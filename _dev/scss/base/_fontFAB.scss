@@ -1,0 +1,5082 @@
+// ---------------------------------------------------------------------
+//  Index
+// ---------------------------------------------------------------------
+
+
+
+.ms-icon {
+    display: inline-block;
+    font-family: $icons;
+    font-style: normal;
+    font-weight: 400;
+    speak: none
+}
+
+.ms-icon--circle {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    width: 1em;
+    height: 1em;
+    margin: 0 .5em 0 0;
+    padding: 0;
+    text-align: left
+}
+
+.ms-icon--circle::after,
+.ms-icon--circle::before {
+    line-height: 1;
+    font-size: inherit
+}
+
+.ms-icon--circle::before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    position: absolute
+}
+
+.ms-icon--circle::after {
+    content: '\e000';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    z-index: 0
+}
+
+.ms-icon--xs {
+    font-size: 10px
+}
+
+.ms-icon--s {
+    font-size: 12px
+}
+
+.ms-icon--m {
+    font-size: 16px
+}
+
+.ms-icon--l {
+    font-size: 20px
+}
+
+.ms-icon--SwayLogo::before {
+    content: '\ED29'
+}
+
+.ms-icon--ClassNotebookLogo::before {
+    content: '\EDC8'
+}
+
+.ms-icon--DocsLogo::before {
+    content: '\EDCB'
+}
+
+.ms-icon--OneNoteEduLogo::before {
+    content: '\EDD0'
+}
+
+.ms-icon--ProjectLogo::before {
+    content: '\EDD4'
+}
+
+.ms-icon--AdminALogo::before {
+    content: '\ED6A'
+}
+
+.ms-icon--AdminCLogo::before {
+    content: '\ED6B'
+}
+
+.ms-icon--AdminDLogo::before {
+    content: '\ED6C'
+}
+
+.ms-icon--AdminELogo::before {
+    content: '\ED6D'
+}
+
+.ms-icon--AdminLLogo::before {
+    content: '\ED6E'
+}
+
+.ms-icon--AdminMLogo::before {
+    content: '\ED6F'
+}
+
+.ms-icon--AdminOLogo::before {
+    content: '\ED70'
+}
+
+.ms-icon--AdminPLogo::before {
+    content: '\ED71'
+}
+
+.ms-icon--AdminSLogo::before {
+    content: '\ED72'
+}
+
+.ms-icon--AdminYLogo::before {
+    content: '\ED73'
+}
+
+.ms-icon--OfficeFormLogo::before {
+    content: '\EF86'
+}
+
+.ms-icon--AADLogo::before {
+    content: '\ED68'
+}
+
+.ms-icon--Accept::before {
+    content: '\E8FB'
+}
+
+.ms-icon--AccessLogo::before {
+    content: '\ED69'
+}
+
+.ms-icon--AccessLogoFill::before {
+    content: '\F1DB'
+}
+
+.ms-icon--Accounts::before {
+    content: '\E910'
+}
+
+.ms-icon--ActivityFeed::before {
+    content: '\F056'
+}
+
+.ms-icon--Add::before {
+    content: '\E710'
+}
+
+.ms-icon--AddEvent::before {
+    content: '\EEB5'
+}
+
+.ms-icon--AddFavorite::before {
+    content: '\F0C8'
+}
+
+.ms-icon--AddFavoriteFill::before {
+    content: '\F0C9'
+}
+
+.ms-icon--AddFriend::before {
+    content: '\E8FA'
+}
+
+.ms-icon--AddGroup::before {
+    content: '\EE3D'
+}
+
+.ms-icon--AddOnlineMeeting::before {
+    content: '\ED8E'
+}
+
+.ms-icon--AddPhone::before {
+    content: '\ED96'
+}
+
+.ms-icon--AddTo::before {
+    content: '\ECC8'
+}
+
+.ms-icon--Admin::before {
+    content: '\E7EF'
+}
+
+.ms-icon--AdminALogo32::before {
+    content: '\F4BA'
+}
+
+.ms-icon--AdminALogoFill32::before {
+    content: '\F4BB'
+}
+
+.ms-icon--AdminALogoInverse32::before {
+    content: '\ED6A'
+}
+
+.ms-icon--AdminCLogoInverse32::before {
+    content: '\ED6B'
+}
+
+.ms-icon--AdminDLogoInverse32::before {
+    content: '\ED6C'
+}
+
+.ms-icon--AdminELogoInverse32::before {
+    content: '\ED6D'
+}
+
+.ms-icon--AdminLLogoInverse32::before {
+    content: '\ED6E'
+}
+
+.ms-icon--AdminMLogoInverse32::before {
+    content: '\ED6F'
+}
+
+.ms-icon--AdminOLogoInverse32::before {
+    content: '\ED70'
+}
+
+.ms-icon--AdminPLogoInverse32::before {
+    content: '\ED71'
+}
+
+.ms-icon--AdminSLogoInverse32::before {
+    content: '\ED72'
+}
+
+.ms-icon--AdminYLogoInverse32::before {
+    content: '\ED73'
+}
+
+.ms-icon--Airplane::before {
+    content: '\E709'
+}
+
+.ms-icon--AirplaneSolid::before {
+    content: '\EB4C'
+}
+
+.ms-icon--AirTickets::before {
+    content: '\EF7A'
+}
+
+.ms-icon--AlarmClock::before {
+    content: '\E919'
+}
+
+.ms-icon--Album::before {
+    content: '\E7AB'
+}
+
+.ms-icon--AlbumRemove::before {
+    content: '\EC62'
+}
+
+.ms-icon--AlertSolid::before {
+    content: '\F331'
+}
+
+.ms-icon--AlignCenter::before {
+    content: '\E8E3'
+}
+
+.ms-icon--AlignLeft::before {
+    content: '\E8E4'
+}
+
+.ms-icon--AlignRight::before {
+    content: '\E8E2'
+}
+
+.ms-icon--AnalyticsLogo::before {
+    content: '\F1DE'
+}
+
+.ms-icon--AnalyticsQuery::before {
+    content: '\F1DF'
+}
+
+.ms-icon--AnalyticsReport::before {
+    content: '\F1E1'
+}
+
+.ms-icon--AndroidLogo::before {
+    content: '\EF8B'
+}
+
+.ms-icon--Annotation::before {
+    content: '\E924'
+}
+
+.ms-icon--AppIconDefault::before {
+    content: '\ECAA'
+}
+
+.ms-icon--Archive::before {
+    content: '\F03F'
+}
+
+.ms-icon--AreaChart::before {
+    content: '\E9D2'
+}
+
+.ms-icon--Arrivals::before {
+    content: '\EB34'
+}
+
+.ms-icon--ArrowDownRight8::before {
+    content: '\EED5'
+}
+
+.ms-icon--ArrowDownRightMirrored8::before {
+    content: '\EEF0'
+}
+
+.ms-icon--ArrowTallDownLeft::before {
+    content: '\F2BF'
+}
+
+.ms-icon--ArrowTallDownRight::before {
+    content: '\F2C0'
+}
+
+.ms-icon--ArrowTallUpLeft::before {
+    content: '\F2BD'
+}
+
+.ms-icon--ArrowTallUpRight::before {
+    content: '\F2BE'
+}
+
+.ms-icon--ArrowUpRight8::before {
+    content: '\EED4'
+}
+
+.ms-icon--ArrowUpRightMirrored8::before {
+    content: '\EEEF'
+}
+
+.ms-icon--Articles::before {
+    content: '\EAC1'
+}
+
+.ms-icon--Ascending::before {
+    content: '\EDC0'
+}
+
+.ms-icon--AspectRatio::before {
+    content: '\E799'
+}
+
+.ms-icon--AssessmentGroup::before {
+    content: '\F31A'
+}
+
+.ms-icon--AssessmentGroupTemplate::before {
+    content: '\F2B1'
+}
+
+.ms-icon--AssetLibrary::before {
+    content: '\EEB6'
+}
+
+.ms-icon--Assign::before {
+    content: '\E9D3'
+}
+
+.ms-icon--Asterisk::before {
+    content: '\EA38'
+}
+
+.ms-icon--AsteriskSolid::before {
+    content: '\F34D'
+}
+
+.ms-icon--ATPLogo::before {
+    content: '\EF85'
+}
+
+.ms-icon--Attach::before {
+    content: '\E723'
+}
+
+.ms-icon--AustralianRules::before {
+    content: '\EE70'
+}
+
+.ms-icon--AutoEnhanceOff::before {
+    content: '\E78E'
+}
+
+.ms-icon--AutoEnhanceOn::before {
+    content: '\E78D'
+}
+
+.ms-icon--AutoFillTemplate::before {
+    content: '\F313'
+}
+
+.ms-icon--AutoRacing::before {
+    content: '\EB24'
+}
+
+.ms-icon--AwayStatus::before {
+    content: '\EE6A'
+}
+
+.ms-icon--AzureAPIManagement::before {
+    content: '\F37F'
+}
+
+.ms-icon--AzureKeyVault::before {
+    content: '\F3B4'
+}
+
+.ms-icon--AzureLogo::before {
+    content: '\EB6A'
+}
+
+.ms-icon--AzureServiceEndpoint::before {
+    content: '\F380'
+}
+
+.ms-icon--Back::before {
+    content: '\E72B'
+}
+
+.ms-icon--Backlog::before {
+    content: '\F2AC'
+}
+
+.ms-icon--BacklogBoard::before {
+    content: '\F444'
+}
+
+.ms-icon--BackToWindow::before {
+    content: '\E73F'
+}
+
+.ms-icon--Badge::before {
+    content: '\EC1B'
+}
+
+.ms-icon--Balloons::before {
+    content: '\ED7E'
+}
+
+.ms-icon--BankSolid::before {
+    content: '\F34F'
+}
+
+.ms-icon--BarChart4::before {
+    content: '\EAE7'
+}
+
+.ms-icon--BarChartHorizontal::before {
+    content: '\E9EB'
+}
+
+.ms-icon--BarChartVertical::before {
+    content: '\E9EC'
+}
+
+.ms-icon--Baseball::before {
+    content: '\EB20'
+}
+
+.ms-icon--BeerMug::before {
+    content: '\F49E'
+}
+
+.ms-icon--BidiLtr::before {
+    content: '\E9AA'
+}
+
+.ms-icon--BidiRtl::before {
+    content: '\E9AB'
+}
+
+.ms-icon--BingLogo::before {
+    content: '\EB6B'
+}
+
+.ms-icon--BlockContact::before {
+    content: '\E8F8'
+}
+
+.ms-icon--Blocked::before {
+    content: '\E733'
+}
+
+.ms-icon--Blocked2::before {
+    content: '\ECE4'
+}
+
+.ms-icon--BlowingSnow::before {
+    content: '\E9C9'
+}
+
+.ms-icon--Blur::before {
+    content: '\F28E'
+}
+
+.ms-icon--Boards::before {
+    content: '\EF68'
+}
+
+.ms-icon--Bold::before {
+    content: '\E8DD'
+}
+
+.ms-icon--BookingsLogo::before {
+    content: '\EDC7'
+}
+
+.ms-icon--Bookmarks::before {
+    content: '\E8A4'
+}
+
+.ms-icon--BookmarksMirrored::before {
+    content: '\EA41'
+}
+
+.ms-icon--BoxAdditionSolid::before {
+    content: '\F2D4'
+}
+
+.ms-icon--BoxCheckmarkSolid::before {
+    content: '\F2D7'
+}
+
+.ms-icon--BoxLogo::before {
+    content: '\ED75'
+}
+
+.ms-icon--BoxMultiplySolid::before {
+    content: '\F2D5'
+}
+
+.ms-icon--BoxPlaySolid::before {
+    content: '\F2D6'
+}
+
+.ms-icon--BoxSubtractSolid::before {
+    content: '\F2D3'
+}
+
+.ms-icon--BranchCommit::before {
+    content: '\F293'
+}
+
+.ms-icon--BranchCompare::before {
+    content: '\F294'
+}
+
+.ms-icon--BranchFork::before {
+    content: '\F173'
+}
+
+.ms-icon--BranchFork2::before {
+    content: '\F291'
+}
+
+.ms-icon--BranchLocked::before {
+    content: '\F292'
+}
+
+.ms-icon--BranchMerge::before {
+    content: '\F295'
+}
+
+.ms-icon--BranchPullRequest::before {
+    content: '\F296'
+}
+
+.ms-icon--BranchSearch::before {
+    content: '\F297'
+}
+
+.ms-icon--BranchShelveset::before {
+    content: '\F298'
+}
+
+.ms-icon--Breadcrumb::before {
+    content: '\EF8C'
+}
+
+.ms-icon--Breakfast::before {
+    content: '\F49C'
+}
+
+.ms-icon--Brightness::before {
+    content: '\E706'
+}
+
+.ms-icon--Broom::before {
+    content: '\EA99'
+}
+
+.ms-icon--Brunch::before {
+    content: '\F49D'
+}
+
+.ms-icon--BucketColor::before {
+    content: '\F1B6'
+}
+
+.ms-icon--BucketColorFill::before {
+    content: '\F1B7'
+}
+
+.ms-icon--BufferTimeAfter::before {
+    content: '\F0D0'
+}
+
+.ms-icon--BufferTimeBefore::before {
+    content: '\F0CF'
+}
+
+.ms-icon--BufferTimeBoth::before {
+    content: '\F0D1'
+}
+
+.ms-icon--BugSolid::before {
+    content: '\F335'
+}
+
+.ms-icon--Build::before {
+    content: '\F28F'
+}
+
+.ms-icon--BuildIssue::before {
+    content: '\F319'
+}
+
+.ms-icon--BuildQueue::before {
+    content: '\F24F'
+}
+
+.ms-icon--BuildQueueNew::before {
+    content: '\F250'
+}
+
+.ms-icon--BulletedList::before {
+    content: '\E8FD'
+}
+
+.ms-icon--BulletedList2::before {
+    content: '\F2C7'
+}
+
+.ms-icon--BulletedList2Mirrored::before {
+    content: '\F2C8'
+}
+
+.ms-icon--BulletedListMirrored::before {
+    content: '\EA42'
+}
+
+.ms-icon--Bus::before {
+    content: '\E806'
+}
+
+.ms-icon--BusinessCenterLogo::before {
+    content: '\F4B2'
+}
+
+.ms-icon--BusinessHoursSign::before {
+    content: '\F310'
+}
+
+.ms-icon--BusSolid::before {
+    content: '\EB47'
+}
+
+.ms-icon--Cafe::before {
+    content: '\EC32'
+}
+
+.ms-icon--Cake::before {
+    content: '\ECA4'
+}
+
+.ms-icon--CalculatorAddition::before {
+    content: '\E948'
+}
+
+.ms-icon--CalculatorEqualTo::before {
+    content: '\E94E'
+}
+
+.ms-icon--CalculatorMultiply::before {
+    content: '\E947'
+}
+
+.ms-icon--CalculatorNotEqualTo::before {
+    content: '\F2D2'
+}
+
+.ms-icon--CalculatorSubtract::before {
+    content: '\E949'
+}
+
+.ms-icon--Calendar::before {
+    content: '\E787'
+}
+
+.ms-icon--CalendarAgenda::before {
+    content: '\EE9A'
+}
+
+.ms-icon--CalendarDay::before {
+    content: '\E8BF'
+}
+
+.ms-icon--CalendarMirrored::before {
+    content: '\ED28'
+}
+
+.ms-icon--CalendarReply::before {
+    content: '\E8F5'
+}
+
+.ms-icon--CalendarWeek::before {
+    content: '\E8C0'
+}
+
+.ms-icon--CalendarWorkWeek::before {
+    content: '\EF51'
+}
+
+.ms-icon--CaloriesAdd::before {
+    content: '\F172'
+}
+
+.ms-icon--Camera::before {
+    content: '\E722'
+}
+
+.ms-icon--Cancel::before {
+    content: '\E711'
+}
+
+.ms-icon--CannedChat::before {
+    content: '\F0F2'
+}
+
+.ms-icon--Car::before {
+    content: '\E804'
+}
+
+.ms-icon--CaretBottomLeftCenter8::before {
+    content: '\F365'
+}
+
+.ms-icon--CaretBottomLeftSolid8::before {
+    content: '\F121'
+}
+
+.ms-icon--CaretBottomRightCenter8::before {
+    content: '\F364'
+}
+
+.ms-icon--CaretBottomRightSolid8::before {
+    content: '\F122'
+}
+
+.ms-icon--CaretDown8::before {
+    content: '\EDD8'
+}
+
+.ms-icon--CaretDownSolid8::before {
+    content: '\EDDC'
+}
+
+.ms-icon--CaretHollow::before {
+    content: '\E817'
+}
+
+.ms-icon--CaretHollowMirrored::before {
+    content: '\EA45'
+}
+
+.ms-icon--CaretLeft8::before {
+    content: '\EDD5'
+}
+
+.ms-icon--CaretLeftSolid8::before {
+    content: '\EDD9'
+}
+
+.ms-icon--CaretRight::before {
+    content: '\F06B'
+}
+
+.ms-icon--CaretRight8::before {
+    content: '\EDD6'
+}
+
+.ms-icon--CaretRightSolid8::before {
+    content: '\EDDA'
+}
+
+.ms-icon--CaretSolid::before {
+    content: '\E818'
+}
+
+.ms-icon--CaretSolid16::before {
+    content: '\EE62'
+}
+
+.ms-icon--CaretSolidDown::before {
+    content: '\F08E'
+}
+
+.ms-icon--CaretSolidLeft::before {
+    content: '\F08D'
+}
+
+.ms-icon--CaretSolidMirrored::before {
+    content: '\EA46'
+}
+
+.ms-icon--CaretSolidRight::before {
+    content: '\F08F'
+}
+
+.ms-icon--CaretSolidUp::before {
+    content: '\F090'
+}
+
+.ms-icon--CaretTopLeftCenter8::before {
+    content: '\F367'
+}
+
+.ms-icon--CaretTopLeftSolid8::before {
+    content: '\EF54'
+}
+
+.ms-icon--CaretTopRightCenter8::before {
+    content: '\F366'
+}
+
+.ms-icon--CaretTopRightSolid8::before {
+    content: '\EF55'
+}
+
+.ms-icon--CaretUp8::before {
+    content: '\EDD7'
+}
+
+.ms-icon--CaretUpSolid8::before {
+    content: '\EDDB'
+}
+
+.ms-icon--Cat::before {
+    content: '\ED7F'
+}
+
+.ms-icon--CellPhone::before {
+    content: '\E8EA'
+}
+
+.ms-icon--Certificate::before {
+    content: '\EB95'
+}
+
+.ms-icon--Chart::before {
+    content: '\E999'
+}
+
+.ms-icon--Chat::before {
+    content: '\E901'
+}
+
+.ms-icon--ChatInviteFriend::before {
+    content: '\ECFE'
+}
+
+.ms-icon--ChatSolid::before {
+    content: '\F344'
+}
+
+.ms-icon--Checkbox::before {
+    content: '\E739'
+}
+
+.ms-icon--CheckboxComposite::before {
+    content: '\E73A'
+}
+
+.ms-icon--CheckboxCompositeReversed::before {
+    content: '\E73D'
+}
+
+.ms-icon--CheckboxIndeterminate::before {
+    content: '\E73C'
+}
+
+.ms-icon--CheckList::before {
+    content: '\E9D5'
+}
+
+.ms-icon--CheckMark::before {
+    content: '\E73E'
+}
+
+.ms-icon--ChevronDown::before {
+    content: '\E70D'
+}
+
+.ms-icon--ChevronDownEnd6::before {
+    content: '\F36F'
+}
+
+.ms-icon--ChevronDownMed::before {
+    content: '\E972'
+}
+
+.ms-icon--ChevronDownSmall::before {
+    content: '\E96E'
+}
+
+.ms-icon--ChevronFold10::before {
+    content: '\F36A'
+}
+
+.ms-icon--ChevronLeft::before {
+    content: '\E76B'
+}
+
+.ms-icon--ChevronLeftEnd6::before {
+    content: '\F371'
+}
+
+.ms-icon--ChevronLeftMed::before {
+    content: '\E973'
+}
+
+.ms-icon--ChevronLeftSmall::before {
+    content: '\E96F'
+}
+
+.ms-icon--ChevronRight::before {
+    content: '\E76C'
+}
+
+.ms-icon--ChevronRightEnd6::before {
+    content: '\F372'
+}
+
+.ms-icon--ChevronRightMed::before {
+    content: '\E974'
+}
+
+.ms-icon--ChevronRightSmall::before {
+    content: '\E970'
+}
+
+.ms-icon--ChevronUnfold10::before {
+    content: '\F369'
+}
+
+.ms-icon--ChevronUp::before {
+    content: '\E70E'
+}
+
+.ms-icon--ChevronUpEnd6::before {
+    content: '\F370'
+}
+
+.ms-icon--ChevronUpMed::before {
+    content: '\E971'
+}
+
+.ms-icon--ChevronUpSmall::before {
+    content: '\E96D'
+}
+
+.ms-icon--Chopsticks::before {
+    content: '\F4A2'
+}
+
+.ms-icon--ChromeBack::before {
+    content: '\E830'
+}
+
+.ms-icon--ChromeBackMirrored::before {
+    content: '\EA47'
+}
+
+.ms-icon--ChromeClose::before {
+    content: '\E8BB'
+}
+
+.ms-icon--ChromeMinimize::before {
+    content: '\E921'
+}
+
+.ms-icon--CircleAddition::before {
+    content: '\F2E3'
+}
+
+.ms-icon--CircleAdditionSolid::before {
+    content: '\F2E4'
+}
+
+.ms-icon--CircleFill::before {
+    content: '\EA3B'
+}
+
+.ms-icon--CircleHalfFull::before {
+    content: '\ED9E'
+}
+
+.ms-icon--CirclePause::before {
+    content: '\F2D9'
+}
+
+.ms-icon--CirclePauseSolid::before {
+    content: '\F2D8'
+}
+
+.ms-icon--CirclePlus::before {
+    content: '\EAEE'
+}
+
+.ms-icon--CircleRing::before {
+    content: '\EA3A'
+}
+
+.ms-icon--CircleStop::before {
+    content: '\F2DC'
+}
+
+.ms-icon--CircleStopSolid::before {
+    content: '\F2DB'
+}
+
+.ms-icon--CityNext::before {
+    content: '\EC06'
+}
+
+.ms-icon--ClassNotebookLogo16::before {
+    content: '\F488'
+}
+
+.ms-icon--ClassNotebookLogo32::before {
+    content: '\F486'
+}
+
+.ms-icon--ClassNotebookLogoFill16::before {
+    content: '\F489'
+}
+
+.ms-icon--ClassNotebookLogoFill32::before {
+    content: '\F487'
+}
+
+.ms-icon--ClassNotebookLogoInverse::before {
+    content: '\EDC8'
+}
+
+.ms-icon--ClassNotebookLogoInverse16::before {
+    content: '\F48B'
+}
+
+.ms-icon--ClassNotebookLogoInverse32::before {
+    content: '\F48A'
+}
+
+.ms-icon--ClassroomLogo::before {
+    content: '\EF75'
+}
+
+.ms-icon--Clear::before {
+    content: '\E894'
+}
+
+.ms-icon--ClearFilter::before {
+    content: '\EF8F'
+}
+
+.ms-icon--ClearFormatting::before {
+    content: '\EDDD'
+}
+
+.ms-icon--ClearNight::before {
+    content: '\E9C2'
+}
+
+.ms-icon--Clock::before {
+    content: '\E917'
+}
+
+.ms-icon--CloneToDesktop::before {
+    content: '\F28C'
+}
+
+.ms-icon--ClosedCaption::before {
+    content: '\EF84'
+}
+
+.ms-icon--ClosePane::before {
+    content: '\E89F'
+}
+
+.ms-icon--ClosePaneMirrored::before {
+    content: '\EA49'
+}
+
+.ms-icon--Cloud::before {
+    content: '\E753'
+}
+
+.ms-icon--CloudAdd::before {
+    content: '\ECA9'
+}
+
+.ms-icon--CloudDownload::before {
+    content: '\EBD3'
+}
+
+.ms-icon--CloudUpload::before {
+    content: '\EC8E'
+}
+
+.ms-icon--CloudWeather::before {
+    content: '\E9BE'
+}
+
+.ms-icon--Cloudy::before {
+    content: '\E9BF'
+}
+
+.ms-icon--Cocktails::before {
+    content: '\EA9D'
+}
+
+.ms-icon--Code::before {
+    content: '\E943'
+}
+
+.ms-icon--Coffee::before {
+    content: '\EAEF'
+}
+
+.ms-icon--CoffeeScript::before {
+    content: '\F2FA'
+}
+
+.ms-icon--CollapseContent::before {
+    content: '\F165'
+}
+
+.ms-icon--CollapseContentSingle::before {
+    content: '\F166'
+}
+
+.ms-icon--CollapseMenu::before {
+    content: '\EF66'
+}
+
+.ms-icon--CollegeFootball::before {
+    content: '\EB26'
+}
+
+.ms-icon--CollegeHoops::before {
+    content: '\EB25'
+}
+
+.ms-icon--Color::before {
+    content: '\E790'
+}
+
+.ms-icon--ColorSolid::before {
+    content: '\F354'
+}
+
+.ms-icon--ColumnLeftTwoThirds::before {
+    content: '\F1D6'
+}
+
+.ms-icon--ColumnLeftTwoThirdsEdit::before {
+    content: '\F324'
+}
+
+.ms-icon--ColumnOptions::before {
+    content: '\F317'
+}
+
+.ms-icon--ColumnRightTwoThirds::before {
+    content: '\F1D7'
+}
+
+.ms-icon--ColumnRightTwoThirdsEdit::before {
+    content: '\F325'
+}
+
+.ms-icon--Combine::before {
+    content: '\EDBB'
+}
+
+.ms-icon--CommandPrompt::before {
+    content: '\E756'
+}
+
+.ms-icon--Comment::before {
+    content: '\E90A'
+}
+
+.ms-icon--CommentAdd::before {
+    content: '\F2B3'
+}
+
+.ms-icon--CommentNext::before {
+    content: '\F2B4'
+}
+
+.ms-icon--CommentPrevious::before {
+    content: '\F2B5'
+}
+
+.ms-icon--CommentUrgent::before {
+    content: '\F307'
+}
+
+.ms-icon--Communications::before {
+    content: '\E95A'
+}
+
+.ms-icon--CompassNW::before {
+    content: '\E942'
+}
+
+.ms-icon--Completed::before {
+    content: '\E930'
+}
+
+.ms-icon--CompletedSolid::before {
+    content: '\EC61'
+}
+
+.ms-icon--ConfigurationSolid::before {
+    content: '\F334'
+}
+
+.ms-icon--ConstructionCone::before {
+    content: '\E98F'
+}
+
+.ms-icon--ConstructionConeSolid::before {
+    content: '\F339'
+}
+
+.ms-icon--Contact::before {
+    content: '\E77B'
+}
+
+.ms-icon--ContactCard::before {
+    content: '\EEBD'
+}
+
+.ms-icon--ContactInfo::before {
+    content: '\E779'
+}
+
+.ms-icon--Contrast::before {
+    content: '\E7A1'
+}
+
+.ms-icon--Copy::before {
+    content: '\E8C8'
+}
+
+.ms-icon--Cotton::before {
+    content: '\EAF3'
+}
+
+.ms-icon--CPlusPlus::before {
+    content: '\F2F4'
+}
+
+.ms-icon--CPlusPlusLanguage::before {
+    content: '\F2F3'
+}
+
+.ms-icon--Cricket::before {
+    content: '\EB1E'
+}
+
+.ms-icon--CRMReport::before {
+    content: '\EFFE'
+}
+
+.ms-icon--Crown::before {
+    content: '\ED01'
+}
+
+.ms-icon--CrownSolid::before {
+    content: '\F336'
+}
+
+.ms-icon--CSharp::before {
+    content: '\F2F0'
+}
+
+.ms-icon--CSharpLanguage::before {
+    content: '\F2EF'
+}
+
+.ms-icon--CSS::before {
+    content: '\EBEF'
+}
+
+.ms-icon--CustomList::before {
+    content: '\EEBE'
+}
+
+.ms-icon--CustomListMirrored::before {
+    content: '\EEBF'
+}
+
+.ms-icon--Cut::before {
+    content: '\E8C6'
+}
+
+.ms-icon--Cycling::before {
+    content: '\EAC7'
+}
+
+.ms-icon--Database::before {
+    content: '\EFC7'
+}
+
+.ms-icon--DataConnectionLibrary::before {
+    content: '\EEB7'
+}
+
+.ms-icon--DateTime::before {
+    content: '\EC92'
+}
+
+.ms-icon--DateTime2::before {
+    content: '\EA17'
+}
+
+.ms-icon--DateTimeMirrored::before {
+    content: '\EE93'
+}
+
+.ms-icon--DecisionSolid::before {
+    content: '\F350'
+}
+
+.ms-icon--DeclineCall::before {
+    content: '\F405'
+}
+
+.ms-icon--DecreaseIndentLegacy::before {
+    content: '\E290'
+}
+
+.ms-icon--DefectSolid::before {
+    content: '\F449'
+}
+
+.ms-icon--Delete::before {
+    content: '\E74D'
+}
+
+.ms-icon--DeliveryTruck::before {
+    content: '\EBF4'
+}
+
+.ms-icon--DelveAnalytics::before {
+    content: '\EEEE'
+}
+
+.ms-icon--DelveAnalyticsLogo::before {
+    content: '\EDCA'
+}
+
+.ms-icon--DelveLogo::before {
+    content: '\F280'
+}
+
+.ms-icon--DelveLogoFill::before {
+    content: '\F281'
+}
+
+.ms-icon--DelveLogoInverse::before {
+    content: '\ED76'
+}
+
+.ms-icon--Deploy::before {
+    content: '\F29D'
+}
+
+.ms-icon--Descending::before {
+    content: '\EDC1'
+}
+
+.ms-icon--Design::before {
+    content: '\EB3C'
+}
+
+.ms-icon--DeveloperTools::before {
+    content: '\EC7A'
+}
+
+.ms-icon--Devices3::before {
+    content: '\EA6C'
+}
+
+.ms-icon--Devices4::before {
+    content: '\EB66'
+}
+
+.ms-icon--Diagnostic::before {
+    content: '\E9D9'
+}
+
+.ms-icon--Dialpad::before {
+    content: '\E75F'
+}
+
+.ms-icon--DiamondSolid::before {
+    content: '\F34C'
+}
+
+.ms-icon--Dictionary::before {
+    content: '\E82D'
+}
+
+.ms-icon--DietPlanNotebook::before {
+    content: '\EAC8'
+}
+
+.ms-icon--DiffInline::before {
+    content: '\F309'
+}
+
+.ms-icon--DiffSideBySide::before {
+    content: '\F30A'
+}
+
+.ms-icon--DisableUpdates::before {
+    content: '\E8D8'
+}
+
+.ms-icon--Dislike::before {
+    content: '\E8E0'
+}
+
+.ms-icon--DislikeSolid::before {
+    content: '\F3C0'
+}
+
+.ms-icon--DockLeft::before {
+    content: '\E90C'
+}
+
+.ms-icon--DockLeftMirrored::before {
+    content: '\EA4C'
+}
+
+.ms-icon--DockRight::before {
+    content: '\E90D'
+}
+
+.ms-icon--DocLibrary::before {
+    content: '\EEB8'
+}
+
+.ms-icon--DocsLogoInverse::before {
+    content: '\EDCB'
+}
+
+.ms-icon--Document::before {
+    content: '\E8A5'
+}
+
+.ms-icon--DocumentApproval::before {
+    content: '\F28B'
+}
+
+.ms-icon--Documentation::before {
+    content: '\EC17'
+}
+
+.ms-icon--DocumentManagement::before {
+    content: '\EFFC'
+}
+
+.ms-icon--DocumentReply::before {
+    content: '\EF57'
+}
+
+.ms-icon--DocumentSearch::before {
+    content: '\EF6C'
+}
+
+.ms-icon--DocumentSet::before {
+    content: '\EED6'
+}
+
+.ms-icon--DonutChart::before {
+    content: '\F368'
+}
+
+.ms-icon--Door::before {
+    content: '\EB75'
+}
+
+.ms-icon--DoubleBookmark::before {
+    content: '\EB8F'
+}
+
+.ms-icon--DoubleChevronDown::before {
+    content: '\EE04'
+}
+
+.ms-icon--DoubleChevronDown12::before {
+    content: '\EE97'
+}
+
+.ms-icon--DoubleChevronDown8::before {
+    content: '\F36B'
+}
+
+.ms-icon--DoubleChevronLeft::before {
+    content: '\EDBE'
+}
+
+.ms-icon--DoubleChevronLeft12::before {
+    content: '\EE98'
+}
+
+.ms-icon--DoubleChevronLeft8::before {
+    content: '\F36D'
+}
+
+.ms-icon--DoubleChevronLeftMed::before {
+    content: '\E991'
+}
+
+.ms-icon--DoubleChevronLeftMedMirrored::before {
+    content: '\EA4D'
+}
+
+.ms-icon--DoubleChevronRight::before {
+    content: '\EDBF'
+}
+
+.ms-icon--DoubleChevronRight12::before {
+    content: '\EE99'
+}
+
+.ms-icon--DoubleChevronRight8::before {
+    content: '\F36E'
+}
+
+.ms-icon--DoubleChevronUp::before {
+    content: '\EDBD'
+}
+
+.ms-icon--DoubleChevronUp12::before {
+    content: '\EE96'
+}
+
+.ms-icon--DoubleChevronUp8::before {
+    content: '\F36C'
+}
+
+.ms-icon--DoubleColumn::before {
+    content: '\F1D4'
+}
+
+.ms-icon--DoubleColumnEdit::before {
+    content: '\F322'
+}
+
+.ms-icon--Down::before {
+    content: '\E74B'
+}
+
+.ms-icon--Download::before {
+    content: '\E896'
+}
+
+.ms-icon--DRM::before {
+    content: '\ECA8'
+}
+
+.ms-icon--Drop::before {
+    content: '\EB42'
+}
+
+.ms-icon--DropboxLogo::before {
+    content: '\ED77'
+}
+
+.ms-icon--Dropdown::before {
+    content: '\EDC5'
+}
+
+.ms-icon--Duststorm::before {
+    content: '\E9CD'
+}
+
+.ms-icon--Dynamics365Logo::before {
+    content: '\EDCC'
+}
+
+.ms-icon--DynamicSMBLogo::before {
+    content: '\EDCD'
+}
+
+.ms-icon--EatDrink::before {
+    content: '\E807'
+}
+
+.ms-icon--EdgeLogo::before {
+    content: '\EC60'
+}
+
+.ms-icon--Edit::before {
+    content: '\E70F'
+}
+
+.ms-icon--EditMail::before {
+    content: '\EF61'
+}
+
+.ms-icon--EditMirrored::before {
+    content: '\EB7E'
+}
+
+.ms-icon--EditNote::before {
+    content: '\ED9D'
+}
+
+.ms-icon--EditPhoto::before {
+    content: '\EF77'
+}
+
+.ms-icon--EditSolid12::before {
+    content: '\F4B5'
+}
+
+.ms-icon--EditSolidMirrored12::before {
+    content: '\F4B6'
+}
+
+.ms-icon--EditStyle::before {
+    content: '\EF60'
+}
+
+.ms-icon--Education::before {
+    content: '\E7BE'
+}
+
+.ms-icon--EgnyteLogo::before {
+    content: '\F373'
+}
+
+.ms-icon--Embed::before {
+    content: '\ECCE'
+}
+
+.ms-icon--EMI::before {
+    content: '\E731'
+}
+
+.ms-icon--Emoji::before {
+    content: '\E899'
+}
+
+.ms-icon--Emoji2::before {
+    content: '\E76E'
+}
+
+.ms-icon--EmojiDisappointed::before {
+    content: '\EA88'
+}
+
+.ms-icon--EmojiNeutral::before {
+    content: '\EA87'
+}
+
+.ms-icon--EmptyRecycleBin::before {
+    content: '\EF88'
+}
+
+.ms-icon--EngineeringGroup::before {
+    content: '\F362'
+}
+
+.ms-icon--Equalizer::before {
+    content: '\E9E9'
+}
+
+.ms-icon--EraseTool::before {
+    content: '\E75C'
+}
+
+.ms-icon--Error::before {
+    content: '\E783'
+}
+
+.ms-icon--ErrorBadge::before {
+    content: '\EA39'
+}
+
+.ms-icon--Event::before {
+    content: '\ECA3'
+}
+
+.ms-icon--EventAccepted::before {
+    content: '\F422'
+}
+
+.ms-icon--EventDate::before {
+    content: '\F059'
+}
+
+.ms-icon--EventDeclined::before {
+    content: '\F425'
+}
+
+.ms-icon--EventInfo::before {
+    content: '\ED8B'
+}
+
+.ms-icon--EventTentative::before {
+    content: '\F423'
+}
+
+.ms-icon--EventTentativeMirrored::before {
+    content: '\F424'
+}
+
+.ms-icon--ExcelDocument::before {
+    content: '\EF73'
+}
+
+.ms-icon--ExcelLogo::before {
+    content: '\F1E5'
+}
+
+.ms-icon--ExcelLogo16::before {
+    content: '\F397'
+}
+
+.ms-icon--ExcelLogoFill::before {
+    content: '\F1E6'
+}
+
+.ms-icon--ExcelLogoFill16::before {
+    content: '\F398'
+}
+
+.ms-icon--ExcelLogoInverse::before {
+    content: '\EC28'
+}
+
+.ms-icon--ExcelLogoInverse16::before {
+    content: '\F396'
+}
+
+.ms-icon--ExchangeLogo::before {
+    content: '\F284'
+}
+
+.ms-icon--ExchangeLogoFill::before {
+    content: '\F285'
+}
+
+.ms-icon--ExchangeLogoInverse::before {
+    content: '\ED78'
+}
+
+.ms-icon--ExerciseTracker::before {
+    content: '\EACC'
+}
+
+.ms-icon--ExpandMenu::before {
+    content: '\EF67'
+}
+
+.ms-icon--ExploreContent::before {
+    content: '\ECCD'
+}
+
+.ms-icon--ExploreContentSingle::before {
+    content: '\F164'
+}
+
+.ms-icon--Export::before {
+    content: '\EDE1'
+}
+
+.ms-icon--ExportMirrored::before {
+    content: '\EDE2'
+}
+
+.ms-icon--ExternalBuild::before {
+    content: '\F445'
+}
+
+.ms-icon--ExternalTFVC::before {
+    content: '\F446'
+}
+
+.ms-icon--ExternalXAML::before {
+    content: '\F447'
+}
+
+.ms-icon--FabricAssetLibrary::before {
+    content: '\F09C'
+}
+
+.ms-icon--FabricDataConnectionLibrary::before {
+    content: '\F09D'
+}
+
+.ms-icon--FabricDocLibrary::before {
+    content: '\F09E'
+}
+
+.ms-icon--FabricFolder::before {
+    content: '\F0A9'
+}
+
+.ms-icon--FabricFolderFill::before {
+    content: '\F0AA'
+}
+
+.ms-icon--FabricFolderSearch::before {
+    content: '\F0A4'
+}
+
+.ms-icon--FabricFormLibrary::before {
+    content: '\F09F'
+}
+
+.ms-icon--FabricFormLibraryMirrored::before {
+    content: '\F0A0'
+}
+
+.ms-icon--FabricMovetoFolder::before {
+    content: '\F0A5'
+}
+
+.ms-icon--FabricNewFolder::before {
+    content: '\F0AB'
+}
+
+.ms-icon--FabricOpenFolderHorizontal::before {
+    content: '\F0A8'
+}
+
+.ms-icon--FabricPictureLibrary::before {
+    content: '\F0AC'
+}
+
+.ms-icon--FabricPublicFolder::before {
+    content: '\F0A3'
+}
+
+.ms-icon--FabricReportLibrary::before {
+    content: '\F0A1'
+}
+
+.ms-icon--FabricReportLibraryMirrored::before {
+    content: '\F0A2'
+}
+
+.ms-icon--FabricSyncFolder::before {
+    content: '\F0A7'
+}
+
+.ms-icon--FabricUnsyncFolder::before {
+    content: '\F0A6'
+}
+
+.ms-icon--FacebookLogo::before {
+    content: '\ECB3'
+}
+
+.ms-icon--Family::before {
+    content: '\EBDA'
+}
+
+.ms-icon--FangBody::before {
+    content: '\ECEB'
+}
+
+.ms-icon--FastForward::before {
+    content: '\EB9D'
+}
+
+.ms-icon--Favicon::before {
+    content: '\E737'
+}
+
+.ms-icon--FavoriteList::before {
+    content: '\E728'
+}
+
+.ms-icon--FavoriteStar::before {
+    content: '\E734'
+}
+
+.ms-icon--FavoriteStarFill::before {
+    content: '\E735'
+}
+
+.ms-icon--Fax::before {
+    content: '\EF5C'
+}
+
+.ms-icon--Feedback::before {
+    content: '\ED15'
+}
+
+.ms-icon--FeedbackRequestMirroredSolid::before {
+    content: '\F35A'
+}
+
+.ms-icon--FeedbackRequestSolid::before {
+    content: '\F359'
+}
+
+.ms-icon--FeedbackResponseSolid::before {
+    content: '\F35B'
+}
+
+.ms-icon--Ferry::before {
+    content: '\E7E3'
+}
+
+.ms-icon--FerrySolid::before {
+    content: '\EB48'
+}
+
+.ms-icon--FieldChanged::before {
+    content: '\F2C3'
+}
+
+.ms-icon--FieldEmpty::before {
+    content: '\F2C1'
+}
+
+.ms-icon--FieldFilled::before {
+    content: '\F2C2'
+}
+
+.ms-icon--FieldNotChanged::before {
+    content: '\F2C4'
+}
+
+.ms-icon--FieldReadOnly::before {
+    content: '\F442'
+}
+
+.ms-icon--FieldRequired::before {
+    content: '\F443'
+}
+
+.ms-icon--FileASPX::before {
+    content: '\F2E9'
+}
+
+.ms-icon--FileBug::before {
+    content: '\F30D'
+}
+
+.ms-icon--FileCode::before {
+    content: '\F30E'
+}
+
+.ms-icon--FileComment::before {
+    content: '\F30F'
+}
+
+.ms-icon--FileCSS::before {
+    content: '\F2EA'
+}
+
+.ms-icon--FileHTML::before {
+    content: '\F2ED'
+}
+
+.ms-icon--FileImage::before {
+    content: '\F311'
+}
+
+.ms-icon--FileJAVA::before {
+    content: '\F2E8'
+}
+
+.ms-icon--FileLess::before {
+    content: '\F2EC'
+}
+
+.ms-icon--FilePDB::before {
+    content: '\F2E5'
+}
+
+.ms-icon--FileSass::before {
+    content: '\F2EB'
+}
+
+.ms-icon--FileSQL::before {
+    content: '\F2E7'
+}
+
+.ms-icon--FileSymlink::before {
+    content: '\F312'
+}
+
+.ms-icon--FileTemplate::before {
+    content: '\F2E6'
+}
+
+.ms-icon--FileTypeSolution::before {
+    content: '\F387'
+}
+
+.ms-icon--Filter::before {
+    content: '\E71C'
+}
+
+.ms-icon--Filters::before {
+    content: '\E795'
+}
+
+.ms-icon--FilterSolid::before {
+    content: '\F412'
+}
+
+.ms-icon--FiltersSolid::before {
+    content: '\F353'
+}
+
+.ms-icon--Financial::before {
+    content: '\E7BB'
+}
+
+.ms-icon--FinancialMirroredSolid::before {
+    content: '\F347'
+}
+
+.ms-icon--FinancialSolid::before {
+    content: '\F346'
+}
+
+.ms-icon--Fingerprint::before {
+    content: '\E928'
+}
+
+.ms-icon--FiveTileGrid::before {
+    content: '\F274'
+}
+
+.ms-icon--Flag::before {
+    content: '\E7C1'
+}
+
+.ms-icon--FlameSolid::before {
+    content: '\F1F3'
+}
+
+.ms-icon--FlickDown::before {
+    content: '\E935'
+}
+
+.ms-icon--FlickLeft::before {
+    content: '\E937'
+}
+
+.ms-icon--FlickRight::before {
+    content: '\E938'
+}
+
+.ms-icon--FlickUp::before {
+    content: '\E936'
+}
+
+.ms-icon--Flow::before {
+    content: '\EF90'
+}
+
+.ms-icon--FocalPoint::before {
+    content: '\F277'
+}
+
+.ms-icon--Fog::before {
+    content: '\E9CB'
+}
+
+.ms-icon--Folder::before {
+    content: '\E8B7'
+}
+
+.ms-icon--FolderFill::before {
+    content: '\E8D5'
+}
+
+.ms-icon--FolderHorizontal::before {
+    content: '\F12B'
+}
+
+.ms-icon--FolderList::before {
+    content: '\F2CE'
+}
+
+.ms-icon--FolderListMirrored::before {
+    content: '\F2CF'
+}
+
+.ms-icon--FolderOpen::before {
+    content: '\E838'
+}
+
+.ms-icon--FolderQuery::before {
+    content: '\F2CD'
+}
+
+.ms-icon--FolderSearch::before {
+    content: '\EF65'
+}
+
+.ms-icon--Font::before {
+    content: '\E8D2'
+}
+
+.ms-icon--FontColor::before {
+    content: '\E8D3'
+}
+
+.ms-icon--FontDecrease::before {
+    content: '\E8E7'
+}
+
+.ms-icon--FontIncrease::before {
+    content: '\E8E8'
+}
+
+.ms-icon--FontSize::before {
+    content: '\E8E9'
+}
+
+.ms-icon--FormLibrary::before {
+    content: '\EEB9'
+}
+
+.ms-icon--FormLibraryMirrored::before {
+    content: '\EEBA'
+}
+
+.ms-icon--Forward::before {
+    content: '\E72A'
+}
+
+.ms-icon--ForwardEvent::before {
+    content: '\ED8C'
+}
+
+.ms-icon--Freezing::before {
+    content: '\E9EF'
+}
+
+.ms-icon--Frigid::before {
+    content: '\E9CA'
+}
+
+.ms-icon--FSharp::before {
+    content: '\F2F6'
+}
+
+.ms-icon--FSharpLanguage::before {
+    content: '\F2F5'
+}
+
+.ms-icon--FullCircleMask::before {
+    content: '\E91F'
+}
+
+.ms-icon--FullHistory::before {
+    content: '\F31C'
+}
+
+.ms-icon--FullScreen::before {
+    content: '\E740'
+}
+
+.ms-icon--FullWidth::before {
+    content: '\F2FE'
+}
+
+.ms-icon--FullWidthEdit::before {
+    content: '\F2FF'
+}
+
+.ms-icon--GallatinLogo::before {
+    content: '\F496'
+}
+
+.ms-icon--Generate::before {
+    content: '\E9DA'
+}
+
+.ms-icon--Giftbox::before {
+    content: '\EC1F'
+}
+
+.ms-icon--GiftboxOpen::before {
+    content: '\F133'
+}
+
+.ms-icon--GiftBoxSolid::before {
+    content: '\F341'
+}
+
+.ms-icon--GiftCard::before {
+    content: '\EB8E'
+}
+
+.ms-icon--GitGraph::before {
+    content: '\F2CA'
+}
+
+.ms-icon--Glasses::before {
+    content: '\EA16'
+}
+
+.ms-icon--Glimmer::before {
+    content: '\ECF4'
+}
+
+.ms-icon--GlobalNavButton::before {
+    content: '\E700'
+}
+
+.ms-icon--Globe::before {
+    content: '\E774'
+}
+
+.ms-icon--Globe2::before {
+    content: '\F49A'
+}
+
+.ms-icon--GlobeFavorite::before {
+    content: '\EF53'
+}
+
+.ms-icon--Golf::before {
+    content: '\EB1F'
+}
+
+.ms-icon--GoogleDriveLogo::before {
+    content: '\EE0B'
+}
+
+.ms-icon--GoogleDriveLogoBottomBlue::before {
+    content: '\F375'
+}
+
+.ms-icon--GoogleDriveLogoLeftGreen::before {
+    content: '\F374'
+}
+
+.ms-icon--GoogleDriveLogoRightYellow::before {
+    content: '\F376'
+}
+
+.ms-icon--GotoToday::before {
+    content: '\E8D1'
+}
+
+.ms-icon--GridViewLarge::before {
+    content: '\F234'
+}
+
+.ms-icon--GridViewMedium::before {
+    content: '\F233'
+}
+
+.ms-icon--GridViewSmall::before {
+    content: '\F232'
+}
+
+.ms-icon--GripperBarHorizontal::before {
+    content: '\E76F'
+}
+
+.ms-icon--GripperBarVertical::before {
+    content: '\E784'
+}
+
+.ms-icon--GripperTool::before {
+    content: '\E75E'
+}
+
+.ms-icon--Group::before {
+    content: '\E902'
+}
+
+.ms-icon--GroupedAscending::before {
+    content: '\EE67'
+}
+
+.ms-icon--GroupedDescending::before {
+    content: '\EE66'
+}
+
+.ms-icon--GroupedList::before {
+    content: '\EF74'
+}
+
+.ms-icon--Guitar::before {
+    content: '\F49B'
+}
+
+.ms-icon--HailDay::before {
+    content: '\EA00'
+}
+
+.ms-icon--HailNight::before {
+    content: '\EA13'
+}
+
+.ms-icon--HalfAlpha::before {
+    content: '\E97E'
+}
+
+.ms-icon--Handwriting::before {
+    content: '\E929'
+}
+
+.ms-icon--HardDriveGroup::before {
+    content: '\F18F'
+}
+
+.ms-icon--Header1::before {
+    content: '\EA19'
+}
+
+.ms-icon--Header2::before {
+    content: '\EF36'
+}
+
+.ms-icon--Header3::before {
+    content: '\EF37'
+}
+
+.ms-icon--Header4::before {
+    content: '\EF38'
+}
+
+.ms-icon--Headset::before {
+    content: '\E95B'
+}
+
+.ms-icon--HeadsetSolid::before {
+    content: '\F348'
+}
+
+.ms-icon--Health::before {
+    content: '\E95E'
+}
+
+.ms-icon--HealthSolid::before {
+    content: '\F33F'
+}
+
+.ms-icon--Heart::before {
+    content: '\EB51'
+}
+
+.ms-icon--HeartFill::before {
+    content: '\EB52'
+}
+
+.ms-icon--Help::before {
+    content: '\E897'
+}
+
+.ms-icon--HelpMirrored::before {
+    content: '\EA51'
+}
+
+.ms-icon--Hide::before {
+    content: '\ED1A'
+}
+
+.ms-icon--Hide2::before {
+    content: '\EF89'
+}
+
+.ms-icon--Highlight::before {
+    content: '\E7E6'
+}
+
+.ms-icon--HighlightMappedShapes::before {
+    content: '\F2A1'
+}
+
+.ms-icon--History::before {
+    content: '\E81C'
+}
+
+.ms-icon--Home::before {
+    content: '\E80F'
+}
+
+.ms-icon--HomeSolid::before {
+    content: '\EA8A'
+}
+
+.ms-icon--Hospital::before {
+    content: '\E91D'
+}
+
+.ms-icon--Hotel::before {
+    content: '\E824'
+}
+
+.ms-icon--IconSetsFlag::before {
+    content: '\F2A4'
+}
+
+.ms-icon--IDBadge::before {
+    content: '\F427'
+}
+
+.ms-icon--ImageCrosshair::before {
+    content: '\F2C9'
+}
+
+.ms-icon--ImageDiff::before {
+    content: '\F30B'
+}
+
+.ms-icon--ImagePixel::before {
+    content: '\F30C'
+}
+
+.ms-icon--Import::before {
+    content: '\E8B5'
+}
+
+.ms-icon--Important::before {
+    content: '\E8C9'
+}
+
+.ms-icon--ImportMirrored::before {
+    content: '\EA52'
+}
+
+.ms-icon--Inbox::before {
+    content: '\F41C'
+}
+
+.ms-icon--InboxCheck::before {
+    content: '\EF64'
+}
+
+.ms-icon--IncidentTriangle::before {
+    content: '\E814'
+}
+
+.ms-icon--IncreaseIndentLegacy::before {
+    content: '\E291'
+}
+
+.ms-icon--Info::before {
+    content: '\E946'
+}
+
+.ms-icon--Info2::before {
+    content: '\EA1F'
+}
+
+.ms-icon--InfoSolid::before {
+    content: '\F167'
+}
+
+.ms-icon--InsertTextBox::before {
+    content: '\EC7D'
+}
+
+.ms-icon--InstallToDrive::before {
+    content: '\F28D'
+}
+
+.ms-icon--InternetSharing::before {
+    content: '\E704'
+}
+
+.ms-icon--iOSAppStoreLogo::before {
+    content: '\EF8A'
+}
+
+.ms-icon--IRMForward::before {
+    content: '\F41F'
+}
+
+.ms-icon--IRMForwardMirrored::before {
+    content: '\F420'
+}
+
+.ms-icon--IRMReply::before {
+    content: '\F41D'
+}
+
+.ms-icon--IRMReplyMirrored::before {
+    content: '\F41E'
+}
+
+.ms-icon--IssueSolid::before {
+    content: '\F448'
+}
+
+.ms-icon--IssueTracking::before {
+    content: '\EEC0'
+}
+
+.ms-icon--IssueTrackingMirrored::before {
+    content: '\EEC1'
+}
+
+.ms-icon--Italic::before {
+    content: '\E8DB'
+}
+
+.ms-icon--JavaScriptLanguage::before {
+    content: '\F2EE'
+}
+
+.ms-icon--JoinOnlineMeeting::before {
+    content: '\ED8F'
+}
+
+.ms-icon--JS::before {
+    content: '\EBF0'
+}
+
+.ms-icon--KaizalaLogo::before {
+    content: '\F492'
+}
+
+.ms-icon--Label::before {
+    content: '\E932'
+}
+
+.ms-icon--LadybugSolid::before {
+    content: '\F44A'
+}
+
+.ms-icon--LandscapeOrientation::before {
+    content: '\EF6B'
+}
+
+.ms-icon--LaptopSelected::before {
+    content: '\EC76'
+}
+
+.ms-icon--LargeGrid::before {
+    content: '\EECB'
+}
+
+.ms-icon--Library::before {
+    content: '\E8F1'
+}
+
+.ms-icon--Lifesaver::before {
+    content: '\EF62'
+}
+
+.ms-icon--LifesaverLock::before {
+    content: '\EF63'
+}
+
+.ms-icon--Light::before {
+    content: '\E793'
+}
+
+.ms-icon--Lightbulb::before {
+    content: '\EA80'
+}
+
+.ms-icon--LightningBolt::before {
+    content: '\E945'
+}
+
+.ms-icon--Like::before {
+    content: '\E8E1'
+}
+
+.ms-icon--LikeSolid::before {
+    content: '\F3BF'
+}
+
+.ms-icon--LineChart::before {
+    content: '\E9E6'
+}
+
+.ms-icon--Link::before {
+    content: '\E71B'
+}
+
+.ms-icon--LinkedInLogo::before {
+    content: '\F20A'
+}
+
+.ms-icon--List::before {
+    content: '\EA37'
+}
+
+.ms-icon--ListMirrored::before {
+    content: '\EA55'
+}
+
+.ms-icon--LocaleLanguage::before {
+    content: '\F2B7'
+}
+
+.ms-icon--Location::before {
+    content: '\E81D'
+}
+
+.ms-icon--LocationCircle::before {
+    content: '\E80E'
+}
+
+.ms-icon--LocationDot::before {
+    content: '\E827'
+}
+
+.ms-icon--LocationFill::before {
+    content: '\E920'
+}
+
+.ms-icon--LocationOutline::before {
+    content: '\F2D0'
+}
+
+.ms-icon--Lock::before {
+    content: '\E72E'
+}
+
+.ms-icon--LockSolid::before {
+    content: '\E9A2'
+}
+
+.ms-icon--LogRemove::before {
+    content: '\F316'
+}
+
+.ms-icon--LowerBrightness::before {
+    content: '\EC8A'
+}
+
+.ms-icon--LyncLogo::before {
+    content: '\ED79'
+}
+
+.ms-icon--Mail::before {
+    content: '\E715'
+}
+
+.ms-icon--MailAlert::before {
+    content: '\ED80'
+}
+
+.ms-icon--MailCheck::before {
+    content: '\ED81'
+}
+
+.ms-icon--MailFill::before {
+    content: '\E8A8'
+}
+
+.ms-icon--MailForward::before {
+    content: '\E89C'
+}
+
+.ms-icon--MailForwardMirrored::before {
+    content: '\EA56'
+}
+
+.ms-icon--MailLowImportance::before {
+    content: '\ED82'
+}
+
+.ms-icon--MailPause::before {
+    content: '\ED83'
+}
+
+.ms-icon--MailReminder::before {
+    content: '\F418'
+}
+
+.ms-icon--MailRepeat::before {
+    content: '\ED84'
+}
+
+.ms-icon--MailReply::before {
+    content: '\E8CA'
+}
+
+.ms-icon--MailReplyAll::before {
+    content: '\E8C2'
+}
+
+.ms-icon--MailReplyAllMirrored::before {
+    content: '\EA58'
+}
+
+.ms-icon--MailReplyMirrored::before {
+    content: '\EA57'
+}
+
+.ms-icon--MailSolid::before {
+    content: '\F343'
+}
+
+.ms-icon--MailTentative::before {
+    content: '\F416'
+}
+
+.ms-icon--MailTentativeMirrored::before {
+    content: '\F417'
+}
+
+.ms-icon--MailUndelivered::before {
+    content: '\F415'
+}
+
+.ms-icon--MapDirections::before {
+    content: '\E816'
+}
+
+.ms-icon--MapPin::before {
+    content: '\E707'
+}
+
+.ms-icon--MarkDownLanguage::before {
+    content: '\F2FB'
+}
+
+.ms-icon--Market::before {
+    content: '\EAFC'
+}
+
+.ms-icon--MarketDown::before {
+    content: '\EF42'
+}
+
+.ms-icon--Medical::before {
+    content: '\EAD4'
+}
+
+.ms-icon--Megaphone::before {
+    content: '\E789'
+}
+
+.ms-icon--MegaphoneSolid::before {
+    content: '\F332'
+}
+
+.ms-icon--Memo::before {
+    content: '\E77C'
+}
+
+.ms-icon--Merge::before {
+    content: '\E7D5'
+}
+
+.ms-icon--MergeDuplicate::before {
+    content: '\F29A'
+}
+
+.ms-icon--Message::before {
+    content: '\E8BD'
+}
+
+.ms-icon--MessageFill::before {
+    content: '\EC70'
+}
+
+.ms-icon--MicOff::before {
+    content: '\EC54'
+}
+
+.ms-icon--Microphone::before {
+    content: '\E720'
+}
+
+.ms-icon--MicrosoftFlowLogo::before {
+    content: '\F4B1'
+}
+
+.ms-icon--MicrosoftStaffhubLogo::before {
+    content: '\F130'
+}
+
+.ms-icon--MiniLink::before {
+    content: '\E732'
+}
+
+.ms-icon--MobileSelected::before {
+    content: '\EC75'
+}
+
+.ms-icon--Money::before {
+    content: '\EAFD'
+}
+
+.ms-icon--More::before {
+    content: '\E712'
+}
+
+.ms-icon--MoreSports::before {
+    content: '\EB22'
+}
+
+.ms-icon--MoreVertical::before {
+    content: '\F2BC'
+}
+
+.ms-icon--Move::before {
+    content: '\E7C2'
+}
+
+.ms-icon--MoveToFolder::before {
+    content: '\E8DE'
+}
+
+.ms-icon--MSNLogo::before {
+    content: '\EB6C'
+}
+
+.ms-icon--MSNVideos::before {
+    content: '\EB1C'
+}
+
+.ms-icon--MSNVideosSolid::before {
+    content: '\F2DA'
+}
+
+.ms-icon--MTMLogo::before {
+    content: '\F44B'
+}
+
+.ms-icon--MultiSelect::before {
+    content: '\E762'
+}
+
+.ms-icon--MultiSelectMirrored::before {
+    content: '\EA98'
+}
+
+.ms-icon--MusicInCollection::before {
+    content: '\E940'
+}
+
+.ms-icon--MusicInCollectionFill::before {
+    content: '\EA36'
+}
+
+.ms-icon--MusicNote::before {
+    content: '\EC4F'
+}
+
+.ms-icon--MyMoviesTV::before {
+    content: '\EE6C'
+}
+
+.ms-icon--Nav2DMapView::before {
+    content: '\E800'
+}
+
+.ms-icon--NavigateBack::before {
+    content: '\F2DD'
+}
+
+.ms-icon--NavigateBackMirrored::before {
+    content: '\F2DE'
+}
+
+.ms-icon--NavigateExternalInline::before {
+    content: '\F35F'
+}
+
+.ms-icon--NavigateForward::before {
+    content: '\F2DF'
+}
+
+.ms-icon--NavigateForwardMirrored::before {
+    content: '\F2E0'
+}
+
+.ms-icon--NetworkTower::before {
+    content: '\EC05'
+}
+
+.ms-icon--NewAnalyticsQuery::before {
+    content: '\F1E0'
+}
+
+.ms-icon--NewFolder::before {
+    content: '\E8F4'
+}
+
+.ms-icon--News::before {
+    content: '\E900'
+}
+
+.ms-icon--NewTeamProject::before {
+    content: '\F2B2'
+}
+
+.ms-icon--Next::before {
+    content: '\E893'
+}
+
+.ms-icon--NonprofitLogo32::before {
+    content: '\F495'
+}
+
+.ms-icon--NoteForward::before {
+    content: '\ED99'
+}
+
+.ms-icon--NotePinned::before {
+    content: '\ED9A'
+}
+
+.ms-icon--NoteReply::before {
+    content: '\ED98'
+}
+
+.ms-icon--NotExecuted::before {
+    content: '\F440'
+}
+
+.ms-icon--NotImpactedSolid::before {
+    content: '\F441'
+}
+
+.ms-icon--NugetLogo::before {
+    content: '\F44C'
+}
+
+.ms-icon--NumberedList::before {
+    content: '\EA1C'
+}
+
+.ms-icon--NumberField::before {
+    content: '\EDC4'
+}
+
+.ms-icon--OfficeAddinsLogo::before {
+    content: '\EEC7'
+}
+
+.ms-icon--OfficeAssistantLogo::before {
+    content: '\EDCE'
+}
+
+.ms-icon--OfficeFormsLogo::before {
+    content: '\F434'
+}
+
+.ms-icon--OfficeFormsLogo16::before {
+    content: '\F436'
+}
+
+.ms-icon--OfficeFormsLogo24::before {
+    content: '\F43B'
+}
+
+.ms-icon--OfficeFormsLogoFill::before {
+    content: '\F435'
+}
+
+.ms-icon--OfficeFormsLogoFill16::before {
+    content: '\F437'
+}
+
+.ms-icon--OfficeFormsLogoFill24::before {
+    content: '\F43C'
+}
+
+.ms-icon--OfficeFormsLogoInverse::before {
+    content: '\EF86'
+}
+
+.ms-icon--OfficeFormsLogoInverse16::before {
+    content: '\F433'
+}
+
+.ms-icon--OfficeFormsLogoInverse24::before {
+    content: '\F43A'
+}
+
+.ms-icon--OfficeLogo::before {
+    content: '\EB6E'
+}
+
+.ms-icon--OfficeStoreLogo::before {
+    content: '\EDCF'
+}
+
+.ms-icon--OfficeVideoLogo::before {
+    content: '\F282'
+}
+
+.ms-icon--OfficeVideoLogoFill::before {
+    content: '\F283'
+}
+
+.ms-icon--OfficeVideoLogoInverse::before {
+    content: '\ED7A'
+}
+
+.ms-icon--OfflineOneDriveParachute::before {
+    content: '\EEC8'
+}
+
+.ms-icon--OfflineOneDriveParachuteDisabled::before {
+    content: '\EEC9'
+}
+
+.ms-icon--OfflineStorageSolid::before {
+    content: '\F34E'
+}
+
+.ms-icon--OneDrive::before {
+    content: '\E941'
+}
+
+.ms-icon--OneDriveAdd::before {
+    content: '\EF32'
+}
+
+.ms-icon--OneNoteEduLogoInverse::before {
+    content: '\EDD0'
+}
+
+.ms-icon--OneNoteLogo::before {
+    content: '\F1E7'
+}
+
+.ms-icon--OneNoteLogo16::before {
+    content: '\F39A'
+}
+
+.ms-icon--OneNoteLogoFill::before {
+    content: '\F1E8'
+}
+
+.ms-icon--OneNoteLogoFill16::before {
+    content: '\F39B'
+}
+
+.ms-icon--OneNoteLogoInverse::before {
+    content: '\EC0D'
+}
+
+.ms-icon--OneNoteLogoInverse16::before {
+    content: '\F399'
+}
+
+.ms-icon--OpenFile::before {
+    content: '\E8E5'
+}
+
+.ms-icon--OpenFolderHorizontal::before {
+    content: '\ED25'
+}
+
+.ms-icon--OpenInNewWindow::before {
+    content: '\E8A7'
+}
+
+.ms-icon--OpenPane::before {
+    content: '\E8A0'
+}
+
+.ms-icon--OpenPaneMirrored::before {
+    content: '\EA5B'
+}
+
+.ms-icon--OpenSource::before {
+    content: '\EBC2'
+}
+
+.ms-icon--Org::before {
+    content: '\ECA6'
+}
+
+.ms-icon--OutlookLogo::before {
+    content: '\F1E9'
+}
+
+.ms-icon--OutlookLogo16::before {
+    content: '\F39D'
+}
+
+.ms-icon--OutlookLogoFill::before {
+    content: '\F1EA'
+}
+
+.ms-icon--OutlookLogoFill16::before {
+    content: '\F39E'
+}
+
+.ms-icon--OutlookLogoInverse::before {
+    content: '\EB6D'
+}
+
+.ms-icon--OutlookLogoInverse16::before {
+    content: '\F39C'
+}
+
+.ms-icon--OutOfOffice::before {
+    content: '\ED34'
+}
+
+.ms-icon--Package::before {
+    content: '\E7B8'
+}
+
+.ms-icon--Packages::before {
+    content: '\F318'
+}
+
+.ms-icon--Page::before {
+    content: '\E7C3'
+}
+
+.ms-icon--PageAdd::before {
+    content: '\EA1A'
+}
+
+.ms-icon--PageCheckedin::before {
+    content: '\F104'
+}
+
+.ms-icon--PageCheckedOut::before {
+    content: '\F02C'
+}
+
+.ms-icon--PageEdit::before {
+    content: '\EFB6'
+}
+
+.ms-icon--PageLeft::before {
+    content: '\E760'
+}
+
+.ms-icon--PageListMirroredSolid::before {
+    content: '\F33B'
+}
+
+.ms-icon--PageListSolid::before {
+    content: '\F33A'
+}
+
+.ms-icon--PageLock::before {
+    content: '\F43F'
+}
+
+.ms-icon--PageRight::before {
+    content: '\E761'
+}
+
+.ms-icon--PageSolid::before {
+    content: '\E729'
+}
+
+.ms-icon--PanoIndicator::before {
+    content: '\E7B0'
+}
+
+.ms-icon--Parachute::before {
+    content: '\F351'
+}
+
+.ms-icon--ParachuteSolid::before {
+    content: '\F352'
+}
+
+.ms-icon--Parameter::before {
+    content: '\F306'
+}
+
+.ms-icon--ParatureLogo::before {
+    content: '\ED7B'
+}
+
+.ms-icon--ParkingLocation::before {
+    content: '\E811'
+}
+
+.ms-icon--ParkingLocationMirrored::before {
+    content: '\EA5E'
+}
+
+.ms-icon--ParkingMirroredSolid::before {
+    content: '\F34B'
+}
+
+.ms-icon--ParkingSolid::before {
+    content: '\F34A'
+}
+
+.ms-icon--PartlyCloudyDay::before {
+    content: '\E9C0'
+}
+
+.ms-icon--PartlyCloudyNight::before {
+    content: '\E9C1'
+}
+
+.ms-icon--PartyLeader::before {
+    content: '\ECA7'
+}
+
+.ms-icon--Paste::before {
+    content: '\E77F'
+}
+
+.ms-icon--Pause::before {
+    content: '\E769'
+}
+
+.ms-icon--PaymentCard::before {
+    content: '\E8C7'
+}
+
+.ms-icon--PC1::before {
+    content: '\E977'
+}
+
+.ms-icon--PDF::before {
+    content: '\EA90'
+}
+
+.ms-icon--PencilReply::before {
+    content: '\EF7B'
+}
+
+.ms-icon--People::before {
+    content: '\E716'
+}
+
+.ms-icon--PeopleAdd::before {
+    content: '\EA15'
+}
+
+.ms-icon--PeopleAlert::before {
+    content: '\ED93'
+}
+
+.ms-icon--PeopleBlock::before {
+    content: '\ED91'
+}
+
+.ms-icon--PeoplePause::before {
+    content: '\ED94'
+}
+
+.ms-icon--PeopleRepeat::before {
+    content: '\ED92'
+}
+
+.ms-icon--Permissions::before {
+    content: '\E8D7'
+}
+
+.ms-icon--PermissionsSolid::before {
+    content: '\F349'
+}
+
+.ms-icon--Personalize::before {
+    content: '\E771'
+}
+
+.ms-icon--Phone::before {
+    content: '\E717'
+}
+
+.ms-icon--Photo2::before {
+    content: '\EB9F'
+}
+
+.ms-icon--Photo2Add::before {
+    content: '\ECAB'
+}
+
+.ms-icon--Photo2Remove::before {
+    content: '\ECAC'
+}
+
+.ms-icon--PhotoCollection::before {
+    content: '\E7AA'
+}
+
+.ms-icon--Picture::before {
+    content: '\E8B9'
+}
+
+.ms-icon--PictureLibrary::before {
+    content: '\EEC2'
+}
+
+.ms-icon--PieDouble::before {
+    content: '\EB04'
+}
+
+.ms-icon--PieSingle::before {
+    content: '\EB05'
+}
+
+.ms-icon--Pill::before {
+    content: '\EACB'
+}
+
+.ms-icon--Pin::before {
+    content: '\E718'
+}
+
+.ms-icon--Pinned::before {
+    content: '\E840'
+}
+
+.ms-icon--PinnedFill::before {
+    content: '\E842'
+}
+
+.ms-icon--PivotChart::before {
+    content: '\F24C'
+}
+
+.ms-icon--PlannerLogo::before {
+    content: '\EDD1'
+}
+
+.ms-icon--PlanView::before {
+    content: '\F360'
+}
+
+.ms-icon--Play::before {
+    content: '\E768'
+}
+
+.ms-icon--PlayerSettings::before {
+    content: '\EF58'
+}
+
+.ms-icon--PlayResume::before {
+    content: '\F2C6'
+}
+
+.ms-icon--Plug::before {
+    content: '\F300'
+}
+
+.ms-icon--PlugConnected::before {
+    content: '\F302'
+}
+
+.ms-icon--PlugDisconnected::before {
+    content: '\F303'
+}
+
+.ms-icon--PlugSolid::before {
+    content: '\F301'
+}
+
+.ms-icon--POI::before {
+    content: '\ECAF'
+}
+
+.ms-icon--POISolid::before {
+    content: '\F2D1'
+}
+
+.ms-icon--PostUpdate::before {
+    content: '\E8F3'
+}
+
+.ms-icon--PowerApps::before {
+    content: '\EDD2'
+}
+
+.ms-icon--PowerApps2Logo::before {
+    content: '\F092'
+}
+
+.ms-icon--PowerAppsLogo::before {
+    content: '\F091'
+}
+
+.ms-icon--PowerBILogo::before {
+    content: '\EA1E'
+}
+
+.ms-icon--PowerPointDocument::before {
+    content: '\EF72'
+}
+
+.ms-icon--PowerPointLogo::before {
+    content: '\F1EB'
+}
+
+.ms-icon--PowerPointLogo16::before {
+    content: '\F394'
+}
+
+.ms-icon--PowerPointLogoFill::before {
+    content: '\F1EC'
+}
+
+.ms-icon--PowerPointLogoFill16::before {
+    content: '\F395'
+}
+
+.ms-icon--PowerPointLogoInverse::before {
+    content: '\EC2A'
+}
+
+.ms-icon--PowerPointLogoInverse16::before {
+    content: '\F393'
+}
+
+.ms-icon--Precipitation::before {
+    content: '\E9CF'
+}
+
+.ms-icon--PresenceChickletVideo::before {
+    content: '\E979'
+}
+
+.ms-icon--Preview::before {
+    content: '\E8FF'
+}
+
+.ms-icon--PreviewLink::before {
+    content: '\E8A1'
+}
+
+.ms-icon--Previous::before {
+    content: '\E892'
+}
+
+.ms-icon--PrimaryCalendar::before {
+    content: '\F4AE'
+}
+
+.ms-icon--Print::before {
+    content: '\E749'
+}
+
+.ms-icon--PrintfaxPrinterFile::before {
+    content: '\E956'
+}
+
+.ms-icon--Processing::before {
+    content: '\E9F5'
+}
+
+.ms-icon--ProcessMetaTask::before {
+    content: '\F290'
+}
+
+.ms-icon--Product::before {
+    content: '\ECDC'
+}
+
+.ms-icon--ProFootball::before {
+    content: '\EB27'
+}
+
+.ms-icon--ProgressLoopInner::before {
+    content: '\ECDE'
+}
+
+.ms-icon--ProgressLoopOuter::before {
+    content: '\ECDF'
+}
+
+.ms-icon--ProgressRingDots::before {
+    content: '\F16A'
+}
+
+.ms-icon--ProHockey::before {
+    content: '\EB28'
+}
+
+.ms-icon--ProjectCollection::before {
+    content: '\F363'
+}
+
+.ms-icon--ProjectLogo16::before {
+    content: '\F480'
+}
+
+.ms-icon--ProjectLogo32::before {
+    content: '\F47E'
+}
+
+.ms-icon--ProjectLogoFill16::before {
+    content: '\F481'
+}
+
+.ms-icon--ProjectLogoFill32::before {
+    content: '\F47F'
+}
+
+.ms-icon--ProjectLogoInverse::before {
+    content: '\EDD4'
+}
+
+.ms-icon--ProtectedDocument::before {
+    content: '\E8A6'
+}
+
+.ms-icon--ProtectionCenterLogo32::before {
+    content: '\F494'
+}
+
+.ms-icon--ProtectRestrict::before {
+    content: '\F22A'
+}
+
+.ms-icon--PublicCalendar::before {
+    content: '\EF6D'
+}
+
+.ms-icon--PublicContactCard::before {
+    content: '\EF6E'
+}
+
+.ms-icon--PublicEmail::before {
+    content: '\EF6F'
+}
+
+.ms-icon--PublicFolder::before {
+    content: '\EF70'
+}
+
+.ms-icon--PublisherLogo::before {
+    content: '\F1ED'
+}
+
+.ms-icon--PublisherLogo16::before {
+    content: '\F3A0'
+}
+
+.ms-icon--PublisherLogoFill::before {
+    content: '\F1EE'
+}
+
+.ms-icon--PublisherLogoFill16::before {
+    content: '\F3A1'
+}
+
+.ms-icon--PublisherLogoInverse16::before {
+    content: '\F39F'
+}
+
+.ms-icon--Puzzle::before {
+    content: '\EA86'
+}
+
+.ms-icon--PY::before {
+    content: '\F2F9'
+}
+
+.ms-icon--PythonLanguage::before {
+    content: '\F2F8'
+}
+
+.ms-icon--QueryList::before {
+    content: '\F2B8'
+}
+
+.ms-icon--Questionnaire::before {
+    content: '\EE19'
+}
+
+.ms-icon--QuestionnaireMirrored::before {
+    content: '\EE4B'
+}
+
+.ms-icon--QuickNote::before {
+    content: '\E70B'
+}
+
+.ms-icon--QuickNoteSolid::before {
+    content: '\F338'
+}
+
+.ms-icon--RadioBtnOff::before {
+    content: '\ECCA'
+}
+
+.ms-icon--RadioBtnOn::before {
+    content: '\ECCB'
+}
+
+.ms-icon--RadioBullet::before {
+    content: '\E915'
+}
+
+.ms-icon--Rain::before {
+    content: '\E9C4'
+}
+
+.ms-icon--RainShowersDay::before {
+    content: '\E9C3'
+}
+
+.ms-icon--RainShowersNight::before {
+    content: '\EA0F'
+}
+
+.ms-icon--RainSnow::before {
+    content: '\E9C7'
+}
+
+.ms-icon--RawSource::before {
+    content: '\F299'
+}
+
+.ms-icon--Read::before {
+    content: '\E8C3'
+}
+
+.ms-icon--ReadingMode::before {
+    content: '\E736'
+}
+
+.ms-icon--ReadingModeSolid::before {
+    content: '\F33D'
+}
+
+.ms-icon--ReceiptCheck::before {
+    content: '\EF5B'
+}
+
+.ms-icon--ReceiptForward::before {
+    content: '\EF59'
+}
+
+.ms-icon--ReceiptReply::before {
+    content: '\EF5A'
+}
+
+.ms-icon--ReceiptTentative::before {
+    content: '\F41A'
+}
+
+.ms-icon--ReceiptTentativeMirrored::before {
+    content: '\F41B'
+}
+
+.ms-icon--ReceiptUndelivered::before {
+    content: '\F419'
+}
+
+.ms-icon--Recent::before {
+    content: '\E823'
+}
+
+.ms-icon--Record2::before {
+    content: '\EA3F'
+}
+
+.ms-icon--RecurringEvent::before {
+    content: '\EF5D'
+}
+
+.ms-icon--RecurringTask::before {
+    content: '\EDB2'
+}
+
+.ms-icon--RecycleBin::before {
+    content: '\EF87'
+}
+
+.ms-icon--Redeploy::before {
+    content: '\F29E'
+}
+
+.ms-icon--RedEye::before {
+    content: '\E7B3'
+}
+
+.ms-icon--Redo::before {
+    content: '\E7A6'
+}
+
+.ms-icon--Refresh::before {
+    content: '\E72C'
+}
+
+.ms-icon--ReminderGroup::before {
+    content: '\EBF8'
+}
+
+.ms-icon--ReminderPerson::before {
+    content: '\EBF7'
+}
+
+.ms-icon--Remove::before {
+    content: '\E738'
+}
+
+.ms-icon--RemoveEvent::before {
+    content: '\ED8A'
+}
+
+.ms-icon--RemoveFilter::before {
+    content: '\EB08'
+}
+
+.ms-icon--RemoveLink::before {
+    content: '\ED90'
+}
+
+.ms-icon--RemoveOccurrence::before {
+    content: '\ED9B'
+}
+
+.ms-icon--Rename::before {
+    content: '\E8AC'
+}
+
+.ms-icon--ReopenPages::before {
+    content: '\ED50'
+}
+
+.ms-icon--Repair::before {
+    content: '\E90F'
+}
+
+.ms-icon--Reply::before {
+    content: '\E97A'
+}
+
+.ms-icon--ReplyAll::before {
+    content: '\EE0A'
+}
+
+.ms-icon--ReplyAllAlt::before {
+    content: '\EF5F'
+}
+
+.ms-icon--ReplyAllMirrored::before {
+    content: '\EE36'
+}
+
+.ms-icon--ReplyAlt::before {
+    content: '\EF5E'
+}
+
+.ms-icon--ReplyMirrored::before {
+    content: '\EE35'
+}
+
+.ms-icon--Repo::before {
+    content: '\F2CB'
+}
+
+.ms-icon--ReportLibrary::before {
+    content: '\EEBB'
+}
+
+.ms-icon--ReportLibraryMirrored::before {
+    content: '\EEBC'
+}
+
+.ms-icon--RepoSolid::before {
+    content: '\F2CC'
+}
+
+.ms-icon--ReturnToSession::before {
+    content: '\ED24'
+}
+
+.ms-icon--ReviewRequestMirroredSolid::before {
+    content: '\F357'
+}
+
+.ms-icon--ReviewRequestSolid::before {
+    content: '\F356'
+}
+
+.ms-icon--ReviewResponseSolid::before {
+    content: '\F358'
+}
+
+.ms-icon--ReviewSolid::before {
+    content: '\F355'
+}
+
+.ms-icon--RevToggleKey::before {
+    content: '\E845'
+}
+
+.ms-icon--Rewind::before {
+    content: '\EB9E'
+}
+
+.ms-icon--Ribbon::before {
+    content: '\E9D1'
+}
+
+.ms-icon--RibbonSolid::before {
+    content: '\F345'
+}
+
+.ms-icon--RightDoubleQuote::before {
+    content: '\E9B1'
+}
+
+.ms-icon--Ringer::before {
+    content: '\EA8F'
+}
+
+.ms-icon--RingerOff::before {
+    content: '\F2C5'
+}
+
+.ms-icon--Robot::before {
+    content: '\E99A'
+}
+
+.ms-icon--Rocket::before {
+    content: '\F3B3'
+}
+
+.ms-icon--Room::before {
+    content: '\ED9F'
+}
+
+.ms-icon--Rotate::before {
+    content: '\E7AD'
+}
+
+.ms-icon--RowsChild::before {
+    content: '\F29C'
+}
+
+.ms-icon--RowsGroup::before {
+    content: '\F29B'
+}
+
+.ms-icon--Rugby::before {
+    content: '\EB2D'
+}
+
+.ms-icon--Running::before {
+    content: '\EADA'
+}
+
+.ms-icon--Sad::before {
+    content: '\E757'
+}
+
+.ms-icon--SadSolid::before {
+    content: '\F33E'
+}
+
+.ms-icon--Save::before {
+    content: '\E74E'
+}
+
+.ms-icon--SaveAll::before {
+    content: '\F203'
+}
+
+.ms-icon--SaveAndClose::before {
+    content: '\F038'
+}
+
+.ms-icon--SaveAs::before {
+    content: '\E792'
+}
+
+.ms-icon--Savings::before {
+    content: '\EB0B'
+}
+
+.ms-icon--ScheduleEventAction::before {
+    content: '\F1EF'
+}
+
+.ms-icon--ScopeTemplate::before {
+    content: '\F2B0'
+}
+
+.ms-icon--Script::before {
+    content: '\F03A'
+}
+
+.ms-icon--ScrollUpDown::before {
+    content: '\EC8F'
+}
+
+.ms-icon--Search::before {
+    content: '\E721'
+}
+
+.ms-icon--SearchAndApps::before {
+    content: '\E773'
+}
+
+.ms-icon--SearchCalendar::before {
+    content: '\F4AF'
+}
+
+.ms-icon--SearchIssue::before {
+    content: '\F09A'
+}
+
+.ms-icon--SearchIssueMirrored::before {
+    content: '\F09B'
+}
+
+.ms-icon--Section::before {
+    content: '\EC0C'
+}
+
+.ms-icon--Sections::before {
+    content: '\EF76'
+}
+
+.ms-icon--SecurityGroup::before {
+    content: '\ED85'
+}
+
+.ms-icon--Send::before {
+    content: '\E724'
+}
+
+.ms-icon--SendMirrored::before {
+    content: '\EA63'
+}
+
+.ms-icon--Separator::before {
+    content: '\F35E'
+}
+
+.ms-icon--Server::before {
+    content: '\F201'
+}
+
+.ms-icon--ServerEnviroment::before {
+    content: '\F29F'
+}
+
+.ms-icon--ServerProcesses::before {
+    content: '\F1FE'
+}
+
+.ms-icon--SetAction::before {
+    content: '\F071'
+}
+
+.ms-icon--Settings::before {
+    content: '\E713'
+}
+
+.ms-icon--Share::before {
+    content: '\E72D'
+}
+
+.ms-icon--ShareiOS::before {
+    content: '\EF79'
+}
+
+.ms-icon--SharepointLogo::before {
+    content: '\F27E'
+}
+
+.ms-icon--SharepointLogoFill::before {
+    content: '\F27F'
+}
+
+.ms-icon--SharepointLogoInverse::before {
+    content: '\ED18'
+}
+
+.ms-icon--Shield::before {
+    content: '\EA18'
+}
+
+.ms-icon--ShieldSolid::before {
+    content: '\F340'
+}
+
+.ms-icon--Shop::before {
+    content: '\E719'
+}
+
+.ms-icon--ShoppingCart::before {
+    content: '\E7BF'
+}
+
+.ms-icon--ShoppingCartSolid::before {
+    content: '\F342'
+}
+
+.ms-icon--ShopServer::before {
+    content: '\F2B6'
+}
+
+.ms-icon--ShowResults::before {
+    content: '\E8BC'
+}
+
+.ms-icon--ShowResultsMirrored::before {
+    content: '\EA65'
+}
+
+.ms-icon--SidePanel::before {
+    content: '\EF52'
+}
+
+.ms-icon--SidePanelMirrored::before {
+    content: '\F221'
+}
+
+.ms-icon--SignOut::before {
+    content: '\F3B1'
+}
+
+.ms-icon--SingleBookmark::before {
+    content: '\EDFF'
+}
+
+.ms-icon--SingleColumn::before {
+    content: '\F1D3'
+}
+
+.ms-icon--SingleColumnEdit::before {
+    content: '\F321'
+}
+
+.ms-icon--SIPMove::before {
+    content: '\E759'
+}
+
+.ms-icon--SkiResorts::before {
+    content: '\EB45'
+}
+
+.ms-icon--SkypeCheck::before {
+    content: '\EF80'
+}
+
+.ms-icon--SkypeCircleCheck::before {
+    content: '\EF7D'
+}
+
+.ms-icon--SkypeCircleClock::before {
+    content: '\EF7E'
+}
+
+.ms-icon--SkypeCircleMinus::before {
+    content: '\EF7F'
+}
+
+.ms-icon--SkypeClock::before {
+    content: '\EF81'
+}
+
+.ms-icon--SkypeForBusinessLogo::before {
+    content: '\F0FC'
+}
+
+.ms-icon--SkypeForBusinessLogo16::before {
+    content: '\F40F'
+}
+
+.ms-icon--SkypeForBusinessLogoFill::before {
+    content: '\F27D'
+}
+
+.ms-icon--SkypeForBusinessLogoFill16::before {
+    content: '\F410'
+}
+
+.ms-icon--SkypeLogo::before {
+    content: '\EB6F'
+}
+
+.ms-icon--SkypeLogo16::before {
+    content: '\F40E'
+}
+
+.ms-icon--SkypeMessage::before {
+    content: '\EF83'
+}
+
+.ms-icon--SkypeMinus::before {
+    content: '\EF82'
+}
+
+.ms-icon--SliderThumb::before {
+    content: '\EC13'
+}
+
+.ms-icon--Snooze::before {
+    content: '\F4BD'
+}
+
+.ms-icon--Snow::before {
+    content: '\E9C8'
+}
+
+.ms-icon--Snowflake::before {
+    content: '\EB46'
+}
+
+.ms-icon--SnowShowerDay::before {
+    content: '\E9FD'
+}
+
+.ms-icon--SnowShowerNight::before {
+    content: '\EA11'
+}
+
+.ms-icon--Soccer::before {
+    content: '\EB21'
+}
+
+.ms-icon--SocialListeningLogo::before {
+    content: '\ED7C'
+}
+
+.ms-icon--Sort::before {
+    content: '\E8CB'
+}
+
+.ms-icon--SortDown::before {
+    content: '\EE69'
+}
+
+.ms-icon--SortLines::before {
+    content: '\E9D0'
+}
+
+.ms-icon--SortUp::before {
+    content: '\EE68'
+}
+
+.ms-icon--Spacer::before {
+    content: '\F40D'
+}
+
+.ms-icon--Speakers::before {
+    content: '\E7F5'
+}
+
+.ms-icon--SpeedHigh::before {
+    content: '\EC4A'
+}
+
+.ms-icon--Split::before {
+    content: '\EDBC'
+}
+
+.ms-icon--Sprint::before {
+    content: '\F3B0'
+}
+
+.ms-icon--Squalls::before {
+    content: '\E9CC'
+}
+
+.ms-icon--StackedBarChart::before {
+    content: '\F24D'
+}
+
+.ms-icon--StackedLineChart::before {
+    content: '\F24E'
+}
+
+.ms-icon--StackIndicator::before {
+    content: '\E7FF'
+}
+
+.ms-icon--StaffNotebookLogo16::before {
+    content: '\F48E'
+}
+
+.ms-icon--StaffNotebookLogo32::before {
+    content: '\F48C'
+}
+
+.ms-icon--StaffNotebookLogoFill16::before {
+    content: '\F48F'
+}
+
+.ms-icon--StaffNotebookLogoFill32::before {
+    content: '\F48D'
+}
+
+.ms-icon--StaffNotebookLogoInverted16::before {
+    content: '\F491'
+}
+
+.ms-icon--StaffNotebookLogoInverted32::before {
+    content: '\F490'
+}
+
+.ms-icon--Starburst::before {
+    content: '\EF78'
+}
+
+.ms-icon--StarburstSolid::before {
+    content: '\F33C'
+}
+
+.ms-icon--StatusCircleCheckmark::before {
+    content: '\F13E'
+}
+
+.ms-icon--StatusCircleInner::before {
+    content: '\F137'
+}
+
+.ms-icon--StatusCircleOuter::before {
+    content: '\F136'
+}
+
+.ms-icon--StatusErrorFull::before {
+    content: '\EB90'
+}
+
+.ms-icon--StatusTriangle::before {
+    content: '\EA82'
+}
+
+.ms-icon--Step::before {
+    content: '\F241'
+}
+
+.ms-icon--StepInsert::before {
+    content: '\F242'
+}
+
+.ms-icon--StepShared::before {
+    content: '\F243'
+}
+
+.ms-icon--StepSharedAdd::before {
+    content: '\F244'
+}
+
+.ms-icon--StepSharedInsert::before {
+    content: '\F245'
+}
+
+.ms-icon--StockDown::before {
+    content: '\EB0F'
+}
+
+.ms-icon--StockUp::before {
+    content: '\EB11'
+}
+
+.ms-icon--Stop::before {
+    content: '\E71A'
+}
+
+.ms-icon--StopSolid::before {
+    content: '\EE95'
+}
+
+.ms-icon--Stopwatch::before {
+    content: '\E916'
+}
+
+.ms-icon--StoreLogo::before {
+    content: '\EA96'
+}
+
+.ms-icon--StoreLogoMed::before {
+    content: '\EA04'
+}
+
+.ms-icon--Storyboard::before {
+    content: '\F308'
+}
+
+.ms-icon--Streaming::before {
+    content: '\E93E'
+}
+
+.ms-icon--StreamingOff::before {
+    content: '\F2BB'
+}
+
+.ms-icon--StreamLogo::before {
+    content: '\F329'
+}
+
+.ms-icon--Strikethrough::before {
+    content: '\EDE0'
+}
+
+.ms-icon--Subscribe::before {
+    content: '\EDA1'
+}
+
+.ms-icon--Subscript::before {
+    content: '\EDDF'
+}
+
+.ms-icon--Suitcase::before {
+    content: '\EDD3'
+}
+
+.ms-icon--SunAdd::before {
+    content: '\EF69'
+}
+
+.ms-icon--Sunny::before {
+    content: '\E9BD'
+}
+
+.ms-icon--SunQuestionMark::before {
+    content: '\EF6A'
+}
+
+.ms-icon--Superscript::before {
+    content: '\EDDE'
+}
+
+.ms-icon--SwayLogo16::before {
+    content: '\F484'
+}
+
+.ms-icon--SwayLogo32::before {
+    content: '\F482'
+}
+
+.ms-icon--SwayLogoFill16::before {
+    content: '\F485'
+}
+
+.ms-icon--SwayLogoFill32::before {
+    content: '\F483'
+}
+
+.ms-icon--SwayLogoInverse::before {
+    content: '\ED29'
+}
+
+.ms-icon--Switch::before {
+    content: '\E8AB'
+}
+
+.ms-icon--SwitcherStartEnd::before {
+    content: '\E810'
+}
+
+.ms-icon--Sync::before {
+    content: '\E895'
+}
+
+.ms-icon--SyncFolder::before {
+    content: '\E8F7'
+}
+
+.ms-icon--SyncOccurence::before {
+    content: '\F4A3'
+}
+
+.ms-icon--SyncToPC::before {
+    content: '\EE6E'
+}
+
+.ms-icon--System::before {
+    content: '\E770'
+}
+
+.ms-icon--Tab::before {
+    content: '\E7E9'
+}
+
+.ms-icon--Table::before {
+    content: '\ED86'
+}
+
+.ms-icon--Tablet::before {
+    content: '\E70A'
+}
+
+.ms-icon--TabletSelected::before {
+    content: '\EC74'
+}
+
+.ms-icon--Tag::before {
+    content: '\E8EC'
+}
+
+.ms-icon--Taskboard::before {
+    content: '\F1C2'
+}
+
+.ms-icon--TaskGroup::before {
+    content: '\F2AE'
+}
+
+.ms-icon--TaskGroupMirrored::before {
+    content: '\F2AF'
+}
+
+.ms-icon--TaskLogo::before {
+    content: '\F493'
+}
+
+.ms-icon--TaskManager::before {
+    content: '\EDB7'
+}
+
+.ms-icon--TaskManagerMirrored::before {
+    content: '\EDB8'
+}
+
+.ms-icon--TaskSolid::before {
+    content: '\F333'
+}
+
+.ms-icon--Taxi::before {
+    content: '\F4A1'
+}
+
+.ms-icon--TeamFavorite::before {
+    content: '\F2AD'
+}
+
+.ms-icon--TeamsLogo::before {
+    content: '\F27B'
+}
+
+.ms-icon--TeamsLogoFill::before {
+    content: '\F27C'
+}
+
+.ms-icon--TeamsLogoInverse::before {
+    content: '\F27A'
+}
+
+.ms-icon--Teamwork::before {
+    content: '\EA12'
+}
+
+.ms-icon--Teeth::before {
+    content: '\F4A0'
+}
+
+.ms-icon--TemporaryUser::before {
+    content: '\EE58'
+}
+
+.ms-icon--Tennis::before {
+    content: '\EB33'
+}
+
+.ms-icon--TestAutoSolid::before {
+    content: '\F3A8'
+}
+
+.ms-icon--TestBeaker::before {
+    content: '\F3A5'
+}
+
+.ms-icon--TestBeakerSolid::before {
+    content: '\F3A6'
+}
+
+.ms-icon--TestCase::before {
+    content: '\F3AF'
+}
+
+.ms-icon--TestExploreSolid::before {
+    content: '\F3A7'
+}
+
+.ms-icon--TestImpactSolid::before {
+    content: '\F3AA'
+}
+
+.ms-icon--TestParameter::before {
+    content: '\F3AD'
+}
+
+.ms-icon--TestPlan::before {
+    content: '\F3AB'
+}
+
+.ms-icon--TestStep::before {
+    content: '\F3AC'
+}
+
+.ms-icon--TestSuite::before {
+    content: '\F3AE'
+}
+
+.ms-icon--TestUserSolid::before {
+    content: '\F3A9'
+}
+
+.ms-icon--TextBox::before {
+    content: '\EDC2'
+}
+
+.ms-icon--TextCallout::before {
+    content: '\F2A2'
+}
+
+.ms-icon--TextDocument::before {
+    content: '\F029'
+}
+
+.ms-icon--TextField::before {
+    content: '\EDC3'
+}
+
+.ms-icon--TFVCLogo::before {
+    content: '\F44D'
+}
+
+.ms-icon--ThisPC::before {
+    content: '\EC4E'
+}
+
+.ms-icon--ThumbnailView::before {
+    content: '\E7B6'
+}
+
+.ms-icon--ThumbnailViewMirrored::before {
+    content: '\EA67'
+}
+
+.ms-icon--Thunderstorms::before {
+    content: '\E9C6'
+}
+
+.ms-icon--Ticket::before {
+    content: '\EB54'
+}
+
+.ms-icon--Tiles::before {
+    content: '\ECA5'
+}
+
+.ms-icon--Tiles2::before {
+    content: '\EF7C'
+}
+
+.ms-icon--Timeline::before {
+    content: '\ED9C'
+}
+
+.ms-icon--TimelineDelivery::before {
+    content: '\F2AB'
+}
+
+.ms-icon--TimelineMatrixView::before {
+    content: '\F361'
+}
+
+.ms-icon--TimelineProgress::before {
+    content: '\F2AA'
+}
+
+.ms-icon--Timer::before {
+    content: '\E91E'
+}
+
+.ms-icon--ToDoLogoBottom::before {
+    content: '\F4B3'
+}
+
+.ms-icon--ToDoLogoInverse::before {
+    content: '\F4BC'
+}
+
+.ms-icon--ToDoLogoTop::before {
+    content: '\F4B4'
+}
+
+.ms-icon--ToggleBorder::before {
+    content: '\EC12'
+}
+
+.ms-icon--ToggleFilled::before {
+    content: '\EC11'
+}
+
+.ms-icon--ToggleThumb::before {
+    content: '\EC14'
+}
+
+.ms-icon--Touch::before {
+    content: '\E815'
+}
+
+.ms-icon--TouchPointer::before {
+    content: '\E7C9'
+}
+
+.ms-icon--Train::before {
+    content: '\E7C0'
+}
+
+.ms-icon--TrainSolid::before {
+    content: '\EB4D'
+}
+
+.ms-icon--TransferCall::before {
+    content: '\ED95'
+}
+
+.ms-icon--TriangleDown12::before {
+    content: '\EED1'
+}
+
+.ms-icon--TriangleLeft12::before {
+    content: '\EED2'
+}
+
+.ms-icon--TriangleRight12::before {
+    content: '\EED3'
+}
+
+.ms-icon--TriangleSolid::before {
+    content: '\EA08'
+}
+
+.ms-icon--TriangleSolidDown12::before {
+    content: '\EECD'
+}
+
+.ms-icon--TriangleSolidLeft12::before {
+    content: '\EECE'
+}
+
+.ms-icon--TriangleSolidRight12::before {
+    content: '\EECF'
+}
+
+.ms-icon--TriangleSolidUp12::before {
+    content: '\EECC'
+}
+
+.ms-icon--TriangleUp12::before {
+    content: '\EED0'
+}
+
+.ms-icon--TriggerApproval::before {
+    content: '\F3B2'
+}
+
+.ms-icon--TriggerAuto::before {
+    content: '\F24A'
+}
+
+.ms-icon--TriggerUser::before {
+    content: '\F24B'
+}
+
+.ms-icon--TripleColumn::before {
+    content: '\F1D5'
+}
+
+.ms-icon--TripleColumnEdit::before {
+    content: '\F323'
+}
+
+.ms-icon--Trophy::before {
+    content: '\ED3F'
+}
+
+.ms-icon--Trophy2Solid::before {
+    content: '\F337'
+}
+
+.ms-icon--TurnRight::before {
+    content: '\E7DB'
+}
+
+.ms-icon--TVMonitor::before {
+    content: '\E7F4'
+}
+
+.ms-icon--TVMonitorSelected::before {
+    content: '\EC77'
+}
+
+.ms-icon--TypeScriptLanguage::before {
+    content: '\F2F7'
+}
+
+.ms-icon--Umbrella::before {
+    content: '\EC04'
+}
+
+.ms-icon--Underline::before {
+    content: '\E8DC'
+}
+
+.ms-icon--Undo::before {
+    content: '\E7A7'
+}
+
+.ms-icon--Uneditable::before {
+    content: '\ED1D'
+}
+
+.ms-icon--UneditableMirrored::before {
+    content: '\F4B9'
+}
+
+.ms-icon--UneditableSolid12::before {
+    content: '\F4B7'
+}
+
+.ms-icon--UneditableSolidMirrored12::before {
+    content: '\F4B8'
+}
+
+.ms-icon--Unfavorite::before {
+    content: '\E8D9'
+}
+
+.ms-icon--Unknown::before {
+    content: '\E9CE'
+}
+
+.ms-icon--UnknownCall::before {
+    content: '\ED97'
+}
+
+.ms-icon--UnknownMirroredSolid::before {
+    content: '\F2E2'
+}
+
+.ms-icon--UnknownSolid::before {
+    content: '\F2E1'
+}
+
+.ms-icon--Unlock::before {
+    content: '\E785'
+}
+
+.ms-icon--UnlockSolid::before {
+    content: '\F304'
+}
+
+.ms-icon--Unpin::before {
+    content: '\E77A'
+}
+
+.ms-icon--Unsubscribe::before {
+    content: '\EDA0'
+}
+
+.ms-icon--UnsyncFolder::before {
+    content: '\E8F6'
+}
+
+.ms-icon--UnsyncOccurence::before {
+    content: '\F4A4'
+}
+
+.ms-icon--Up::before {
+    content: '\E74A'
+}
+
+.ms-icon--Upload::before {
+    content: '\E898'
+}
+
+.ms-icon--UserFollowed::before {
+    content: '\F25C'
+}
+
+.ms-icon--UserPause::before {
+    content: '\F2BA'
+}
+
+.ms-icon--UserSync::before {
+    content: '\F2B9'
+}
+
+.ms-icon--Vacation::before {
+    content: '\F49F'
+}
+
+.ms-icon--Variable::before {
+    content: '\F305'
+}
+
+.ms-icon--VariableGroup::before {
+    content: '\F31B'
+}
+
+.ms-icon--VB::before {
+    content: '\F2F2'
+}
+
+.ms-icon--VennDiagram::before {
+    content: '\F273'
+}
+
+.ms-icon--Video::before {
+    content: '\E714'
+}
+
+.ms-icon--VideoOff::before {
+    content: '\F4B0'
+}
+
+.ms-icon--VideoSolid::before {
+    content: '\EA0C'
+}
+
+.ms-icon--View::before {
+    content: '\E890'
+}
+
+.ms-icon--ViewAll::before {
+    content: '\E8A9'
+}
+
+.ms-icon--ViewAll2::before {
+    content: '\EF56'
+}
+
+.ms-icon--ViewDashboard::before {
+    content: '\F246'
+}
+
+.ms-icon--ViewList::before {
+    content: '\F247'
+}
+
+.ms-icon--ViewListGroup::before {
+    content: '\F248'
+}
+
+.ms-icon--ViewListTree::before {
+    content: '\F249'
+}
+
+.ms-icon--VisioDiagram::before {
+    content: '\F2A0'
+}
+
+.ms-icon--VisioDocument::before {
+    content: '\F2A9'
+}
+
+.ms-icon--VisioLogo::before {
+    content: '\F2A7'
+}
+
+.ms-icon--VisioLogo16::before {
+    content: '\F3A3'
+}
+
+.ms-icon--VisioLogoFill::before {
+    content: '\F2A8'
+}
+
+.ms-icon--VisioLogoFill16::before {
+    content: '\F3A4'
+}
+
+.ms-icon--VisioLogoInverse::before {
+    content: '\ED7D'
+}
+
+.ms-icon--VisioLogoInverse16::before {
+    content: '\F3A2'
+}
+
+.ms-icon--VisualBasicLanguage::before {
+    content: '\F2F1'
+}
+
+.ms-icon--VisualStudioLogo::before {
+    content: '\EC22'
+}
+
+.ms-icon--VoicemailForward::before {
+    content: '\ED87'
+}
+
+.ms-icon--VoicemailIRM::before {
+    content: '\F421'
+}
+
+.ms-icon--VoicemailReply::before {
+    content: '\ED88'
+}
+
+.ms-icon--Volume0::before {
+    content: '\E992'
+}
+
+.ms-icon--Volume1::before {
+    content: '\E993'
+}
+
+.ms-icon--Volume2::before {
+    content: '\E994'
+}
+
+.ms-icon--Volume3::before {
+    content: '\E995'
+}
+
+.ms-icon--VolumeDisabled::before {
+    content: '\EA85'
+}
+
+.ms-icon--VSTSAltLogo1::before {
+    content: '\F382'
+}
+
+.ms-icon--VSTSAltLogo2::before {
+    content: '\F383'
+}
+
+.ms-icon--VSTSLogo::before {
+    content: '\F381'
+}
+
+.ms-icon--Waffle::before {
+    content: '\ED89'
+}
+
+.ms-icon--Warning::before {
+    content: '\E7BA'
+}
+
+.ms-icon--Website::before {
+    content: '\EB41'
+}
+
+.ms-icon--Weights::before {
+    content: '\EADB'
+}
+
+.ms-icon--WifiEthernet::before {
+    content: '\EE77'
+}
+
+.ms-icon--WindDirection::before {
+    content: '\EBE6'
+}
+
+.ms-icon--WindowsLogo::before {
+    content: '\E782'
+}
+
+.ms-icon--Wines::before {
+    content: '\EABF'
+}
+
+.ms-icon--WipePhone::before {
+    content: '\ED8D'
+}
+
+.ms-icon--WordDocument::before {
+    content: '\EF71'
+}
+
+.ms-icon--WordLogo::before {
+    content: '\F1E3'
+}
+
+.ms-icon--WordLogo16::before {
+    content: '\F391'
+}
+
+.ms-icon--WordLogoFill::before {
+    content: '\F1E4'
+}
+
+.ms-icon--WordLogoFill16::before {
+    content: '\F392'
+}
+
+.ms-icon--WordLogoInverse::before {
+    content: '\EC29'
+}
+
+.ms-icon--WordLogoInverse16::before {
+    content: '\F390'
+}
+
+.ms-icon--Work::before {
+    content: '\E821'
+}
+
+.ms-icon--WorkFlow::before {
+    content: '\EA01'
+}
+
+.ms-icon--WorkItem::before {
+    content: '\F314'
+}
+
+.ms-icon--WorkItemBar::before {
+    content: '\F35C'
+}
+
+.ms-icon--WorkItemBarSolid::before {
+    content: '\F35D'
+}
+
+.ms-icon--WorkItemBug::before {
+    content: '\F315'
+}
+
+.ms-icon--World::before {
+    content: '\E909'
+}
+
+.ms-icon--WorldClock::before {
+    content: '\E918'
+}
+
+.ms-icon--YammerLogo::before {
+    content: '\ED19'
+}
+
+.ms-icon--ZipFolder::before {
+    content: '\F012'
+}
+
+.ms-icon--Zoom::before {
+    content: '\E71E'
+}
+
+.ms-icon--ZoomIn::before {
+    content: '\E8A3'
+}
+
+.ms-icon--ZoomOut::before {
+    content: '\E71F'
+}

@@ -1,0 +1,48 @@
+# Welcome to Jekyll!
+#
+# Site settings
+# in the templates via {{ site.myvariable }}.
+title: Microsoft Opensource
+email:
+description: |
+
+twitter_username: microsoft
+github_username: microsoft
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-octicons
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - CNAME
+  - script
+  - vendor/gems
+  - node_modules
+  - node_modules/**/CHANGELOG.md
+  - CHANGELOG.md
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+seo:
+
+twitter:
+  username: microsoft
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      image: assets/images/social-card.png
+      layout: default

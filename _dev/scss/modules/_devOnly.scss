@@ -1,0 +1,39 @@
+// ---------------------------------------------------------------------
+//  REMOVE FOR PRODUCTION
+// ---------------------------------------------------------------------
+
+#__bs_notify__ {
+    opacity: 0;
+    bottom: 0 !important;
+    top: auto !important;
+    height: 50px;
+}
+
+body.localhost:after {
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    color: white;
+    font-size: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px;
+    content: 'Mobile';
+
+    @include start-at($small) {
+        content: 'Small';
+    }
+
+    @include start-at($medium) {
+        content: 'Medium';
+    }
+
+    @include start-at($large) {
+        content: 'Large';
+    }
+
+    @include start-at($xlarge) {
+        content: 'x-large';
+    }
+}

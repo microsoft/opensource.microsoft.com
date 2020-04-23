@@ -1,0 +1,202 @@
+
+#pace-layers {
+    .accordion {
+        max-width: 544px;
+        margin: 0;
+
+        + .accordion {
+            //margin-top: 12px;
+        }
+
+        @include start-at($medium) {
+            + .accordion {
+                margin-top: 18px;
+            }
+        }
+    }
+}
+
+.accordion {
+    max-width: 928px;
+    margin: 0 auto;
+
+    a {
+        color: $blue-400;
+    }
+}
+
+.accordion__hd {
+    position: relative;
+    padding: 12px 0;
+    padding-right: 52px;
+
+    @include start-at($medium) {
+        padding: 12px 0 8px;
+    }
+
+    h4 {
+        display: flex;
+        align-items: center;
+        transition: color $trans, opacity $trans;
+
+        img,
+        svg {
+            margin-right: 12px;
+        }
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+
+        @include start-at($medium) {
+            display: none;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: $white;
+            z-index: -1;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            transform: translate3d(-50%, -50%, 0);
+            transform-origin: center;
+            transition: transform 0.6s ease;
+        }
+
+        svg {
+            fill: $black;
+            width: 14px;
+            height: 14px;
+            transition: transform 0.6s ease;
+        }
+    }
+
+
+    &:hover {
+        cursor: text;
+
+        @include stop-at($medium) {
+            cursor: pointer;
+
+            h4 {
+                color: $gray-300;
+            }
+        }
+
+        .icon {
+            &:after {
+                transform: translate3d(-50%, -50%, 0) scale(1.5);
+            }
+        }
+    }
+
+    .is-open & {
+        svg {
+            transform: rotate(135deg);
+        }
+    }
+}
+
+.accordion__bd {
+    padding-left: 38px;
+    transition: max-height 0.4s ease-out;
+
+    @include stop-at($medium) {
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    p {
+        font-size: 14px;
+
+        @include start-at($medium) {
+            font-size: 14px;
+        }
+    }
+}
+
+
+.accordions__expand-all {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+
+    @include start-at($medium) {
+        display: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    span {
+        color: $gray-500 !important;
+    }
+
+    svg {
+        margin-right: 8px;
+        background: $gray-700;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        transition: transform 0.6s ease;
+    }
+
+    &.is-open {
+        svg {
+            transform: rotate(135deg);
+        }
+    }
+}
+
+
+.faq {
+    .accordion {
+        margin-bottom: 16px;
+
+        @include start-at($medium) {
+            margin-bottom: 36px;
+        }
+    }
+
+    .accordion__hd {
+
+        .h6 {
+            text-transform: none;
+            line-height: 1.4;
+            letter-spacing: 0;
+            font-size: 15px !important;
+
+            @include start-at($medium) {
+                font-size: 22px !important;
+            }
+        }
+
+        &:hover {
+
+            @include stop-at($medium) {
+                .h6 {
+                    color: $gray-600;
+
+                }
+            }
+        }
+    }
+
+    .accordion__bd {
+        padding-left: 0;
+    }
+}

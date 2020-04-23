@@ -1,0 +1,60 @@
+// ---------------------------------------------------------------------
+//  Mixins
+// ---------------------------------------------------------------------
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin wrapper {
+    width: $wrapper-percentage;
+    margin: 0 auto;
+    max-width: $wrapper-width;
+    transition: max-width $transition;
+}
+
+@mixin cover-parent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@mixin visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.bg-image--fallback {
+
+        img {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,155 @@
+// ---------------------------------------------------------------------
+//  @font face
+// ---------------------------------------------------------------------
+
+
+@font-face {
+    font-family: 'SegoeUI';
+    src:
+        local("Segoe UI Light"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src:
+        local("Segoe UI Semilight"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src:
+        local("Segoe UI"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src:
+        local("Segoe UI Bold"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src:
+        local("Segoe UI Semibold"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
+    font-weight: 600;
+}
+
+
+
+
+@font-face {
+    font-family: 'FabricMDL2Icons';
+    src: url('../fonts/FabExMDL2.woff') format('woff2'),
+        url('../fonts/FabExMDL2.woff') format('woff'),
+        url('../fonts/FabExMDL2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+//
+// @font-face {
+//     font-family: 'Inter';
+//     src: url("../fonts/Inter-UI-Regular.woff2") format("woff2"),
+//          url("../fonts/Inter-UI-Regular.woff") format("woff");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+//
+// @font-face {
+//     font-family: 'Inter';
+//     src: url("../fonts/Inter-UI-Medium.woff2") format("woff2"),
+//          url("../fonts/Inter-UI-Medium.woff") format("woff");
+//     font-weight: 500;
+//     font-style: normal;
+// }
+//
+// @font-face {
+//     font-family: 'Inter';
+//     src: url("../fonts/Inter-UI-SemiBold.woff2") format("woff2"),
+//          url("../fonts/Inter-UI-SemiBold.woff") format("woff");
+//     font-weight: 600;
+//     font-style: normal;
+// }
+//
+// @font-face {
+//     font-family: 'Inter';
+//     src: url("../fonts/Inter-UI-Bold.woff2") format("woff2"),
+//          url("../fonts/Inter-UI-Bold.woff") format("woff");
+//     font-weight: 700;
+//     font-style: normal;
+// }
+//
+//
+//
+// @font-face {
+//     font-family: 'Inter';
+//     src: url("../fonts/Inter-UI-Italic.woff2") format("woff2"),
+//          url("../fonts/Inter-UI-Italic.woff") format("woff");
+//     font-weight: normal;
+//     font-style: italic;
+// }
+//
+// // @font-face {
+// //     font-family: 'Inter';
+// //     src: url("../fonts/Inter-UI-Medium.woff2") format("woff2"),
+// //          url("../fonts/Inter-UI-Medium.woff") format("woff");
+// //     font-weight: 500;
+// //     font-style: normal;
+// // }
+// //
+// @font-face {
+//     font-family: 'Inter';
+//     src: url("../fonts/Inter-UI-MediumItalic.woff2") format("woff2"),
+//          url("../fonts/Inter-UI-MediumItalic.woff") format("woff");
+//     font-weight: 500;
+//     font-style: italic;
+// }
+//
+// //
+// //
+// // }
+// //
+// // @font-face {
+// //     font-family: 'Inter';
+// //     src: url("../fonts/Inter-UI-Bold-Italic.woff2") format("woff2"),
+// //          url("../fonts/Inter-UI-Bold-Italic.woff") format("woff");
+// //     font-weight: 700;
+// //     font-style: italic;
+// // }
+//
+@font-face {
+    font-family: 'SF-Mono';
+    src: url("../fonts/sfmono-regular-webfont.woff2") format("woff2"),
+         url("../fonts/sfmono-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-Mono';
+    src: url("../fonts/sfmono-medium-webfont.woff2") format("woff2"),
+         url("../fonts/sfmono-medium-webfont.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}

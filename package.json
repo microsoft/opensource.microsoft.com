@@ -1,0 +1,29 @@
+{
+  "name": "microsoft-opensource",
+  "browserslist": "last 2 versions",
+  "version": "2.0.0",
+  "scripts": {
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "child_process": "^1.0.2",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-load-plugins": "^2.0.2",
+    "gulp-newer": "^1.4.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-pngquant": "^8.0.0",
+    "npm-clean": "^1.0.3"
+  },
+  "dependencies": {
+    "@primer/css": "^14.3.0",
+    "primer-core": "^6.7.0"
+  }
+}

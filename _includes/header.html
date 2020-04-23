@@ -1,0 +1,91 @@
+
+
+<header id="site-header" role="banner">
+    <div class="site-header__inner">
+        <div class="site-logo">
+            <a href="{{ '/' | relative_url }}">
+                <img src="{{ '/assets/images/Microsoft-Open-Source-logo.svg' | relative_url }}" alt="Microsoft | Open Source logo" />
+                <span class="sr-only">Return to homepage</span>
+            </a>
+        </div>
+
+        <ul class="site-header__nav">
+            <li>
+                <a href="{{ "/explore/" | relative_url }}">Explore</a>
+            </li>
+            <li>
+                <a href="{{ "/about/" | relative_url }}">About</a>
+            </li>
+            <li>
+                <a href="{{ "/resources/" | relative_url }}">Resources</a>
+            </li>
+        </ul>
+
+        <div class="site-header__utilities">
+
+            <div class="site-header__search">
+                <form class="search-form" role="search" action="https://www.microsoft.com/en-us/search" method="GET">
+                    <label>
+                        <span class="sr-only">Search on Microsoft.com</span>
+                        {% octicon search %}
+                    </label>
+                    <input type="text" placeholder="Search" />
+                </form>
+
+                <div class="search-trigger">
+                    {% octicon search %}
+                </div>
+            </div>
+            <div class="nav-trigger js-menu-trigger">
+                <img class="open-menu" src="{{ '/assets/images/svgs/menu.svg' | relative_url }}" alt="menu icon" />
+                <img class="close-menu" src="{{ '/assets/images/svgs/close.svg' | relative_url }}"  alt="close icon" />
+            </div>
+
+            <a class="sign-in" href="https://www.microsoft.com/mscomhp/onerf/signin?EEL=True&pcexp=True&ru=https%3A%2F%2Fwww.microsoft.com%2Fen-us">
+                <span>Sign In</span>
+                <span class="account-img"></span>
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<nav id="navigation">
+    <div class="site-navigation">
+        <div>
+            <ul class="main-nav">
+                <li>
+                    <a class="is-active" href="{{ "/" | relative_url }}">Home</a>
+                </li>
+                <li>
+                    <a href="{{ "/explore/" | relative_url }}">Explore</a>
+                </li>
+                <li>
+                    <a href="{{ "/about/" | relative_url }}">About</a>
+                </li>
+                <li>
+                    <a href="{{ "/resources/" | relative_url }}">Resources</a>
+                </li>
+                <li>
+                    <a class="sign-in" href="https://www.microsoft.com/mscomhp/onerf/signin?EEL=True&pcexp=True&ru=https%3A%2F%2Fwww.microsoft.com%2Fen-us">
+                        <span>Sign In</span>
+                        <span class="account-img"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <span class="navigation-screen js-menu-trigger"></span>
+</nav>
+
+<div class="search-form-mobile">
+    <form class="search-form" role="search" action="https://www.microsoft.com/en-us/search" method="GET">
+        <label>
+            <span class="sr-only">Search on Microsoft.com</span>
+            {% octicon search %}
+        </label>
+        <input type="text" placeholder="Search" />
+    </form>
+</div>

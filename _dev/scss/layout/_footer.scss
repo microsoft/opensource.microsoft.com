@@ -1,0 +1,115 @@
+// ---------------------------------------------------------------------
+//  Site Footer Styles
+// ---------------------------------------------------------------------
+
+.site-footer {
+    background: black;
+    padding: 28px 0;
+    text-align: center;
+    margin-top: -1px;
+    font-size: 13px;
+    color: $white;
+
+    p, a {
+        font-size: 13px;
+        color: $white;
+        margin-bottom: 0;
+    }
+
+    @include start-at($large) {
+        text-align: left;
+    }
+
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin: 4px 10px;
+
+            @include start-at($large) {
+                margin: 0;
+
+                + li {
+                    margin: 0 0 0 16px;
+                }
+            }
+        }
+
+        a {
+            display: block;
+            text-decoration: underline;
+            transition: opacity $trans;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+}
+
+
+
+#subscribe {
+    padding-top: 20px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 2;
+
+    .footer-img {
+        display: none;
+    }
+
+    @include start-at( $medium ){
+        .wrapper-wide {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1320px;
+        }
+
+        #subscribe-wrap {
+            margin-right: 40px;
+        }
+
+        .footer-img {
+            display: block;
+            position: relative;
+            width: 428px;
+            max-width: 40%;
+            height: auto;
+            transform: translate3d(0, -20px, 0);
+        }
+    }
+
+}
+
+
+.site-footer__brand {
+    text-align: center;
+    margin-bottom: 24px;
+
+    p {
+        font-family: $mono;
+    }
+
+    img {
+        margin: 0 auto 16px;
+        width: 24px;
+    }
+
+    @include start-at($large) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 0;
+
+        img {
+            margin: 0 20px 0 0;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+// ---------------------------------------------------------------------
+//  Hero
+// ---------------------------------------------------------------------
+
+
+.hero {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    min-height: calc(100vh - 220px);
+    background: $black;
+
+    .dots-sm {
+        display: block;
+        position: absolute;
+        bottom: 32px;
+        left: -20px;
+        z-index: 2;
+        opacity: 0.4;
+        width: 60px;
+    }
+
+    @include start-at($medium) {
+        min-height: calc(100vh - 64px);
+        padding: 100px 0 120px;
+
+        .dots-sm {
+            width: 80px;
+            bottom: 82px;
+            left: 2%;
+            opacity: 1;
+        }
+    }
+}
+
+.hero__content {
+    width: 100%;
+    color: $white;
+    position: relative;
+    z-index: 1;
+
+
+    p {
+        max-width: 1113px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.hero__img {
+
+}
+
+.hero__ft {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, -24px, 0);
+    text-align: center;
+    width: 200px;
+    color: $white;
+
+
+    .h6 {
+        margin-bottom: 0;
+    }
+
+    svg {
+        display: block;
+        margin: 8px auto 0;
+        fill: $white;
+        width: 12px;
+    }
+}
+
+.dots-lg {
+    position: absolute;
+    transform: translate3d(0, -50%, 0);
+    z-index: 2;
+    width: 100px;
+    left: -20px;
+
+
+    @include start-at($medium) {
+        left: 7.5%;
+        transform: translate3d(0, -50%, 0);
+        z-index: 2;
+        width: 160px;
+    }
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------

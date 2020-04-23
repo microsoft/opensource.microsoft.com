@@ -1,0 +1,287 @@
+// ---------------------------------------------------------------------
+//  Typography Styles
+// ---------------------------------------------------------------------
+
+// ----------------------------------------
+// Headings
+// ----------------------------------------
+
+
+.h1-xl {
+    display: block;
+    font-family: $sans-serif;
+    font-weight: 600 !important;
+    font-size: 54px !important;
+    line-height: 1;
+    letter-spacing: 0;
+    color: $brand;
+
+    span {
+        display: block;
+    }
+
+    @include start-at($small) {
+        font-size: 84px !important;
+    }
+
+    @include start-at($medium) {
+        font-size: 64px !important;
+    }
+
+
+    @include start-at($large) {
+        font-size: 92px !important;
+    }
+
+    @include start-at(1300px) {
+        font-size: 118px !important;
+    }
+}
+
+.h1 {
+    display: block;
+    font-family: $sans-serif;
+    font-weight: 600 !important;
+    font-size: 48px !important;
+    line-height: 1;
+    letter-spacing: 0;
+    color: $brand;
+
+    span {
+        display: block;
+    }
+
+    @include start-at($medium) {
+        font-size: 68px !important;
+    }
+
+}
+
+
+.h2,
+.h3-alt {
+    display: block;
+    font-weight: 700 !important;
+    font-size: 30px !important;
+    line-height: 1;
+    letter-spacing: 0;
+
+    span {
+        display: block;
+    }
+
+    @include start-at($medium) {
+        font-size: 48px !important;
+    }
+    @include start-at($large) {
+        font-size: 64px !important;
+    }
+}
+
+.h3-alt {
+    font-size: 36px !important;
+
+    @include start-at($medium) {
+        font-size: 42px !important;
+    }
+    @include start-at($large) {
+        font-size: 48px !important;
+    }
+}
+
+.h3 {
+    font-family: $sans-serif;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    letter-spacing: -0.2px;
+    line-height: 1.25;
+    color: $black;
+
+    @include start-at($medium) {
+        font-size: 32px !important;;
+    }
+}
+
+
+.h4 {
+    font-family: $sans-serif;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    line-height: 1.25;
+    color: $black;
+
+    @include start-at($medium) {
+        font-size: 24px !important;;
+    }
+}
+
+.h5 {
+    font-family: $sans-serif;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    letter-spacing: -0.1px;
+    line-height: 1.25;
+
+    @include start-at($medium) {
+        font-size: 16px !important;;
+    }
+}
+
+.h6 {
+    font-family: $sans-serif;
+    font-weight: 600 !important;
+    font-size: 10px !important;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-transform: uppercase;
+
+    @include start-at($medium) {
+        font-size: 12px !important;;
+    }
+}
+
+
+
+
+// ----------------------------------------
+// Paragraph Style Mixins
+// ----------------------------------------
+
+@mixin para {
+    display: block;
+    font-family: $sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: $base-line-height;
+
+    @include start-at($medium) {
+        font-size: 18px;
+    }
+
+}
+
+
+
+@mixin p-sm {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 0;
+
+    @include start-at($medium) {
+        font-size: 16px;
+    }
+}
+
+
+// ----------------------------------------
+// Paragraph Styles
+// ----------------------------------------
+
+.p,
+p {
+    @include para;
+    color: $gray-600;
+
+    + p {
+        margin-top: 18px;
+    }
+
+    a {
+        color: $blue-400;
+    }
+
+    .text-white & {
+        color: $white;
+    }
+}
+
+.p-md {
+    @include para;
+    font-size: 18px;
+    color: $gray-800;
+
+    @include start-at($medium) {
+        font-size: 24px;
+    }
+}
+
+.f2 {
+    color: $gray-800;
+}
+
+.p-lg {
+    @include para;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-weight: 600;
+
+    @include start-at($medium) {
+        font-size: 18px;
+    }
+}
+
+.p-sm,
+small {
+  @include p-sm;
+}
+
+
+.text-display {
+    //font-family: $display;
+}
+
+
+.text-content {
+    > * {
+        margin-bottom: 16px;
+    }
+}
+
+.font-mono {
+    font-family: $mono;
+    font-weight: 400 !important;
+}
+
+
+.long-form {
+    p {
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+
+    li {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    ul {
+        list-style: initial;
+        padding-left: 48px;
+        margin: 24px 0;
+    }
+
+    ol {
+        list-style: decimal;
+        padding-left: 48px;
+        margin: 24px 0;
+    }
+
+}
+
+
+small {
+    display: block;
+    font-size: 12px;
+    color: $gray-600;
+
+    @include start-at($large) {
+        font-size: 14px;
+    }
+}
+
+
+.text-orange {
+    color: $orange-400 !important;
+}

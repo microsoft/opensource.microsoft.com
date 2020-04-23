@@ -1,0 +1,239 @@
+// ---------------------------------------------------------------------
+//  Slick Carousel Styles
+//  http://kenwheeler.github.io/slick/
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Animate Plugin
+// ----------------------------------------
+
+.slick-slider {
+	position: relative;
+	display: block;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+}
+
+.slick-list {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+	transform: translate3d(0, 0, 0);
+	outline: none;
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+	outline: none;
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table;
+
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+// [dir='rtl'] .slick-slide {
+//     float: right;
+// }
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+// ----------------------------------------
+// Theme
+// ----------------------------------------
+
+$slick-dot-color: $black;
+$slick-dot-color-active: $black;
+$slick-dot-size: 12px;
+$slick-opacity-default: 0.3;
+$slick-opacity-active: 1;
+$slick-arrow-size: 36px;
+$slick-arrow-background: rgba(255,255,255, 0.4);
+
+
+
+// ----------------------------------------
+// Arrows
+// ----------------------------------------
+
+.slick-list {
+    .slick-loading & {
+        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    }
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+
+    line-height: 0;
+    font-size: 0;
+    z-index: 2;
+    cursor: pointer;
+    text-indent: -99999px;
+    padding: 0;
+    border: none;
+    outline: none;
+	width: $slick-arrow-size;
+	height: $slick-arrow-size;
+	top: 27px;
+    //margin-top: ( -$slick-arrow-size / 2 );
+	opacity: 1;
+
+	background: white;
+	//	background: red;
+	transition: opacity $transition;
+
+
+    &:hover {
+        opacity: $slick-opacity-active;
+    }
+
+
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+.slick-prev {
+    right: 44px;
+	// background: $slick-arrow-background url('../images/svgs/arrow-left.svg') no-repeat;
+	// background-size: auto 30px;
+	// background-position: center center;
+}
+
+.slick-next {
+    right: 0;
+	// background: $slick-arrow-background url('../images/svgs/arrow-right.svg') no-repeat;
+	// background-size: auto 30px;
+	// background-position: center center;
+}
+
+.tc-info {
+	position: relative;
+}
+
+
+// ----------------------------------------
+// Dots
+// ----------------------------------------
+
+.slick-dots {
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 5px 0;
+
+    li {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+    	padding: 4px;
+        margin: 5px;
+        cursor: pointer;
+
+        button {
+            border: 1px solid $slick-dot-color;
+            background-color: $slick-dot-color;
+    		border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            height: $slick-dot-size;
+            width: $slick-dot-size;
+            outline: none;
+            line-height: 0;
+            font-size: 0;
+            color: transparent;
+            padding: 0;
+            cursor: pointer;
+            opacity: $slick-opacity-default;
+            transition: all $transition;
+        }
+
+        &:hover button {
+        	outline: none;
+            opacity: $slick-opacity-active;
+        }
+
+        &.slick-active button {
+            background-color: $slick-dot-color-active;
+            border-color: $slick-dot-color-active;
+            opacity: $slick-opacity-active;
+        }
+    }
+}

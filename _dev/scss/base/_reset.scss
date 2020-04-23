@@ -1,0 +1,30 @@
+// ---------------------------------------------------------------------
+//  Author: Andrew Ross with a little help from my friends
+//  Target Browsers: All Modern & IE11 +
+// ---------------------------------------------------------------------
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+ol, ul {
+    list-style: none;
+}
+
+// ----------------------------------------
+// HTML5 Block / Inline Block declarations
+// ----------------------------------------
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, pt-6 pb-6, main,
+audio, canvas, video {
+    display: block;
+}

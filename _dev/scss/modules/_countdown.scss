@@ -1,0 +1,118 @@
+// ---------------------------------------------------------------------
+//  Countdown
+// ---------------------------------------------------------------------
+
+.js-countdown,
+.js-countdowns {
+    font-family: $mono;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+// ----------------------------------------
+// SM
+// ----------------------------------------
+
+.countdown-sm {
+    span {
+        font-size: 14px;
+		font-weight: 500;
+        line-height: 1;
+    }
+
+    span span {
+        font-size: 10px;
+        font-family: $mono;
+        font-weight: 400;
+        margin: 0 12px 0 -3px;
+        line-height: 1;
+    }
+}
+
+
+
+// ----------------------------------------
+// LG
+// ----------------------------------------
+
+.countdown-lg {
+    //text-align: center;
+
+    .js-countdown,
+    .js-countdowns {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        max-width: 540px;
+        //text-align: center;
+
+    }
+
+    span {
+        font-size: 18px;
+        line-height: 1;
+        display: block;
+        font-weight: 400;
+
+        @include start-at($medium) {
+            font-size: 20px;
+        }
+    }
+
+    span span {
+        font-size: 8px;
+        font-weight: 500;
+        padding-top: 6px;
+
+        @include start-at($large) {
+            padding-top: 9px;
+        }
+    }
+}
+
+
+.countdown-lg--fancy {
+    text-align: center;
+
+    .js-countdown,
+    .js-countdowns {
+        //justify-content: center;
+
+        > span {
+            position: relative;
+
+            span {
+                width: 100%;
+                text-align: center;
+            }
+
+            + span {
+                padding-left: 24px;
+                margin-left: 18px;
+
+                @include start-at($medium) {
+                    padding-left: 36px;
+                    margin-left: 24px;
+                }
+
+                &:before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    position: absolute;
+                    top: calc(50% - 12px);
+                    left: 0;
+                    background: url('../img/svgs/dots-sm.svg') center / 7px 7px no-repeat;
+
+                    @include start-at($medium) {
+                        width: 12px;
+                        height: 12px;
+                        top: calc(50% - 12px);
+                        background: url('../img/svgs/dots-sm.svg') center / 11px 11px no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+// ---------------------------------------------------------------------
+//  Media Styles
+// ---------------------------------------------------------------------
+
+.img-full {
+    width: 100%;
+}
+
+.img-cover {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+
+.bg-image {
+    @include bg-image;
+}
+
+.bg-image--gradient-left {
+    &:after {
+        content: '';
+        background-image: linear-gradient(270deg, rgba(36,41,46,0.00) 0%, #24292E 59%);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        display: block;
+    }
+}
+
+
+.bg-image-dark {
+    &:after {
+        content: '';
+        background-image: linear-gradient(180deg, rgba(36,41,46,0.00) 0%, #24292E 59%);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        display: block;
+        z-index: 2;
+        opacity: 0.5;
+    }
+
+    &:before {
+        content: '';
+        background: $black;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        display: block;
+        z-index: 2;
+        opacity: 0.85;
+
+    }
+}
+
+
+// ----------------------------------------
+// SVGs
+// ----------------------------------------
+
+svg {
+	display: block;
+	fill: currentColor;
+}
+
+
+// ----------------------------------------
+// Media Object
+// ----------------------------------------
+
+.media-object {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include stop-at($medium) {
+        .media-object__media {
+            order: 1;
+            max-width: 380px;
+            margin: 0 auto;
+
+        }
+        .media-object__content {
+            order: 2;
+        }
+    }
+
+    @include start-at($medium) {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        &.media-object--top-align {
+            align-items: flex-start;
+        }
+
+        .media-object__media {
+            width: 33%;
+        }
+
+        .media-object__content {
+            width: 67%;
+        }
+    }
+
+    @include start-at($large) {
+        .media-object__media {
+            width: 40%;
+        }
+
+        .media-object__content {
+            width: 60%;
+        }
+    }
+}
+
+.media-object__media {
+    margin: 0 0 24px 0;
+
+    img {
+       display: block;
+   }
+
+   @include start-at($medium) {
+       margin: 0 24px 0 0;
+       flex-grow: 1;
+       min-width: 200px;
+   }
+}
+
+.media-object__bd {
+    overflow: hidden;
+}

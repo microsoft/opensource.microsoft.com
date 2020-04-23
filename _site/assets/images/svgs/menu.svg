@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="13px" viewBox="0 0 20 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>menu</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Seed-Bank-v3" transform="translate(-22.000000, -27.000000)" fill="#FFFFFF">
+            <g id="side-bar">
+                <g id="menu" transform="translate(22.000000, 27.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="20" height="1.08333333"></rect>
+                    <rect id="Rectangle" x="0" y="5.95833333" width="20" height="1.08333333"></rect>
+                    <rect id="Rectangle" x="0" y="11.9166667" width="20" height="1.08333333"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

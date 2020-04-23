@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="robots" content="noindex nofollow" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content= "#24292e">
+        <!--[if IE]><meta http-equiv="cleartype" content="on" /><![endif]-->
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+        <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+        <link rel="stylesheet" href="https://use.typekit.net/fhk4uct.css">
+        <link rel="stylesheet" media="screen" href="{{ '/assets/css/index.css' | relative_url }}" />
+        <link rel="shortcut icon" type="image/ico" href="{{ '/assets/images/favicons/favicon.png' | relative_url }}" />
+        <link rel="apple-touch-icon" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}" />
+        <link rel="icon" href="{{ '/assets/images/favicons/android-favicon.png' | relative_url }}">
+
+        {% seo %}
+
+        <style type="text/css">
+            *[data-animate-in="up"],
+            *[data-animate-in="fade"],
+            *[data-animate-in="left"],
+            *[data-animate-in="right"] {
+                opacity: 0;
+            }
+        </style>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-3769691-116', 'auto');
+            ga('send', 'pageview');
+        </script>
+
+    </head>
+
+    <body class="page-loading no-js {{ page.id }}" id="page-{{ page.id }}">
+        <a class="sr-only" href="#content">skip to content</a>
+
+        {% include header.html %}
+
+        <main id="content" class="main page-content" aria-label="Content">
+            {{ content }}
+        </main>
+
+        {% include footer.html %}
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    </body>
+</html>
