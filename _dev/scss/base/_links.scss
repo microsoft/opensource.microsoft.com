@@ -144,19 +144,37 @@
     }
 
     &:hover {
-        &:after {
-            transform: translate3d(0, -40%, 0);
+        &:before {
+            transform: translate3d(2px, 0, 0);
         }
     }
 }
 
-.link-arrow.link-arrow--outgoing {
-    width: 100%;
-    display: block;
-    font-weight: inherit;
+.link-arrow-external {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 400;
+    font-family: $mono;
+    color: $brand;
+    position: relative;
+    padding-right: 18px;
+    margin-right: 24px;
+    font-size: 16px;
 
     &:after {
-        transform: translate3d(0, -50%, 0) rotate(-135deg);
+        font-family: $icons;
+        content: '\E72A';
+        transform: rotate(-45deg);
+        display: block;
+        transition: transform $trans;
+        margin-left: 12px;
+    }
+
+    &:hover {
+        &:after {
+            transform: translate3d(2px, -2px, 0) rotate(-45deg);
+        }
     }
 }
 

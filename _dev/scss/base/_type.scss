@@ -42,10 +42,11 @@
     display: block;
     font-family: $sans-serif;
     font-weight: 600 !important;
-    font-size: 48px !important;
     line-height: 1;
-    letter-spacing: 0;
+
     color: $brand;
+    font-size: 48px !important;
+    letter-spacing: 0;
 
     span {
         display: block;
@@ -58,47 +59,43 @@
 }
 
 
-.h2,
-.h3-alt {
+.h2  {
     display: block;
-    font-weight: 700 !important;
-    font-size: 30px !important;
+    font-family: $sans-serif;
+    font-weight: 600 !important;
     line-height: 1;
+    font-size: 36px !important;
     letter-spacing: 0;
 
-    span {
-        display: block;
+    margin-bottom: 16px;
+
+    &:last-child {
+        margin-bottom: 0;
     }
+
 
     @include start-at($medium) {
         font-size: 48px !important;
     }
-    @include start-at($large) {
-        font-size: 64px !important;
-    }
 }
 
-.h3-alt {
-    font-size: 36px !important;
-
-    @include start-at($medium) {
-        font-size: 42px !important;
-    }
-    @include start-at($large) {
-        font-size: 48px !important;
-    }
-}
 
 .h3 {
+    display: block;
     font-family: $sans-serif;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
+    line-height: 1;
     font-size: 24px !important;
-    letter-spacing: -0.2px;
-    line-height: 1.25;
-    color: $black;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
 
     @include start-at($medium) {
-        font-size: 32px !important;;
+        font-size: 32px !important;
     }
 }
 
@@ -150,33 +147,15 @@
 @mixin para {
     display: block;
     font-family: $sans-serif;
+    line-height: $base-line-height;
     font-weight: 400;
     font-size: 14px;
     letter-spacing: 0;
-    line-height: $base-line-height;
 
     @include start-at($medium) {
-        font-size: 18px;
-    }
-
-}
-
-
-
-@mixin p-sm {
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 0;
-
-    @include start-at($medium) {
-        font-size: 16px;
+        font-size: $base-font-size;
     }
 }
-
-
-// ----------------------------------------
-// Paragraph Styles
-// ----------------------------------------
 
 .p,
 p {
@@ -196,92 +175,39 @@ p {
     }
 }
 
-.p-md {
-    @include para;
-    font-size: 18px;
-    color: $gray-800;
+
+@mixin p-sm {
+    display: block;
+    font-family: $sans-serif;
+    line-height: $base-line-height;
+    font-size: 12px;
+    margin-bottom: 0;
 
     @include start-at($medium) {
-        font-size: 24px;
+        font-size: 14px;
     }
 }
-
-.f2 {
-    color: $gray-800;
+.p-sm,
+small {
+    @include p-sm;
 }
 
+
 .p-lg {
-    @include para;
+    display: block;
+    font-family: $sans-serif;
     font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0;
+    line-height: $base-line-height;
     font-weight: 600;
+    margin-bottom: 0;
 
     @include start-at($medium) {
         font-size: 18px;
     }
 }
 
-.p-sm,
-small {
-  @include p-sm;
-}
-
-
-.text-display {
-    //font-family: $display;
-}
-
-
-.text-content {
-    > * {
-        margin-bottom: 16px;
-    }
-}
 
 .font-mono {
     font-family: $mono;
     font-weight: 400 !important;
-}
-
-
-.long-form {
-    p {
-        margin-bottom: 16px;
-        font-size: 16px;
-    }
-
-    li {
-        font-size: 16px;
-        margin-bottom: 12px;
-    }
-
-    ul {
-        list-style: initial;
-        padding-left: 48px;
-        margin: 24px 0;
-    }
-
-    ol {
-        list-style: decimal;
-        padding-left: 48px;
-        margin: 24px 0;
-    }
-
-}
-
-
-small {
-    display: block;
-    font-size: 12px;
-    color: $gray-600;
-
-    @include start-at($large) {
-        font-size: 14px;
-    }
-}
-
-
-.text-orange {
-    color: $orange-400 !important;
 }

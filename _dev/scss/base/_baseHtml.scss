@@ -31,7 +31,7 @@ textarea {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
-    color: $black;
+    color: $gray;
 
     @include start-at($medium) {
         font-size: $base-font-size;
