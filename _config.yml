@@ -2,11 +2,11 @@
 #
 # Site settings
 # in the templates via {{ site.myvariable }}.
-title: Microsoft Opensource
+title: Microsoft Open Source
 email:
 description: |
 
-twitter_username: microsoft
+twitter_username: openatmicrosoft
 github_username: microsoft
 
 # Build settings
@@ -37,7 +37,7 @@ exclude:
 seo:
 
 twitter:
-  username: microsoft
+  username: openatmicrosoft
 
 defaults:
   -
