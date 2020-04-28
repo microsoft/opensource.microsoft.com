@@ -8059,13 +8059,12 @@ audio, canvas, video {
 
 .h5 {
   font-family: "SegoeUI", sans-serif;
-  font-weight: 700 !important;
-  font-size: 14px !important;
-  letter-spacing: -0.1px;
+  font-weight: 600 !important;
+  font-size: 16px !important;
   line-height: 1.25; }
   @media (min-width: 768px) {
     .h5 {
-      font-size: 16px !important; } }
+      font-size: 20px !important; } }
 
 .h6 {
   font-family: "SegoeUI", sans-serif;
@@ -8127,6 +8126,9 @@ small {
 .font-mono {
   font-family: "SF-Mono", serif;
   font-weight: 400 !important; }
+
+.font-weight-400 {
+  font-weight: 400; }
 
 .btn {
   position: relative;
@@ -12851,6 +12853,59 @@ svg {
 
 .media-object__bd {
   overflow: hidden; }
+
+.split-content {
+  min-height: 90vh;
+  background: #959da5;
+  color: #ffffff; }
+  @media (min-width: 768px) {
+    .split-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch; } }
+  @media (min-width: 768px) {
+    .split-content .h2 {
+      font-size: 42px !important; } }
+
+.split-content__content {
+  position: relative;
+  z-index: 1;
+  padding: 74px 4%; }
+  @media (min-width: 768px) {
+    .split-content__content {
+      width: 50%;
+      min-width: 50%;
+      padding: 74px 88px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .split-content__content > * {
+        width: 100%;
+        max-width: 664px; } }
+  .split-content__content img {
+    position: absolute;
+    z-index: 0;
+    bottom: 10px;
+    width: 156px; }
+
+.split-content__content--left {
+  background: #258EDE; }
+  .split-content__content--left img {
+    left: 10px; }
+
+.split-content__content--right {
+  background: #4F6BED; }
+  .split-content__content--right img {
+    right: 10px; }
 
 #subscribe {
   -webkit-transition: background 0.4s ease;

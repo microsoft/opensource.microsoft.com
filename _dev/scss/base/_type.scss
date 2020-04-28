@@ -114,13 +114,12 @@
 
 .h5 {
     font-family: $sans-serif;
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    letter-spacing: -0.1px;
+    font-weight: 600 !important;
+    font-size: 16px !important;
     line-height: 1.25;
 
     @include start-at($medium) {
-        font-size: 16px !important;;
+        font-size: 20px !important;;
     }
 }
 
@@ -210,4 +209,8 @@ small {
 .font-mono {
     font-family: $mono;
     font-weight: 400 !important;
+}
+
+.font-weight-400 {
+    font-weight: 400;
 }
