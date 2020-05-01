@@ -13,6 +13,7 @@ var AROSSMN = AROSSMN || {};
         APP.Header.init();
         //APP.ScrollTo.init();
         //APP.Accordion.init();
+        APP.Draw.init();
     });
 
 // ---------------------------------------------------------------------
@@ -299,5 +300,73 @@ APP.Accordion = {
 };
 
 
+
+// ---------------------------------------------------------------------
+// Accordion
+// ---------------------------------------------------------------------
+
+APP.Draw = {
+
+    init: function() {
+        if( $('#draw-svg').length ) {
+            this.bind();
+        } else {
+            return;
+        }
+    },
+
+    bind: function() {
+
+
+        var svg = $('#draw-svg'),
+			path = $('#draw-svg path'),
+            rect = $(' #draw-svg rect'),
+            circle = $('#draw-svg circle'),
+			done = false,
+            rotate = $('.rotate'),
+            square = $('.sqaure rect');
+
+        console.log(path.length);
+		gsap.fromTo(circle, 0, {drawSVG:0}, {duration: 0, drawSVG:false});
+
+        gsap.fromTo(rect, 0, {drawSVG:0}, {duration: 0, drawSVG:false});
+
+		function detect(){
+			//if( svg.hasClass('in-view')) {
+				if(done) return;
+
+				setTimeout(function(){
+					gsap.fromTo(circle, {drawSVG: "20% 20%"}, {duration: 5, drawSVG: "0% 100%"});
+                    gsap.fromTo(rect, {drawSVG: "20% 20%"}, {duration: 3, drawSVG: "0% 100%"});
+
+				}, 1500);
+			//	done = true;
+			//}
+		}
+
+        function randNum(min, max) { // min and max included
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        gsap.to(rotate, 10, {rotation:"360", ease:Linear.easeNone, repeat:-1, transformOrigin:"50% 50%"});
+
+        square.each(function(){
+            var el = $(this),
+                speed = randNum(.5, 4),
+                scale = randNum(0, .5);
+
+            gsap.to(el, speed, {scaleX:scale, ease:Linear.easeNone, repeat:-1, transformOrigin:"50% 50%", yoyo: true});
+        });
+
+
+
+		$(document).ready(function(){
+			detect();
+		});
+
+		// window.addEventListener('scroll', detect);
+        // window.addEventListener('resize', detect);
+
+    }
+};
 
 }(jQuery, AROSSMN));

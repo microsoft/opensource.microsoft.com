@@ -83,14 +83,13 @@ sup {
     font-size: smaller;
 }
 
-picture > * {
-    width: 100%;
-    height: auto;
+hr {
+
 }
 
 @mixin selection {
     color: $white;
-    background: $gray-800;
+    background: $brand;
 }
 
 ::selection {

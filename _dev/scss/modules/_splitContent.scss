@@ -44,7 +44,11 @@
         position: absolute;
         z-index: 0;
         bottom: 10px;
-        width: 156px;
+        width: 56px;
+
+        @include start-at($medium) {
+            width: 156px;
+        }
     }
 }
 

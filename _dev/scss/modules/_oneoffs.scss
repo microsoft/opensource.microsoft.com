@@ -5,8 +5,23 @@
 .intro-svg {
     max-width: 100%;
     width: 100%;
+    transform: translate3d(0,0,0);
 
     svg {
         width: 100%;
+
+        // @include stop-at($small) {
+        //     > g:nth-child(1),
+        //     > g:nth-child(2) {
+        //         display: none;
+        //     }
+        // }
     }
+}
+
+
+
+
+.rotate {
+
 }

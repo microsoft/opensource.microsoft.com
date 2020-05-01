@@ -1,0 +1,38 @@
+## Projects will go here
+
+- title: Visual Studio Code
+  featured: true
+  developer: Microsoft
+  logo: vsc-icon.svg
+  url: https://code.visualstudio.com/
+  description: Visual Studio Code is a free and open-souce code editor that runs anywhere.
+  linkText: Explore Visual Studio
+  filters:
+    - filter: HTML
+    - filter: CSS
+    - filter: JavaScript
+
+
+- title: Accessibility Insights
+  featured: true
+  developer: Accessibility Insights
+  logo: accessibility-insights.svg
+  url: https://accessibilityinsights.io/
+  description: Acceessibility Insights is the ultimate open source tool for helping detect and solve accessibility issues.
+  linkText: Get Accessibility Insights
+  filters:
+    - filter: Accessibility
+    - filter: Tools
+
+
+- title: Visual Studio Code
+  featured: true
+  developer: Microsoft
+  logo: vsc-icon.svg
+  url: https://code.visualstudio.com/
+  description: Visual Studio Code is a free and open-souce code editor that runs anywhere.
+  linkText: Explore Visual Studio
+  filters:
+    - filter: HTML
+    - filter: CSS
+    - filter: JavaScript

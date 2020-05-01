@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-5 col-lg-4 pl-md-4 pl-lg-2">
-                <figure class="intro-svg">
+                <figure class="intro-svg" id="draw-svg" data-detect-viewport>
                     {% include open-source-svg.html %}
                 </figure>
             </div>
@@ -24,26 +24,26 @@
 <div class="wrapper py-6 my-6">
     <div class="py-6 my-6">
         <div class="d-md-flex text-center">
-            <div class="col-12 col-md-4 pr-md-3 mb-6 mb-md-0">
+            <div class="col-12 col-md-4 pr-md-3 mb-6 mb-md-0" data-animate-in="fade" data-animate-in-delay="200">
                 <img class="mb-4" src="{{ '/assets/images/svgs/innovate.svg' | relative_url }}" alt="" />
                 <h3 class="h3">Innovate</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
 
-            <div class="col-12 col-md-4 px-md-2 mb-6 mb-md-0">
+            <div class="col-12 col-md-4 px-md-2 mb-6 mb-md-0" data-animate-in="fade" data-animate-in-delay="200">
                 <img class="mb-4" src="{{ '/assets/images/svgs/build.svg' | relative_url }}" alt="" />
                 <h3 class="h3">Build</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
 
-            <div class="col-12 col-md-4 pl-md-3">
+            <div class="col-12 col-md-4 pl-md-3" data-animate-in="fade" data-animate-in-delay="200">
                 <img class="mb-4" src="{{ '/assets/images/svgs/collaborate.svg' | relative_url }}" alt="" />
                 <h3 class="h3">Collaborate</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
 
-        <div class="text-center mt-6">
+        <div class="text-center mt-6" data-animate-in="up" data-animate-in-delay="200">
             <a class="link-arrow-external" href="{{ '/explore/' | relative_url }}">Start Exploring Projects</a>
         </div>
     </div>
@@ -52,7 +52,7 @@
 
 <div class="split-content text-white">
     <div class="split-content__content split-content__content--left">
-        <div>
+        <div data-animate-in="fade" data-animate-in-delay="200">
             <h2 class="mb-4">
                 <span class="h5">Microsoft Open Source</span>
                 <span class="h2">For Developers</span>
@@ -68,7 +68,7 @@
     </div>
 
     <div class="split-content__content split-content__content--right">
-        <div>
+        <div data-animate-in="fade" data-animate-in-delay="200">
             <h2 class="mb-4">
                 <span class="h5">Microsoft Open Source</span>
                 <span class="h2">For System & Data Admins</span>
@@ -80,5 +80,87 @@
             </div>
         </div>
         <img src="{{ '/assets/images/direction/dots-corner.svg' | relative_url }}" alt="" />
+    </div>
+</div>
+
+
+
+
+<div class="wrapper pt-6 pb-4 mt-6 mb-4">
+    <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="200">
+        <h2 class="h3">Featured Projects</h2>
+        <p>Here are some of the many projects available for contribution with Microsoft Open Source.</p>
+    </div>
+
+    <div class="tile-list" data-animate-in="up" data-animate-in-delay="400">
+        {% for project in site.data.projects %}
+        {% if project.featured %}
+        <a class="tile" href="{{ project.url }}" target="_blank">
+            <div>
+                {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
+                <img class="mb-4" src="{{ img | relative_url }}" alt="" />
+                <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+            </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-6 pb-6">
+        <a class="link-arrow text-brand" href="">View All Projects</a>
+    </div>
+</div>
+
+<hr />
+
+
+<div class="wrapper pt-6 pb-6 mt-6 mb-6">
+    <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="400">
+        <h2 class="h3">Open Source Updates</h2>
+        <p>Here are some of the many projects available for contribution with Microsoft Open Source.</p>
+    </div>
+
+    <div class="blog-list">
+        <a class="blog-preview" href="" target="_blank" data-animate-in="up" data-animate-in-delay="200">
+            <figure class="blog-preview__img">
+                <img data-animate-in="fade" data-animate-in-delay="500" class="mb-4" src="{{ '/assets/images/direction/blog.jpg' | relative_url }}" alt="" />
+            </figure>
+            <h3 class="h5 text-brand font-weight-600 mb-2">Detect large-scale cryptocurrency mining attack against clusters</h3>
+            <p class="blog-preview__meta mb-2">Wednesday, April 8, 2020</p>
+            <p>Today, we’re announcing additional collaborations with industry leaders, which together represent the vast majority of the market for 32-bit MCUs.</p>
+        </a>
+
+        <a class="blog-preview" href="" target="_blank" data-animate-in="up" data-animate-in-delay="200">
+            <figure class="blog-preview__img">
+                <img data-animate-in="fade" data-animate-in-delay="500" class="mb-4" src="{{ '/assets/images/direction/blog.jpg' | relative_url }}" alt="" />
+            </figure>
+            <h3 class="h5 text-brand font-weight-600 mb-2">Detect large-scale cryptocurrency mining attack against clusters</h3>
+            <p class="blog-preview__meta mb-2">Wednesday, April 8, 2020</p>
+            <p>Today, we’re announcing additional collaborations with industry leaders, which together represent the vast majority of the market for 32-bit MCUs.</p>
+        </a>
+
+        <a class="blog-preview" href="" target="_blank" data-animate-in="up" data-animate-in-delay="200">
+            <figure class="blog-preview__img">
+                <img data-animate-in="fade" data-animate-in-delay="500" class="mb-4" src="{{ '/assets/images/direction/blog.jpg' | relative_url }}" alt="" />
+            </figure>
+            <h3 class="h5 text-brand font-weight-600 mb-2">Detect large-scale cryptocurrency mining attack against clusters</h3>
+            <p class="blog-preview__meta mb-2">Wednesday, April 8, 2020</p>
+            <p>Today, we’re announcing additional collaborations with industry leaders, which together represent the vast majority of the market for 32-bit MCUs.</p>
+        </a>
+
+        <a class="blog-preview" href="" target="_blank" data-animate-in="up" data-animate-in-delay="200">
+            <figure class="blog-preview__img">
+                <img data-animate-in="fade" data-animate-in-delay="500" class="mb-4" src="{{ '/assets/images/direction/blog.jpg' | relative_url }}" alt="" />
+            </figure>
+            <h3 class="h5 text-brand font-weight-600 mb-2">Detect large-scale cryptocurrency mining attack against clusters</h3>
+            <p class="blog-preview__meta mb-2">Wednesday, April 8, 2020</p>
+            <p>Today, we’re announcing additional collaborations with industry leaders, which together represent the vast majority of the market for 32-bit MCUs.</p>
+        </a>
+
+    </div>
+
+    <div class="text-center mt-6 pb-6">
+        <a class="link-arrow-external" href="">View All Posts</a>
     </div>
 </div>
