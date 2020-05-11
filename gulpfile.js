@@ -97,6 +97,7 @@ function js() {
 		gulp
 			.src(scriptsToConcat)
 			.pipe(concat('main.js'))
+            .pipe(uglify())
 			.pipe(gulp.dest("./assets/js/"))
 			.pipe(browsersync.stream())
 	);

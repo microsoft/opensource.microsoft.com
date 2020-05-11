@@ -1,0 +1,68 @@
+// ---------------------------------------------------------------------
+//  Index
+// ---------------------------------------------------------------------
+
+$projectWidth: 832px;
+
+
+.explore-header {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    > * {
+        max-width: $projectWidth;
+    }
+
+    .h2 {
+        font-weight: 400;
+        margin-bottom: 24px;
+    }
+}
+
+.explore-header__img {
+    position: absolute;
+    right: 12px;
+    top: 48px;
+    width: 60px;
+    pointer-events: none;
+
+    @include start-at($small) {
+        top: 24px;
+        width: 90px;
+    }
+
+    @include start-at(1120px) {
+        right: auto;
+        left: 3%;
+        top: 50px;
+        width: auto;
+    }
+}
+
+
+.search-form.search-form--dark {
+
+    input {
+        height: 56px;
+        color: #8A8886;
+        border-color: #E1DFDD;
+        font-size: 16px !important;
+        padding-left: 45px;
+    }
+
+    svg {
+        fill: #8A8886;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+// ----------------------------------------
+// explore-projects
+// ----------------------------------------
+
+.explore-projects {
+    width: 100%;
+    background: #FAF9F8;
+}

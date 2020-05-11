@@ -1,0 +1,31 @@
+
+<article class="project">
+    <img src="{{ '/assets/images/projects/icons/react.svg' | relative_url }}" alt="" />
+
+    <div class="project__details">
+        <div class="project__overview">
+            <a class="project__dev" href="" target="_blank">Name of Developer</a> / <a  class="project__name" href="" target="_blank">{% raw %}{{ name }}{% endraw %}</a>
+        </div>
+
+        <p>{% raw %}{{ description }}{% endraw %}</p>
+
+        <div class="project__meta">
+            <div class="pr-4">
+                {% octicon star %} --
+            </div>
+
+            <div class="pr-4">
+                {% octicon repo-forked %} {% raw %}{{ forks_count }}{% endraw %}
+            </div>
+
+            <div class="project__tags">
+                <span>{% raw %}{{ language }}{% endraw %}</span>
+            </div>
+        </div>
+    </div>
+
+    <a class="project__url" href="{% raw %}{{ homepage }}{% endraw %}" target="_blank">
+        <span>View</span>
+        <span class="ms-icon ms-icon--Forward"></span>
+    </a>
+</article>

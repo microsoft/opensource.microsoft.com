@@ -129,7 +129,33 @@ body {
 	}
 
 	a {
+		position: relative;
 
+		&:after {
+			content: '';
+			width: 100%;
+			height: 3px;
+			background: $brand;
+			position: absolute;
+			bottom: -6px;
+			left: 0;
+			display: block;
+			transform-origin: center;
+			transform: scaleX(0);
+			transition: transform $trans;
+		}
+	}
+
+	li a:hover {
+
+		&:after {
+			transform: scaleX(.6);
+		}
+
+	}
+
+	li.is-active a:after {
+		transform: scaleX(1);
 	}
 
 	@include stop-at($header-breakpoint) {

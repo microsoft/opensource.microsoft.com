@@ -1,11 +1,98 @@
 ---
 layout: default
-id: Explore
+id: explore
 permalink: /explore/
 ---
 
 
-<article class="wrapper my-6 py-6">
-    <h1>Explore</h1>
+<article class="mb-6 pb-6">
 
+    <header class="wrapper-full explore-header pb-4 pt-6">
+        <div class="wrapper py-6">
+            <h1 class="h2">Explore</h1>
+
+            <form class="search-form search-form--dark" id="search-projects" role="search" action="https://opensource.microsoft.com/api/publicRepos?q=" method="GET">
+                <label>
+                    <span class="sr-only">Search on Microsoft.com</span>
+                    {% octicon search %}
+                </label>
+                <input type="text" id="project-search-field" placeholder="Search" value="" />
+            </form>
+        </div>
+
+        <img class="explore-header__img" src="{{ '/assets/images/direction/explore-shapes.svg' | relative_url }}" alt="" />
+    </header>
+
+
+    <div class="explore-projects py-4">
+
+
+        <div id="projectResults"></div>
+        <script id="project-template" type="text/x-handlebars-template">
+            <ul class="project-list">
+                {% raw %}{{#each apidata}}{% endraw %}
+                    <li>
+
+                        {% include project.html %}
+                    </li>
+                {% raw %}{{/each}}{% endraw %}
+            </ul>
+        </script>
+
+    </div>
 </article>
+
+
+<script>
+    var $ = jQuery,
+        searchForm = $('#search-projects'),
+        source = $("#project-template").html(),
+        template = Handlebars.compile(source),
+        results = $("#projectResults");
+
+    $.ajax({
+        type: 'GET',
+        url: 'https://opensource.microsoft.com/api/publicRepos',
+        dataType: 'json',
+        success: function(posts){
+            //do something with posts.
+            //console.log(posts.repos);
+
+            results.addClass('is-thinking');
+
+            setTimeout(function(){
+                html = template({apidata: posts.repos});
+                results.html(html);
+                results.removeClass('is-thinking');
+            }, 1000);
+        }
+    });
+
+    $(document).on("submit", searchForm, function (e) {
+        e.preventDefault();
+        var searchString = $('#project-search-field').val();
+
+        var searchUrl = 'https://opensource.microsoft.com/api/publicRepos?q=' + searchString;
+
+        console.log(searchUrl);
+
+        $.ajax({
+            type: 'GET',
+            url: searchUrl,
+            dataType: 'json',
+            success: function(posts){
+                //do something with posts.
+                //console.log(posts.repos);
+                results.addClass('is-thinking');
+
+                setTimeout(function(){
+                    html = template({apidata: posts.repos});
+                    results.html(html);
+                    results.removeClass('is-thinking');
+                }, 1000);
+
+
+            }
+        });
+    });
+</script>

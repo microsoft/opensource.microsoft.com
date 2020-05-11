@@ -10,13 +10,13 @@
         </div>
 
         <ul class="site-header__nav">
-            <li>
+            <li{% if page.id == 'explore' %} class="is-active"{% endif %}>
                 <a href="{{ "/explore/" | relative_url }}">Explore</a>
             </li>
-            <li>
+            <li{% if page.id == 'about' %} class="is-active"{% endif %}>
                 <a href="{{ "/about/" | relative_url }}">About</a>
             </li>
-            <li>
+            <li{% if page.id == 'resources' %} class="is-active"{% endif %}>
                 <a href="{{ "/resources/" | relative_url }}">Resources</a>
             </li>
         </ul>
