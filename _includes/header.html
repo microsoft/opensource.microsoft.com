@@ -10,14 +10,17 @@
         </div>
 
         <ul class="site-header__nav">
-            <li{% if page.id == 'explore' %} class="is-active"{% endif %}>
-                <a href="{{ "/explore/" | relative_url }}">Explore</a>
+            <li{% if page.id == 'community' %} class="is-active"{% endif %}>
+                <a href="{{ "/community/" | relative_url }}">Community</a>
+            </li>
+            <li{% if page.id == 'projects' %} class="is-active"{% endif %}>
+                <a href="{{ "/projects/" | relative_url }}">Projects</a>
             </li>
             <li{% if page.id == 'about' %} class="is-active"{% endif %}>
-                <a href="{{ "/about/" | relative_url }}">About</a>
+                <a href="{{ "/learn/" | relative_url }}">Learn</a>
             </li>
             <li{% if page.id == 'resources' %} class="is-active"{% endif %}>
-                <a href="{{ "/resources/" | relative_url }}">Resources</a>
+                <a href="{{ "/resources/" | relative_url }}">Blog</a>
             </li>
         </ul>
 
@@ -56,6 +59,9 @@
             <ul class="main-nav">
                 <li>
                     <a class="is-active" href="{{ "/" | relative_url }}">Home</a>
+                </li>
+                <li>
+                    <a href="{{ "/community/" | relative_url }}">Community</a>
                 </li>
                 <li>
                     <a href="{{ "/explore/" | relative_url }}">Explore</a>
