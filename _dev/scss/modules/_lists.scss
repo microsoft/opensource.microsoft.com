@@ -2,6 +2,69 @@
 //  Lists
 // ---------------------------------------------------------------------
 
+.internal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    li {
+        margin-right: 16px;
+
+        @include start-at($medium) {
+            margin-right: 24px;
+        }
+    }
+
+    a {
+        display: block;
+        position: relative;
+        padding: 8px 0 12px;
+        font-weight: 600;
+        font-size: 13px;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: $brand;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform-origin: center;
+            transform: scaleX(0);
+            transition: transform $trans;
+        }
+
+        &:hover:after {
+            transform: scaleX(.6);
+        }
+    }
+
+    li.is-active {
+        a:after {
+            transform: scaleX(1);
+        }
+
+    }
+}
+
+
+// ----------------------------------------
+// Tile list
+// ----------------------------------------
+
+.ul {
+    list-style-type: disc;
+    padding-left: 24px;
+    color: $gray;
+
+    li {
+        margin-bottom: 16px;
+        padding-left: 4px;
+    }
+}
+
 // ----------------------------------------
 // Tile list
 // ----------------------------------------

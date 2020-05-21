@@ -16,11 +16,13 @@
             <li{% if page.id == 'projects' %} class="is-active"{% endif %}>
                 <a href="{{ "/projects/" | relative_url }}">Projects</a>
             </li>
-            <li{% if page.id == 'about' %} class="is-active"{% endif %}>
+            <li{% if page.id == 'learn' or page.id == 'governance' or page.id == 'best-practices' %} class="is-active"{% endif %}>
                 <a href="{{ "/learn/" | relative_url }}">Learn</a>
             </li>
             <li{% if page.id == 'resources' %} class="is-active"{% endif %}>
-                <a href="{{ "/resources/" | relative_url }}">Blog</a>
+                <a class="external" href="{{ "/resources/" | relative_url }}">
+                    <span>Blog</span>
+                </a>
             </li>
         </ul>
 
@@ -60,17 +62,19 @@
                 <li>
                     <a class="is-active" href="{{ "/" | relative_url }}">Home</a>
                 </li>
-                <li>
+                <li{% if page.id == 'community' %} class="is-active"{% endif %}>
                     <a href="{{ "/community/" | relative_url }}">Community</a>
                 </li>
-                <li>
-                    <a href="{{ "/explore/" | relative_url }}">Explore</a>
+                <li{% if page.id == 'projects' %} class="is-active"{% endif %}>
+                    <a href="{{ "/projects/" | relative_url }}">Projects</a>
                 </li>
-                <li>
-                    <a href="{{ "/about/" | relative_url }}">About</a>
+                <li{% if page.id == 'learn' or page.id == 'governance' or page.id == 'best-practices' %} class="is-active"{% endif %}>
+                    <a href="{{ "/learn/" | relative_url }}">Learn</a>
                 </li>
-                <li>
-                    <a href="{{ "/resources/" | relative_url }}">Resources</a>
+                <li{% if page.id == 'resources' %} class="is-active"{% endif %}>
+                    <a class="external" href="{{ "/resources/" | relative_url }}">
+                        <span>Blog</span>
+                    </a>
                 </li>
                 <li>
                     <a class="sign-in" href="https://www.microsoft.com/mscomhp/onerf/signin?EEL=True&pcexp=True&ru=https%3A%2F%2Fwww.microsoft.com%2Fen-us">

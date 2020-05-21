@@ -1,130 +1,57 @@
 
-#pace-layers {
-    .accordion {
-        max-width: 544px;
-        margin: 0;
-
-        + .accordion {
-            //margin-top: 12px;
-        }
-
-        @include start-at($medium) {
-            + .accordion {
-                margin-top: 18px;
-            }
-        }
-    }
-}
 
 .accordion {
-    max-width: 928px;
     margin: 0 auto;
 
     a {
-        color: $blue-400;
+        color: $brand;
     }
 }
 
 .accordion__hd {
     position: relative;
-    padding: 12px 0;
+    padding: 18px 0;
     padding-right: 52px;
 
-    @include start-at($medium) {
-        padding: 12px 0 8px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
     h4 {
         display: flex;
         align-items: center;
         transition: color $trans, opacity $trans;
+        color: $brand;
 
-        img,
-        svg {
-            margin-right: 12px;
+        &:before {
+            content: '\E70D';
+            display: block;
+            font-family: $icons;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            margin-right: 17px;
+            transform: rotate(-90deg);
+            transition: transform $trans;
         }
     }
-
-    .icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 40px;
-        height: 40px;
-        z-index: 1;
-
-        @include start-at($medium) {
-            display: none;
-        }
-
-        &:after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            background: $white;
-            z-index: -1;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            transform: translate3d(-50%, -50%, 0);
-            transform-origin: center;
-            transition: transform 0.6s ease;
-        }
-
-        svg {
-            fill: $black;
-            width: 14px;
-            height: 14px;
-            transition: transform 0.6s ease;
-        }
-    }
-
 
     &:hover {
-        cursor: text;
-
-        @include stop-at($medium) {
-            cursor: pointer;
-
-            h4 {
-                color: $gray-300;
-            }
-        }
-
-        .icon {
-            &:after {
-                transform: translate3d(-50%, -50%, 0) scale(1.5);
-            }
-        }
+        cursor: pointer;
     }
 
     .is-open & {
-        svg {
-            transform: rotate(135deg);
+        h4:before {
+            transform: rotate(0deg);
         }
     }
 }
 
 .accordion__bd {
+    max-height: 0;
+    overflow: hidden;
     padding-left: 38px;
     transition: max-height 0.4s ease-out;
-
-    @include stop-at($medium) {
-        max-height: 0;
-        overflow: hidden;
-    }
-
-    p {
-        font-size: 14px;
-
-        @include start-at($medium) {
-            font-size: 14px;
-        }
-    }
 }
 
 

@@ -12,7 +12,7 @@ var AROSSMN = AROSSMN || {};
         APP.Viewport.init();
         APP.Header.init();
         //APP.ScrollTo.init();
-        //APP.Accordion.init();
+        APP.Accordion.init();
         APP.Draw.init();
     });
 

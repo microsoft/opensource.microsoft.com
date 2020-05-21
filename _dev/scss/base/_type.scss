@@ -102,7 +102,7 @@
 
 .h4 {
     font-family: $sans-serif;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     font-size: 18px !important;
     line-height: 1.25;
     color: $black;
@@ -172,7 +172,6 @@
 .p,
 p {
     @include para;
-    color: $gray-600;
 
     + p {
         margin-top: 18px;
