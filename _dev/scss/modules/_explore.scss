@@ -65,4 +65,130 @@ $projectWidth: 832px;
 .explore-projects {
     width: 100%;
     background: #FAF9F8;
+    min-height: 500px;
+
+    > * {
+        position: relative;
+        width: 1216px;
+        max-width: $wrapper-percentage;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+}
+
+
+
+// ----------------------------------------
+// Filters
+// ----------------------------------------
+
+@include start-at(1200px) {
+    .filters {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+
+        .filters__hd {
+            margin-bottom: 12px;
+        }
+
+        input[type="submit"],
+        button {
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            height: auto;
+            padding: 0;
+            margin: 16px 0 0 0;
+            font-size: 14px;
+            color: $brand;
+
+        }
+    }
+}
+
+
+// ----------------------------------------
+// Checkbox
+// ----------------------------------------
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    position: relative;
+    padding: 4px 0;
+
+    input {
+        @include visually-hidden;
+    }
+
+    label {
+        position: relative;
+        padding-left: 32px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            //top: 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        &:before {
+            z-index: 2;
+            border: 1px solid #323130;
+            background: transparent;
+            transition: background-color $trans, border-color $trans;
+        }
+
+        &:after {
+            border: none;
+            z-index: 3;
+            content: '\E73E';
+            font-family: $icons;
+            color: $white;
+            transform: scale(0);
+            transition: transform .35s cubic-bezier(0.68,-0.55,0.27,1.75);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    input:checked + label {
+
+        &:before {
+            background-color: $brand;
+            border-color: $brand;
+        }
+
+        &:after {
+            transform: scale(1);
+        }
+    }
+
+    input {
+        margin-right: 4px;
+    }
 }

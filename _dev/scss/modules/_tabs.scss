@@ -1,0 +1,128 @@
+// ---------------------------------------------------------------------
+//  Tabs
+// ---------------------------------------------------------------------
+
+.tabs {
+    overflow: hidden;
+}
+
+.tabs--simple {
+
+    .tabs__tabs {
+        justify-content: center;
+        background: $white;
+        height: auto;
+
+        > * {
+            justify-content: center;
+        }
+    }
+}
+
+// ----------------------------------------
+// Tabs wrap
+// ----------------------------------------
+
+.tabs__tabs {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+// ----------------------------------------
+// Tab
+// ----------------------------------------
+
+.tabs__tab {
+    position: relative;
+    margin-right: 16px;
+    padding: 8px 0 12px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: color $trans;
+
+    @include start-at($medium) {
+        margin-right: 24px;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: $brand;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform-origin: center;
+        transform: scaleX(0);
+        transition: transform $trans;
+    }
+
+
+    &:hover {
+        cursor: pointer;
+        color: $gray-dark;
+
+        &:after {
+            transform: scaleX(.6);
+        }
+
+        > * {
+            //opacity: 0.7;
+
+            &:after {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+
+
+    &.is-active {
+
+        &:after {
+            transform: scaleX(1);
+        }
+
+        > * {
+            opacity: 1;
+
+            &:after {
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+
+
+
+
+// ----------------------------------------
+//  Content
+// ----------------------------------------
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.tabs__content {
+    display: none;
+    //padding: 6px 12px;
+    //border: 1px solid #ccc;
+    border-top: none;
+
+
+    &.is-active {
+        display: block;
+        animation: fadeEffect 1s;
+    }
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------

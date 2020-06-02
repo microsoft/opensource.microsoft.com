@@ -6,6 +6,7 @@
     a {
         color: $brand;
     }
+
 }
 
 .accordion__hd {
@@ -51,9 +52,19 @@
     max-height: 0;
     overflow: hidden;
     padding-left: 38px;
+
     transition: max-height 0.4s ease-out;
+
+    > * {
+        padding-bottom: 16px;
+    }
 }
 
+.accordion--short {
+    .accordion__hd {
+        padding-bottom: 12px;
+    }
+}
 
 .accordions__expand-all {
     display: flex;
@@ -90,40 +101,40 @@
 }
 
 
-.faq {
-    .accordion {
-        margin-bottom: 16px;
-
-        @include start-at($medium) {
-            margin-bottom: 36px;
-        }
-    }
-
-    .accordion__hd {
-
-        .h6 {
-            text-transform: none;
-            line-height: 1.4;
-            letter-spacing: 0;
-            font-size: 15px !important;
-
-            @include start-at($medium) {
-                font-size: 22px !important;
-            }
-        }
-
-        &:hover {
-
-            @include stop-at($medium) {
-                .h6 {
-                    color: $gray-600;
-
-                }
-            }
-        }
-    }
-
-    .accordion__bd {
-        padding-left: 0;
-    }
-}
+// .faq {
+//     .accordion {
+//         margin-bottom: 16px;
+//
+//         @include start-at($medium) {
+//             margin-bottom: 36px;
+//         }
+//     }
+//
+//     .accordion__hd {
+//
+//         .h6 {
+//             text-transform: none;
+//             line-height: 1.4;
+//             letter-spacing: 0;
+//             font-size: 15px !important;
+//
+//             @include start-at($medium) {
+//                 font-size: 22px !important;
+//             }
+//         }
+//
+//         &:hover {
+//
+//             @include stop-at($medium) {
+//                 .h6 {
+//                     color: $gray-600;
+//
+//                 }
+//             }
+//         }
+//     }
+//
+//     .accordion__bd {
+//         padding-left: 0;
+//     }
+// }

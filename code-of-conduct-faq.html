@@ -1,0 +1,41 @@
+---
+layout: default
+id: code-of-conduct-faq
+permalink: /code-of-conduct/faq/
+---
+
+
+<article>
+    <div class="page-header">
+        <div class="wrapper d-md-flex">
+            <div class="col-md-6 col-lg-6 mb-4 mb-md-0">
+                <p>Microsoft Open Source</p>
+                <h1 class="h2">Code of Conduct FAQ</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrapper my-6 py-4">
+        <div class="col-md-10 col-lg-7 mx-auto">
+
+            {% for faq in site.data.cocfaq %}
+            <div class="accordion accordion--short">
+                <div class="accordion__hd">
+                    <h4 class="h4">{{ faq.question }}</h4>
+                </div>
+                <div class="accordion__bd">
+                    <div class="longform">
+                        <p>{{ faq.answer }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+
+        </div>
+    </div>
+
+</article>

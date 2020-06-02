@@ -1,0 +1,192 @@
+---
+layout: default
+id: projects-explore
+permalink: /projects/explore/
+---
+
+
+<article>
+
+    <header class="wrapper-full explore-header pb-4 pt-6">
+        <div class="wrapper py-6">
+            <h1 class="h2">Explore</h1>
+
+            <form class="search-form search-form--dark" id="search-projects" role="search" action="https://opensource.microsoft.com/api/publicRepos?q=" method="GET">
+                <label>
+                    <span class="sr-only">Search on Microsoft.com</span>
+                    {% octicon search %}
+                </label>
+                <input type="text" id="project-search-field" placeholder="Search" value="" />
+
+                <button type="submit" class="d-none"></button>
+            </form>
+        </div>
+
+        <img class="explore-header__img" src="{{ '/assets/images/direction/explore-shapes.svg' | relative_url }}" alt="" />
+    </header>
+
+
+    <div class="explore-projects pt-4 pb-6">
+        <div>
+            <form class="filters" id="filter-projects">
+
+                <div class="filters__hd">
+                    <p class="h4">Filters</p>
+                </div>
+
+                <div class="filters__filters">
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="html" id="html" value="html">
+                        <label for="html">HTML</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="css" id="css" value="css">
+                        <label for="css">CSS</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="javascript" id="javascript" value="JavaScript">
+                        <label for="javascript">JavaScript</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="csharp" id="csharp" value="C#">
+                        <label for="csharp">C#</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="typescript" id="typescript" value="TypeScript">
+                        <label for="typescript">TypeScript</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="c++" id="c++" value="C++">
+                        <label for="c++">C++</label>
+                    </div>
+
+                    <button id="filter-submit" type="submit" class="link-arrow">Filter</button>
+
+                </div>
+            </form>
+
+            <div class="project-wrap">
+                <div id="search-for"></div>
+                <div id="projectResults"></div>
+                <script id="project-template" type="text/x-handlebars-template">
+                    <ul class="project-list">
+                        {% raw %}{{#each apidata}}{% endraw %}
+                            <li>
+
+                                {% include project.html %}
+                            </li>
+                        {% raw %}{{/each}}{% endraw %}
+                    </ul>
+                </script>
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<script>
+    var $ = jQuery,
+        searchForm = $('#search-projects'),
+        source = $("#project-template").html(),
+        template = Handlebars.compile(source),
+        results = $("#projectResults"),
+        searchText = $('#search-for');
+
+    $.ajax({
+        type: 'GET',
+        url: 'https://opensource.microsoft.com/api/publicRepos',
+        dataType: 'json',
+        success: function(posts){
+            //do something with posts.
+            console.log(posts.repos);
+
+            results.addClass('is-thinking');
+
+            setTimeout(function(){
+                html = template({apidata: posts.repos});
+                results.html(html);
+                results.removeClass('is-thinking');
+            }, 1000);
+        }
+    });
+
+    searchForm.submit(function(e) {
+        e.preventDefault();
+        var searchString = $('#project-search-field').val();
+        var searchUrl = 'https://opensource.microsoft.com/api/publicRepos?q=' + searchString;
+        //console.log('searching');
+        $.ajax({
+            type: 'GET',
+            url: searchUrl,
+            dataType: 'json',
+            success: function(posts){
+                //do something with posts.
+                //console.log(posts.repos);
+                results.addClass('is-thinking');
+
+                setTimeout(function(){
+                    html = template({apidata: posts.repos});
+                    results.html(html);
+                    results.removeClass('is-thinking');
+
+                    if( posts.repos.length === 0 ) {
+                        results.html('<p>No results found for "' + searchString + '".</p>');
+                    } else {
+                        searchText.html('<p class="h4 mb-5">Showing results for "' + searchString + '" (' + posts.repos.length + ')</p>');
+                    }
+
+                }, 1000);
+
+
+            }
+        });
+    });
+
+    var filterForm = $('#filter-projects'),
+        filterSubmit = $('#filter-submit'),
+        checkboxes = $('#filter-projects input[type="checkbox"]');
+
+        filterForm.submit(function(e) {
+        e.preventDefault();
+        //console.log('filter projects');
+        activeFilters = [];
+        checkboxes.each(function(){
+            if ( $(this).is(':checked') ) {
+                activeFilters.push($(this).val());
+            }
+        });
+
+        if (activeFilters.length != 0) {
+            $.ajax({
+                type: 'GET',
+                url: 'https://opensource.microsoft.com/api/publicRepos',
+                dataType: 'json',
+                success: function(posts){
+                    results.addClass('is-thinking');
+                    var filteredResults = $.grep( posts.repos, function( n, i ) {
+                        return $.inArray(n.language, activeFilters) !== -1;
+                    });
+                    //console.log(filteredResults);
+                    setTimeout(function(){
+                        searchText.empty();
+                        html = template({apidata: filteredResults});
+                        results.html(html);
+                        results.removeClass('is-thinking');
+
+                        if( filteredResults.length === 0 ) {
+                            results.html('<p>No results found.</p>');
+                        }
+                    }, 1000);
+                }
+            });
+        }
+    });
+
+</script>

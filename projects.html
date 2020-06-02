@@ -7,92 +7,57 @@ permalink: /projects/
 
 <article class="mb-6 pb-6">
 
-    <header class="wrapper-full explore-header pb-4 pt-6">
-        <div class="wrapper py-6">
-            <h1 class="h2">Explore</h1>
 
-            <form class="search-form search-form--dark" id="search-projects" role="search" action="https://opensource.microsoft.com/api/publicRepos?q=" method="GET">
-                <label>
-                    <span class="sr-only">Search on Microsoft.com</span>
-                    {% octicon search %}
-                </label>
-                <input type="text" id="project-search-field" placeholder="Search" value="" />
-            </form>
+    <div class="page-header">
+        <div class="wrapper d-md-flex">
+            <div class="col-md-6 col-lg-6 mb-4 mb-md-0">
+                <p>Microsoft Open Source</p>
+                <h1 class="h2">Featured Projects</h1>
+            </div>
+            <div class="col-md-6 pl-md-4 col-lg-4">
+                <p>Check out the latest projects from the Microsoft Open Source Community, or search on your own.</p>
+
+                <div data-animate-in="fade" data-animate-in-delay="240">
+                    <a class="link-arrow text-white mt-4" href="{{ '/projects/explore/' | relative_url }}">Explore Open Source Projects</a>
+                </div>
+            </div>
         </div>
 
-        <img class="explore-header__img" src="{{ '/assets/images/direction/explore-shapes.svg' | relative_url }}" alt="" />
-    </header>
-
-
-    <div class="explore-projects py-4">
-
-
-        <div id="projectResults"></div>
-        <script id="project-template" type="text/x-handlebars-template">
-            <ul class="project-list">
-                {% raw %}{{#each apidata}}{% endraw %}
-                    <li>
-
-                        {% include project.html %}
-                    </li>
-                {% raw %}{{/each}}{% endraw %}
-            </ul>
-        </script>
-
+        <img class="page-header__shapes-lg" src="{{ '/assets/images/direction/project-shapes.svg' | relative_url }}" alt="abstract shapes" />
     </div>
+
+
+    <div class="wrapper d-lg-flex flex-justify-between my-6 py-lg-4">
+        <div class="col-12 col-lg-7 pr-lg-6 mb-4 mb-md-0">
+
+            {% for project in site.data.projects %}
+            <div class="mb-6 pb-lg-4" data-animate-in="up">
+                <div class="d-flex mb-3">
+                    {% capture icon %}/assets/images/projects/{{ project.logo }}{%  endcapture %}
+                    <img class="mr-3 icon" src="{{ icon | relative_url }}" alt="{{ project.title }} logo" />
+                    <h2>{{ project.title }}</h2>
+                </div>
+                <p>{{ project.description }}</p>
+                <a class="link-arrow-external mt-3" href="{{ '/explore/' | relative_url }}">{{ project.linkText }}</a>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="col-12 col-lg-4 pl-lg-6 col-lg-4">
+            <div class="sticky">
+                <div class="cta">
+                    <div class="cta__inner">
+                        <p class="h5">Explore Open Source</p>
+                        <p>Search for Microsoft Open Source repos to share, contribute to, or learn about.</p>
+                        <a class="link-arrow text-white mt-4" href="{{ '/projects/explore/' | relative_url }}">Start Exploring</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
 </article>
-
-
-<script>
-    var $ = jQuery,
-        searchForm = $('#search-projects'),
-        source = $("#project-template").html(),
-        template = Handlebars.compile(source),
-        results = $("#projectResults");
-
-    $.ajax({
-        type: 'GET',
-        url: 'https://opensource.microsoft.com/api/publicRepos',
-        dataType: 'json',
-        success: function(posts){
-            //do something with posts.
-            //console.log(posts.repos);
-
-            results.addClass('is-thinking');
-
-            setTimeout(function(){
-                html = template({apidata: posts.repos});
-                results.html(html);
-                results.removeClass('is-thinking');
-            }, 1000);
-        }
-    });
-
-    $(document).on("submit", searchForm, function (e) {
-        e.preventDefault();
-        var searchString = $('#project-search-field').val();
-
-        var searchUrl = 'https://opensource.microsoft.com/api/publicRepos?q=' + searchString;
-
-        console.log(searchUrl);
-
-        $.ajax({
-            type: 'GET',
-            url: searchUrl,
-            dataType: 'json',
-            success: function(posts){
-                //do something with posts.
-                //console.log(posts.repos);
-                results.addClass('is-thinking');
-
-                setTimeout(function(){
-                    html = template({apidata: posts.repos});
-                    results.html(html);
-                    results.removeClass('is-thinking');
-                }, 1000);
-
-
-            }
-        });
-    });
-</script>

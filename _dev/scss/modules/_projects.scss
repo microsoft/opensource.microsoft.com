@@ -3,13 +3,17 @@
 // ---------------------------------------------------------------------
 
 
-.project-list {
+.project-wrap {
     max-width: $projectWidth;
     margin: 0 auto;
 
     .project {
         margin-bottom: 16px
     }
+}
+
+.project-list {
+
 }
 
 

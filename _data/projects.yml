@@ -25,12 +25,48 @@
     - filter: Tools
 
 
-- title: Visual Studio Code
+- title: Feature Project Title
   featured: true
-  developer: Microsoft
-  logo: vsc-icon.svg
-  url: https://code.visualstudio.com/
-  description: Visual Studio Code is a free and open-souce code editor that runs anywhere.
+  developer:
+  logo: octocat.svg
+  url: https://github.com/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  linkText: Explore Visual Studio
+  filters:
+    - filter: HTML
+    - filter: CSS
+    - filter: JavaScript
+
+- title: Feature Project Title
+  featured: true
+  developer:
+  logo: octocat.svg
+  url: https://github.com/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  linkText: Explore Visual Studio
+  filters:
+    - filter: HTML
+    - filter: CSS
+    - filter: JavaScript
+
+- title: Feature Project Title
+  featured: true
+  developer:
+  logo: octocat.svg
+  url: https://github.com/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  linkText: Explore Visual Studio
+  filters:
+    - filter: HTML
+    - filter: CSS
+    - filter: JavaScript
+
+- title: Feature Project Title
+  featured: true
+  developer:
+  logo: octocat.svg
+  url: https://github.com/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   linkText: Explore Visual Studio
   filters:
     - filter: HTML

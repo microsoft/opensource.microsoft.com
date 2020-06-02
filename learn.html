@@ -24,210 +24,40 @@ permalink: /learn/
         </div>
     </div>
 
-    <nav class="wrapper my-6 py-4">
-        <div class="col-md-10 col-lg-7 mx-auto">
-            <ul class="internal-nav">
-                <li{% if page.id == 'learn' %} class="is-active"{% endif %}>
-                    <a href="{{ "/learn/" | relative_url }}">Tools & Services</a>
-                </li>
-                <li{% if page.id == 'governance' %} class="is-active"{% endif %}>
-                    <a href="{{ "/learn/governance/" | relative_url }}">Governance</a>
-                </li>
-                <li{% if page.id == 'best-practices' %} class="is-active"{% endif %}>
-                    <a href="{{ "/learn/best-practices/" | relative_url }}">Best Practices</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-
-    <div class="wrapper mb-6 pb-4">
-        <div class="col-md-10 col-lg-7 mx-auto">
-
-            <div class="pb-6">
-                <h3 class="h3 mb-4">GitHub Management</h3>
-                <p><a href="https://github.com/" target="_blank">GitHub.com</a> is at the forefront of today's open source movement, but the public product introduces many challenges for an enterprise to function at scale.</p>
-
-                <div>
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">User Managment</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                <p>When interfacing with third-party services such as GitHub, it is important to be able to identify employees at the same company working together on open source.</p>
-
-                                <p>While GitHub allows organization members to publicize their organization membership on their individual profile, there is more to know. GitHub user management solutions will offer the following capabilities:</p>
-
-                                <ul class="ul mt-4">
-                                    <li><b>Employment lifecycle automation:</b> Employees should be able to join a company organization, if authorized, without needing a manual invitation. When an employee decides to leave the company, their access to company resources and GitHub organization membership should be removed.</li>
-                                    <li><b>User linking:</b> Authenticating an employee with IT and also GitHub to associate the GitHub account</li>
-                                    <li><b>Communications:</b> By linking an employee's corporate identity with their GitHub account, comms are possible without having to ask the user to share their email address or other information on their public profile.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Public project presence / exploration</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Self-service onboarding & management</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="tabs">
+        <nav class="wrapper my-6">
+            <div class="col-md-10 col-lg-7 mx-auto">
+                <ul class="tabs__tabs">
+                    <li class="tabs__tab is-active" data-tab="tools-services">
+                        <span>Tools & Services</span>
+                    </li>
+                    <li class="tabs__tab" data-tab="governance">
+                        <span>Governance</span>
+                    </li>
+                    <li class="tabs__tab" data-tab="best-practices">
+                        <span>Best Practices</span>
+                    </li>
+                </ul>
             </div>
+        </nav>
 
+        <div class="wrapper my-6 pt-lg-3 pb-4">
+            <div class="col-md-10 col-lg-7 mx-auto">
 
-
-            <div class="pb-6">
-                <h3 class="h3 mb-4">Insights & Data</h3>
-                <p>By connecting data sources such as the GitHub event stream to big data systems can offer important insights into the health and engagement of your company's open source efforts.</p>
-
-                <div>
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">GitHub crawler</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                copy here
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">GitHub insights</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Self-service onboarding & management</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
+                <div class="tabs__content is-active" data-tab="tools-services">
+                    {% include learn.html %}
                 </div>
-            </div>
 
-
-
-            <div class="pb-6">
-                <h3 class="h3 mb-4">GitHub Services & Extensions</h3>
-                <p>Many great services exist for helping teams to collaborate on GitHub. An open source programs office will likely need to operate services to extend GitHub with organization-specific services such as contributor license agreements.</p>
-
-                <div>
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Contributor License Agreement (CLA)</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                copy here
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Repository Linters</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
+                <div class="tabs__content" data-tab="governance">
+                    {% include learn-governance.html %}
                 </div>
-            </div>
 
-
-
-            <div class="pb-6">
-                <h3 class="h3 mb-4">Open source obligations, package publishing and more</h3>
-                <p>There are a large number of services and needs for a large corporate open source programs office to help engineers to be efficient as they explore the value of open source.</p>
-
-                <div>
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Source code disclosure</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                copy here
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Disaster recovery</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Communication</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Package management & publishing</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="accordion__hd">
-                            <h4 class="h4">Operations & process</h4>
-                        </div>
-                        <div class="accordion__bd">
-                            <div>
-                                Copy here
-                            </div>
-                        </div>
-                    </div>
+                <div class="tabs__content" data-tab="best-practices">
+                    {% include learn-best-practices.html %}
                 </div>
-            </div>
+
+
+
 
         </div>
     </div>

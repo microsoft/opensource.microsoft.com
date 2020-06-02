@@ -1,0 +1,48 @@
+##
+# Community projects
+# Images should be uploaded to assets/images/projects
+#
+##
+
+- projects:
+  - title: Typescript
+    image: typescript.png
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
+    url:
+
+  - title: Visual Studio Code
+    image: vsc-icon.svg
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+    url:
+
+  - title: .NET Foundation
+    image: dotnet.png
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
+    url:
+
+  - title: Typescript
+    image: typescript.png
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
+    url:
+
+  - title: Visual Studio Code
+    image: vsc-icon.svg
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+    url:
+
+  - title: .NET Foundation
+    image: dotnet.png
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
+    url:
+
+
+
+- resources:
+  - title: Resource Name
+    url: /
+  - title: Resource Name
+    url: /
+  - title: Resource Name
+    url: /
+  - title: Resource Name
+    url: /

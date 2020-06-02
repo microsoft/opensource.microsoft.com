@@ -6,6 +6,8 @@
 .page-header {
     background: $black;
     padding: 80px 0 80px;
+    position: relative;
+    z-index: 1;
 
     .h2 {
         color: $brand;
@@ -16,6 +18,21 @@
 
 }
 
+.page-header__shapes-lg {
+    display: none;
+    
+    @include start-at(1110px) {
+        display: block;
+        position: absolute;
+        right: $wrapper-padding;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+// ----------------------------------------
+//
+// ----------------------------------------
 
 .intro-svg {
     max-width: 100%;
@@ -36,7 +53,42 @@
 
 
 
-
+// ----------------------------------------
+//
+// ----------------------------------------
 .rotate {
 
+}
+
+
+// ----------------------------------------
+// Cta
+// ----------------------------------------
+
+.cta {
+    background: #4F6BED;
+    padding: 55px 50px;
+    text-align: center;
+    color: $white;
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        width: 64px;
+        height: 64px;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background: url('../images/direction/dots-corner.svg') center / cover no-repeat;
+        pointer-events: none;
+    }
+
+}
+
+@include start-at($large) {
+    .sticky {
+        position: sticky;
+        top: 80px
+    }
 }
