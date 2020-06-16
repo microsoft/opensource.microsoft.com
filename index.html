@@ -104,17 +104,21 @@ id: home
         </div>
 
         <div class="tile-list" data-animate-in="up" data-animate-in-delay="400">
-            {% for project in site.data.projects %}
-            {% if project.featured %}
-            <a class="tile" href="{{ project.url }}" target="_blank">
-                <div>
-                    {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
-                    <img class="mb-4" src="{{ img | relative_url }}" alt="" />
-                    <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
-                </div>
-            </a>
-            {% endif %}
+            {% for project in site.projects %}
+                {% if project.featured %}
+                <a class="tile" href="{{ project.url }}" target="_blank">
+                    <div>
+                        {% if project.externalLogo %}
+                        {% assign img = project.externalLogo %}
+                        {% else %}
+                        {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
+                        {% endif %}
+                        <img class="mb-4" src="{{ img | relative_url }}" alt="" />
+                        <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                    </div>
+                </a>
+                {% endif %}
             {% endfor %}
         </div>
 

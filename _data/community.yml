@@ -6,32 +6,38 @@
 
 - projects:
   - title: Typescript
-    image: typescript.png
+    logo: typescript.png
+    externalLogo:
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
     url:
 
   - title: Visual Studio Code
-    image: vsc-icon.svg
+    logo: vsc-icon.svg
+    externalLogo:
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
     url:
 
   - title: .NET Foundation
-    image: dotnet.png
+    logo: dotnet.png
+    externalLogo:
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
     url:
 
   - title: Typescript
-    image: typescript.png
+    logo: typescript.png
+    externalLogo:
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
     url:
 
   - title: Visual Studio Code
-    image: vsc-icon.svg
+    logo: vsc-icon.svg
+    externalLogo:
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
     url:
 
   - title: .NET Foundation
-    image: dotnet.png
+    logo: dotnet.png
+    externalLogo:
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
     url:
 

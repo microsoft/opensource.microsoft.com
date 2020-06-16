@@ -12935,6 +12935,7 @@ body.menu-is-open {
   .tile > * {
     max-width: 400px; }
   .tile img {
+    max-height: 90px;
     margin: 0 auto; }
   @media (min-width: 544px) {
     .tile {

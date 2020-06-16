@@ -43,9 +43,15 @@ permalink: /community/
 
             {% for projects in site.data.community %}
             {% for project in projects.projects %}
-            {% capture icon %}/assets/images/projects/{{ project.image }}{%  endcapture %}
+
+            {% if project.externalLogo %}
+            {% assign img = project.externalLogo %}
+            {% else %}
+            {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
+            {% endif %}
+
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade" data-animate-in-delay="200">
-                <img class="mb-4 icon" src="{{ icon | relative_url }}" alt="{{ project.title }} logo" />
+                <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ project.title }} logo" />
                 <h3 class="h6 text-brand">{{ project.title }}</h3>
                 <p>{{ project.description }}</p>
             </div>

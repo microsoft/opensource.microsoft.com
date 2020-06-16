@@ -21,6 +21,10 @@ plugins:
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 
+collections:
+  projects:
+    output: true
+
 exclude:
   - README.md
   - Gemfile

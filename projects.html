@@ -30,14 +30,19 @@ permalink: /projects/
     <div class="wrapper d-lg-flex flex-justify-between my-6 py-lg-4">
         <div class="col-12 col-lg-7 pr-lg-6 mb-4 mb-md-0">
 
-            {% for project in site.data.projects %}
+            {% for project in site.projects %}
             <div class="mb-6 pb-lg-4" data-animate-in="up">
                 <div class="d-flex mb-3">
-                    {% capture icon %}/assets/images/projects/{{ project.logo }}{%  endcapture %}
-                    <img class="mr-3 icon" src="{{ icon | relative_url }}" alt="{{ project.title }} logo" />
+                    {% if project.externalLogo %}
+                    {% assign img = project.externalLogo %}
+                    {% else %}
+                    {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
+                    {% endif %}
+                    <img class="mr-3 icon" src="{{ img | relative_url }}" alt="{{ project.title }} logo" />
                     <h2>{{ project.title }}</h2>
                 </div>
                 <p>{{ project.description }}</p>
+
                 <a class="link-arrow-external mt-3" href="{{ '/explore/' | relative_url }}">{{ project.linkText }}</a>
             </div>
             {% endfor %}
