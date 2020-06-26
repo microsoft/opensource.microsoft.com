@@ -92,8 +92,7 @@ permalink: /community/
 
         <div class="d-sm-flex flex-wrap">
 
-            {% for conferences in site.data.community %}
-            {% for conference in conferences.conferences %}
+            {% for conference in site.data.community %}
 
             {% if project.externalLogo %}
             {% assign img = project.externalLogo %}
@@ -109,7 +108,7 @@ permalink: /community/
             {% if project.url %}
             <a class="link-arrow-external mt-3" href="{{ project.url }}">Learn more</a>
             {% endif %}
-            {% endfor %}
+
             {% endfor %}
 
         </div>
