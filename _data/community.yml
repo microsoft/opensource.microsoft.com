@@ -35,6 +35,15 @@
     description: TBD
     url:
 
+
+- conferences:
+
+  - title: Open Source Summit North America
+    logo: dotnet.png
+    externalLogo:
+    description: TBD
+    url:
+
 - resources:
   - title: Microsoft's Open Source Code of Conduct
     url: https://opensource.microsoft.com/codeofconduct
