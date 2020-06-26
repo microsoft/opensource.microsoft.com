@@ -12,7 +12,7 @@ permalink: /community/
                 <h1 class="h2">Community</h1>
             </div>
             <div class="col-md-6 pl-md-4 col-lg-4">
-                <p>Blah blah blah</p>
+                <p>We are proud to support amazing projects, from the largest open source foundations, to sponsoring individual projects that help bring value to the open source ecosystem, to Microsoft and our customers, and to you.</p>
 
                 <!--
                 <div data-animate-in="fade" data-animate-in-delay="240">
@@ -96,19 +96,19 @@ permalink: /community/
 
             {% for conference in site.data.community %}
 
-            {% if project.externalLogo %}
-            {% assign img = project.externalLogo %}
+            {% if conference.externalLogo %}
+            {% assign img = conference.externalLogo %}
             {% else %}
-            {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
+            {% capture img %}/assets/images/projects/{{ conference.logo }}{% endcapture %}
             {% endif %}
 
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade" data-animate-in-delay="200">
-                <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ project.title }} logo" />
-                <h3 class="h6 text-brand">{{ project.title }}</h3>
-                <p>{{ project.description }}</p>
+                <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ conference.title }} logo" />
+                <h3 class="h6 text-brand">{{ conference.title }}</h3>
+                <p>{{ conference.description }}</p>
             </div>
-            {% if project.url %}
-            <a class="link-arrow-external mt-3" href="{{ project.url }}">Learn more</a>
+            {% if conference.url %}
+            <a class="link-arrow-external mt-3" href="{{ conference.url }}">Learn more</a>
             {% endif %}
 
             {% endfor %}
