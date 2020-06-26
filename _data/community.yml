@@ -5,50 +5,40 @@
 ##
 
 - projects:
-  - title: Typescript
+  - title: Linux Foundation
     logo: typescript.png
     externalLogo:
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
+    description: TBD
     url:
 
-  - title: Visual Studio Code
+  - title: Open Source Initiative (OSI)
     logo: vsc-icon.svg
     externalLogo:
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+    description: TBD
+    url:
+
+  - title: Outreachy
+    logo: dotnet.png
+    externalLogo:
+    description: TBD
+    url:
+
+  - title: Eclipse Foundation
+    logo: typescript.png
+    externalLogo:
+    description: TBD
     url:
 
   - title: .NET Foundation
     logo: dotnet.png
     externalLogo:
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
+    description: TBD
     url:
-
-  - title: Typescript
-    logo: typescript.png
-    externalLogo:
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
-    url:
-
-  - title: Visual Studio Code
-    logo: vsc-icon.svg
-    externalLogo:
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-    url:
-
-  - title: .NET Foundation
-    logo: dotnet.png
-    externalLogo:
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremag.
-    url:
-
-
 
 - resources:
-  - title: Resource Name
-    url: /
-  - title: Resource Name
-    url: /
-  - title: Resource Name
-    url: /
-  - title: Resource Name
-    url: /
+  - title: Microsoft's Open Source Code of Conduct
+    url: https://opensource.microsoft.com/codeofconduct
+  - title: Microsoft Contributor License Agreement
+    url: https://cla.opensource.microsoft.com
+  - title: .NET Foundation
+    url: https://dotnetfoundation.org/
