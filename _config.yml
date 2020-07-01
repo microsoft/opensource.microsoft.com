@@ -23,7 +23,11 @@ plugins:
 
 collections:
   projects:
-    output: true
+    output: false
+  posts:
+    output: false
+  community:
+    output: false
 
 exclude:
   - README.md

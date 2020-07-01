@@ -44,7 +44,7 @@ title: Featured Projects - Microsoft Open Source
                 </div>
                 <p>{{ project.description }}</p>
 
-                <a class="link-arrow-external mt-3" href="{{ '/explore/' | relative_url }}">{{ project.linkText }}</a>
+                <a class="link-arrow-external mt-3" href="{{ project.projectUrl }}" target="_blank">{{ project.linkText }}</a>
             </div>
             {% endfor %}
 

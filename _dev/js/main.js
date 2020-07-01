@@ -327,7 +327,7 @@ APP.Draw = {
             rotate = $('.rotate'),
             square = $('.sqaure rect');
 
-        console.log(path.length);
+        //console.log(path.length);
 		gsap.fromTo(circle, 0, {drawSVG:0}, {duration: 0, drawSVG:false});
 
         gsap.fromTo(rect, 0, {drawSVG:0}, {duration: 0, drawSVG:false});

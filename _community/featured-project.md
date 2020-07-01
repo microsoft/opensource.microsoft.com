@@ -1,6 +1,5 @@
 ---
 title: Windows Terminal
-featured: true
 developer:
 logo: octocat.svg
 externalLogo: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png

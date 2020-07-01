@@ -30,7 +30,6 @@ permalink: /community/
                 <p>Microsoft is proud to sponsor these amazing open source foundations.</p>
             </div>
             <div class="col-md-6 pl-md-4 col-lg-4">
-
                 <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
             </div>
         </div>
@@ -42,49 +41,34 @@ permalink: /community/
     <div class="wrapper py-6 my-6">
 
         <div class="d-sm-flex flex-wrap">
-
-            {% for projects in site.data.community %}
-            {% for project in projects.projects %}
-
-            {% if project.externalLogo %}
-            {% assign img = project.externalLogo %}
-            {% else %}
-            {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
-            {% endif %}
-
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade" data-animate-in-delay="200">
-                <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ project.title }} logo" />
-                <h3 class="h6 text-brand">{{ project.title }}</h3>
-                <p>{{ project.description }}</p>
-            </div>
-            {% if project.url %}
-            <a class="link-arrow-external mt-3" href="{{ project.url }}">Learn more</a>
-            {% endif %}
+            {% for post in site.community %}
+                {% if post.externalLogo %}
+                {% assign img = post.externalLogo %}
+                {% else %}
+                {% capture img %}/assets/images/projects/{{ post.logo }}{% endcapture %}
+                {% endif %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade" data-animate-in-delay="200">
+                    <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
+                    <h3 class="h6 text-brand">{{ post.title }}</h3>
+                    <p>{{ post.description }}</p>
+                    {% if post.projectUrl %}
+                    <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">Learn more</a>
+                    {% endif %}
+                </div>
             {% endfor %}
-            {% endfor %}
-
         </div>
-
     </div>
 
 
-    
-    
-    
-    
-    
-    
+
+
+
     <div class="wrapper my-6 py-6">
         <div class="d-md-flex flex-items-center">
             <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
                 <h2 class="h2">Conferences</h2>
                 <!-- <p>Microsoft is proud to sponsor open source projects, foundations, and more.</p> -->
             </div>
-            <!--
-            <div class="col-md-6 pl-md-4 col-lg-4">
-                <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
-            </div>
-            -->
         </div>
     </div>
 
@@ -94,7 +78,8 @@ permalink: /community/
 
         <div class="d-sm-flex flex-wrap">
 
-            {% for conference in site.data.community %}
+            {% for conferences in site.data.community %}
+            {% for conference in conferences.conferences %}
 
             {% if conference.externalLogo %}
             {% assign img = conference.externalLogo %}
@@ -104,28 +89,36 @@ permalink: /community/
 
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade" data-animate-in-delay="200">
                 <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ conference.title }} logo" />
+                {% if conference.url %}
+                <a href="{{ conference.url }}">
+                {% endif %}
                 <h3 class="h6 text-brand">{{ conference.title }}</h3>
-                <p>{{ conference.description }}</p>
-            </div>
-            {% if conference.url %}
-            <a class="link-arrow-external mt-3" href="{{ conference.url }}">Learn more</a>
-            {% endif %}
+                {% if conference.url %}
+                </a>
+                {% endif %}
+                <p class="p-sm my-2 text-light">{{ conference.date }}</p>
+                <p class="mt-0">{{ conference.description }}</p>
 
+                {% if conference.url %}
+                <a class="link-arrow-external mt-3" href="{{ conference.url }}">Learn more</a>
+                {% endif %}
+            </div>
+            {% endfor %}
             {% endfor %}
 
         </div>
 
     </div>
 
-    
-    
-    
+
+
+
     <div class="wrapper-full bg-brand text-white">
         <div class="wrapper py-6 my-6">
             <h3 class="h3">Community Resources</h3>
             <div class="d-md-flex">
                 <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
-                    <p>Microsoft open source projects adopt a consistent community Code of Conduct. All 
+                    <p>Microsoft open source projects adopt a consistent community Code of Conduct. All
                     Microsoft projects require contributors to sign the individual Contributor License Agreement (CLA)
                     one time.</p>
                 </div>

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Visual Studio Code
-featured: true
 developer: Microsoft
 logo: vsc-icon.svg
 externalLogo:

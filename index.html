@@ -135,55 +135,36 @@ id: home
     <div class="wrapper pt-6 pb-6 mt-6 mb-6">
         <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="400">
             <h2 class="h3">Open Source Updates</h2>
-            <!-- TODO: need blog content instead 
-            <p>Here are some of the many projects available for contribution with Microsoft Open Source.</p>
-            -->
         </div>
 
         <div class="blog-list">
-            <a class="blog-preview" href="https://cloudblogs.microsoft.com/opensource/2020/05/01/helm-package-manager-kubernetes-now-cncf-graduated-project/" target="_blank" data-animate-in="up" data-animate-in-delay="200">
-                <!-- <figure class="blog-preview__img">
-                    <img data-animate-in="fade" data-animate-in-delay="500" class="mb-4" src="{{ '/assets/images/direction/blog.jpg' | relative_url }}" alt="" />
-                </figure> -->
-                <h3 class="h5 text-brand font-weight-600 mb-2">Helm, the package manager for Kubernetes, now a CNCF graduated project</h3>
-                <p class="blog-preview__meta mb-2">May 1, 2020</p>
-                <p>Yesterday, Helm became a graduated project in the Cloud Native Computing Foundation (CNCF), joining a select group of projects that the CNCF recognizes for achieving majority adoption by the cloud-native community.</p>
-                <p>I want to extend congratulations and thanks both to the creators of Helm, as well as to the broader Helm community that has supported, extended, and enabled Helm to reach this significant milestone. The wider Kubernetes community is better for the foresight of Helm’s creators and the persistence of the community. Thank you!</p>
-            </a>
+            {% for post in site.posts %}
+                <a class="blog-preview" href="{{ post.articleUrl }}" target="_blank" data-animate-in="up" data-animate-in-delay="200">
+                    <div>
+                        <h3 class="h5 text-brand font-weight-600 mb-2">{{ post.title }}</h3>
+                        <p class="blog-preview__meta mb-2">{{ post.publishDate }}</p>
+                        {{ post.content }}
+                    </div>
 
-            <a class="blog-preview" href="https://cloudblogs.microsoft.com/opensource/2019/12/12/announcing-microsoft-openchain-conformance/" target="_blank" data-animate-in="up" data-animate-in-delay="200">
-                <!-- <figure class="blog-preview__img">
-                    <img data-animate-in="fade" data-animate-in-delay="500" class="mb-4" src="{{ '/assets/images/direction/blog.jpg' | relative_url }}" alt="" />
-                </figure> -->
-                <h3 class="h5 text-brand font-weight-600 mb-2">Microsoft announces OpenChain 2.0 conformance for open source</h3>
-                <p class="blog-preview__meta mb-2">December 12, 2019</p>
-                <p>Trust is key to open source. Developers should be able to trust users to respect their licensing choices. And when you receive software, you should be able to trust that the open source licenses were followed. The OpenChain Project plays an important role in building trust by setting standards that define how to operate a high-quality open source compliance program. It means that when you receive open source from a company that follows the OpenChain standard, you can be assured that the code went through a rigorous license compliance process. You can trust it.</p>
-            </a>
-
-            <a class="blog-preview" href="https://cloudblogs.microsoft.com/opensource/2019/11/14/onnx-joins-linux-foundation/" target="_blank" data-animate-in="up" data-animate-in-delay="200">
-                <!-- <figure class="blog-preview__img">
-                    <img data-animate-in="fade" data-animate-in-delay="500" class="mb-4" src="{{ '/assets/images/direction/blog.jpg' | relative_url }}" alt="" />
-                </figure> -->
-                <h3 class="h5 text-brand font-weight-600 mb-2">ONNX joins Linux Foundation</h3>
-                <p class="blog-preview__meta mb-2">November 14, 2019</p>
-                <p>Today the Open Neural Network eXchange (ONNX) is joining the LF AI Foundation, an umbrella foundation of the Linux Foundation supporting open source innovation in artificial intelligence, machine learning, and deep learning.</p>
-                <p>ONNX was co-founded by Microsoft in 2017 to make it easier to create and deploy machine learning applications. In the past few years, the machine learning landscape has evolved at a rapid pace, resulting in increased fragmentation across frameworks, tools, and hardware. ONNX accelerates machine learning innovation by reducing the friction caused by this fragmentation, thus speeding up the process of taking models from research to production.</p>
-            </a>
-
-            <a class="blog-preview" href="https://cloudblogs.microsoft.com/opensource/2019/08/28/exfat-linux-kernel/" target="_blank" data-animate-in="up" data-animate-in-delay="200">
-                <!-- <figure class="blog-preview__img">
-                    <img data-animate-in="fade" data-animate-in-delay="500" class="mb-4" src="{{ '/assets/images/direction/blog.jpg' | relative_url }}" alt="" />
-                </figure> -->
-                <h3 class="h5 text-brand font-weight-600 mb-2">exFAT in the Linux kernel? Yes!</h3>
-                <p class="blog-preview__meta mb-2">August 28, 2019</p>
-                <p>Today we’re pleased to announce that Microsoft is supporting the addition of Microsoft’s exFAT technology to the Linux kernel.</p>
-                <p>exFAT is the Microsoft-developed file system that’s used in Windows and in many types of storage devices like SD Cards and USB flash drives. It’s why hundreds of millions of storage devices that are formatted using exFAT “just work” when you plug them into your laptop, camera, and car.</p>
-            </a>
-
+                    <div class="link-arrow-external mt-4">Read more</div>
+                </a>
+            {% endfor %}
         </div>
+        {% assign postCount = site.posts|size %}
+        {% if postCount > 4 %}
+            <script>
+                var $ = jQuery,
+                    post = $('.blog-preview');
+                post.hide();
+                randomElements = post.get().sort(function(){
+                    return Math.round(Math.random())-0.5
+                }).slice(0,4);
+                $(randomElements).show();
+            </script>
+        {% endif %}
 
         <div class="text-center mt-6 pb-6">
-            <a class="link-arrow-external" href="">View All Posts</a>
+            <a class="link-arrow-external" href="https://cloudblogs.microsoft.com/opensource/">View All Posts</a>
         </div>
     </div>
 
