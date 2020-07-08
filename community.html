@@ -43,22 +43,31 @@ permalink: /community/
         <div class="d-sm-flex flex-wrap">
             {% for post in site.community %}
                 {% if post.externalLogo %}
-                {% assign img = post.externalLogo %}
+                    {% assign img = post.externalLogo %}
                 {% else %}
-                {% capture img %}/assets/images/projects/{{ post.logo }}{% endcapture %}
+                    {% capture img %}/assets/images/projects/{{ post.logo }}{% endcapture %}
                 {% endif %}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade" data-animate-in-delay="200">
-                    <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
-                    <h3 class="h6 text-brand">{{ post.title }}</h3>
+                    {% if post.projectUrl %}
+                        {% if img | relative_url %}
+                        <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
+                        {% endif %}
+                        <h3 class="h6 text-brand">{{ post.title }}</h3>
+                    {% else %}
+                        {% if img | relative_url %}
+                        <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
+                        {% endif %}
+                        <h3 class="h6 text-brand">{{ post.title }}</h3>
+                    {% endif %}
                     <p>{{ post.description }}</p>
                     {% if post.projectUrl %}
-                    <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">
-                        {% if post.linkText %}
-                            {{ post.linkText }}
-                        {% else %}
-                            Learn more
-                        {% endif %}
-                    </a>
+                        <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">
+                            {% if post.linkText %}
+                                {{ post.linkText }}
+                            {% else %}
+                                Learn more
+                            {% endif %}
+                        </a>
                     {% endif %}
                 </div>
             {% endfor %}
