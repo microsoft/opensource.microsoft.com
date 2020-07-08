@@ -52,7 +52,13 @@ permalink: /community/
                     <h3 class="h6 text-brand">{{ post.title }}</h3>
                     <p>{{ post.description }}</p>
                     {% if post.projectUrl %}
-                    <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">Learn more</a>
+                    <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">
+                        {% if post.linkText %}
+                            {{ post.linkText }}
+                        {% else %}
+                            Learn more
+                        {% endif %}
+                    </a>
                     {% endif %}
                 </div>
             {% endfor %}
