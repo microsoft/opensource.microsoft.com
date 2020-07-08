@@ -37,7 +37,6 @@ permalink: /community/
 
     <hr class="wrapper" />
 
-
     <div class="wrapper py-6 my-6">
 
         <div class="d-sm-flex flex-wrap">
@@ -49,12 +48,12 @@ permalink: /community/
                 {% endif %}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade" data-animate-in-delay="200">
                     {% if post.projectUrl %}
-                        {% if (img | relative_url) %}
+                        {% if img or relative_url %}
                         <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
                         {% endif %}
                         <h3 class="h6 text-brand">{{ post.title }}</h3>
                     {% else %}
-                        {% if (img | relative_url) %}
+                        {% if img or relative_url %}
                         <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
                         {% endif %}
                         <h3 class="h6 text-brand">{{ post.title }}</h3>
