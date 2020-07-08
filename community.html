@@ -51,14 +51,16 @@ permalink: /community/
                         <a href="{{ post.projectUrl }}" target="_new">
                             {% if img %}
                             <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
-                            {% endif %}
+                            {% else %}
                             <h3 class="h6 text-brand">{{ post.title }}</h3>
+                            {% endif %}
                         </a>
                     {% else %}
                         {% if img %}
                         <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
-                        {% endif %}
+                        {% else %}
                         <h3 class="h6 text-brand">{{ post.title }}</h3>
+                        {% endif %}
                     {% endif %}
                     <p>{{ post.description }}</p>
                     {% if post.projectUrl %}
