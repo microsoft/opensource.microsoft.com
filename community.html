@@ -41,6 +41,7 @@ permalink: /community/
 
         <div class="d-sm-flex flex-wrap">
             {% for post in site.community %}
+                {% assign img = nil %}
                 {% if post.externalLogo %}
                 {% assign img = post.externalLogo %}
                 {% elsif post.logo %}
