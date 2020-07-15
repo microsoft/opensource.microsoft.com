@@ -42,9 +42,11 @@ id: home
         </div>
 
         <div class="tile-list" data-animate-in="up" data-animate-in-delay="400">
+            {% assign featured_projects_count = 0 %}
             {% for project in site.projects %}
-                {% if project.featured %}
-                <a class="tile" href="{{ project.url }}" target="_blank">
+                {% if project.featured and featured_projects_count < 3 %}
+                    {% assign featured_projects_count = featured_projects_count | plus: 1 %}
+                    <a class="tile" href="{{ project.url }}" target="_blank">
                     <div>
                         {% if project.externalLogo %}
                         {% assign img = project.externalLogo %}
