@@ -12,7 +12,8 @@ id: home
                     <h1 class="h1-xl mb-6" data-animate-in="fade" data-animate-in-delay="100">
                         <!-- Microsoft<br />Open Source -->
                         Open.<br />
-                        Collaborative.
+                        Collaborative.<br />
+                        Saavy.
                     </h1>
                     <p class="p-lg text-white col-md-11 col-lg-9" data-animate-in="fade" data-animate-in-delay="220">
                         Microsoft products and services embrace open source to bring choice,
@@ -25,7 +26,8 @@ id: home
                         -->
                     </p>
                     <div data-animate-in="fade" data-animate-in-delay="240">
-                        <a class="link-arrow text-white mt-4" href="{{ '/projects' | relative_url }}">Start Exploring Projects</a>
+                        <a class="link-arrow text-white mt-4" href="{{ '/projects' | relative_url }}">Start Exploring
+                            Projects</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-5 col-lg-4 pl-md-4 pl-lg-2">
@@ -38,12 +40,12 @@ id: home
     </div>
 
 
-    
+
     <div class="wrapper pt-6 pb-4 mt-6 mb-4">
         <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="200">
-            <h2 class="h3">Open Source Projects and Products</h2>
+            <h2 class="h3">Projects</h2>
             <p>
-                Some of the most popular developer tools, frameworks and experiences in the world 
+                Some of the most popular developer tools, frameworks and experiences in the world
                 are built around open communities. Here are a few featured Microsoft projects of note.
             </p>
         </div>
@@ -51,32 +53,32 @@ id: home
         <div class="tile-list" data-animate-in="up" data-animate-in-delay="400">
             {% assign featured_projects_count = 0 %}
             {% for project in site.projects %}
-                {% if project.featured and featured_projects_count < 3 %}
-                    {% assign featured_projects_count = featured_projects_count | plus: 1 %}
-                    <a class="tile" href="{{ project.url }}" target="_blank">
-                    <div>
-                        {% if project.externalLogo %}
-                        {% assign img = project.externalLogo %}
-                        {% else %}
-                        {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
-                        {% endif %}
-                        <img class="mb-4" src="{{ img | relative_url }}" alt="" />
-                        <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
-                        <p>{{ project.description }}</p>
-                    </div>
-                </a>
-                {% endif %}
+            {% if project.featured and featured_projects_count < 3 %}
+            {% assign featured_projects_count = featured_projects_count | plus: 1 %}
+            <a class="tile" href="{{ project.url }}" target="_blank">
+                <div>
+                    {% if project.externalLogo %}
+                    {% assign img = project.externalLogo %}
+                    {% else %}
+                    {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
+                    {% endif %}
+                    <img class="mb-4" src="{{ img | relative_url }}" alt="" />
+                    <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                </div>
+            </a>
+            {% endif %}
             {% endfor %}
         </div>
 
         <div class="text-center mt-6 pb-6">
-            <a class="link-arrow text-brand" href="/projects">View more projects</a>
+            <a class="link-arrow text-brand" href="/projects">Discover and contribute to great projects</a>
         </div>
     </div>
 
     <hr />
 
-    
+
     <div class="wrapper py-6 my-6">
         <div class="py-6 my-6">
             <div class="d-md-flex text-center">
@@ -85,7 +87,8 @@ id: home
                     <img class="mb-4" src="{{ '/assets/images/svgs/collaborate.svg' | relative_url }}" alt="" />
                     <h3 class="h3">Collaborate</h3>
                     <p>
-                        Communities are the heart of open source. Microsoft works to help support a diversity of technologies and platforms,
+                        Communities are the heart of open source. Microsoft works to help support a diversity of
+                        technologies and platforms,
                         contributing upstream as often as possible.
                     </p>
                 </div>
@@ -101,18 +104,20 @@ id: home
                 <div class="col-12 col-md-4 px-md-2 mb-6 mb-md-0" data-animate-in="fade" data-animate-in-delay="200">
                     <img class="mb-4" src="{{ '/assets/images/svgs/build.svg' | relative_url }}" alt="" />
                     <h3 class="h3">Together</h3>
-                    <p>We can all build the world's best software in the open: shared infrastructure, libraries, environments, and more bring value to all of us.</p>
+                    <p>We can all build the world's best software in the open: shared infrastructure, libraries,
+                        environments, and more bring value to all of us.</p>
                 </div>
 
             </div>
 
             <div class="text-center mt-6" data-animate-in="up" data-animate-in-delay="200">
-                <a class="link-arrow-external" href="{{ '/community' | relative_url }}">Communities Microsoft sponsors</a>
+                <a class="link-arrow-external" href="{{ '/ecosystem' | relative_url }}">Communities Microsoft
+                    sponsors</a>
             </div>
         </div>
     </div>
 
-<!-- hiding this section for now
+    <!-- hiding this section for now
     <div class="split-content text-white">
         <div class="split-content__content split-content__content--left">
             <div data-animate-in="fade" data-animate-in-delay="200">
@@ -155,32 +160,34 @@ id: home
 
         <div class="blog-list">
             {% for post in site.posts %}
-                <a class="blog-preview" href="{{ post.articleUrl }}" target="_blank" data-animate-in="up" data-animate-in-delay="200">
-                    <div>
-                        <h3 class="h5 text-brand font-weight-600 mb-2">{{ post.title }}</h3>
-                        <p class="blog-preview__meta mb-2">{{ post.publishDate }}</p>
-                        {{ post.content }}
-                    </div>
+            <a class="blog-preview" href="{{ post.articleUrl }}" target="_blank" data-animate-in="up"
+                data-animate-in-delay="200">
+                <div>
+                    <h3 class="h5 text-brand font-weight-600 mb-2">{{ post.title }}</h3>
+                    <p class="blog-preview__meta mb-2">{{ post.publishDate }}</p>
+                    {{ post.content }}
+                </div>
 
-                    <div class="link-arrow-external mt-4">Read more</div>
-                </a>
+                <div class="link-arrow-external mt-4">Read more</div>
+            </a>
             {% endfor %}
         </div>
         {% assign postCount = site.posts|size %}
         {% if postCount > 4 %}
-            <script>
-                var $ = jQuery,
-                    post = $('.blog-preview');
-                post.hide();
-                randomElements = post.get().sort(function(){
-                    return Math.round(Math.random())-0.5
-                }).slice(0,4);
-                $(randomElements).show();
-            </script>
+        <script>
+            var $ = jQuery,
+                post = $('.blog-preview');
+            post.hide();
+            randomElements = post.get().sort(function () {
+                return Math.round(Math.random()) - 0.5
+            }).slice(0, 4);
+            $(randomElements).show();
+        </script>
         {% endif %}
 
         <div class="text-center mt-6 pb-6">
-            <a class="link-arrow-external" href="https://cloudblogs.microsoft.com/opensource/">Microsoft's Open Source Blog</a>
+            <a class="link-arrow-external" href="https://cloudblogs.microsoft.com/opensource/">Microsoft's Open Source
+                Blog</a>
         </div>
     </div>
 
