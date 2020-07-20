@@ -14,3 +14,10 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## Jekyll site install
+
+Ensure you have a working copy of Ruby.
+
+```sh
+bundle
+bundle exec jekyll serve
+```
