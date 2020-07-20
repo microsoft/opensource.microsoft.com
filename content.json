@@ -1,0 +1,11 @@
+{
+  "build": "__Build_BuildNumber__",
+  "commitId": "__Build_SourceVersion__",
+  "queuedBy": "__Build_QueuedBy__",
+  "queuedById": "__Build_QueuedById__",
+  "reason": "__Build_Reason__",
+  "requestedFor": "__Build_RequestedFor__",
+  "requestedForEmail": "__Build_RequestedForEmail__",
+  "sourceBranch": "__Build_SourceBranch__",
+  "sourceBranchName": "__Build_SourceBranchName__"
+}
