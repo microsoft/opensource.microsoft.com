@@ -28,8 +28,5 @@ This project may contain trademarks or logos for projects, products, or services
 trademarks or logos is subject to and must follow 
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 
-Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents,
-or trademarks, whether by implication, estoppel or otherwise. Any use of third-party trademarks or logos are subject 
-to those third-party's policies.
+Any use of third-party trademarks or logos are subject to those third-party's policies.
 
-Privacy information can be found at https://privacy.microsoft.com/en-us/
