@@ -1,4 +1,7 @@
 FROM jekyll/builder as build
+
+RUN apk update && apk add --no-cache zip
+
 WORKDIR /tmp
 COPY Gemfile /tmp
 COPY Gemfile.lock /tmp
