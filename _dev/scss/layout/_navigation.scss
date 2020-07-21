@@ -10,7 +10,6 @@
 
 .site-navigation {
     width: 100%;
-
     position: fixed;
     height: 100%;
     top: $header-height-sm;
@@ -21,6 +20,18 @@
     transform: translate3d(100%,0,0);
     overflow-y: auto;
     display: none;
+
+    @include start-at($header-breakpoint) {
+        display: none !important;
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
 
     @include start-at($medium) {
         max-width: 480px;
@@ -64,9 +75,10 @@
 }
 
 body.page-ready {
-
-    .site-navigation {
-        display: block;
+    @include stop-at($header-breakpoint) {
+        .site-navigation {
+            display: block;
+        }
     }
 }
 

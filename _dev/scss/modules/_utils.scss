@@ -51,6 +51,10 @@
 
 .text-brand {
    color: $blue-400;
+
+   &.h6 {
+       color: $blue-500;
+    }
 }
 
 .text-white {
@@ -84,6 +88,14 @@
 
 .bg-brand {
     background: $blue-400;
+
+    .link-arrow-external {
+        font-weight: 500;
+    }
+}
+
+.bg-brand-dark {
+    background: darken($blue-400, 9%);
 }
 
 .bg-dark {

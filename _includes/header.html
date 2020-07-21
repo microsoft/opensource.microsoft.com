@@ -11,31 +11,31 @@
         <ul class="site-header__nav">
             <li{% if page.id == 'projects' %} class="is-active" {% endif %}>
                 <a href="{{ "/projects/" | relative_url }}">Projects</a>
+            </li>
+            <li{% if page.id == 'ecosystem' %} class="is-active" {% endif %}>
+                <a href="{{ "/ecosystem/" | relative_url }}">Ecosystem</a>
                 </li>
-                <li{% if page.id == 'ecosystem' %} class="is-active" {% endif %}>
-                    <a href="{{ "/ecosystem/" | relative_url }}">Ecosystem</a>
-                    </li>
-                    <li{% if page.id == 'learn' or page.id == 'governance' or page.id == 'best-practices' %}
-                        class="is-active" {% endif %}>
-                        <a href="{{ "/learn/" | relative_url }}">Microsoft's Open Source Program</a>
-                        </li>
-                        <li{% if page.id == 'resources' %} class="is-active" {% endif %}>
-                            <a class="external"
-                                href="{{ "https://cloudblogs.microsoft.com/opensource/" | relative_url }}">
-                                <span>Blog</span>
-                            </a>
-                            </li>
+            <li{% if page.id == 'learn' or page.id == 'governance' or page.id == 'best-practices' %}
+                class="is-active" {% endif %}>
+                <a href="{{ "/learn/" | relative_url }}">Microsoft's Open Source Program</a>
+            </li>
+            <li{% if page.id == 'resources' %} class="is-active" {% endif %}>
+                <a class="external"
+                    href="{{ "https://cloudblogs.microsoft.com/opensource/" | relative_url }}">
+                    <span>Blog</span>
+                </a>
+            </li>
         </ul>
 
         <div class="site-header__utilities">
 
             <div class="site-header__search">
                 <form class="search-form" role="search" action="https://www.microsoft.com/en-us/search" method="GET">
-                    <label>
+                    <label for="header-search">
                         <span class="sr-only">Search on Microsoft.com</span>
                         {% octicon search %}
                     </label>
-                    <input type="text" placeholder="Search" />
+                    <input type="text" id="header-search" placeholder="Search" />
                 </form>
 
                 <div class="search-trigger">

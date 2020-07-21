@@ -129,7 +129,7 @@
     }
 
     @include start-at($medium) {
-        font-size: 20px !important;;
+        font-size: 24px !important;;
     }
 }
 
@@ -178,7 +178,7 @@ p {
     }
 
     a {
-        color: $blue-400;
+        color: $blue-500;
     }
 
     .text-white & {
@@ -282,6 +282,10 @@ small {
     color: white;
     padding: 18px 16px;
 
+    a {
+        color: $blue-300 !important;
+    }
+
     @include start-at($medium) {
         padding: 28px 32px;
     }
@@ -307,13 +311,13 @@ small {
 
 
     .org {
-        color: #4F6BED;
+        color: lighten(#4F6BED, 10%);
     }
     .co {
         color: #50E6FF;
     }
     .rt {
-        color: #8764B8;
+        color: lighten(#8764B8, 8%);
     }
 
 }

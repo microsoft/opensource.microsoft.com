@@ -135,6 +135,10 @@
     margin-right: 24px;
     font-size: 16px;
 
+    &.text-brand {
+        color: $brand-dark !important;
+    }
+
     &:before {
         font-family: $icons;
         content: '\E72A';
@@ -156,7 +160,7 @@
     justify-content: flex-start;
     font-weight: 400;
     font-family: $mono;
-    color: $brand;
+    color: $brand-dark;
     position: relative;
     padding-right: 18px;
     margin-right: 24px;
