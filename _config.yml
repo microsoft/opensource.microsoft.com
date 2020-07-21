@@ -9,6 +9,8 @@ description: |
 twitter_username: openatmicrosoft
 github_username: microsoft
 
+cdn: https://opensource.azureedge.net
+
 # Build settings
 markdown: kramdown
 theme: minima
