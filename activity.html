@@ -1,0 +1,78 @@
+---
+layout: default
+id: activity
+permalink: /activity/
+title: Activity
+---
+
+
+<article>
+    <div class="page-header">
+        <div class="wrapper d-md-flex">
+            <div class="col-md-6 col-lg-6 mb-4 mb-md-0">
+                <h1 class="h2">Activity</h1>
+            </div>
+            <div class="col-md-6 pl-md-4 col-lg-4">
+                <!--
+                <p>We are proud to support amazing projects, from the largest open source foundations, to sponsoring
+                    individual projects that help bring value to the open source ecosystem, to Microsoft and our
+                    customers, and to you.</p>
+                -->
+
+                <!--
+                <div data-animate-in="fade" data-animate-in-delay="240">
+                    <a class="link-arrow text-white mt-4" href="{{ '/' | relative_url }}">Join the community</a>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper my-6 py-6">
+        <div class="d-md-flex flex-items-center">
+            <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
+                <h2 class="h2">// Under construction</h2>
+                <p>This page is under development... stand by.</p>
+            </div>
+            <div class="col-md-6 pl-md-4 col-lg-4">
+                <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <hr class="wrapper" />
+
+    <div class="wrapper py-6 my-6">
+
+        <div class="d-sm-flex flex-wrap">
+
+        </div>
+    </div>
+
+
+
+
+    <div class="wrapper-full bg-brand-dark text-white">
+        <div class="wrapper py-6 my-6">
+            <h3 class="h3">Community Resources</h3>
+            <div class="d-md-flex">
+                <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
+                    <p>Microsoft open source projects adopt a consistent community Code of Conduct. All
+                        Microsoft projects require contributors to sign the individual Contributor License Agreement
+                        (CLA)
+                        one time.</p>
+                </div>
+                <div class="col-md-6 pl-md-4 pl-lg-6">
+                    {% for resources in site.data.community %}
+                    {% for resource in resources.resources %}
+                    <div>
+                        <a class="link-arrow-external mb-2" href="{{ resource.url }}">{{ resource.title }}</a>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
