@@ -12,9 +12,12 @@
             <li{% if page.id == 'projects' %} class="is-active" {% endif %}>
                 <a href="{{ "/projects/" | relative_url }}">Projects</a>
             </li>
+            <li{% if page.id == 'activity' %} class="is-active" {% endif %}>
+                <a href="{{ "/activity/" | relative_url }}">Activity</a>
+            </li>
             <li{% if page.id == 'ecosystem' %} class="is-active" {% endif %}>
                 <a href="{{ "/ecosystem/" | relative_url }}">Ecosystem</a>
-                </li>
+            </li>
             <li{% if page.id == 'ospo' or page.id == 'governance' or page.id == 'best-practices' %}
                 class="is-active" {% endif %}>
                 <a href="{{ "/ospo/" | relative_url }}">Microsoft's Open Source Program</a>
@@ -65,7 +68,7 @@
                     <a class="is-active" href="{{ "/" | relative_url }}">Home</a>
                 </li>
                 <li{% if page.id == 'activity' %} class="is-active" {% endif %}>
-                    <a href="{{ "/activity/" | relative_url }}">Collaborate</a>
+                    <a href="{{ "/activity/" | relative_url }}">Activity</a>
                 </li>
                 <li{% if page.id == 'ecosystem' %} class="is-active" {% endif %}>
                     <a href="{{ "/ecosystem/" | relative_url }}">Ecosystem</a>
@@ -82,6 +85,7 @@
                         <span>Blog</span>
                     </a>
                 </li>
+                <!--
                 <li>
                     <a class="sign-in"
                         href="https://www.microsoft.com/mscomhp/onerf/signin?EEL=True&pcexp=True&ru=https%3A%2F%2Fwww.microsoft.com%2Fen-us">
@@ -89,6 +93,7 @@
                         <span class="account-img"></span>
                     </a>
                 </li>
+                -->
             </ul>
         </div>
     </div>
