@@ -104,10 +104,10 @@ title: Collaborate
             url: '/api/stream' + qs,
             dataType: 'json',
             success: function(activity){
-                console.dir(activityFeed);
+                console.dir(activity);
 
-                if (activityFeed && activityFeed.future) {
-                    futureContinuation = activityFeed.future;
+                if (activity && activity.future) {
+                    futureContinuation = activity.future;
                     console.log('next continuation will be from: ' + futureContinuation);
                 }
 

@@ -5,7 +5,6 @@
   "queuedById": "__Build_QueuedById__",
   "reason": "__Build_Reason__",
   "requestedFor": "__Build_RequestedFor__",
-  "requestedForEmail": "__Build_RequestedForEmail__",
   "sourceBranch": "__Build_SourceBranch__",
   "sourceBranchName": "__Build_SourceBranchName__"
 }
