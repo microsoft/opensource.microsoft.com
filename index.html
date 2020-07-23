@@ -26,9 +26,9 @@ id: home
                         -->
                     </p>
                     <div data-animate-in="fade" data-animate-in-delay="240">
-                        <a class="link-arrow text-white mt-4" href="{{ '/projects' | relative_url }}">Explore projects</a>
-                        <br />
                         <a class="link-arrow text-white mt-4" href="{{ '/collaborate' | relative_url }}">Jump in</a>
+                        <br />
+                        <a class="link-arrow text-white mt-4" href="{{ '/projects' | relative_url }}">Explore projects</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-5 col-lg-4 pl-md-4 pl-lg-2">
@@ -192,5 +192,29 @@ id: home
         </div>
     </div>
 
+
+    <div class="wrapper-full bg-brand-dark text-white">
+        <div class="wrapper py-6 my-6">
+            <h3 class="h3">Community Resources</h3>
+            <div class="d-md-flex">
+                <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
+                    <p>Microsoft open source projects adopt a consistent community Code of Conduct. All
+                        Microsoft projects require contributors to sign the individual Contributor License Agreement
+                        (CLA)
+                        one time.</p>
+                </div>
+                <div class="col-md-6 pl-md-4 pl-lg-6">
+                    {% for resources in site.data.community %}
+                    {% for resource in resources.resources %}
+                    <div>
+                        <a class="link-arrow-external mb-2" href="{{ resource.url }}">{{ resource.title }}</a>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 </article>
