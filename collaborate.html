@@ -46,7 +46,16 @@ title: Collaborate
 
         <div class="d-sm-flex flex-wrap">
 
-            <div id="activityFeed"></div>
+            <div id="activityFeed">
+                <ul class="project-list" id="activityList">
+                    
+                </ul>
+            </div>
+            <script id="activity-template" type="text/x-handlebars-template">
+                <li>
+                    {% include activity.html %}
+                </li>
+            </script>
 
         </div>
     </div>
@@ -82,35 +91,59 @@ title: Collaborate
 
 <script>
     var $ = jQuery,
-        activityFeed = $('#activityFeed');
+        activityFeed = $('#activityFeed'),
+        activityList = $('#activityList'),
+        source = $("#activity-template").html(),
+        template = Handlebars.compile(source);
 
     var futureContinuation = null;
-    var alive = true;
+    var backwardContinuation = null;
 
-    var refreshInterval = 5000;
+    var alive = true;    
+    var queuedActivity = [];
+
+    var refreshInterval = 7500;
+    var displayInterval = 1500;
     
     function start() {
         alive = true;
-        return iteration();
+        return iteration() && pendingRender();
+    }
+
+    function pendingRender() {
+        if (!alive) return;
+        if (queuedActivity && queuedActivity.length) {
+            const first = queuedActivity.shift();
+            try {
+                console.dir(first);
+                var html = template({activity: first});
+                console.log(html);
+                activityList.append(html);
+            } catch (ignoredError) {
+                console.dir(ignoredError);
+            }
+            console.log(queuedActivity.length + ' remaining entries');
+        }
+        return setTimeout(displayInterval, pendingRender);
     }
 
     function iteration() {
         if (!alive) return;
-
         const qs = futureContinuation ? '?future=' + encodeURIComponent(futureContinuation) : '';
-
         $.ajax({
             type: 'GET',
             url: '/api/stream' + qs,
             dataType: 'json',
             success: function(activity){
-                console.dir(activity);
-
                 if (activity && activity.future) {
                     futureContinuation = activity.future;
-                    console.log('next continuation will be from: ' + futureContinuation);
                 }
-
+                if (activity && activity.past && !backwardContinuation) {
+                    backwardContinuation = activity.past;
+                }
+                if (activity && activity.activities) {
+                    activity.activities.forEach(activity => queuedActivity.push(activity));
+                }
                 setTimeout(iteration, refreshInterval);
             }
         });

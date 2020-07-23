@@ -102,7 +102,7 @@ title: Explore Projects
 
     $.ajax({
         type: 'GET',
-        url: 'https://opensource.microsoft.com/api/publicRepos',
+        url: '/api/repos',
         dataType: 'json',
         success: function(posts){
             //do something with posts.
@@ -121,7 +121,7 @@ title: Explore Projects
     searchForm.submit(function(e) {
         e.preventDefault();
         var searchString = $('#project-search-field').val();
-        var searchUrl = 'https://opensource.microsoft.com/api/publicRepos?q=' + searchString;
+        var searchUrl = '/api/repos?q=' + searchString;
         //console.log('searching');
         $.ajax({
             type: 'GET',
@@ -167,7 +167,7 @@ title: Explore Projects
         if (activeFilters.length != 0) {
             $.ajax({
                 type: 'GET',
-                url: 'https://opensource.microsoft.com/api/publicRepos',
+                url: '/api/repos',
                 dataType: 'json',
                 success: function(posts){
                     results.addClass('is-thinking');
