@@ -46,6 +46,8 @@ title: Collaborate
 
         <div class="d-sm-flex flex-wrap">
 
+            <div id="activityFeed"></div>
+
         </div>
     </div>
 
@@ -76,3 +78,44 @@ title: Collaborate
         </div>
     </div>
 </article>
+
+
+<script>
+    var $ = jQuery,
+        activityFeed = $('#activityFeed');
+
+    var futureContinuation = null;
+    var alive = true;
+
+    var refreshInterval = 5000;
+    
+    function start() {
+        alive = true;
+        return iteration();
+    }
+
+    function iteration() {
+        if (!alive) return;
+
+        const qs = futureContinuation ? '?future=' + encodeURIComponent(futureContinuation) : '';
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/stream' + qs,
+            dataType: 'json',
+            success: function(activity){
+                console.dir(activityFeed);
+
+                if (activityFeed && activityFeed.future) {
+                    futureContinuation = activityFeed.future;
+                    console.log('next continuation will be from: ' + futureContinuation);
+                }
+
+                setTimeout(iteration, refreshInterval);
+            }
+        });
+    }
+
+    start();
+
+</script>
