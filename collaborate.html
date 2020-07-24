@@ -102,10 +102,15 @@ title: Collaborate
     var rendering = null;
     var alive = true;
     var queuedActivity = [];
+    var visibleActivity = [];
+    var pinnedActivity = [];
 
     var refreshInterval = 7500;
     var displayInterval = 1500;
-    
+
+    var incrementalId = 0;
+    var maximumVisible = 20;
+
     function start() {
         alive = true;
         iteration();
@@ -114,20 +119,33 @@ title: Collaborate
     function renderNext() {
         console.log('*');
         if (!alive) return;
-        console.log(queuedActivity.length + ' remaining entries');
         if (queuedActivity && queuedActivity.length) {
             const first = queuedActivity.shift();
             try {
+                const id = ++incrementalId;
                 console.dir(first);
-                var html = template({activity: first});
-                console.log(html);
+                var html = template({activity: first, id: id});
                 activityList.append(html);
+                visibleActivity.push(id);
                 jQuery('time.timeago').timeago();
             } catch (ignoredError) {
                 console.dir(ignoredError);
             }
-            console.log(queuedActivity.length + ' remaining entries');
         }
+
+        if (visibleActivity.length > maximumVisible) {
+            cleanupDisplay();
+        }
+    }
+
+    function cleanupDisplay() {
+        var cleanupIds = [];
+        while (visibleActivity.length > maximumVisible) {
+            cleanupIds.push(visibleActivity.shift());
+        }
+        cleanupIds.forEach(id => {
+            $('#' + id).remove();
+        });
     }
 
     function iteration() {
