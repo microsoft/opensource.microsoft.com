@@ -99,7 +99,8 @@ title: Collaborate
     var futureContinuation = null;
     var backwardContinuation = null;
 
-    var alive = true;    
+    var rendering = null;
+    var alive = true;
     var queuedActivity = [];
 
     var refreshInterval = 7500;
@@ -107,11 +108,13 @@ title: Collaborate
     
     function start() {
         alive = true;
-        return iteration() && pendingRender();
+        iteration();
     }
 
-    function pendingRender() {
+    function renderNext() {
+        console.log('*');
         if (!alive) return;
+        console.log(queuedActivity.length + ' remaining entries');
         if (queuedActivity && queuedActivity.length) {
             const first = queuedActivity.shift();
             try {
@@ -124,7 +127,6 @@ title: Collaborate
             }
             console.log(queuedActivity.length + ' remaining entries');
         }
-        return setTimeout(displayInterval, pendingRender);
     }
 
     function iteration() {
@@ -143,12 +145,14 @@ title: Collaborate
                 }
                 if (activity && activity.activities) {
                     activity.activities.forEach(activity => queuedActivity.push(activity));
+                    if (activity.activities.length && !rendering) {
+                        renderNext();
+                        rendering = setInterval(renderNext, displayInterval);
+                    }
                 }
                 setTimeout(iteration, refreshInterval);
             }
         });
     }
-
     start();
-
 </script>

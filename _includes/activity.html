@@ -1,4 +1,7 @@
 
 <article class="activity">
-    <p>{% raw %}{{ type }}{% endraw %}</p>
+    <p><strong>{% raw %}{{ activity.type }}{% endraw %}</strong></p>
+    <p><time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">
+        {% raw %}{{ activity.created }}{% endraw %}
+    </time></p>
 </article>

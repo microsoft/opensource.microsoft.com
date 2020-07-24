@@ -26,6 +26,7 @@
             }
         </style>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="{{ '/assets/js/jquery.timeago.js' | relative_url }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     </head>
 
@@ -44,5 +45,6 @@
         <script src="{{ '/assets/js/gsap.min.js' | relative_url }}"></script>
         <script src="{{ '/assets/js/DrawSVGPlugin.min.js' | relative_url }}"></script>
         <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+        <script>jQuery('time.timeago').timeago();</script>
     </body>
 </html>
