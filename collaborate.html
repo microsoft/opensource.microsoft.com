@@ -111,6 +111,15 @@ title: Collaborate
 
 
 <script>
+    // TODO: pause button
+    // TODO: more button, which will pause
+    // TODO: extract octicon SVGs to place as icons
+    // TODO: detect context==='merged' for PRs uniquely
+    // TODO: implement "more" experience and separate API for that
+
+    // TODO: parallel experience, very slow poll - contributions
+    // TODO: parallel experience, very slow poll - good first issue
+
     var $ = jQuery,
         activityFeed = $('#activityFeed'),
         activityList = $('#activityList'),
@@ -125,11 +134,11 @@ title: Collaborate
     var queuedActivity = [];
     var visibleActivity = [];
     var pinnedActivity = [];
+    var visibleIds = {};
 
     var refreshInterval = 7500;
     var displayInterval = 1500;
 
-    var incrementalId = 0;
     var initialDisplay = 5;
     var maximumVisible = 8;
 
@@ -143,11 +152,14 @@ title: Collaborate
         if (queuedActivity && queuedActivity.length) {
             const oldest = queuedActivity.pop();
             try {
-                const id = ++incrementalId;
-                var html = template({activity: oldest, id: id});
-                activityList.prepend(html);
-                visibleActivity.push(id);
-                jQuery('time.timeago').timeago();
+                const id = oldest.id;
+                if (!visibleIds[id]) {
+                    var html = template({activity: oldest, id: id});
+                    activityList.prepend(html);
+                    visibleActivity.push(id);
+                    visibleIds[id] = true;
+                    jQuery('time.timeago').timeago();
+                }
             } catch (ignoredError) {
                 console.dir(ignoredError);
             }
@@ -167,6 +179,7 @@ title: Collaborate
         }
         console.log('Will remove: ' + cleanupIds.join(', '));
         cleanupIds.forEach(id => {
+            delete visibleIds[id];
             try {
                 $('#activity' + id).remove();
             } catch (error) {
