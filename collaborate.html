@@ -150,9 +150,9 @@ title: Collaborate
     function renderNext() {
         if (!alive) return;
         if (queuedActivity && queuedActivity.length) {
-            const oldest = queuedActivity.pop();
+            const activity = queuedActivity.pop();
             try {
-                const id = oldest.id;
+                const id = activity.id;
                 if (!visibleIds[id]) {
                     const octicon = '';
                     if (activity.context === 'merged') {
@@ -160,7 +160,7 @@ title: Collaborate
                     } else if (activity.type === 'issue_comment.create') {
                         octicon = $('svg.octicon-comment').last().html();
                     }
-                    var html = template({activity: oldest, id: id, octicon: octicon});
+                    var html = template({activity: activity, id: id, octicon: octicon});
                     activityList.prepend(html);
                     visibleActivity.push(id);
                     visibleIds[id] = true;
