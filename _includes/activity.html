@@ -3,4 +3,12 @@
                     <p>
                         <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
                     </p>
+                    <p>
+                        <a href="https://github.com/{% raw %}{{ activity.login }}{% endraw %}" target="_new">
+                            <img
+                                src="{% raw %}{{ activity.loginAvatar }}{% endraw %}"
+                                style="height:24px;width:24px" />
+                                {% raw %}{{ activity.login }}{% endraw %}
+                        </a>
+                    </p>
                 </article>
