@@ -150,11 +150,11 @@ title: Collaborate
     function renderNext() {
         if (!alive) return;
         if (queuedActivity && queuedActivity.length) {
-            const activity = queuedActivity.pop();
+            var activity = queuedActivity.pop();
             try {
-                const id = activity.id;
+                var id = activity.id;
                 if (!visibleIds[id]) {
-                    const octicon = '';
+                    var octicon = '';
                     if (activity.context === 'merged') {
                         octicon = $('svg.octicon-git-merge').last().html();
                     } else if (activity.type === 'issue_comment.create') {
@@ -195,7 +195,7 @@ title: Collaborate
     
     function iteration() {
         if (!alive) return;
-        const qs = futureContinuation ? '?future=' + encodeURIComponent(futureContinuation) : '';
+        var qs = futureContinuation ? '?future=' + encodeURIComponent(futureContinuation) : '';
         $.ajax({
             type: 'GET',
             url: '/api/stream' + qs,
