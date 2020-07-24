@@ -1,17 +1,17 @@
-                <article
+        <article
                     class="activity"
                     id="activity{% raw %}{{ id }}{% endraw %}">
                     <p>
                         <a href="https://github.com/{% raw %}{{ activity.actorLogin }}{% endraw %}" target="_new">
                             <img
                                 src="{% raw %}{{ activity.actorAvatar }}{% endraw %}"
-                                style="height:24px;width:24px" />
+                                style="height:24px;width:24px;display: inline-block; padding-right: 6px" />
                                 {% raw %}{{ activity.actorLogin }}{% endraw %}
                         </a>
                         &nbsp;
                         <strong>{% raw %}{{ activity.type }}{% endraw %}</strong>
                         &nbsp;
-                        {% raw %}{{ activity.title }}{% endraw %}
+                        {% raw %}{{ description }}{% endraw %}
                         &nbsp;
                         {% raw %}{{{ octicon }}}{% endraw %}
                         <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.repoName }}{% endraw %}</a>

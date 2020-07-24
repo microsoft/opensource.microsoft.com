@@ -45,6 +45,8 @@ title: Collaborate
 
     <div class="wrapper py-6 my-6">
 
+        <h3 class="h3">Happening now</h3>
+
         <div class="d-sm-flex flex-wrap">
 
             <div id="activityFeed">
@@ -61,28 +63,27 @@ title: Collaborate
         </div>
     </div>
 
-    <!-- TODO: hide, but verify we can still retrieve the SVG content at runtime with jQuery -->
-    <div id="octicons-temp">
-        {% octicon star %}
-        {% octicon repo-forked %}
-        {% octicon issue-opened %}
-        {% octicon pin %}
-        {% octicon plus %}
-        {% octicon pulse %}
-        {% octicon reply %}
-        {% octicon quote %}
-        {% octicon tag %}
-        {% octicon versions %}
-        {% octicon comment-discussion %}
-        {% octicon comment %}
-        {% octicon git-commit %}
-        {% octicon diff %}
-        {% octicon file-binary %}
-        {% octicon git-merge %}
-        {% octicon git-pull-request %}
-        {% octicon issue-reopened %}
-    </div>
 
+
+    <script id="octicon-star" type="text/x-octicon">{% octicon star %}</script>
+    <script id="octicon-repo-forked" type="text/x-octicon">{% octicon repo-forked %}</script>
+    <script id="octicon-issue-opened" type="text/x-octicon">{% octicon issue-opened %}</script>
+    <script id="octicon-pin" type="text/x-octicon">{% octicon pin %}</script>
+    <script id="octicon-plus" type="text/x-octicon">{% octicon plus %}</script>
+    <script id="octicon-pulse" type="text/x-octicon">{% octicon pulse %}</script>
+    <script id="octicon-reply" type="text/x-octicon">{% octicon reply %}</script>
+    <script id="octicon-quote" type="text/x-octicon">{% octicon quote %}</script>
+    <script id="octicon-tag" type="text/x-octicon">{% octicon tag %}</script>
+    <script id="octicon-versions" type="text/x-octicon">{% octicon versions %}</script>
+    <script id="octicon-comment-discussion" type="text/x-octicon">{% octicon comment-discussion %}</script>
+    <script id="octicon-comment" type="text/x-octicon">{% octicon comment %}</script>
+    <script id="octicon-git-commit" type="text/x-octicon">{% octicon git-commit %}</script>
+    <script id="octicon-diff" type="text/x-octicon">{% octicon diff %}</script>
+    <script id="octicon-file-binary" type="text/x-octicon">{% octicon file-binary %}</script>
+    <script id="octicon-git-merge" type="text/x-octicon">{% octicon git-merge %}</script>
+    <script id="octicon-git-pull-request" type="text/x-octicon">{% octicon git-pull-request %}</script>
+    <script id="octicon-issue-reopened" type="text/x-octicon">{% octicon issue-reopened %}</script>
+   
     <div class="wrapper-full bg-brand-dark text-white">
         <div class="wrapper py-6 my-6">
             <h3 class="h3">Community Resources</h3>
@@ -113,18 +114,18 @@ title: Collaborate
 <script>
     // TODO: pause button
     // TODO: more button, which will pause
-    // TODO: extract octicon SVGs to place as icons
-    // TODO: detect context==='merged' for PRs uniquely
     // TODO: implement "more" experience and separate API for that
 
-    // TODO: parallel experience, very slow poll - contributions
-    // TODO: parallel experience, very slow poll - good first issue
+    // TODO: parallel experience, slow poll - contributions
+    // TODO: parallel experience, slow poll - good first issue
 
     var $ = jQuery,
         activityFeed = $('#activityFeed'),
         activityList = $('#activityList'),
         source = $("#activity-template").html(),
         template = Handlebars.compile(source);
+    
+    var octicons = {};
 
     var futureContinuation = null;
     var backwardContinuation = null;
@@ -147,6 +148,52 @@ title: Collaborate
         iteration();
     }
 
+    function tryGetOcticon(name) {
+        if (octicons[name] !== undefined) {
+            return octicons[name];
+        }
+        var html = octicon = $('#octicon-' + name).html();
+        octicons[name] = html || '';
+        return html;
+    }
+
+    function octiconFromType(type, optionalContext) {
+        if (optionalContext === 'merged') {
+            return 'git-merge';
+        }
+        switch(type) {
+            case 'issue_comment.created':
+            case 'pull_request_review_comment.created':
+                return 'comment';
+            case 'issues.opened':
+                return 'issue-opened';
+            case 'issues.reopened':
+               return 'issue-reopened';
+            default:
+                return null;
+        }
+    }
+
+    function descriptionFromType(type, optionalContext) {
+        if (optionalContext === 'merged') {
+            return 'merged a pull request';
+        }
+        switch(type) {
+            case 'issue_comment.created':
+                return 'commented on an issue';
+            case 'pull_request_review_comment.created':
+                return 'commented on a pull request';
+            case 'issues.opened':
+                return 'opened an issue';
+            case 'issues.reopened':
+               return 're-opened an issue';
+            case 'pull_request_review.submitted':
+                return 'reviewed a pull request';
+            default:
+                return type;
+        }
+    }
+
     function renderNext() {
         if (!alive) return;
         if (queuedActivity && queuedActivity.length) {
@@ -154,16 +201,16 @@ title: Collaborate
             try {
                 var id = activity.id;
                 if (!visibleIds[id]) {
-                    var octicon = '';
-                    if (activity.context === 'merged') {
-                        octicon = $('svg.octicon-git-merge').last().html();
-                    } else if (activity.type === 'issue_comment.create') {
-                        octicon = $('svg.octicon-comment').last().html();
-                    }
-                    var html = template({activity: activity, id: id, octicon: octicon});
+                    var octicon = octiconFromType(activity.type, activity.context);
+                    var html = template({
+                        activity: activity, 
+                        id: id, 
+                        octicon: tryGetOcticon(octicon),
+                        description: descriptionFromType(activity.type, activity.context),
+                    });
                     activityList.prepend(html);
                     visibleActivity.push(id);
-                    visibleIds[id] = true;
+                    visibleIds[id] = activity.created;
                     jQuery('time.timeago').timeago();
                 }
             } catch (ignoredError) {
