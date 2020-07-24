@@ -109,7 +109,7 @@ title: Collaborate
     var displayInterval = 1500;
 
     var incrementalId = 0;
-    var maximumVisible = 20;
+    var maximumVisible = 8;
 
     function start() {
         alive = true;
@@ -117,13 +117,11 @@ title: Collaborate
     }
 
     function renderNext() {
-        console.log('*');
         if (!alive) return;
         if (queuedActivity && queuedActivity.length) {
             const first = queuedActivity.shift();
             try {
                 const id = ++incrementalId;
-                console.dir(first);
                 var html = template({activity: first, id: id});
                 activityList.append(html);
                 visibleActivity.push(id);
@@ -132,7 +130,6 @@ title: Collaborate
                 console.dir(ignoredError);
             }
         }
-
         if (visibleActivity.length > maximumVisible) {
             cleanupDisplay();
         }
@@ -143,6 +140,7 @@ title: Collaborate
         while (visibleActivity.length > maximumVisible) {
             cleanupIds.push(visibleActivity.shift());
         }
+        console.log('Will remove: ' + cleanupIds.join(', '));
         cleanupIds.forEach(id => {
             $('#' + id).remove();
         });
