@@ -122,6 +122,7 @@ title: Collaborate
                 var html = template({activity: first});
                 console.log(html);
                 activityList.append(html);
+                jQuery('time.timeago').timeago();
             } catch (ignoredError) {
                 console.dir(ignoredError);
             }
