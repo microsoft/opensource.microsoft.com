@@ -123,7 +123,7 @@ title: Collaborate
             const oldest = queuedActivity.pop();
             try {
                 const id = ++incrementalId;
-                var html = template({activity: first, id: id});
+                var html = template({activity: oldest, id: id});
                 activityList.prepend(html);
                 visibleActivity.push(id);
                 jQuery('time.timeago').timeago();
@@ -147,7 +147,7 @@ title: Collaborate
         console.log('Will remove: ' + cleanupIds.join(', '));
         cleanupIds.forEach(id => {
             try {
-                $('#' + id).remove();
+                $('#activity' + id).remove();
             } catch (error) {
                 console.log(error);
             };
