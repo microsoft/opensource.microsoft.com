@@ -9,9 +9,9 @@
                                 {% raw %}{{ activity.actorLogin }}{% endraw %}
                         </a>
                         &nbsp;
-                        <strong>{% raw %}{{ activity.type }}{% endraw %}</strong>
+                        <strong>{% raw %}{{ description }}{% endraw %}</strong>
                         &nbsp;
-                        {% raw %}{{ description }}{% endraw %}
+                        {% raw %}{{ activity.title }}{% endraw %}
                         &nbsp;
                         {% raw %}{{{ octicon }}}{% endraw %}
                         <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.repoName }}{% endraw %}</a>
