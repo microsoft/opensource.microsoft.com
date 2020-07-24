@@ -177,7 +177,6 @@ title: Collaborate
         while (visibleActivity.length > maximumVisible) {
             cleanupIds.push(visibleActivity.shift());
         }
-        console.log('Will remove: ' + cleanupIds.join(', '));
         cleanupIds.forEach(id => {
             delete visibleIds[id];
             try {
