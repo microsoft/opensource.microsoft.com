@@ -154,7 +154,13 @@ title: Collaborate
             try {
                 const id = oldest.id;
                 if (!visibleIds[id]) {
-                    var html = template({activity: oldest, id: id});
+                    const octicon = '';
+                    if (activity.context === 'merged') {
+                        octicon = $('svg.octicon-git-merge').last().html();
+                    } else if (activity.type === 'issue_comment.create') {
+                        octicon = $('svg.octicon-comment').last().html();
+                    }
+                    var html = template({activity: oldest, id: id, octicon: octicon});
                     activityList.prepend(html);
                     visibleActivity.push(id);
                     visibleIds[id] = true;
