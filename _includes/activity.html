@@ -11,6 +11,8 @@
                         &nbsp;
                         <strong>{% raw %}{{ activity.type }}{% endraw %}</strong>
                         &nbsp;
+                        {% raw %}{{ activity.title }}{% endraw %}
+                        &nbsp;
                         <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.repoName }}{% endraw %}</a>
                         &nbsp;
                         <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
