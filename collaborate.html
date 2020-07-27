@@ -59,13 +59,14 @@ title: Collaborate
 
 
 
+    <hr class="wrapper" />
 
 
 
     <div class="wrapper my-6 py-6">
         <div class="d-md-flex flex-items-center">
             <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
-                <h2 class="h2">Get started</h2>
+                <h2 class="h3">Get started</h2><!-- using H3 to make the sizing better -->
                 <p>
                     Issues tagged as "good first issue" are a great 
                     chance to start participating in an open online
@@ -74,6 +75,7 @@ title: Collaborate
                 <p>
                     A few good resources to learn about getting involved in online communities:
                 </p>
+                <!-- TODO: what style classes are needed for these? -->
                 <ul>
                     <li><a href="https://opensource.guide/how-to-contribute/" target="_new">How to Contribute to Open Source</a>, from the <a href="https://opensource.guide" target="_new">Open Source Guides</a> at opensource.guide</li>
                     <li><a href="https://opensource.microsoft.com/codeofconduct/" target="_new">Microsoft's Open Source Code of Conduct</a>, to encourage friendly participation and inclusion</li>
@@ -85,7 +87,7 @@ title: Collaborate
             </div>
         </div>
     </div>
-    <hr class="wrapper" />
+    
     <div class="wrapper py-6 my-6">
         <div class="d-sm-flex flex-wrap">
             <div id="goodFirstIssueFeed">
@@ -327,24 +329,27 @@ title: Collaborate
         goodFirstIssueSource = $("#goodfirstissue-template").html(),
         goodFirstIssueTemplate = Handlebars.compile(goodFirstIssueSource);
 
-    var initialGoodFirstIssueDisplay = 10;
+    var initialGoodFirstIssueDisplay = 6;
 
     function renderGoodFirstIssues(goodFirstIssues) {
+        var shown = 0;
         if (goodFirstIssues && goodFirstIssues.length) {
             var gfi = goodFirstIssues.pop();
             while (gfi) {
                 try {
-                    var id = gfi.id;
-                    if (!visibleIds[id]) {
-                        var octicon = octiconFromType(gfi.type, gfi.context);
-                        var html = goodFirstIssueTemplate({
-                            activity: gfi, 
-                            id: id, 
-                            octicon: tryGetOcticon(octicon),
-                            description: descriptionFromType(gfi.type, gfi.context),
-                        });
-                        goodFirstIssueList.prepend(html);
-                        jQuery('time.timeago').timeago();
+                    if (shown++ < initialGoodFirstIssueDisplay) {
+                        var id = gfi.id;
+                        if (!visibleIds[id]) {
+                            var octicon = octiconFromType(gfi.type, gfi.context);
+                            var html = goodFirstIssueTemplate({
+                                activity: gfi, 
+                                id: id, 
+                                octicon: tryGetOcticon(octicon),
+                                description: descriptionFromType(gfi.type, gfi.context),
+                            });
+                            goodFirstIssueList.prepend(html);
+                            jQuery('time.timeago').timeago();
+                        }
                     }
                 } catch (ignoredError) {
                     console.dir(ignoredError);
