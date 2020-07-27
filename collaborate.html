@@ -28,13 +28,11 @@ title: Collaborate
         </div>
     </div>
 
+    <!--
     <div class="wrapper my-6 py-6">
         <div class="d-md-flex flex-items-center">
             <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
                 <h2 class="h2">Happening now</h2>
-                <!--
-                    <p></p>
-                -->
             </div>
             <div class="col-md-6 pl-md-4 col-lg-4">
                 <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
@@ -42,10 +40,9 @@ title: Collaborate
         </div>
     </div>
     <hr class="wrapper" />
+    -->
     <div class="wrapper py-6 my-6">
-        <!--
         <h3 class="h3">Happening now</h3>
-        -->
         <div class="d-sm-flex flex-wrap">
             <div id="activityFeed">
                 <ul class="project-list" id="activityList">
@@ -74,6 +71,14 @@ title: Collaborate
                     chance to start participating in an open online
                     community.
                 </p>
+                <p>
+                    A few good resources to learn about getting involved in online communities:
+                </p>
+                <ul>
+                    <li><a href="https://opensource.guide/how-to-contribute/" target="_new">How to Contribute to Open Source</a>, from the <a href="https://opensource.guide" target="_new">Open Source Guides</a> at opensource.guide</li>
+                    <li><a href="https://opensource.microsoft.com/codeofconduct/" target="_new">Microsoft's Open Source Code of Conduct</a>, to encourage friendly participation and inclusion</li>
+                    <li><a href="https://cla.opensource.microsoft.com" target="_new">Microsoft's Contributor License Agreement (CLA)</a>, a one-time agreement for first-time contributors to Microsoft or .NET Foundation projects</li>
+                </ul>
             </div>
             <div class="col-md-6 pl-md-4 col-lg-4">
                 <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
@@ -207,6 +212,7 @@ title: Collaborate
             case 'pull_request_review_comment.created':
                 return 'comment';
             case 'issues.opened':
+            case 'issues.labeled':
                 return 'issue-opened';
             case 'issues.reopened':
                return 'issue-reopened';
