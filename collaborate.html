@@ -420,7 +420,7 @@ title: Collaborate
     function renderContributions(contributions) {
         var shown = 0;
         if (contributions && contributions.length) {
-            var contribution = goodFirstIssues.pop();
+            var contribution = contributions.pop();
             while (contribution) {
                 try {
                     if (shown++ < initialContributionsDisplay) {
@@ -440,7 +440,7 @@ title: Collaborate
                 } catch (ignoredError) {
                     console.dir(ignoredError);
                 }
-                contribution = goodFirstIssues.pop();
+                contribution = contributions.pop();
             }
         }
     }
