@@ -1,17 +1,20 @@
 
 <article class="project">
+    <!--
     <img src="{{ '/assets/images/projects/react.svg' | relative_url }}" alt="" />
+    -->
+    {% octicon repo %}
 
     <div class="project__details">
         <div class="project__overview">
-            <a class="project__name" href="" target="_blank">{% raw %}{{ name }}{% endraw %}</a>
+            <a class="project__name" href="{% raw %}{{ html_url }}{% endraw %}" target="_blank">{% raw %}{{ name }}{% endraw %}</a>
         </div>
 
         <p>{% raw %}{{ description }}{% endraw %}</p>
 
         <div class="project__meta">
             <div class="pr-4">
-                {% octicon star %} --
+                {% octicon star %} {% raw %}{{ stargazers_count }}{% endraw %}
             </div>
 
             <div class="pr-4">
@@ -24,8 +27,16 @@
         </div>
     </div>
 
-    <a class="project__url" href="{% raw %}{{ homepage }}{% endraw %}" target="_blank">
-        <span>View</span>
+    <a class="project__repo_url" href="{% raw %}{{ html_url }}{% endraw %}" target="_blank">
+        <span>Repo</span>
         <span class="ms-icon ms-icon--Forward"></span>
     </a>
+
+    {% raw %}{% if homepage %}{% endraw %}
+    <a class="project__url" href="{% raw %}{{ homepage }}{% endraw %}" target="_blank">
+        <span>Homepage</span>
+        <span class="ms-icon ms-icon--Forward"></span>
+    </a>
+    {% raw %}{% endif %}{% endraw %}
+
 </article>

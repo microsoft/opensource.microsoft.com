@@ -258,6 +258,8 @@ title: Get involved
             return 'merged a pull request';
         }
         switch(type) {
+            case 'pull_request.reopened':
+                return 're-opened a pull request';
             case 'pull_request.opened':
                 return 'opened a pull request';
             case 'issue_comment.created':
