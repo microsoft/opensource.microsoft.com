@@ -1,0 +1,17 @@
+<article
+class="goodfirstissue"
+id="goodfirstissue{% raw %}{{ id }}{% endraw %}">
+<p>
+    <strong>{% raw %}{{ description }}{% endraw %}</strong>
+    &nbsp;
+    <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
+        {% raw %}{{ activity.title }}{% endraw %}
+    </a>
+    &nbsp;
+    {% raw %}{{{ octicon }}}{% endraw %}
+    <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.repoName }}{% endraw %}</a>
+    &nbsp;
+    labeled
+    <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
+</p>
+</article>
