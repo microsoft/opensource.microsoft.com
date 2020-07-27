@@ -9,8 +9,8 @@ permalink: /ospo/
     <div class="page-header">
         <div class="wrapper">
             <div class="col-md-10 col-lg-7 mx-auto">
-                <h1 class="h5 text-white">Microsoft's Open Source Program</h1>
-                <h2 class="h2">Our story</h2>
+                <h1 class="h5 text-white">Microsoft's Open Source Programs Office</h1>
+                <h2 class="h2">Our program</h2>
             </div>
         </div>
     </div>
@@ -19,24 +19,20 @@ permalink: /ospo/
         <div class="wrapper my-6 py-4">
             <div class="col-md-10 col-lg-7 mx-auto">
                 <h3 class="h4 font-weight-400 mb-4">
-                    NOTE: this content is under re-development of all content right now!
-                </h3>
-                <h3 class="h4 font-weight-400 mb-4">
                     Microsoft has a strong open source program that encourages contribution,
-                    allows engineers to use open source, and easily release projects.
+                    allows engineers to use open source with ease, work in the open, and release projects.
                 </h3>
-                <p class="p-lg font-weight-400">
-                    We are committed to helping share what we have learned in adopting open source at
-                    the Enterprise Scale by sharing tools, services, guidance, and our learnings.
+                <p>
+                    At Microsoft, we are committed to sharing what we have learned while building
+                    an enterprise-scale program for open source.
                 </p>
-                <p class="p-lg font-weight-400">
+                <!--
+                <p>
                     The Microsoft open source program is a part of the One Engineering System (1ES) organization
                     at the company and is supported by the Open Source Standards and Legal Team, an Open Source
                     Executive Council, and Open Source Champs and others from around the world.
                 </p>
-                <p class="p-lg font-weight-400">
-                    The open source program at Microsoft is <a href="https://cloudblogs.microsoft.com/opensource/2019/12/12/announcing-microsoft-openchain-conformance/" target="_new">OpenChain 2.0 conformant</a>.
-                </p>
+                -->
             </div>
         </div>
     </div>
@@ -45,22 +41,17 @@ permalink: /ospo/
         <nav class="wrapper my-6">
             <div class="col-md-10 col-lg-7 mx-auto">
                 <ul class="tabs__tabs">
-                    <li class="tabs__tab is-active" data-tab="tools-services">
-                        <span>Tools & Services</span>
+                    <li class="tabs__tab is-active" data-tab="program-using">
+                        <span>Using open source</span>
                     </li>
-                    <!--
-                    <li class="tabs__tab" data-tab="governance">
-                        <span>Governance</span>
+                    <li class="tabs__tab" data-tab="program-contributing">
+                        <span>Contributing upstream</span>
                     </li>
-                    -->
-                    <li class="tabs__tab" data-tab="best-practices">
-                        <span>Best Practices</span>
+                    <li class="tabs__tab" data-tab="program-releasing">
+                        <span>Working in the open</span>
                     </li>
-                    <li class="tabs__tab" data-tab="best-practices">
-                        <span>Policies</span>
-                    </li>
-                    <li class="tabs__tab" data-tab="best-practices">
-                        <span>Security and Supply Chain</span>
+                    <li class="tabs__tab" data-tab="program-tools">
+                        <span>Tools &amp; Services</span>
                     </li>
                 </ul>
             </div>
@@ -69,22 +60,21 @@ permalink: /ospo/
         <div class="wrapper my-6 pt-lg-3 pb-4">
             <div class="col-md-10 col-lg-7 mx-auto">
 
-                <div class="tabs__content is-active" data-tab="tools-services">
-                    {% include learn.html %}
+                <div class="tabs__content is-active" data-tab="program-using">
+                    {% include program-using.html %}
                 </div>
 
-                <!--
-                <div class="tabs__content" data-tab="governance">
-                    {% include learn-governance.html %}
-                </div>
-                -->
-
-                <div class="tabs__content" data-tab="best-practices">
-                    {% include learn-best-practices.html %}
+                <div class="tabs__content" data-tab="program-contributing">
+                    {% include program-contributing.html %}
                 </div>
 
+                <div class="tabs__content" data-tab="program-releasing">
+                    {% include program-releasing.html %}
+                </div>
 
-
+                <div class="tabs__content" data-tab="program-tools">
+                    {% include program-tools.html %}
+                </div>
 
         </div>
     </div>
