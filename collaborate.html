@@ -28,12 +28,13 @@ title: Collaborate
         </div>
     </div>
 
-    <!--
     <div class="wrapper my-6 py-6">
         <div class="d-md-flex flex-items-center">
             <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
-                <h2 class="h2">// Under construction</h2>
-                <p>This page is under development... stand by.</p>
+                <h2 class="h2">Happening now</h2>
+                <!--
+                    <p></p>
+                -->
             </div>
             <div class="col-md-6 pl-md-4 col-lg-4">
                 <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
@@ -41,14 +42,11 @@ title: Collaborate
         </div>
     </div>
     <hr class="wrapper" />
-    -->
-
     <div class="wrapper py-6 my-6">
-
+        <!--
         <h3 class="h3">Happening now</h3>
-
+        -->
         <div class="d-sm-flex flex-wrap">
-
             <div id="activityFeed">
                 <ul class="project-list" id="activityList">
                     
@@ -59,9 +57,46 @@ title: Collaborate
                     {% include activity.html %}
                 </li>
             </script>
-
         </div>
     </div>
+
+
+
+
+
+
+    <div class="wrapper my-6 py-6">
+        <div class="d-md-flex flex-items-center">
+            <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
+                <h2 class="h2">Get started</h2>
+                <p>
+                    Issues tagged as "good first issue" are a great 
+                    chance to start participating in an open online
+                    community.
+                </p>
+            </div>
+            <div class="col-md-6 pl-md-4 col-lg-4">
+                <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
+            </div>
+        </div>
+    </div>
+    <hr class="wrapper" />
+    <div class="wrapper py-6 my-6">
+        <div class="d-sm-flex flex-wrap">
+            <div id="goodFirstIssueFeed">
+                <ul class="project-list" id="goodFirstIssueList">
+                </ul>
+            </div>
+            <script id="goodfirstissue-template" type="text/x-handlebars-template">
+                <li>
+                    {% include good-first-issue.html %}
+                </li>
+            </script>
+        </div>
+    </div>
+
+
+
 
 
 
@@ -118,6 +153,12 @@ title: Collaborate
 
     // TODO: parallel experience, slow poll - contributions
     // TODO: parallel experience, slow poll - good first issue
+
+    // CONSIDER: start paused
+    // INVESTIGATE: are there browser/window events are obscured/not actively on the tab/idle to connect to and auto-pause?
+
+    // --- 
+    // this is the primary near real-time activity feed
 
     var $ = jQuery,
         activityFeed = $('#activityFeed'),
@@ -267,5 +308,58 @@ title: Collaborate
             }
         });
     }
+
     start();
+
+    // ---------------------
+    // this is a one-time pull of "good first issue"
+
+    var goodFirstIssueFeed = $('#goodFirstIssueFeed'),
+        goodFirstIssueList = $('#goodFirstIssueList'),
+        goodFirstIssueSource = $("#goodfirstissue-template").html(),
+        goodFirstIssueTemplate = Handlebars.compile(goodFirstIssueSource);
+
+    var initialGoodFirstIssueDisplay = 10;
+
+    function renderGoodFirstIssues(goodFirstIssues) {
+        if (goodFirstIssues && goodFirstIssues.length) {
+            var gfi = goodFirstIssues.pop();
+            while (gfi) {
+                try {
+                    var id = gfi.id;
+                    if (!visibleIds[id]) {
+                        var octicon = octiconFromType(gfi.type, gfi.context);
+                        var html = goodFirstIssueTemplate({
+                            activity: gfi, 
+                            id: id, 
+                            octicon: tryGetOcticon(octicon),
+                            description: descriptionFromType(gfi.type, gfi.context),
+                        });
+                        goodFirstIssueList.prepend(html);
+                        jQuery('time.timeago').timeago();
+                    }
+                } catch (ignoredError) {
+                    console.dir(ignoredError);
+                }
+                gfi = goodFirstIssues.pop();
+            }
+        }
+    }
+
+    function loadGoodFirstIssues() {
+        $.ajax({
+            type: 'GET',
+            url: '/api/issues',
+            dataType: 'json',
+            success: function(firstIssues){
+                if (firstIssues && firstIssues.issues) {
+                    renderGoodFirstIssues(firstIssues.issues);
+                }
+            }
+        });
+    }
+
+    // just one-time
+    loadGoodFirstIssues();
+
 </script>
