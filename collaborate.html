@@ -2,7 +2,7 @@
 layout: default
 id: collaborate
 permalink: /collaborate/
-title: Collaborate
+title: Get involved
 ---
 
 
@@ -427,7 +427,7 @@ title: Collaborate
                         var id = contribution.id;
                         if (!visibleIds[id]) {
                             var octicon = octiconFromType(contribution.type, contribution.context);
-                            var html = goodFirstIssueTemplate({
+                            var html = contributionsTemplate({
                                 activity: contribution, 
                                 id: id, 
                                 octicon: tryGetOcticon(octicon),
