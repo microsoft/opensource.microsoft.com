@@ -32,11 +32,11 @@
         <span class="ms-icon ms-icon--Forward"></span>
     </a>
 
-    {% raw %}{% if homepage %}{% endraw %}
+    {% raw %}{{#if homepage }}{% endraw %}
     <a class="project__url" href="{% raw %}{{ homepage }}{% endraw %}" target="_blank">
         <span>Homepage</span>
         <span class="ms-icon ms-icon--Forward"></span>
     </a>
-    {% raw %}{% endif %}{% endraw %}
+    {% raw %}{{/if}}{% endraw %}
 
 </article>
