@@ -104,6 +104,36 @@ title: Collaborate
 
 
 
+    <hr class="wrapper" />
+
+
+
+    <div class="wrapper py-6 my-6">
+        <h3 class="h3">Recent contributions</h3>
+        <p>
+            Thousands of Microsoft engineers are active in open source communities, 
+            whether contributing for work, hobbies, or maintaining other projects.
+        </p>
+        <p>
+            Here are some recent contributions that have been made to projects on GitHub.
+        </p>
+        <div class="d-sm-flex flex-wrap">
+            <div id="contributionsFeed">
+                <ul class="project-list" id="contributionsList">
+                    
+                </ul>
+            </div>
+            <script id="contributions-template" type="text/x-handlebars-template">
+                <li>
+                    {% include upstream-contribution.html %}
+                </li>
+            </script>
+        </div>
+    </div>
+
+
+
+    
 
 
 
@@ -374,5 +404,62 @@ title: Collaborate
 
     // just one-time
     loadGoodFirstIssues();
+
+
+
+    // ---------------------
+    // this is a one-time pull of "contributions"
+
+    var contributionsFeed = $('#contributionsFeed'),
+        contributionsList = $('#contributionsList'),
+        contributionsSource = $("#contributions-template").html(),
+        contributionsTemplate = Handlebars.compile(contributionsSource);
+
+    var initialContributionsDisplay = 6;
+
+    function renderContributions(contributions) {
+        var shown = 0;
+        if (contributions && contributions.length) {
+            var contribution = goodFirstIssues.pop();
+            while (contribution) {
+                try {
+                    if (shown++ < initialContributionsDisplay) {
+                        var id = contribution.id;
+                        if (!visibleIds[id]) {
+                            var octicon = octiconFromType(contribution.type, contribution.context);
+                            var html = goodFirstIssueTemplate({
+                                activity: contribution, 
+                                id: id, 
+                                octicon: tryGetOcticon(octicon),
+                                description: descriptionFromType(contribution.type, contribution.context),
+                            });
+                            contributionsList.prepend(html);
+                            jQuery('time.timeago').timeago();
+                        }
+                    }
+                } catch (ignoredError) {
+                    console.dir(ignoredError);
+                }
+                contribution = goodFirstIssues.pop();
+            }
+        }
+    }
+
+    function loadContributions() {
+        $.ajax({
+            type: 'GET',
+            url: '/api/contributions',
+            dataType: 'json',
+            success: function(contributions){
+                if (contributions && contributions.contributions) {
+                    renderContributions(contributions.contributions);
+                }
+            }
+        });
+    }
+
+    // just one-time
+    loadContributions();
+
 
 </script>
