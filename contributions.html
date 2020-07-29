@@ -164,7 +164,7 @@ title: Contributions
         contributionsList = $('#contributionsList'),
         contributionsSource = $("#contributions-template").html(),
         contributionsTemplate = Handlebars.compile(contributionsSource);
-
+    var visibleIds = {};
     var initialContributionsDisplay = 15;
 
     function renderContributions(contributions) {
