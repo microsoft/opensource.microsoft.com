@@ -4,5 +4,6 @@ title: To be announced
 #projectUrl: TBD
 description: "This project has been selected by employees and the award is pending."
 #context: ""
+awarded: false
 fund: "FOSS Fund #2"
 ---

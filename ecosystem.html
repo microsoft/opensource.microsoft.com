@@ -31,7 +31,7 @@ title: Ecosystem
     <div class="wrapper my-6 py-6">
         <div class="d-md-flex flex-items-center">
             <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
-                <h2 class="h2">Foundations and Initiatives</h2>
+                <h2 class="h2">Foundations &amp; Initiatives</h2>
                 <p>Microsoft is proud to participate, partner, and sponsor, 
                     many amazing initiatives to better the open source ecosystem.</p>
             </div>
@@ -96,6 +96,14 @@ title: Ecosystem
                     way for Microsoft engineers to participate in the nomination and 
                     selection process to help communities and projects they are passionate about.
                 </p>
+                <p>
+                    <a class="link-arrow-external" href="https://aka.ms/microsoftfossfund">
+                        Learn about the Microsoft FOSS Fund process
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-6 pl-md-4 col-lg-4">
+                <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
             </div>
         </div>
     </div>
@@ -125,10 +133,11 @@ title: Ecosystem
                     {% if img %}
                         <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
                     {% endif %}
-                    <h3 class="h3 text-brand">{{ post.title }}</h3>
-                {% endif %}
-                {% if post.fund %}
-                    <p class="h5">{{ post.fund }}</p>
+                    {% if post.awarded %}
+                        <h3 class="h3 text-brand">{{ post.title }}</h3>
+                    {% else %}
+                        <h3 class="h6 text-brand">{{ post.title }}</h3>
+                    {% endif %}
                 {% endif %}
                 <p>{{ post.description }}</p>
                 {% if post.context %}
@@ -142,6 +151,9 @@ title: Ecosystem
                         Learn about {{ post.title }}
                     {% endif %}
                     </a>
+                {% endif %}
+                {% if post.fund %}
+                    <!-- <p class="h5">{{ post.fund }}</p> -->
                 {% endif %}
         </div>
         {% endfor %}
