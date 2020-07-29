@@ -41,6 +41,46 @@ id: home
     </div>
 
 
+
+    <div class="wrapper pt-6 pb-4 mt-6 mb-4">
+        <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="200">
+            <h2 class="h3">Projects</h2>
+            <p>
+                Some of the most popular developer tools, frameworks and experiences in the world
+                are built around open communities. Here are a few featured Microsoft projects of note.
+            </p>
+        </div>
+
+        <div class="tile-list" data-animate-in="up" data-animate-in-delay="400">
+            {% assign featured_projects_count = 0 %}
+            {% for project in site.projects %}
+            {% if project.featured and featured_projects_count < 3 %}
+            {% assign featured_projects_count = featured_projects_count | plus: 1 %}
+            <a class="tile" href="{{ project.projectUrl }}" target="_blank">
+                <div>
+                    {% if project.externalLogo %}
+                    {% assign img = project.externalLogo %}
+                    {% else %}
+                    {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
+                    {% endif %}
+                    <img class="mb-4" src="{{ img | relative_url }}" alt="" />
+                    <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-6 pb-6">
+            <a class="link-arrow text-brand" href="/projects">Explore Microsoft projects</a>
+        </div>
+    </div>
+
+    <hr />
+
+
+
     <div class="wrapper py-6 my-6">
         <div class="py-6 my-6">
             <div class="d-md-flex text-center">
@@ -91,46 +131,6 @@ id: home
 
 
 
-
-    <hr />
-
-
-
-
-    <div class="wrapper pt-6 pb-4 mt-6 mb-4">
-        <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="200">
-            <h2 class="h3">Projects</h2>
-            <p>
-                Some of the most popular developer tools, frameworks and experiences in the world
-                are built around open communities. Here are a few featured Microsoft projects of note.
-            </p>
-        </div>
-
-        <div class="tile-list" data-animate-in="up" data-animate-in-delay="400">
-            {% assign featured_projects_count = 0 %}
-            {% for project in site.projects %}
-            {% if project.featured and featured_projects_count < 3 %}
-            {% assign featured_projects_count = featured_projects_count | plus: 1 %}
-            <a class="tile" href="{{ project.projectUrl }}" target="_blank">
-                <div>
-                    {% if project.externalLogo %}
-                    {% assign img = project.externalLogo %}
-                    {% else %}
-                    {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
-                    {% endif %}
-                    <img class="mb-4" src="{{ img | relative_url }}" alt="" />
-                    <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
-                </div>
-            </a>
-            {% endif %}
-            {% endfor %}
-        </div>
-
-        <div class="text-center mt-6 pb-6">
-            <a class="link-arrow text-brand" href="/projects">Explore Microsoft projects</a>
-        </div>
-    </div>
 
     <hr />
 
