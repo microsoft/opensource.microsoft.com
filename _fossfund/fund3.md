@@ -2,7 +2,7 @@
 title: Selection in process
 #logo: TBD
 #projectUrl: TBD
-description: "The selection process is underway as of August 2020."
+description: "Fund #3: A selection process is underway, completing in August 2020."
 #context: ""
 awarded: false
 fund: "FOSS Fund #3"
