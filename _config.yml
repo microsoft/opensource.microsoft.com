@@ -30,6 +30,8 @@ collections:
     output: false
   community:
     output: false
+  fossfund:
+    output: false
 
 exclude:
   - README.md
