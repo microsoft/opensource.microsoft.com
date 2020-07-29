@@ -119,20 +119,20 @@ title: Ecosystem
                     {% if img %}
                         <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
                     {% endif %}
-                    <h3 class="h6 text-brand">{{ post.title }}</h3>
+                    <h3 class="h3 text-brand">{{ post.title }}</h3>
                     </a>
                 {% else %}
                     {% if img %}
                         <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
                     {% endif %}
-                    <h3 class="h6 text-brand">{{ post.title }}</h3>
+                    <h3 class="h3 text-brand">{{ post.title }}</h3>
                 {% endif %}
-                {% if post.awarded %}
-                    <p class="h3">{{ post.awarded }}</p>
+                {% if post.fund %}
+                    <p class="h5">{{ post.fund }}</p>
                 {% endif %}
                 <p>{{ post.description }}</p>
                 {% if post.context %}
-                <p class="f4">{{ post.context }}</p>
+                <p class="f5">{{ post.context }}</p>
                 {% endif %}
                 {% if post.projectUrl %}
                     <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">
