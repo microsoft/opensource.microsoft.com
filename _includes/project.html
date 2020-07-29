@@ -3,9 +3,14 @@
     <!--
     <img src="{{ '/assets/images/projects/react.svg' | relative_url }}" alt="" />
     -->
-    {% octicon repo %}
+
+    {% raw %}{{#if social }}{% endraw %}
+    <img src="{% raw %}{{ social }}{% endraw %}" alt="{% raw %}{{ name }}{% endraw %}" />
+    {% raw %}{{/if}}{% endraw %}
 
     <div class="project__details">
+        {% octicon repo %}
+
         <div class="project__overview">
             <a class="project__name" href="{% raw %}{{ html_url }}{% endraw %}" target="_blank">{% raw %}{{ name }}{% endraw %}</a>
         </div>
