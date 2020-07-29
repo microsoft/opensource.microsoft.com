@@ -5,15 +5,13 @@
 ##
 
 
-
 - conferences:
-  - title: GitHub Universe 2020
-    date: December 2020
-    logo:
-    externalLogo: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-    description: Conference descripiton here lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-    url: https://githubuniverse.com
-
+  #- title: GitHub Universe 2020
+  #  date: December 2020
+  #  logo:
+  #  externalLogo: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  #  description: Conference descripiton here lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  #  url: https://githubuniverse.com
 
 
 - resources:
@@ -21,5 +19,7 @@
     url: https://opensource.microsoft.com/codeofconduct
   - title: Microsoft Contributor License Agreement
     url: https://cla.opensource.microsoft.com
+  - title: The Open Source Guides
+    url: https://opensource.guide
   - title: Third-party Source Disclosures
     url: https://3rdpartysource.microsoft.com/
