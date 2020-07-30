@@ -105,6 +105,7 @@ function featureNextAvatar(destinationSquareIndex) {
   style.position = 'absolute';
   style.display = 'none';
   style.backgroundColor = '#000';
+  style.borderRadius = '50%';
   style.height = (Math.ceil(heroSize[0]) + 2) + 'px';
   style.width = (Math.ceil(heroSize[1]) + 2) + 'px';
   style.top = (Math.round(heroPosition[0]) - 1) + 'px';
@@ -113,7 +114,7 @@ function featureNextAvatar(destinationSquareIndex) {
   setTimeout(() => { $(newAvatarSelector).fadeIn(introduceMs) }, outgoingAvatar ? inbetweenMs : 1);
   var rect = $(heroSquare).children('rect');
   if (rect && rect.length === 1) { // hide the rect
-    setTimeout(() => rect.remove(), introduceMs + 1);
+    $(rect).fadeOut(dismissMs, () => { ect.remove() });
   }
 }
 
