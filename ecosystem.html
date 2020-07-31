@@ -13,75 +13,18 @@ title: Ecosystem
                 <h1 class="h2">Ecosystem</h1>
             </div>
             <div class="col-md-6 pl-md-4 col-lg-4">
-                <!--
-                <p>We are proud to support amazing projects, from the largest open source foundations, to sponsoring
-                    individual projects that help bring value to the open source ecosystem, to Microsoft and our
-                    customers, and to you.</p>
-                -->
-
-                <!--
+                <p>
+                    Microsoft is proud to support amazing open source projects, initiatives, foundations,
+                    and contributing to thousands of open source communities on GitHub and beyond.
+                </p>
+                <p>
+                    Here are just a few of the ways that we're working to collectively empower
+                    every person and every organization on the planet to achieve more.
+                </p>
                 <div data-animate-in="fade" data-animate-in-delay="240">
-                    <a class="link-arrow text-white mt-4" href="{{ '/' | relative_url }}">Join the community</a>
+                    <a class="link-arrow text-white mt-4" href="{{ '/contribute' | relative_url }}">Get involved</a>
                 </div>
-                -->
             </div>
-        </div>
-    </div>
-
-    <div class="wrapper my-6 py-6">
-        <div class="d-md-flex flex-items-center">
-            <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
-                <h2 class="h2">Foundations &amp; Initiatives</h2>
-                <p>Microsoft is proud to participate, partner, and sponsor, 
-                    many amazing initiatives to better the open source ecosystem.</p>
-            </div>
-            <div class="col-md-6 pl-md-4 col-lg-4">
-                <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
-            </div>
-        </div>
-    </div>
-
-    <hr class="wrapper" />
-
-    <div class="wrapper py-6 my-6">
-
-        <div class="d-sm-flex flex-wrap">
-            {% for post in site.community %}
-            {% assign img = nil %}
-            {% if post.externalLogo %}
-            {% assign img = post.externalLogo %}
-            {% elsif post.logo %}
-            {% capture img %}/assets/images/projects/{{ post.logo }}{% endcapture %}
-            {% endif %}
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade"
-                data-animate-in-delay="200">
-                {% if post.projectUrl %}
-                <a href="{{ post.projectUrl }}" target="_new">
-                    {% if img %}
-                    <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
-                    {% else %}
-                    <h3 class="h6 text-brand">{{ post.title }}</h3>
-                    {% endif %}
-                </a>
-                {% else %}
-                {% if img %}
-                <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
-                {% else %}
-                <h3 class="h6 text-brand">{{ post.title }}</h3>
-                {% endif %}
-                {% endif %}
-                <p>{{ post.description }}</p>
-                {% if post.projectUrl %}
-                <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">
-                    {% if post.linkText %}
-                    {{ post.linkText }}
-                    {% else %}
-                    Learn more
-                    {% endif %}
-                </a>
-                {% endif %}
-            </div>
-            {% endfor %}
         </div>
     </div>
 
@@ -93,8 +36,13 @@ title: Ecosystem
                 <h2 class="h2">FOSS Fund</h2>
                 <p>
                     The Free and Open Source Software Fund (FOSS Fund) is a 
-                    way for Microsoft engineers to participate in the nomination and 
-                    selection process to help communities and projects they are passionate about.
+                    way for our employees to collectively select open source
+                    projects for $10,000 ponsorship awards throughout the year.
+                </p>
+                <p>
+                    Microsoft's engineers select projects they are super passionate
+                    about: only employees who contribute to open source projects can
+                    participate in the selection process.
                 </p>
                 <p>
                     <a class="link-arrow-external" href="https://aka.ms/microsoftfossfund" target="_new">
@@ -107,8 +55,6 @@ title: Ecosystem
             </div>
         </div>
     </div>
-
-    <hr class="wrapper" />
 
     <div class="wrapper py-6 my-6">
 
@@ -159,6 +105,114 @@ title: Ecosystem
         {% endfor %}
         </div>
     </div>
+
+    
+    
+    <hr class="wrapper" />
+
+
+
+
+    <div class="wrapper my-6 py-6">
+        <div class="d-md-flex flex-items-center">
+            <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
+                <h2 class="h2">Recent Contributions</h2>
+                <p>
+                    Whether an official contribution as part of a team's business goals,
+                    or an after-hours project in robotics and hackathons, to contributing to
+                    non-profits and communities, our employees are always involved.
+                </p>
+            </div>
+            <div class="col-md-6 pl-md-4 col-lg-4">
+                <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
+            </div>
+        </div>
+    </div>
+    {% include octicons.html %}
+    <div class="wrapper py-6 my-6">
+        <div class="d-sm-flex flex-wrap" style="min-height:350px">
+            <div id="contributionsFeed">
+                <ul class="project-list" id="contributionsList"></ul>
+            </div>
+            <script id="contributions-template" type="text/x-handlebars-template">
+                <li>
+                    {% include upstream-contribution.html %}
+                </li>
+            </script>
+        </div>
+        <div><p class="t6">
+            NOTE: this data represents contributions on GitHub that some of our employees have
+            opted in to sharing. Microsoft does not endorse any particular contribution here, as
+            this list will include everything from hobbyist work through official upstream
+            contributions.
+        </p></div>
+    </div>
+
+
+
+
+    <hr class="wrapper" />
+
+    <div class="wrapper my-6 py-6">
+        <div class="d-md-flex flex-items-center">
+            <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
+                <h2 class="h2">Foundations &amp; Initiatives</h2>
+                <p>Microsoft is proud to participate, partner, and sponsor, 
+                    many amazing initiatives to better the open source ecosystem.</p>
+            </div>
+            <div class="col-md-6 pl-md-4 col-lg-4">
+                <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <hr class="wrapper" />
+    -->
+
+    <div class="wrapper py-6 my-6">
+
+        <div class="d-sm-flex flex-wrap">
+            {% for post in site.community %}
+            {% assign img = nil %}
+            {% if post.externalLogo %}
+            {% assign img = post.externalLogo %}
+            {% elsif post.logo %}
+            {% capture img %}/assets/images/projects/{{ post.logo }}{% endcapture %}
+            {% endif %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade"
+                data-animate-in-delay="200">
+                {% if post.projectUrl %}
+                <a href="{{ post.projectUrl }}" target="_new">
+                    {% if img %}
+                    <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
+                    {% else %}
+                    <h3 class="h6 text-brand">{{ post.title }}</h3>
+                    {% endif %}
+                </a>
+                {% else %}
+                {% if img %}
+                <img class="mb-4 icon" src="{{ img | relative_url }}" alt="{{ post.title }} logo" />
+                {% else %}
+                <h3 class="h6 text-brand">{{ post.title }}</h3>
+                {% endif %}
+                {% endif %}
+                <p>{{ post.description }}</p>
+                {% if post.projectUrl %}
+                <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">
+                    {% if post.linkText %}
+                    {{ post.linkText }}
+                    {% else %}
+                    Learn more
+                    {% endif %}
+                </a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
 
     <!--
     <div class="wrapper py-6 my-6">
@@ -227,3 +281,8 @@ title: Ecosystem
         </div>
     </div>
 </article>
+
+
+<script>
+    {% include upstream-contributions.js %}
+</script>

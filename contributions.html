@@ -14,17 +14,17 @@ title: Contributions
             </div>
             <div class="col-md-6 pl-md-4 col-lg-4">
                 <p>
-                    Public contributions to open communities are interesting!
+                    Microsoft's engineers can be found participating 
+                    in communities throughout the Internet and GitHub.
                 </p>
-
-                <!--
                 <div data-animate-in="fade" data-animate-in-delay="240">
-                    <a class="link-arrow text-white mt-4" href="{{ '/' | relative_url }}">Join the community</a>
+                    <a class="link-arrow text-white mt-4" href="{{ '/collaborate/' | relative_url }}">Get involved</a>
                 </div>
-                -->
             </div>
         </div>
     </div>
+
+    
 
 
 
@@ -41,7 +41,7 @@ title: Contributions
           While many public highlighted contributions here may be for official work, 
           Microsoft does not endorse any contribution listed here.
         </p>
-        <div class="d-sm-flex flex-wrap">
+        <div class="d-sm-flex flex-wrap" style="min-height:400px">
             <div id="contributionsFeed">
                 <ul class="project-list" id="contributionsList">
                     
@@ -55,27 +55,13 @@ title: Contributions
         </div>
     </div>
 
-
+    {% include octicons.html %}
 
     
 
 
 
-    <script id="octicon-star" type="text/x-octicon">{% octicon star %}</script>
-    <script id="octicon-repo-forked" type="text/x-octicon">{% octicon repo-forked %}</script>
-    <script id="octicon-issue-opened" type="text/x-octicon">{% octicon issue-opened %}</script>
-    <script id="octicon-pin" type="text/x-octicon">{% octicon pin %}</script>
-    <script id="octicon-plus" type="text/x-octicon">{% octicon plus %}</script>
-    <script id="octicon-pulse" type="text/x-octicon">{% octicon pulse %}</script>
-    <script id="octicon-comment-discussion" type="text/x-octicon">{% octicon comment-discussion %}</script>
-    <script id="octicon-comment" type="text/x-octicon">{% octicon comment %}</script>
-    <script id="octicon-git-commit" type="text/x-octicon">{% octicon git-commit %}</script>
-    <script id="octicon-diff" type="text/x-octicon">{% octicon diff %}</script>
-    <script id="octicon-file-binary" type="text/x-octicon">{% octicon file-binary %}</script>
-    <script id="octicon-git-merge" type="text/x-octicon">{% octicon git-merge %}</script>
-    <script id="octicon-git-pull-request" type="text/x-octicon">{% octicon git-pull-request %}</script>
-    <script id="octicon-issue-reopened" type="text/x-octicon">{% octicon issue-reopened %}</script>
-   
+
     <div class="wrapper-full bg-brand-dark text-white">
         <div class="wrapper py-6 my-6">
             <h3 class="h3">Community Resources</h3>
@@ -104,112 +90,5 @@ title: Contributions
 
 
 <script>
-    var $ = jQuery;
-    var octicons = {};
-
-    function tryGetOcticon(name) {
-        if (octicons[name] !== undefined) {
-            return octicons[name];
-        }
-        var html = octicon = $('#octicon-' + name).html();
-        octicons[name] = html || '';
-        return html;
-    }
-
-    function octiconFromType(type, optionalContext) {
-        if (optionalContext === 'merged') {
-            return 'git-merge';
-        }
-        switch(type) {
-            case 'issue_comment.created':
-            case 'pull_request_review_comment.created':
-                return 'comment';
-            case 'issues.opened':
-            case 'issues.labeled':
-                return 'issue-opened';
-            case 'issues.reopened':
-               return 'issue-reopened';
-            default:
-                return null;
-        }
-    }
-
-    function descriptionFromType(type, optionalContext) {
-        if (optionalContext === 'merged') {
-            return 'merged a pull request';
-        }
-        switch(type) {
-            case 'pull_request.reopened':
-                return 're-opened a pull request';
-            case 'pull_request.opened':
-                return 'opened a pull request';
-            case 'issue_comment.created':
-                return 'commented on an issue';
-            case 'pull_request_review_comment.created':
-                return 'commented on a pull request';
-            case 'issues.opened':
-                return 'opened an issue';
-            case 'issues.reopened':
-               return 're-opened an issue';
-            case 'pull_request_review.submitted':
-                return 'reviewed a pull request';
-            case 'issues.labeled':
-                return 'good first issue';
-            default:
-                return type;
-        }
-    }
-
-    var contributionsFeed = $('#contributionsFeed'),
-        contributionsList = $('#contributionsList'),
-        contributionsSource = $("#contributions-template").html(),
-        contributionsTemplate = Handlebars.compile(contributionsSource);
-    var visibleIds = {};
-    var initialContributionsDisplay = 15;
-
-    function renderContributions(contributions) {
-        var shown = 0;
-        if (contributions && contributions.length) {
-            var contribution = contributions.pop();
-            while (contribution) {
-                try {
-                    if (shown++ < initialContributionsDisplay) {
-                        var id = contribution.id;
-                        if (!visibleIds[id]) {
-                            var octicon = octiconFromType(contribution.type, contribution.context);
-                            var html = contributionsTemplate({
-                                activity: contribution, 
-                                id: id, 
-                                octicon: tryGetOcticon(octicon),
-                                description: descriptionFromType(contribution.type, contribution.context),
-                            });
-                            contributionsList.prepend(html);
-                            jQuery('time.timeago').timeago();
-                        }
-                    }
-                } catch (ignoredError) {
-                    console.dir(ignoredError);
-                }
-                contribution = contributions.pop();
-            }
-        }
-    }
-
-    function loadContributions() {
-        $.ajax({
-            type: 'GET',
-            url: '/api/contributions',
-            dataType: 'json',
-            success: function(contributions){
-                if (contributions && contributions.contributions) {
-                    renderContributions(contributions.contributions);
-                }
-            }
-        });
-    }
-
-    // just one-time
-    loadContributions();
-
-
+    {% include upstream-contributions.js %}
 </script>
