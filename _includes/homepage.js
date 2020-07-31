@@ -2,7 +2,7 @@ var $ = jQuery;
 
 var workerFrequencyMs = 500;
 var startupDelayMs = 50;
-var firstDisplayDelayMs = 1750;
+var firstDisplayDelayMs = 1700;
 var dismissMs = 500;
 var introduceMs = 800;
 var inbetweenMs = 1000;
