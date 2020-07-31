@@ -49,15 +49,15 @@
 }
 
 .accordion__bd {
-    // max-height: 0;
-    // overflow: hidden;
-    // padding-left: 38px;
-    //
-    // transition: max-height 0.4s ease-out;
-    //
-    // > * {
-    //     padding-bottom: 16px;
-    // }
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 38px;
+    
+    transition: max-height 0.4s ease-out;
+    
+    > * {
+         padding-bottom: 16px;
+    }
 }
 
 .accordion--short {

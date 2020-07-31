@@ -13690,6 +13690,15 @@ svg {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
 
+.accordion__bd {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 38px;
+  -webkit-transition: max-height 0.4s ease-out;
+  transition: max-height 0.4s ease-out; }
+  .accordion__bd > * {
+    padding-bottom: 16px; }
+
 .accordion--short .accordion__hd {
   padding-bottom: 12px; }
 

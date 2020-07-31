@@ -276,6 +276,10 @@ APP.Accordion = {
                     panel.style.maxHeight = panel.scrollHeight + "px";
                 }
             });
+
+            // Panels should start closed
+            var panel = acc[i].nextElementSibling;
+            panel.style.maxHeight = null;
         }
 
         var expand = $('.accordions__expand-all');
@@ -303,7 +307,7 @@ APP.Accordion = {
 
 
 // ---------------------------------------------------------------------
-// Accordion
+// Draw
 // ---------------------------------------------------------------------
 
 APP.Draw = {
