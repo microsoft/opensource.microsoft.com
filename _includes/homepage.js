@@ -41,6 +41,8 @@ var heroAvatarsContainer = null;
 
 var avatars = null;
 
+var recentAvatars = {};
+
 var mapAvatarToId = {};
 var mapAvatarIndex = 1;
 
@@ -65,7 +67,12 @@ function startupAvatarLightup() {
 }
 
 function getNextAvailableAvatar() {
-  var availableAvatars = avatars.filter(avatar => !visibleAvatars[avatar]);
+  var remainingAvatars = avatars.filter(avatar => !recentAvatars[avatar]);
+  if (remainingAvatars.length === 0) {
+    recentAvatars = {};
+    remainingAvatars = avatars;
+  }
+  var availableAvatars = remainingAvatars.filter(avatar => !visibleAvatars[avatar]);
   if (availableAvatars.length) {
     return randomElement(availableAvatars);
   }
@@ -91,6 +98,7 @@ function featureNextAvatar(destinationSquareIndex) {
   var newAvatarSelector = '#' + newAvatarId;
   mapAvatarToId[newAvatar] = newAvatarId;
   visibleAvatars[newAvatar] = true;
+  recentAvatars[newAvatar] = true;
   squareToAvatar[destinationSquareIndex] = newAvatar;
   squareRemainingClicks[destinationSquareIndex] = getRandomInt(minimumClicksPerAvatar, maximumClicksPerAvatar);
 
