@@ -22,9 +22,17 @@
                 class="is-active" {% endif %}>
                 <a href="{{ "/ospo/" | relative_url }}">Our program</a>
             </li>
-            <li{% if page.id == 'resources' %} class="is-active" {% endif %}>
+            <li>
                 <a class="external"
-                    href="{{ "https://cloudblogs.microsoft.com/opensource/" | relative_url }}">
+                    target="_new"
+                    href="https://careers.microsoft.com/us/en/search-results?keywords=open%20source">
+                    <span>Jobs</span>
+                </a>
+            </li>
+            <li>
+                <a class="external"
+                    target="_new"
+                    href="https://cloudblogs.microsoft.com/opensource/">
                     <span>Blog</span>
                 </a>
             </li>
@@ -88,8 +96,15 @@
                     class="is-active" {% endif %}>
                     <a href="{{ "/ospo/" | relative_url }}">Our program</a>
                 </li>
-                <li{% if page.id == 'resources' %} class="is-active" {% endif %}>
-                    <a class="external" href="{{ "/resources/" | relative_url }}">
+                <li>
+                    <a class="external"
+                        target="_new"
+                        href="https://careers.microsoft.com/us/en/search-results?keywords=open%20source">
+                        <span>Jobs</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="external" href="https://cloudblogs.microsoft.com/opensource/" target="_new">
                         <span>Blog</span>
                     </a>
                 </li>
