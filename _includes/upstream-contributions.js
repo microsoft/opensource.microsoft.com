@@ -39,6 +39,8 @@ function descriptionFromType(type, optionalContext) {
             return 're-opened a pull request';
         case 'pull_request.opened':
             return 'opened a pull request';
+        case 'issues.closed':
+            return 'closed an issue';
         case 'issue_comment.created':
             return 'commented on an issue';
         case 'pull_request_review_comment.created':
