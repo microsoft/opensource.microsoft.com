@@ -5,12 +5,20 @@ var startupDelayMs = 50;
 var firstDisplayDelayMs = 1750;
 var dismissMs = 500;
 var introduceMs = 800;
-var inbetweenMs = 2000;
+var inbetweenMs = 1000;
+var hookResizeHandlerMs = 5000;
 
 var minimumClicksPerAvatar = 15;
 var maximumClicksPerAvatar = 25;
 
 var heroCount = 6;
+
+var lastKnownWidth = null;
+
+function resetAvatars() {
+  var visible = avatars.filter(avatar => visibleAvatars[avatar]);
+  visible.forEach(avatar => dismissAvatar(avatar));
+}
 
 function getOffset(element) {
   var item = element.getBoundingClientRect();
@@ -55,7 +63,7 @@ function startupAvatarLightup() {
   for (var i = 1; i <= heroCount; i++) {
     var element = $('#heroSquare' + i);
     if (element && element.length === 1) {
-      heroSquares.push(element[0]);
+      heroSquares.push(i);
       squareRemainingClicks.push(0);
       squareToAvatar.push(null);
     }
@@ -64,6 +72,11 @@ function startupAvatarLightup() {
   }
 
   loadAvatars();
+}
+
+function getHeroSquare(i) {
+  var element = $('#heroSquare' + i);
+  return element[0];
 }
 
 function getNextAvailableAvatar() {
@@ -102,7 +115,7 @@ function featureNextAvatar(destinationSquareIndex) {
   squareToAvatar[destinationSquareIndex] = newAvatar;
   squareRemainingClicks[destinationSquareIndex] = getRandomInt(minimumClicksPerAvatar, maximumClicksPerAvatar);
 
-  var heroSquare = heroSquares[destinationSquareIndex];
+  var heroSquare = getHeroSquare(heroSquares[destinationSquareIndex]);
   var heroPosition = getRelativeOffset(heroSquare, heroFigure);
   var heroSize = getSize(heroSquare);
   var heroImage = document.createElement('img');
@@ -114,16 +127,19 @@ function featureNextAvatar(destinationSquareIndex) {
   style.display = 'none';
   style.backgroundColor = '#000';
   style.borderRadius = '50%';
-  style.height = (Math.ceil(heroSize[0]) + 2) + 'px';
-  style.width = (Math.ceil(heroSize[1]) + 2) + 'px';
+  style.height = (Math.ceil(heroSize[0]) + 1.5) + 'px';
+  style.width = (Math.ceil(heroSize[1]) + 1.5) + 'px';
   style.top = (Math.round(heroPosition[0]) - 1) + 'px';
   style.left = (Math.round(heroPosition[1]) - 1) + 'px';
   heroAvatarsContainer.append(heroImage);
-  setTimeout(() => { $(newAvatarSelector).fadeIn(introduceMs) }, outgoingAvatar ? inbetweenMs : 1);
-  var rect = $(heroSquare).children('rect');
-  if (rect && rect.length === 1) { // hide the rect
-    $(rect).fadeOut(dismissMs, () => { ect.remove() });
-  }
+  setTimeout(() => {
+    $(newAvatarSelector).fadeIn(introduceMs, function () {
+      var rect = $(heroSquare).children('rect');
+      if (rect && rect.length === 1) {
+        $(rect).fadeOut(dismissMs, () => { ect.remove() });
+      }
+    });
+  }, outgoingAvatar ? inbetweenMs : 1);
 }
 
 function dismissAvatar(avatar) {
@@ -148,8 +164,21 @@ function loadAvatars() {
             avatars = response.avatars;
         }
         setTimeout(worker, firstDisplayDelayMs);
+        setTimeout(hookResize, hookResizeHandlerMs);
     },
   });
+}
+
+function hookResize() {
+  window.onresize = onResize;
+}
+
+function onResize() {
+  var width = window.innerWidth;
+  if (lastKnownWidth !== width) {
+    lastKnownWidth = width;
+    resetAvatars();
+  }
 }
 
 function worker() {
