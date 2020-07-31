@@ -1,9 +1,13 @@
 {
   "name": "microsoft-opensource",
+  "homepage": "https://opensource.microsoft.com",
   "browserslist": "last 2 versions",
   "version": "2.0.0",
+  "license": "MIT",
+  "repository": "github:microsoft/opensource.microsoft.com",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "node_modules/gulp/bin/gulp.js build"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",

@@ -6,7 +6,7 @@ RUN addgroup oss && adduser -D -G oss oss && chown -R oss:oss .
 RUN chown -R oss:oss /usr/gem
 USER oss
 RUN bundle install
-
+RUN npm install
 RUN jekyll build
 
 FROM nginx:alpine

@@ -153,13 +153,15 @@ function watchFiles() {
 }
 
 
-//const build = gulp.series(clean, css);
+const build = gulp.series(clean, css, js);
 //const watch = gulp.parallel(watchFiles, browserSync);
 
 const jekylll = gulp.series(clean, gulp.parallel(css,js,jekyll));
 const watch = gulp.parallel(watchFiles, browserSync);
 
 gulp.task('default', watch);
+
+gulp.task('build', build);
 
 exports.css = css;
 exports.js = js;
