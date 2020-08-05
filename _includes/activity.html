@@ -1,24 +1,38 @@
-        <article
-                    class="activity"
-                    style="display:none"
-                    id="activity{% raw %}{{ id }}{% endraw %}">
-                    <p>
-                        <a href="https://github.com/{% raw %}{{ activity.actorLogin }}{% endraw %}" target="_new">
-                            <img
-                                src="{% raw %}{{ activity.actorAvatar }}{% endraw %}"
-                                style="width:24px;display: inline-block; padding-right: 6px; border-radius: 50%;" />
-                                {% raw %}{{ activity.actorLogin }}{% endraw %}
-                        </a>
-                        &nbsp;
-                        <strong>{% raw %}{{ description }}{% endraw %}</strong>
-                        &nbsp;
-                        <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
-                            {% raw %}{{ activity.title }}{% endraw %}
-                        </a>
-                        &nbsp;
-                        {% raw %}{{{ octicon }}}{% endraw %}
-                        <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.orgName }}/{{ activity.repoName }}{% endraw %}</a>
-                        &nbsp;
-                        <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
-                    </p>
-                </article>
+{% comment %}
+activity.actorLogin
+activity.actorAvatar
+activity.activityUrl
+activity.repoName
+description
+activity.title
+activity.orgName
+octicon
+activity.created
+{% endcomment %}
+
+    <article class="activity" style="display:none" id="activity{% raw %}{{ id }}{% endraw %}">
+        <a class="activity__avatar" href="https://github.com/{% raw %}{{ activity.actorLogin }}{% endraw %}" target="_new">
+            <img src="{% raw %}{{ activity.actorAvatar }}{% endraw %}"  />
+                {% raw %}{{ activity.actorLogin }}{% endraw %}
+        </a>
+        <div class="activity__body">
+            <div class="activity__body-hd">
+                <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
+                    {% raw %}{{ activity.repoName }}{% endraw %}
+                </a>
+                <p class="activity__activity">
+                <span>{% raw %}{{ description }}{% endraw %}</span>
+                <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
+            </p>
+            </div>
+
+            <a class="activity__title" href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
+                {% raw %}{{ activity.title }}{% endraw %}
+            </a>
+
+            <div class="activity__footer">
+                {% raw %}{{{ octicon }}}{% endraw %}
+                <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.orgName }}/{{ activity.repoName }}{% endraw %}</a>
+            </div>
+        </div>
+    </article>

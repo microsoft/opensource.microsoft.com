@@ -30,8 +30,13 @@
 }
 
 .icon {
+    display: block;
     height: 40px;
     width: auto;
+}
+
+img.icon {
+    max-width: 60%;
 }
 
 

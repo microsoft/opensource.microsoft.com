@@ -193,11 +193,11 @@
 
 
     @include start-at($small) {
-        width: calc(50% - 10px);
+        width: calc(50% - 20px);
     }
 
     @include start-at($large) {
-        width: calc(25% - 15px);
+        width: calc(25% - 30px);
         margin-bottom: 30px;
     }
 }
@@ -205,4 +205,12 @@
 .blog-preview__meta {
     font-size: 12px;
     color: #75757A;
+}
+
+
+
+.foundation-list {
+    .img-gap {
+        height: 40px;
+    }
 }

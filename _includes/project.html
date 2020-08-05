@@ -7,8 +7,11 @@
     -->
 
     {% raw %}{{#if social }}{% endraw %}
-    <img src="{% raw %}{{ social }}{% endraw %}" alt="{% raw %}{{ name }}{% endraw %}" />
-    {% raw %}{{/if}}{% endraw %}
+    <figure class="project__social-image">
+        <img src="{% raw %}{{ social }}{% endraw %}" alt="{% raw %}{{ name }}{% endraw %}" />
+        {% raw %}{{/if}}{% endraw %}
+    </figure>
+
 
     <div class="project__details">
         {% octicon repo %}
@@ -34,16 +37,19 @@
         </div>
     </div>
 
-    <a class="project__repo_url" href="{% raw %}{{ html_url }}{% endraw %}" target="_blank">
-        <span>Repo</span>
-        <span class="ms-icon ms-icon--Forward"></span>
-    </a>
+    <div class="project__urls">
+        <a class="project__repo_url" href="{% raw %}{{ html_url }}{% endraw %}" target="_blank">
+            <span>Repo</span>
+            <span class="ms-icon ms-icon--Forward"></span>
+        </a>
 
-    {% raw %}{{#if homepage }}{% endraw %}
-    <a class="project__url" href="{% raw %}{{ homepage }}{% endraw %}" target="_blank">
-        <span>Homepage</span>
-        <span class="ms-icon ms-icon--Forward"></span>
-    </a>
-    {% raw %}{{/if}}{% endraw %}
+        {% raw %}{{#if homepage }}{% endraw %}
+        <a class="project__url" href="{% raw %}{{ homepage }}{% endraw %}" target="_blank">
+            <span>Homepage</span>
+            <span class="ms-icon ms-icon--Forward"></span>
+        </a>
+        {% raw %}{{/if}}{% endraw %}
+    </div>
+
 
 </article>
