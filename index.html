@@ -145,7 +145,7 @@ id: home
 
                 <div class="mt-6">
                     <a class="link-arrow" href="{{ '/collaborate/' | relative_url }}">Happening now</a><br />
-                    <a class="link-arrow" href="{{ '/collaborate/' | relative_url }}">Find a "good first issue"</a>
+                    <a class="link-arrow" href="{{ '/collaborate/' | relative_url }}">Find a "good first issue"</a><br />
                     <a class="link-arrow" href="{{ '/projects/' | relative_url }}">Featured projects</a>
                 </div>
             </div>
@@ -213,12 +213,12 @@ id: home
                         </div>
                     </span>
                     {% endif %}
+                    <!--
                     <p class="blog-preview__meta mb-2">{{ post.publishDate }}</p>
+                    -->
                     {{ post.content }}
                 </div>
-                <!--
-                <div class="link-arrow-external mt-4">Read more</div>
-                -->
+                <div class="link-arrow-external mt-4">Read post</div>
             </a>
             {% endfor %}
         </div>
