@@ -10,14 +10,12 @@ title: Explore all Microsoft repos
     <header class="wrapper-full explore-header pb-4 pt-6">
         <div class="wrapper py-6">
             <h1 class="h2">Explore</h1>
-
-            <form class="search-form search-form--dark" id="search-projects" role="search" action="https://opensource.microsoft.com/api/publicRepos?q=" method="GET">
+            <form class="search-form search-form--dark" id="search-projects" role="search" action="/projects/explore" method="GET">
                 <label for="project-search-field">
                     <span class="sr-only">Search open source projects on Microsoft.com</span>
                     {% octicon search %}
                 </label>
-                <input type="text" id="project-search-field" placeholder="Search" value="" />
-
+                <input type="text" id="project-search-field" name="q" placeholder="Search" value="" />
                 <button type="submit" class="d-none"></button>
             </form>
         </div>
@@ -35,7 +33,6 @@ title: Explore all Microsoft repos
                 </div>
 
                 <div class="filters__filters">
-
                     <div class="checkbox">
                         <input type="checkbox" name="html" id="html" value="html">
                         <label for="html">HTML</label>
@@ -65,9 +62,7 @@ title: Explore all Microsoft repos
                         <input type="checkbox" name="c++" id="c++" value="C++">
                         <label for="c++">C++</label>
                     </div>
-
                     <button id="filter-submit" type="submit" class="link-arrow">Filter</button>
-
                 </div>
             </form>
 
@@ -104,10 +99,8 @@ title: Explore all Microsoft repos
         dataType: 'json',
         success: function(posts){
             //do something with posts.
-            console.log(posts.repos);
-
+            //console.log(posts.repos);
             results.addClass('is-thinking');
-
             setTimeout(function(){
                 html = template({apidata: posts.repos});
                 results.html(html);
@@ -116,20 +109,17 @@ title: Explore all Microsoft repos
         }
     });
 
-    searchForm.submit(function(e) {
-        e.preventDefault();
-        var searchString = $('#project-search-field').val();
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchString = urlParams.get('q');
+    if( searchString ) {
+        //console.log('Search param = ' + searchString);
         var searchUrl = '/api/repos?q=' + searchString;
-        //console.log('searching');
         $.ajax({
             type: 'GET',
             url: searchUrl,
             dataType: 'json',
             success: function(posts){
-                //do something with posts.
-                //console.log(posts.repos);
                 results.addClass('is-thinking');
-
                 setTimeout(function(){
                     html = template({apidata: posts.repos});
                     results.html(html);
@@ -142,19 +132,17 @@ title: Explore all Microsoft repos
                     }
 
                 }, 1000);
-
-
             }
         });
-    });
+    }
+
 
     var filterForm = $('#filter-projects'),
         filterSubmit = $('#filter-submit'),
         checkboxes = $('#filter-projects input[type="checkbox"]');
 
-        filterForm.submit(function(e) {
+    filterForm.submit(function(e) {
         e.preventDefault();
-        //console.log('filter projects');
         activeFilters = [];
         checkboxes.each(function(){
             if ( $(this).is(':checked') ) {
@@ -172,7 +160,6 @@ title: Explore all Microsoft repos
                     var filteredResults = $.grep( posts.repos, function( n, i ) {
                         return $.inArray(n.language, activeFilters) !== -1;
                     });
-                    //console.log(filteredResults);
                     setTimeout(function(){
                         searchText.empty();
                         html = template({apidata: filteredResults});

@@ -1,16 +1,23 @@
-<article
-class="goodfirstissue"
-id="goodfirstissue{% raw %}{{ id }}{% endraw %}">
-<p>
-    {% octicon repo %}
-    <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.orgName }}/{{ activity.repoName }}{% endraw %}</a>
-    &nbsp;
-    <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
-        {% raw %}{{ activity.title }}{% endraw %}
-    </a>
-    {% raw %}{{{ octicon }}}{% endraw %}
-    &nbsp;
-    labeled
-    <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
-</p>
+
+<article class="activity good-first-issue" id="goodfirstissue{% raw %}{{ id }}{% endraw %}">
+    <div class="activity__body">
+        <div class="activity__body-hd">
+            <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
+                {% raw %}{{ activity.repoName }}{% endraw %}
+            </a>
+            <p class="activity__activity">
+            <span>{% raw %}{{ description }}{% endraw %}</span>
+            <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
+        </p>
+        </div>
+
+        <a class="activity__title" href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
+            {% raw %}{{ activity.title }}{% endraw %}
+        </a>
+
+        <div class="activity__footer">
+            {% octicon repo %}
+            <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.orgName }}/{{ activity.repoName }}{% endraw %}</a>
+        </div>
+    </div>
 </article>

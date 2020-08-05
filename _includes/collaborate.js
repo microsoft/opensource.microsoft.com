@@ -8,7 +8,7 @@
     // CONSIDER: start paused
     // INVESTIGATE: are there browser/window events are obscured/not actively on the tab/idle to connect to and auto-pause?
 
-    // --- 
+    // ---
     // this is the primary near real-time activity feed
 
     var $ = jQuery,
@@ -16,7 +16,7 @@
         activityList = $('#activityList'),
         source = $("#activity-template").html(),
         template = Handlebars.compile(source);
-    
+
     var octicons = {};
 
     var futureContinuation = null;
@@ -106,8 +106,8 @@
                 if (!visibleIds[id]) {
                     var octicon = octiconFromType(activity.type, activity.context);
                     var html = template({
-                        activity: activity, 
-                        id: id, 
+                        activity: activity,
+                        id: id,
                         octicon: tryGetOcticon(octicon),
                         description: descriptionFromType(activity.type, activity.context),
                     });
@@ -143,7 +143,7 @@
             };
         });
     }
-    
+
     function iteration() {
         if (!alive) return;
         var qs = futureContinuation ? '?future=' + encodeURIComponent(futureContinuation) : '';
@@ -193,8 +193,8 @@
                         if (!visibleIds[id]) {
                             var octicon = octiconFromType(gfi.type, gfi.context);
                             var html = goodFirstIssueTemplate({
-                                activity: gfi, 
-                                id: id, 
+                                activity: gfi,
+                                id: id,
                                 octicon: tryGetOcticon(octicon),
                                 description: descriptionFromType(gfi.type, gfi.context),
                             });

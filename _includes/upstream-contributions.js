@@ -15,7 +15,7 @@ function octiconFromType(type, optionalContext) {
         return 'git-merge';
     }
     switch(type) {
-        case 'pull_request.opened':  
+        case 'pull_request.opened':
           return 'git-pull-request';
         case 'issue_comment.created':
         case 'pull_request_review_comment.created':
@@ -76,8 +76,8 @@ function renderContributions(contributions) {
                     if (!visibleIds[id]) {
                         var octicon = octiconFromType(contribution.type, contribution.context);
                         var html = contributionsTemplate({
-                            activity: contribution, 
-                            id: id, 
+                            activity: contribution,
+                            id: id,
                             octicon: tryGetOcticon(octicon),
                             description: descriptionFromType(contribution.type, contribution.context),
                         });

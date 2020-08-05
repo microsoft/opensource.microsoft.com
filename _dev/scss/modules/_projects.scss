@@ -26,21 +26,34 @@
     background: $white;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1), 0px 3px 8px rgba(0, 0, 0, 0.13);
     border-radius: 4px;
+    position: relative;
 
     @include start-at($small) {
         display: flex;
         align-items: flex-start;
+        flex-wrap: wrap;
     }
 }
 
-.project img {
-    width: 40px;
-    margin-right: 16px;
+
+.project__social-image {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    max-height: 340px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .project__details {
     flex-grow: 1;
     padding-right: 12px;
+    width: 100%;
 }
 
 
@@ -70,32 +83,6 @@
 
 .project__meta {
     display: flex;
-}
-
-.project__url {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 81px;
-    min-width: 81px;
-    height: 32px;
-    border-radius: 2px;
-    background: $brand;
-    color: $white;
-    font-size: 14px;
-    transition: background $trans;
-
-    &:hover {
-        cursor: pointer;
-        background: darken($brand, 5%);
-    }
-
-    .ms-icon {
-        display: block;
-        margin-left: 6px;
-        font-size: 12px;
-        transform: rotate(-45deg);
-    }
 }
 
 
@@ -145,5 +132,52 @@
             opacity: 1;
             transform: rotate(1080deg);
         }
+    }
+}
+
+
+.project__repo_url,
+.project__url {
+    font-size: 14px;
+    color: $brand;
+    display: inline-flex;
+    align-items: center;
+    transition: color $trans;
+
+    svg,
+    .ms-icon {
+        margin-left: 6px;
+        display: block;
+        font-size: 12px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: darken($brand, 5%);
+    }
+}
+
+.project__url {
+
+    .ms-icon {
+        font-size: 12px;
+        transform: rotate(-45deg);
+    }
+}
+
+.project__urls {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+
+    // @include start-at($small) {
+    //     position: absolute;
+    //     top: 18px;
+    //     right: 18px;
+    //     margin-top: 0;
+    // }
+
+    > * + * {
+        margin-left: 16px;
     }
 }

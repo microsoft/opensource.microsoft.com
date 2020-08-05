@@ -3,6 +3,28 @@
 // ---------------------------------------------------------------------
 
 
+.refresh {
+    color: $brand;
+    display: flex;
+    align-items: center;
+    
+    transition: color $trans;
+
+    svg {
+        display: block;
+        margin-left: 6px;
+        transition: transform $trans;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: $brand-dark;
+        svg {
+            transform: rotate(360deg);
+        }
+    }
+}
+
 .page-header {
     background: $black;
     padding: 80px 0 80px;
@@ -20,7 +42,7 @@
 
 .page-header__shapes-lg {
     display: none;
-    
+
     @include start-at(1110px) {
         display: block;
         position: absolute;

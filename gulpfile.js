@@ -140,7 +140,7 @@ function watchFiles() {
 	    [
 	      "./_dev/scss/**/*"
 	    ],
-	    gulp.series(css, jekyll, browserSyncReload)
+	    gulp.series(css, jekyll)
 	);
 	gulp.watch(
 	    [

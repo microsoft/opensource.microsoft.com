@@ -41,26 +41,65 @@ title: Get involved
     </div>
     <hr class="wrapper" />
     -->
-    <div class="wrapper py-6 my-6">
-        <h3 class="h3">Happening now</h3>
-        <!-- TODO: a Refresh button that loads the 'latest' -->
-        <!-- ToDO: auto-refresh: disables Refresh button, sets alive to true -->
-        <!-- 
-        <p class="t4">[ Refresh ] button .... [ ] Auto-refresh checkbox</p>
-        -->
-        <div class="d-sm-flex flex-wrap">
-            <div id="activityFeed">
-                <ul class="project-list" id="activityList">
-                    
-                </ul>
+
+    <section class="wrapper  my-6 py-lg-4">
+        <header class="mb-6 border-bottom pb-4">
+            <div class="d-lg-flex flex-items-end flex-justify-between">
+                <div>
+                    <h2 class="h3">Happening now</h2>
+                    <p>See the latest activity on GitHub with Microsoft Open Source projects.</p>
+                </div>
+                <div class="">
+                    <!-- TODO: a Refresh button that loads the 'latest' -->
+                    <!-- ToDO: auto-refresh: disables Refresh button, sets alive to true -->
+                    <!-- <p class="refresh" id="refresh-feed">Refresh feed {% octicon sync %}</p> -->
+                </div>
             </div>
-            <script id="activity-template" type="text/x-handlebars-template">
-                <li>
-                    {% include activity.html %}
-                </li>
-            </script>
+        </header>
+
+        <div class="d-lg-flex flex-justify-between">
+            <div class="col-12 col-lg-8 pr-lg-6 mb-4 mb-md-0">
+
+                <div class="d-sm-flex flex-wrap">
+                    <div id="activityFeed">
+                        <ul class="project-list" id="activityList">
+
+                        </ul>
+                    </div>
+                    <script id="activity-template" type="text/x-handlebars-template">
+                        <li>
+                            {% include activity.html %}
+                        </li>
+                    </script>
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-4 pl-lg-6 col-lg-4">
+                <div class="sticky">
+                    <div class="cta">
+                        <div class="cta__inner">
+                            <p class="h5">Explore Microsoft projects</p>
+                            <p>
+                                Microsoft engineers and community members
+                                maintain thousands of GitHub repos: everything
+                                from complete samples, product SDKs, to entire products.
+                            </p>
+                            <p>
+                                Search, filter and explore to find what you're looking for, or an opportunity to join in the fun.
+                            </p>
+                            <a class="link-arrow text-white mt-4" href="{{ '/projects/explore/' | relative_url }}">View all projects</a>
+                            <br />
+                            <a class="link-arrow text-white mt-4" href="{{ '/collaborate/' | relative_url }}">Get involved</a>
+                            <!--
+                            <br/>
+                            <a class="link-arrow text-white mt-4" href="https://github.com/microsoft">Microsoft on GitHub</a>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
 
 
@@ -73,7 +112,7 @@ title: Get involved
             <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
                 <h2 class="h3">Get started</h2><!-- using H3 to make the sizing better -->
                 <p>
-                    Issues tagged as "good first issue" are a great 
+                    Issues tagged as "good first issue" are a great
                     chance to start participating in an open online
                     community.
                 </p>
@@ -91,7 +130,7 @@ title: Get involved
                     <!--
                     <li>
                         <a href="https://cla.opensource.microsoft.com" target="_new">Microsoft's Contributor License Agreement (CLA)</a>
-                        and the 
+                        and the
                         <a href="https://cla.dotnetfoundation.org" target="_new">.NET Foundation CLA</a>,
                         a one-time agreement for first-time contributors to Microsoft or .NET Foundation projects
                     </li>
@@ -100,23 +139,25 @@ title: Get involved
             </div>
         </div>
     </div>
-    
+
     <div class="wrapper py-6 my-6">
-        <div class="d-sm-flex flex-wrap">
-            <div id="goodFirstIssueFeed">
-                <ul class="project-list" id="goodFirstIssueList">
-                </ul>
+        <div class="col-md-10 col-lg-8 mx-auto">
+            <div class="d-sm-flex flex-wrap">
+                <div id="goodFirstIssueFeed">
+                    <ul class="project-list" id="goodFirstIssueList">
+                    </ul>
+                </div>
+                <script id="goodfirstissue-template" type="text/x-handlebars-template">
+                    <li>
+                        {% include good-first-issue.html %}
+                    </li>
+                </script>
             </div>
-            <script id="goodfirstissue-template" type="text/x-handlebars-template">
-                <li>
-                    {% include good-first-issue.html %}
-                </li>
-            </script>
         </div>
     </div>
 
     {% include octicons.html %}
-   
+
     <div class="wrapper-full bg-brand-dark text-white">
         <div class="wrapper py-6 my-6">
             <h3 class="h3">Community Resources</h3>
