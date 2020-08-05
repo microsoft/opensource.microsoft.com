@@ -9,7 +9,7 @@ title: Thanks - Open Source used in this site
     <div class="page-header">
         <div class="wrapper">
             <div class="col-md-10 col-lg-7 mx-auto">
-                <h1 class="h5 text-white">Thank you, open source</h1>
+                <h1 class="h5 text-white">Thank you.</h1>
             </div>
         </div>
     </div>
@@ -19,46 +19,40 @@ title: Thanks - Open Source used in this site
             <div class="col-md-10 col-lg-7 mx-auto">
                 <h3 class="h4 font-weight-400 mb-4">
                     Hundreds of thousands of open source projects are used across Microsoft's
-                    products and services.
+                    products and services, many contributed to by Microsoft engineers and teams
+                    along the way.
                 </h3>
                 <p>
-                    Thousands of projects power this simple website alone.
-                </p>
-                <p>
-                    THANK YOU to all of these amazing projects for helping everyone build great
-                    solutions together.
+                    Thousands of projects power this simple website alone. Thanks to all of
+                    the participants of these communities for building great technology together.
                 </p>
             </div>
         </div>
     </div>
 
-    
-    <!-- tbd -->
 
-    <p class="h2">
-        Kubernetes
-    </p>
+    <div class="wrapper py-6 my-6">
+        <script id="thanks-template" type="text/x-handlebars-template">
+            <div 
+                id="thanks{% raw %}{{ id }}{% endraw %}"
+                class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6">
+                <h3 class="h3">{% raw %}{{ project.title }}{% endraw %}</h3>
+                {% raw %}{{#if project.description }}{% endraw %}
+                <p>{% raw %}{{ project.description }}{% endraw %}</p>
+                {% raw %}{{/if}}{% endraw %}
+                {% raw %}{{#if project.repo }}{% endraw %}
+                <p>{% raw %}<a href="{{ project.repo }}" target="_blank" class="link-arrow-external mt-3">{{ project.repo }}</a>{% endraw %}</p>
+                {% raw %}{{/if}}{% endraw %}
+            </div>
+        </script>
 
-    <p class="h2">
-        NGINX
-    </p>
-
-    <p class="h2">
-        Moby
-    </p>
-
-    <p class="h2">
-        Postgres
-    </p>
-
-    <p class="h2">
-        GitHub Primer CSS
-    </p>
-
-    <p class="h2">
-        Visual Studio Code
-    </p>
-
+        <div class="d-sm-flex flex-wrap" id="thanksSection">
+        </div>
+    </div>
 
 
 </article>
+
+<script>
+    {% include thanks.js %}
+</script>
