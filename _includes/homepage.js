@@ -136,7 +136,7 @@ function featureNextAvatar(destinationSquareIndex) {
     $(newAvatarSelector).fadeIn(introduceMs, function () {
       var rect = $(heroSquare).children('rect');
       if (rect && rect.length === 1) {
-        $(rect).fadeOut(dismissMs, () => { ect.remove() });
+        $(rect).fadeOut(dismissMs, () => { rect.remove() });
       }
     });
   }, outgoingAvatar ? inbetweenMs : 1);

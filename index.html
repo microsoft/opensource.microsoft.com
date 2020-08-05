@@ -186,6 +186,10 @@ id: home
         <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="400">
             <h2 class="h3">Open Source Updates</h2>
         </div>
+        <div class="text-center mt-6 pb-6">
+            <a class="link-arrow-external" href="https://cloudblogs.microsoft.com/opensource/">Microsoft's Open Source
+                Blog</a>
+        </div>
 
         <div class="blog-list">
             {% for post in site.posts %}
@@ -193,11 +197,28 @@ id: home
                 data-animate-in-delay="200">
                 <div>
                     <h3 class="h5 text-brand font-weight-600 mb-2">{{ post.title }}</h3>
+                    {% if post.author %}
+                    <span class="blog-preview__meta mb-2">
+                        {% if post.authorAvatar %}
+                        <img
+                            alt="Photo or avatar image of {{ post.author }}"
+                            style="border-radius: 50%; max-width: 32px;display:inline-block"
+                            src="/assets/images/posts/{{ post.authorAvatar }}" />
+                        {% endif %}
+                        <div style="display: inline-block; margin-left: 6px">
+                            {{ post.author }}
+                            {% if post.authorTitle %}
+                            <br />{{ post.authorTitle }}
+                            {% endif %}
+                        </div>
+                    </span>
+                    {% endif %}
                     <p class="blog-preview__meta mb-2">{{ post.publishDate }}</p>
                     {{ post.content }}
                 </div>
-
+                <!--
                 <div class="link-arrow-external mt-4">Read more</div>
+                -->
             </a>
             {% endfor %}
         </div>
@@ -214,10 +235,12 @@ id: home
         </script>
         {% endif %}
 
+        <!--
         <div class="text-center mt-6 pb-6">
             <a class="link-arrow-external" href="https://cloudblogs.microsoft.com/opensource/">Microsoft's Open Source
                 Blog</a>
         </div>
+        -->
     </div>
 
 
@@ -229,10 +252,11 @@ id: home
             <h3 class="h3">Community Resources</h3>
             <div class="d-md-flex">
                 <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
-                    <p>Microsoft open source projects adopt a consistent community Code of Conduct. All
-                        Microsoft projects require contributors to sign the individual Contributor License Agreement
-                        (CLA)
-                        one time.</p>
+                    <p>
+                        We welcome you to our open communities and have a
+                        Code of Conduct and one-time Contributor License Agreement
+                        to help us participate together with care.
+                    </p>
                 </div>
                 <div class="col-md-6 pl-md-4 pl-lg-6">
                     {% for resources in site.data.community %}

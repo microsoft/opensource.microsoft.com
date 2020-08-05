@@ -19,7 +19,9 @@
     url: https://opensource.microsoft.com/codeofconduct
   - title: Microsoft Contributor License Agreement
     url: https://cla.opensource.microsoft.com
-  - title: The Open Source Guides
-    url: https://opensource.guide
   - title: Third-party Disclosures
     url: https://3rdpartysource.microsoft.com/
+  - title: Microsoft's Open Source Program
+    url: /program/
+  - title: The Open Source Guides
+    url: https://opensource.guide

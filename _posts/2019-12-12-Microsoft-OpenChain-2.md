@@ -3,6 +3,9 @@ layout: default
 title: Microsoft announces OpenChain 2.0 conformance for open source
 publishDate: December 12, 2019
 featured: true
+author: David Rudin
+authorTitle: Assistant General Counsel
+authorAvatar: davidrudin.jpg
 articleUrl: https://cloudblogs.microsoft.com/opensource/2019/12/12/announcing-microsoft-openchain-conformance/
 excerpt:
 ---
