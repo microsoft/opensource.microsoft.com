@@ -95,7 +95,7 @@ title: Explore all Microsoft repos
 
     $.ajax({
         type: 'GET',
-        url: 'https://opensource-dev.microsoft.com/api/repos',
+        url: '/api/repos',
         dataType: 'json',
         success: function(posts){
             //do something with posts.
@@ -113,7 +113,7 @@ title: Explore all Microsoft repos
     const searchString = urlParams.get('q');
     if( searchString ) {
         //console.log('Search param = ' + searchString);
-        var searchUrl = 'https://opensource-dev.microsoft.com/api/repos?q=' + searchString;
+        var searchUrl = '/api/repos?q=' + searchString;
         $.ajax({
             type: 'GET',
             url: searchUrl,
@@ -153,7 +153,7 @@ title: Explore all Microsoft repos
         if (activeFilters.length != 0) {
             $.ajax({
                 type: 'GET',
-                url: 'https://opensource-dev.microsoft.com/api/repos',
+                url: '/api/repos',
                 dataType: 'json',
                 success: function(posts){
                     results.addClass('is-thinking');

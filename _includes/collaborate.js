@@ -149,7 +149,7 @@
         var qs = futureContinuation ? '?future=' + encodeURIComponent(futureContinuation) : '';
         $.ajax({
             type: 'GET',
-            url: 'https://opensource-dev.microsoft.com/api/stream' + qs,
+            url: '/api/stream' + qs,
             dataType: 'json',
             success: function(activity){
                 if (activity && activity.future) {
@@ -213,7 +213,7 @@
     function loadGoodFirstIssues() {
         $.ajax({
             type: 'GET',
-            url: 'https://opensource-dev.microsoft.com/api/issues',
+            url: '/api/issues',
             dataType: 'json',
             success: function(firstIssues){
                 if (firstIssues && firstIssues.issues) {

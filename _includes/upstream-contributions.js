@@ -97,7 +97,7 @@ function renderContributions(contributions) {
 function loadContributions() {
     $.ajax({
         type: 'GET',
-        url: 'https://opensource-dev.microsoft.com/api/contributions',
+        url: '/api/contributions',
         dataType: 'json',
         success: function(contributions){
             if (contributions && contributions.contributions) {
