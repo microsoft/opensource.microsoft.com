@@ -13,6 +13,7 @@
     "browser-sync": "^2.26.7",
     "child_process": "^1.0.2",
     "del": "^5.1.0",
+    "gsap": "3.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
@@ -24,7 +25,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^8.0.0",
-    "npm-clean": "^1.0.3"
+    "npm-clean": "^1.0.3",
+    "timeago": "1.6.7"
   },
   "dependencies": {
     "@primer/css": "^14.3.0",
