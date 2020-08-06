@@ -49,10 +49,10 @@ var heroAvatarsContainer = null;
 
 var avatars = null;
 
-var recentAvatars = {};
-
 var mapAvatarToId = {};
 var mapAvatarIndex = 1;
+
+var nextAvatar = 0;
 
 function getNewAvatarIndex() {
   var index = mapAvatarIndex++;
@@ -80,15 +80,10 @@ function getHeroSquare(i) {
 }
 
 function getNextAvailableAvatar() {
-  var remainingAvatars = avatars.filter(avatar => !recentAvatars[avatar]);
-  if (remainingAvatars.length === 0) {
-    recentAvatars = {};
-    remainingAvatars = avatars;
+  if (nextAvatar >= avatars.length) {
+    nextAvatar = 0;
   }
-  var availableAvatars = remainingAvatars.filter(avatar => !visibleAvatars[avatar]);
-  if (availableAvatars.length) {
-    return randomElement(availableAvatars);
-  }
+  return avatars[nextAvatar++];
 }
 
 function randomElement(arr) {
@@ -111,7 +106,6 @@ function featureNextAvatar(destinationSquareIndex) {
   var newAvatarSelector = '#' + newAvatarId;
   mapAvatarToId[newAvatar] = newAvatarId;
   visibleAvatars[newAvatar] = true;
-  recentAvatars[newAvatar] = true;
   squareToAvatar[destinationSquareIndex] = newAvatar;
   squareRemainingClicks[destinationSquareIndex] = getRandomInt(minimumClicksPerAvatar, maximumClicksPerAvatar);
 
