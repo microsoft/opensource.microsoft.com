@@ -166,7 +166,7 @@ title: Explore all Microsoft repos
         if (activeFilters.length != 0) {
             $.ajax({
                 type: 'GET',
-                url: 's/api/repos',
+                url: '/api/repos',
                 dataType: 'json',
                 success: function(posts){
                     results.addClass('is-thinking');
