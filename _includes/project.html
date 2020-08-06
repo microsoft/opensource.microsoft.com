@@ -24,11 +24,12 @@
 
         <div class="project__meta">
             <div class="pr-4">
-                {% octicon star %} {% raw %}{{ stargazers_count }}{% endraw %}
+
+                {% octicon star %} <span class="format-number">{% raw %}{{ stargazers_count }}{% endraw %}</span>
             </div>
 
             <div class="pr-4">
-                {% octicon repo-forked %} {% raw %}{{ forks_count }}{% endraw %}
+                {% octicon repo-forked %} <span class="format-number">{% raw %}{{ forks_count }}{% endraw %}</span>
             </div>
 
             <div class="project__tags">

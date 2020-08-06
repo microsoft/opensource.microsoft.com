@@ -11,7 +11,6 @@ var AROSSMN = AROSSMN || {};
         APP.Global.init();
         APP.Viewport.init();
         APP.Header.init();
-        //APP.ScrollTo.init();
         APP.Tabs.init();
         APP.Accordion.init();
         APP.Draw.init();
@@ -433,5 +432,7 @@ APP.Tabs = {
 
     }
 };
+
+
 
 }(jQuery, AROSSMN));
