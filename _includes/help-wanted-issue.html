@@ -14,11 +14,14 @@
         <a class="activity__title" href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
             {% raw %}{{ activity.title }}{% endraw %}
         </a>
-        
+
         {% raw %}{{#if activity.labels }}{% endraw %}
         <div>
+            <!-- question: how does GitHub maintain OK contrast on these labels? -->
             {% raw %}{{#each activity.labels }}{% endraw %}
-            {% raw %}{{this}}&nbsp;{% endraw %}
+            <span style="display: inline-block; padding: 4px; background-color:#{% raw %}{{{this.color}}}{% endraw %}">
+            {% raw %}{{this.name}}&nbsp;{% endraw %}
+            </span>
             {% raw %}{{/each}}{% endraw %}
         </div>
         {% raw %}{{/if}}{% endraw %}
