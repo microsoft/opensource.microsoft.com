@@ -107,55 +107,55 @@ title: Get involved
     <hr class="wrapper" />
 
 
+    <section class="wrapper  my-6 py-lg-4">
+        <header class="mb-6 border-bottom pb-4">
+            <h2 class="h3">Get started</h2>
+            <p>
+                Issues tagged as "good first issue" are a great
+                place to start participating in an open online
+                community.
+            </p>
+        </header>
 
-    <div class="wrapper my-6 py-6">
-        <div class="d-md-flex flex-items-center">
-            <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
-                <h2 class="h3">Get started</h2><!-- using H3 to make the sizing better -->
-                <p>
-                    Issues tagged as "good first issue" are a great
-                    place to start participating in an open online
-                    community.
-                </p>
-            </div>
-            <div class="col-md-6 pl-md-4 col-lg-4">
-                <!--
-                <img class="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
-                -->
-                <p>
-                    A few good resources to learn about getting involved in online communities:
-                </p>
-                <ul>
-                    <li><a href="https://opensource.guide/how-to-contribute/" class="link-arrow text-brand" target="_new">How to Contribute to Open Source</a></li>
-                    <li><a href="https://opensource.microsoft.com/codeofconduct/" class="link-arrow text-brand" target="_new">Microsoft's Open Source Code of Conduct</a></li>
-                    <!--
-                    <li>
-                        <a href="https://cla.opensource.microsoft.com" target="_new">Microsoft's Contributor License Agreement (CLA)</a>
-                        and the
-                        <a href="https://cla.dotnetfoundation.org" target="_new">.NET Foundation CLA</a>,
-                        a one-time agreement for first-time contributors to Microsoft or .NET Foundation projects
-                    </li>
-                    -->
-                </ul>
-            </div>
-        </div>
-    </div>
+        <div class="d-lg-flex flex-justify-between">
+            <div class="col-12 col-lg-8 pr-lg-6 mb-4 mb-md-0">
 
-    <div class="wrapper py-6 my-6">
-        <div class="col-md-10 col-lg-8 mx-auto">
-            <div class="d-sm-flex flex-wrap">
-                <div id="goodFirstIssueFeed">
-                    <ul class="project-list" id="goodFirstIssueList">
+                <div class="d-sm-flex flex-wrap">
+                    <div id="goodFirstIssueFeed">
+                        <ul class="project-list" id="goodFirstIssueList">
+                        </ul>
+                    </div>
+                    <script id="goodfirstissue-template" type="text/x-handlebars-template">
+                        <li>
+                            {% include good-first-issue.html %}
+                        </li>
+                    </script>
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-4 pl-lg-6 col-lg-4">
+                <div>
+                    <h4 class="h4">Resources</h4>
+                    <p>
+                        A few good resources to learn about getting involved in online communities:
+                    </p>
+                    <ul>
+                        <li><a href="https://opensource.guide/how-to-contribute/" class="link-arrow text-brand" target="_new">How to Contribute to Open Source</a></li>
+                        <li><a href="https://opensource.microsoft.com/codeofconduct/" class="link-arrow text-brand" target="_new">Microsoft's Open Source Code of Conduct</a></li>
+                        <!--
+                        <li>
+                            <a href="https://cla.opensource.microsoft.com" target="_new">Microsoft's Contributor License Agreement (CLA)</a>
+                            and the
+                            <a href="https://cla.dotnetfoundation.org" target="_new">.NET Foundation CLA</a>,
+                            a one-time agreement for first-time contributors to Microsoft or .NET Foundation projects
+                        </li>
+                        -->
                     </ul>
                 </div>
-                <script id="goodfirstissue-template" type="text/x-handlebars-template">
-                    <li>
-                        {% include good-first-issue.html %}
-                    </li>
-                </script>
             </div>
         </div>
-    </div>
+    </section>
+
 
     {% include octicons.html %}
 
