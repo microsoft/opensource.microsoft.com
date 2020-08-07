@@ -54,6 +54,10 @@
             return 'git-merge';
         }
         switch(type) {
+            case 'pull_request_review.submitted':
+                return 'comment-discussion'; // could find a better octicon probably
+            case 'pull_request.opened':
+                return 'git-pull-request';
             case 'issue_comment.created':
             case 'pull_request_review_comment.created':
                 return 'comment';
@@ -91,7 +95,7 @@
             case 'pull_request_review.submitted':
                 return 'reviewed a pull request';
             case 'issues.labeled':
-                return 'good first issue';
+                return 'issue labeled';
             default:
                 return type;
         }
@@ -210,17 +214,55 @@
         }
     }
 
-    function loadGoodFirstIssues() {
+    function loadIssuesOneTime() {
         $.ajax({
             type: 'GET',
             url: '/api/issues',
             dataType: 'json',
-            success: function(firstIssues){
-                if (firstIssues && firstIssues.issues) {
-                    renderGoodFirstIssues(firstIssues.issues);
+            success: function(issues){
+                if (issues && issues.issues) {
+                    renderGoodFirstIssues(issues.issues);
+                }
+                if (issues && issues.helpWanted) {
+                    renderHelpWantedIssues(issues.helpWanted);
                 }
             }
         });
     }
 
-    loadGoodFirstIssues();
+    loadIssuesOneTime();
+
+    var helpWantedIssueFeed = $('#helpWantedIssueFeed'),
+        helpWantedIssueList = $('#helpWantedIssueList'),
+        helpWantedIssueSource = $("#helpwantedissue-template").html(),
+        helpWantedIssueTemplate = Handlebars.compile(helpWantedIssueSource);
+
+    var initialHelpWantedIssueDisplay = 6;
+
+    function renderHelpWantedIssues(helpWantedIssues) {
+        var shown = 0;
+        if (helpWantedIssues && helpWantedIssues.length) {
+            var gfi = helpWantedIssues.pop();
+            while (gfi) {
+                try {
+                    if (shown++ < initialHelpWantedIssueDisplay) {
+                        var id = gfi.id;
+                        if (!visibleIds[id]) {
+                            var octicon = octiconFromType(gfi.type, gfi.context);
+                            var html = helpWantedIssueTemplate({
+                                activity: gfi,
+                                id: id,
+                                octicon: tryGetOcticon(octicon),
+                                description: descriptionFromType(gfi.type, gfi.context),
+                            });
+                            helpWantedIssueList.prepend(html);
+                            jQuery('time.timeago').timeago();
+                        }
+                    }
+                } catch (ignoredError) {
+                    console.dir(ignoredError);
+                }
+                gfi = helpWantedIssues.pop();
+            }
+        }
+    }

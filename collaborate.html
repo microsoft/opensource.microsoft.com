@@ -132,6 +132,29 @@ title: Get involved
                     </script>
                 </div>
 
+                <!-- TODO: more space here -->
+                <div>&nbsp;</div>
+
+                <header class="mb-6 border-bottom pb-4">
+                    <h2 class="h3">Help Wanted</h2>
+                    <p>
+                        "Help Wanted" issues on GitHub are a great way to jump in to
+                        communities and engage deeply by solving technical challenges.
+                    </p>
+                </header>
+
+                <div class="d-sm-flex flex-wrap">
+                    <div id="helpWantedIssueFeed">
+                        <ul class="project-list" id="helpWantedIssueList">
+                        </ul>
+                    </div>
+                    <script id="helpwantedissue-template" type="text/x-handlebars-template">
+                        <li>
+                            {% include help-wanted-issue.html %}
+                        </li>
+                    </script>
+                </div>
+
             </div>
             <div class="col-12 col-lg-4 pl-lg-6 col-lg-4">
                 <div>

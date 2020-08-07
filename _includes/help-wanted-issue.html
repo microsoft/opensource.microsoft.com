@@ -1,0 +1,23 @@
+
+<article class="activity good-first-issue" id="helpwantedissue{% raw %}{{ id }}{% endraw %}">
+    <div class="activity__body">
+        <div class="activity__body-hd">
+            <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
+                {% raw %}{{ activity.repoName }}{% endraw %}
+            </a>
+            <p class="activity__activity">
+            <span>{% raw %}{{ description }}{% endraw %}</span>
+            <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
+        </p>
+        </div>
+
+        <a class="activity__title" href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
+            {% raw %}{{ activity.title }}{% endraw %}
+        </a>
+
+        <div class="activity__footer">
+            {% octicon repo %}
+            <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.orgName }}/{{ activity.repoName }}{% endraw %}</a>
+        </div>
+    </div>
+</article>
