@@ -14,6 +14,14 @@
         <a class="activity__title" href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
             {% raw %}{{ activity.title }}{% endraw %}
         </a>
+        
+        {% raw %}{{#if activity.labels }}{% endraw %}
+        <div>
+            {% raw %}{{#each activity.labels }}{% endraw %}
+            {% raw %}{{this}}&nbsp;{% endraw %}
+            {% raw %}{{/each}}{% endraw %}
+        </div>
+        {% raw %}{{/if}}{% endraw %}
 
         <div class="activity__footer">
             {% octicon repo %}

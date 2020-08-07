@@ -8,12 +8,20 @@
             <p class="activity__activity">
             <span>{% raw %}{{ description }}{% endraw %}</span>
             <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
-        </p>
+            </p>
         </div>
 
         <a class="activity__title" href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
             {% raw %}{{ activity.title }}{% endraw %}
         </a>
+
+        {% raw %}{{#if activity.labels }}{% endraw %}
+        <div>
+            {% raw %}{{#each activity.labels }}{% endraw %}
+            {% raw %}{{this}}&nbsp;{% endraw %}
+            {% raw %}{{/each}}{% endraw %}
+        </div>
+        {% raw %}{{/if}}{% endraw %}
 
         <div class="activity__footer">
             {% octicon repo %}
