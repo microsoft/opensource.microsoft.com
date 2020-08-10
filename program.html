@@ -47,6 +47,9 @@ permalink: /program/
                     <li class="tabs__tab is-active" data-tab="program-overview">
                         <span>Overview</span>
                     </li>
+                    <li class="tabs__tab" data-tab="program-tools">
+                        <span>Tools &amp; resources</span>
+                    </li>
                     <li class="tabs__tab" data-tab="program-using">
                         <span>Using open source</span>
                     </li>
@@ -56,9 +59,6 @@ permalink: /program/
                     <li class="tabs__tab" data-tab="program-releasing">
                         <span>Releasing projects</span>
                     </li>
-                    <li class="tabs__tab" data-tab="program-tools">
-                        <span>Tools &amp; resources</span>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -67,6 +67,10 @@ permalink: /program/
             <div class="col-md-10 col-lg-7 mx-auto">
                 <div class="tabs__content is-active" data-tab="program-overview">
                     {% include program-overview.html %}
+                </div>
+
+                <div class="tabs__content" data-tab="program-tools">
+                    {% include program-tools.html %}
                 </div>
 
                 <div class="tabs__content" data-tab="program-using">
@@ -81,9 +85,6 @@ permalink: /program/
                     {% include program-releasing.html %}
                 </div>
 
-                <div class="tabs__content" data-tab="program-tools">
-                    {% include program-tools.html %}
-                </div>
         </div>
     </div>
 
