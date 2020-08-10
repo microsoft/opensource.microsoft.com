@@ -14,6 +14,7 @@
     var $ = jQuery,
         activityFeed = $('#activityFeed'),
         activityList = $('#activityList'),
+        refreshFeed = $('#refresh-feed'),
         source = $("#activity-template").html(),
         template = Handlebars.compile(source);
 
@@ -151,7 +152,12 @@
         });
     }
 
+    function updateRefreshFeed(enabled) {
+        refreshFeed.prop('disabled', !!enabled);
+    }
+
     function iteration(isAutomatic) {
+        updateRefreshFeed(false);
         var qs = futureContinuation ? '?future=' + encodeURIComponent(futureContinuation) : '';
         if (!isAutomatic) {
             qs = ''; // refresh should grab the latest
@@ -161,7 +167,11 @@
             type: 'GET',
             url: url,
             dataType: 'json',
+            error: function () {
+                updateRefreshFeed(true);
+            },
             success: function(activity){
+                updateRefreshFeed(true);
                 if (activity && activity.future) {
                     futureContinuation = activity.future;
                 }
@@ -179,7 +189,8 @@
     }
 
     iteration();
-    $('#refresh-feed').click(refresh);
+
+    refreshFeed.click(refresh);
 
     // ---------------------
     // this is a one-time pull of "good first issue"
