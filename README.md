@@ -46,15 +46,6 @@ When you submit a pull request, a CLA bot will automatically determine whether y
 a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
 provided by the bot. You will only need to do this once across all repos using our CLA.
 
-## Jekyll site install
-
-Ensure you have a working copy of Ruby.
-
-```sh
-bundle
-bundle exec jekyll serve
-```
-
 # Trademarks
 
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
@@ -62,3 +53,18 @@ trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
+
+## Developing locally
+
+Ensure you have a working copy of Ruby, Node.js and Gulp.
+
+```sh
+bundle
+npm install
+gulp
+bundle exec jekyll serve
+```
+
+The `Dockerfile` is available to host a local `nginx` version of the static site,
+although dynamic site features are not available when running local, and Gulp is
+not currently run in the container.
