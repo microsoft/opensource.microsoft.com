@@ -3,11 +3,41 @@
 // ---------------------------------------------------------------------
 
 
+.IssueLabel {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4px 6px 0;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px 3px;
+    border-radius: 50px;
+    text-transform: capitalize;
+    text-align: center;
+    min-width: 50px;
+
+    &[style="background-color:#1d76db"],
+    &[style="background-color:#128A0C"],
+    &[style="background-color:#a084f4"],
+    &[style="background-color:#8D6673"],
+    &[style="background-color:#159818"],
+    &[style="background-color:#0052cc"],
+    &[style="background-color:#cc317c"],
+    &[style="background-color:#3d5c8e"],
+    &[style="background-color:#53b0db"],
+    &[style="background-color:#666600"],
+    &[style="background-color:#0052cc"],
+    &[style="background-color:#xxxxxx"],
+    &[style="background-color:#xxxxxx"],
+    &[style="background-color:#xxxxxx"] {
+        color: $white;
+    }
+}
+
 .refresh {
     color: $brand;
     display: flex;
     align-items: center;
-    
+
     transition: color $trans;
 
     svg {

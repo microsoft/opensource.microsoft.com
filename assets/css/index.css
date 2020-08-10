@@ -13039,6 +13039,20 @@ body.menu-is-open {
 .foundation-list .img-gap {
   height: 40px; }
 
+.IssueLabel {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 4px 6px 0;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px 3px;
+  border-radius: 50px;
+  text-transform: capitalize;
+  text-align: center;
+  min-width: 50px; }
+  .IssueLabel[style="background-color:#1d76db"], .IssueLabel[style="background-color:#128A0C"], .IssueLabel[style="background-color:#a084f4"], .IssueLabel[style="background-color:#8D6673"], .IssueLabel[style="background-color:#159818"], .IssueLabel[style="background-color:#0052cc"], .IssueLabel[style="background-color:#cc317c"], .IssueLabel[style="background-color:#3d5c8e"], .IssueLabel[style="background-color:#53b0db"], .IssueLabel[style="background-color:#666600"], .IssueLabel[style="background-color:#0052cc"], .IssueLabel[style="background-color:#xxxxxx"], .IssueLabel[style="background-color:#xxxxxx"], .IssueLabel[style="background-color:#xxxxxx"] {
+    color: #ffffff; }
+
 .refresh {
   color: #258EDE;
   display: -webkit-box;

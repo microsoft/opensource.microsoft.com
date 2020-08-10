@@ -19,8 +19,8 @@
         <div>
             <!-- question: how does GitHub maintain OK contrast on these labels? -->
             {% raw %}{{#each activity.labels }}{% endraw %}
-            <span style="display: inline-block; padding: 4px; background-color:#{% raw %}{{{this.color}}}{% endraw %}">
-            {% raw %}{{this.name}}&nbsp;{% endraw %}
+            <span class="IssueLabel" style="background-color:#{% raw %}{{{this.color}}}{% endraw %}">
+            {% raw %}{{this.name}}{% endraw %}
             </span>
             {% raw %}{{/each}}{% endraw %}
         </div>
