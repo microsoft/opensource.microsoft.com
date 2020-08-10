@@ -4,7 +4,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Microsoft Open Source
 email:
-description: |
+description: Microsoft Open Source
 
 twitter_username: openatmicrosoft
 github_username: microsoft
@@ -35,9 +35,19 @@ collections:
 
 exclude:
   - README.md
+  - Brewfile
+  - Brewfile.lock.json
+  - CODE_OF_CONDUCT.md
+  - content.json
+  - CONTRIBUTING.md
+  - LICENSE
+  - localbuilder.sh
   - Gemfile
+  - SECURITY.md
   - Gemfile.lock
   - CNAME
+  - Dockerfile
+  - Dockerfile.builder
   - script
   - vendor/gems
   - node_modules
