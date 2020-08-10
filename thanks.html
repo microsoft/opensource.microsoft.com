@@ -32,27 +32,23 @@ title: Thanks - Open Source used in this site
 
 
     <div class="wrapper py-6 my-6">
-        <script id="thanks-template" type="text/x-handlebars-template">
-            <div 
-                id="thanks{% raw %}{{ id }}{% endraw %}"
-                class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6">
-                <h3 class="h3">{% raw %}{{ project.title }}{% endraw %}</h3>
-                {% raw %}{{#if project.description }}{% endraw %}
-                <p>{% raw %}{{ project.description }}{% endraw %}</p>
-                {% raw %}{{/if}}{% endraw %}
-                {% raw %}{{#if project.repo }}{% endraw %}
-                <p>{% raw %}<a href="{{ project.repo }}" target="_blank" class="link-arrow-external mt-3">{{ project.repo }}</a>{% endraw %}</p>
-                {% raw %}{{/if}}{% endraw %}
-            </div>
-        </script>
-
         <div class="d-sm-flex flex-wrap" id="thanksSection">
+            {% for featured in site.data.dependencies %}
+            {% for project in featured.featured %}
+            <div 
+                class="col-12 col-sm-6 col-md-4 col-lg-3 pr-sm-3 pr-lg-4 mb-6">
+                <h3 class="h3">{{ project.title }}</h3>
+                {% if project.description %}
+                <p>{{ project.description }}</p>
+                {% endif %}
+                {% if project.repo %}
+                <p><a href="{{ project.repo }}" target="_blank" class="link-arrow-external mt-3">{{ project.repo }}</a></p>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% endfor %}
         </div>
     </div>
 
 
 </article>
-
-<script>
-    {% include thanks.js %}
-</script>

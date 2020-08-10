@@ -1,15 +1,4 @@
-    // TODO: pause button
-    // TODO: more button, which will pause
-    // TODO: implement "more" experience and separate API for that
-
-    // TODO: parallel experience, slow poll - contributions
-    // TODO: parallel experience, slow poll - good first issue
-
-    // CONSIDER: start paused
-    // INVESTIGATE: are there browser/window events are obscured/not actively on the tab/idle to connect to and auto-pause?
-
-    // ---
-    // this is the primary near real-time activity feed
+    // CONSIDER: More button
 
     var $ = jQuery,
         activityFeed = $('#activityFeed'),

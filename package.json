@@ -24,7 +24,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^8.0.0",
-    "npm-clean": "^1.0.3"
+    "npm-clean": "^1.0.3",
+    "yaml": "1.10.0"
   },
   "dependencies": {
     "@primer/css": "^14.3.0",
