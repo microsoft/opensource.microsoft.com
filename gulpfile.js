@@ -6,10 +6,9 @@ const devPath 			= projectPath + '_dev';
 const buildPath 		= projectPath + 'assets';
 const projectURL 		= projectPath + './_site';
 
-const fs = require('fs');
-const path = require('path');
 
 // npm packages
+const fs = require('fs');
 const gulp 				= require('gulp');
 const gulpLoadPlugins 	= require('gulp-load-plugins');
 const cp = require("child_process");
@@ -91,11 +90,12 @@ function css() {
 }
 
 
-function thanks() {
+function thanks(done) {
 	console.log('Building thanks data...');
 	const yaml = buildThanksData();
 	const file = path.join(__dirname, '_data', 'dependencies.yml');
 	fs.writeFileSync(file, yaml);
+	return done();
 }
 
 
