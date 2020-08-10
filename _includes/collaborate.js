@@ -23,7 +23,7 @@
     var backwardContinuation = null;
 
     var rendering = null;
-    var alive = true;
+    var alive = false;
     var queuedActivity = [];
     var visibleActivity = [];
     var pinnedActivity = [];
@@ -38,6 +38,10 @@
     function start() {
         alive = true;
         iteration();
+    }
+
+    function refresh(isAutomatic) {
+        iteration(isAutomatic);
     }
 
     function tryGetOcticon(name) {
@@ -102,7 +106,6 @@
     }
 
     function renderNext() {
-        if (!alive) return;
         if (queuedActivity && queuedActivity.length) {
             var activity = queuedActivity.pop();
             try {
@@ -129,7 +132,7 @@
             cleanupDisplay();
         }
         if (visibleActivity.length < initialDisplay && queuedActivity.length) {
-            setInterval(renderNext, 1);
+            rendinging = setTimeout(renderNext, 1);
         }
     }
 
@@ -148,12 +151,15 @@
         });
     }
 
-    function iteration() {
-        if (!alive) return;
+    function iteration(isAutomatic) {
         var qs = futureContinuation ? '?future=' + encodeURIComponent(futureContinuation) : '';
+        if (!isAutomatic) {
+            qs = ''; // refresh should grab the latest
+        }
+        var url = '/api/stream' + qs;
         $.ajax({
             type: 'GET',
-            url: '/api/stream' + qs,
+            url: url,
             dataType: 'json',
             success: function(activity){
                 if (activity && activity.future) {
@@ -166,15 +172,14 @@
                     activity.activities.forEach(activity => queuedActivity.push(activity));
                     if (activity.activities.length && !rendering) {
                         renderNext();
-                        rendering = setInterval(renderNext, displayInterval);
                     }
                 }
-                setTimeout(iteration, refreshInterval);
             }
         });
     }
 
-    start();
+    iteration();
+    $('#refresh-feed').click(refresh);
 
     // ---------------------
     // this is a one-time pull of "good first issue"
