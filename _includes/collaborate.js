@@ -32,6 +32,7 @@
 
     function refresh(isAutomatic) {
         iteration(isAutomatic);
+        return false;
     }
 
     function tryGetOcticon(name) {
