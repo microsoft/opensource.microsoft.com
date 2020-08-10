@@ -6,6 +6,9 @@ const devPath 			= projectPath + '_dev';
 const buildPath 		= projectPath + 'assets';
 const projectURL 		= projectPath + './_site';
 
+const fs = require('fs');
+const path = require('path');
+
 // npm packages
 const gulp 				= require('gulp');
 const gulpLoadPlugins 	= require('gulp-load-plugins');
@@ -20,6 +23,9 @@ const concat 			= require('gulp-concat');
 const uglify			= require('gulp-uglify');
 const imagemin			= require('gulp-imagemin');
 const pngquant			= require('imagemin-pngquant');
+
+// local scripts
+const buildThanksData   = require('./script/thanks');
 
 const browsersync = require("browser-sync").create();
 const del = require("del");
@@ -82,6 +88,14 @@ function css() {
     .pipe(gulp.dest("./assets/css/"))
 	.pipe(browsersync.stream());
     //.pipe(browsersync.stream());
+}
+
+
+function thanks() {
+	console.log('Building thanks data...');
+	const yaml = buildThanksData();
+	const file = path.join(__dirname, '_data', 'dependencies.yml');
+	fs.writeFileSync(file, yaml);
 }
 
 
@@ -162,7 +176,7 @@ function watchFiles() {
 }
 
 
-const build = gulp.series(clean, jsFromNpm, css, js);
+const build = gulp.series(clean, jsFromNpm, css, js, thanks);
 //const watch = gulp.parallel(watchFiles, browserSync);
 
 const jekylll = gulp.series(clean, gulp.parallel(css,js,jekyll));
@@ -180,6 +194,7 @@ exports.clean = clean;
 exports.watch = watch;
 exports.watchFiles = watchFiles;
 exports.jsFromNpm = jsFromNpm;
+exports.thanks = thanks;
 
 //
 // gulp.task('default', gulp.series('clean', 'styles', function(done){

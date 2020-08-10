@@ -2,13 +2,15 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('yaml');
 
+module.exports = function() {
+
 const dependenciesPath = path.resolve(path.join(__dirname, '..', '_data', 'dependencies.yml'));
 const document = yaml.parse(fs.readFileSync(dependenciesPath, 'utf8'));
 
 const skip = fromYaml(document, 'skip') || [];
-const components = fromYaml(document, 'components') || [];
+const components = []; // explicitly emptied: fromYaml(document, 'components') || [];
 const featured = fromYaml(document, 'featured') || [];
-const dependencies = fromYaml(document, 'dependencies') || [];
+const dependencies = []; // explicitly emptied: fromYaml(document, 'dependencies') || [];
 
 function fromYaml(y, name) {
     for (let i = 0; i < y.length; i++) {
@@ -59,4 +61,6 @@ const output = yaml.stringify([
   {components},
   {dependencies},
 ]);
-console.log(output);
+
+return output;
+}
