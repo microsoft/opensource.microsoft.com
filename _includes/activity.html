@@ -18,10 +18,11 @@ activity.created
         <div class="activity__body">
             <div class="activity__body-hd">
                 <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
-                    {% raw %}{{ activity.repoName }}{% endraw %}
+                    {% raw %}{{ activity.actorLogin }}{% endraw %}
+                    
                 </a>
                 <p class="activity__activity">
-                <span>{% raw %}{{ description }}{% endraw %}</span>
+                <span>{% raw %}{{{ octicon }}} {{ description }}{% endraw %}</span>
                 <time class="timeago" datetime="{% raw %}{{ activity.created }}{% endraw %}">{% raw %}{{ activity.created }}{% endraw %}</time>
             </p>
             </div>
@@ -31,7 +32,7 @@ activity.created
             </a>
 
             <div class="activity__footer">
-                {% raw %}{{{ octicon }}}{% endraw %}
+                {% octicon repo %}
                 <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.orgName }}/{{ activity.repoName }}{% endraw %}</a>
             </div>
         </div>

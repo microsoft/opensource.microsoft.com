@@ -3,7 +3,8 @@
     <div class="activity__body">
         <div class="activity__body-hd">
             <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">
-                {% raw %}{{ activity.repoName }}{% endraw %}
+                {% octicon repo %}
+                {% raw %}{{ activity.orgName }}/{{ activity.repoName }}{% endraw %}
             </a>
             <p class="activity__activity">
             <span>{% raw %}{{ description }}{% endraw %}</span>
@@ -17,7 +18,6 @@
 
         {% raw %}{{#if activity.labels }}{% endraw %}
         <div>
-            <!-- question: how does GitHub maintain OK contrast on these labels? -->
             {% raw %}{{#each activity.labels }}{% endraw %}
             <span class="IssueLabel" style="background-color:#{% raw %}{{{this.color}}}{% endraw %}">
             {% raw %}{{this.name}}{% endraw %}
@@ -25,10 +25,11 @@
             {% raw %}{{/each}}{% endraw %}
         </div>
         {% raw %}{{/if}}{% endraw %}
-
+        <!--
         <div class="activity__footer">
             {% octicon repo %}
             <a href="{% raw %}{{ activity.activityUrl }}{% endraw %}" target="_new">{% raw %}{{ activity.orgName }}/{{ activity.repoName }}{% endraw %}</a>
         </div>
+        -->
     </div>
 </article>
