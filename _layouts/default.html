@@ -9,7 +9,6 @@
         <!--[if IE]><meta http-equiv="cleartype" content="on" /><![endif]-->
         <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
         <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-        <link rel="stylesheet" href="https://use.typekit.net/fhk4uct.css">
         <link rel="stylesheet" media="screen" href="{{ '/assets/css/index.css' | relative_url }}" />
         <link rel="shortcut icon" type="image/ico" href="{{ '/assets/images/favicons/favicon.png' | relative_url }}" />
         <link rel="apple-touch-icon" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}" />
@@ -25,9 +24,9 @@
                 opacity: 0;
             }
         </style>
-        <script src="{{ cdn }}/assets/js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="{{ cdn }}/assets/js/jquery.timeago.js"></script>
-        <script src="{{ cdn }}/assets/js/handlebars.js"></script>
+        <script src="{{ site.cdn }}/assets/js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="{{ site.cdn }}/assets/js/jquery.timeago.js"></script>
+        <script src="{{ site.cdn }}/assets/js/handlebars.js"></script>
     </head>
 
     <body class="page-loading no-js {{ page.id }}" id="page-{{ page.id }}">
