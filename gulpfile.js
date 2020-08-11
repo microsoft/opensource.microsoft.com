@@ -103,7 +103,6 @@ function js() {
 	console.log('Compiling JS...');
 
 	var scriptsToConcat = [
-		//devPath + '/js/slick.min.js',
 		devPath + '/js/main.js'
 	];
 

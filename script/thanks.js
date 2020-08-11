@@ -36,7 +36,7 @@ function fromPackage(src, dest) {
       }
       dest.push(entry);
     } catch (error) {
-      console.error(error);
+      console.log(`skipping ${name}`);
     }
   }
 }
