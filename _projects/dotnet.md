@@ -1,9 +1,9 @@
 ---
-title: .NET Core
+title: .NET
 logo: dotnet.png
-externalLogo:
-featured:
-description: .NET Core is Microsoft's open-source, general-purpose development framework for building cross-platform apps.
-linkText: About .NET Core
-projectUrl: https://docs.microsoft.com/en-us/dotnet/core/about
+# externalLogo:
+featured: true
+description: .NET is Microsoft's open-source, general-purpose development framework for building cross-platform apps.
+linkText: About .NET
+projectUrl: https://dotnet.microsoft.com
 ---
