@@ -2,7 +2,7 @@
     <div class="site-header__inner">
         <div class="site-logo">
             <a href="{{ '/' | relative_url }}">
-                <img src="{{ '/assets/images/Microsoft-Open-Source-logo.svg' | relative_url }}"
+                <img src="https://opensource.azureedge.net/assets/images/Microsoft-Open-Source-logo.svg"
                     alt="Microsoft | Open Source logo" />
                 <span class="sr-only">Return to homepage</span>
             </a>
@@ -48,15 +48,6 @@
                     </label>
                     <input type="text" id="header-search" name="q" placeholder="Search" />
                 </form>
-                <!--
-                <form class="search-form" role="search" action="https://www.microsoft.com/en-us/search" method="GET">
-                    <label for="header-search">
-                        <span class="sr-only">Search on Microsoft.com</span>
-                        {% octicon search %}
-                    </label>
-                    <input type="text" id="header-search" placeholder="Search" />
-                </form>
-                -->
                 <div class="search-trigger">
                     {% octicon search %}
                 </div>
@@ -133,13 +124,4 @@
         </label>
         <input type="text" name="q" placeholder="Search" />
     </form>
-    <!--
-    <form class="search-form" role="search" action="https://www.microsoft.com/en-us/search" method="GET">
-        <label>
-            <span class="sr-only">Search on Microsoft.com</span>
-            {% octicon search %}
-        </label>
-        <input type="text" placeholder="Search" />
-    </form>
-    -->
 </div>
