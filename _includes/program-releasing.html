@@ -7,11 +7,6 @@
 
     <h4 class="h4">Release policy</h4>
     <p><em>This is a summary of how we approach releasing open source at Microsoft.</em></p>
-    <p>
-        While releasing Microsoft code as open source is encouraged, we also need to 
-        protect valuable Intellectual Property and ensure a valuable and quality 
-        experience for users of our projects.
-    </p>
 
     <h5 class="h5">Approval process</h5>
     <p>
@@ -26,16 +21,15 @@
         plan, and IP management strategy around your proposal.
     </p>
     <p>
-        If you are looking to release non-product code (such as utility libraries, tools, and sample code), your registration will not 
-        require further review if a set of specific conditions are met around good judgement, publishing with the MIT license,
-        not distributing third-party code or content, not containing telemetry, not containing cryptography, and <em>other specific
-        requirements that have been listed and made available internally to Microsoft employees for review</em>.
+        If you are looking to release non-product code (such as utility libraries, tools, and sample code), your registration likely will
+        not require further review if a set of specific conditions are met around purpose, publishing with the preferred license,
+        not distributing third-party code or content, and <em>a set of other specific
+        requirements that are specific to the company and provided inside the company to employees for review</em>.
     </p>
     <h5 class="h5">Location</h5>
     <p>
         All Microsoft open source code should be released on GitHub in one of Microsoft's
-        GitHub Enterprise Cloud orgs. The vast majority of projects will go in the official
-        Microsoft org.
+        GitHub orgs. The vast majority of projects will go in the official company org.
     </p>
     <p>
         Where we are participating in existing community that does not work on GitHub, your 
@@ -43,74 +37,48 @@
     </p>
     <p>
         If you do not plan on releasing your code to the public, an InnerSource location provided by
-        the One Engineering System team is a better option for private engineering work.
+        the One Engineering System team is a better option for private engineering work: for example,
+        using Azure Repos.
     </p>
-    <p>The following projects are typically hosted in a private engineering system and are not permitted on GitHub.com for open source:</p>
-    <ul class="ul mt-4">
-        <li>First-party product code</li>
-        <li>Projects only shared with the rest of the company (new hire wiki guides, internal hackathon projects, for example)</li>
-        <li>Moonlighting projects</li>
-    </ul>
-
-    <h5 class="h5">Security</h5>
-    <p>
-        All Microsoft open source code must follow all applicable security requirements related 
-        to the Security Development Lifecycle.
-    </p>
-
     <h5 class="h5">Licensing</h5>
     <p>
         All Microsoft open source code should be released under the MIT license.
     </p>
-    <p>
-        Where we are participating in existing community that does not use the MIT license, work with 
-        your business and legal contacts to determine the appropriate license. Our intention is to fit 
-        in with the existing community. We just need to confirm that the terms work for the business.
-    </p>
 
     <h5 class="h5">Contributions</h5>
     <p>
-        All contributions to a Microsoft-managed open source project must be covered by a 
-        Contributor License Agreement (CLA) that validates that the contributor(s) have the 
-        right to contribute the content and that Microsoft has the right to use, distribute and 
-        relicense the contribution.
-    </p>
-    <p>
-        The CLA must be agreed to by all contributors who are not Microsoft Full-time Employees (FTE) or 
+        All contributions to a Microsoft-managed open source project must use the 
+        Microsoft Contributor License Agreement (CLA). The CLA must be agreed to 
+        by all contributors who are not Microsoft Full-time Employees (FTE) or 
         interns prior to the contribution being merged into the project codebase.
     </p>
     <p>
-        The CLA requirement is waived for contributions that only affect one file and with a change 
-        that is 15 lines or less, or whatever the current internal guidance is for this policy.
+        The CLA requirement is waived in certain smaller contribution cases.
     </p>
 
     <h4 class="h4">Release checklist</h4>
     <p>
         <em>Releasing an open source code project is a different practice than releasing a 
         product or service. This content only refers to standing up an open source project 
-        to a public repository on GitHub.</em>
+        to a public repository on GitHub. Your organization may have a broad set of
+        additional criteria every release should complete.</em>
     </p>
     <p>
         The following steps should be taken to release and maintain your open source project using the MIT license:
     </p>
     <ul class="ul mt-4">
         <li>
-            <b>Register your release:</b>
-            You can start your release process anytime using the internal source portal, or by creating your
-            repo on GitHub directly and following the instructions you receive by e-mail. If a business and
-            legal review is needed, the wizard process will trigger that easy review process.
+            <b>Create your repo and register your release:</b>
+            The "new repo wizard" contains a form of questions regarding your release. Start there, or,
+            if you created the repo directly on GitHub, you'll receive a link by e-mail to complete the wizard
+            and unlock your repo.<br /><br />            
+            If a business and legal review is needed, the wizard will trigger that review process at the end.
         </li>
         <li>
-            <b>Create and initialize a GitHub repository:</b>
-            create your GitHub repository using the new repository wizard or directly on GitHub. Repositories must be 
-            hosted within a Microsoft-managed GitHub Enterprise Cloud organization and may not be made public until 
-            the release registration is approved by your legal team and management, as required.
-        </li>
-        <li>
-            <b>Include the following in the root directory:</b>
+            <b>Include the following in your repo root directory. The default template may have placed these files for you as a start:</b>
             <ul class="ul mt-4">
                 <li><strong>A README.md file</strong> describing the purpose and state of the repository, with a link to the Microsoft Open Source Code of Conduct and a description of any third-party code included in the repository. A good README file is often critical to project success.</li>
-                <li><strong>A LICENSE.txt file</strong> with the MIT license text. Licenses other than MIT must be cleared with your open source attorney team.</li>
+                <li><strong>A LICENSE file</strong> with the MIT license text. Licenses other than MIT must be cleared with your open source attorney team.</li>
                 <li><strong>A CONTRIBUTING.md file</strong> with instructions on contributing to the project that must include at least the minimum required information. That minimum information includes that contributions to Microsoft projects are subject to our Contributor License Agreement. Additionally, consider providing technical guidance like build instructions, coding conventions, or a project roadmap in the CONTRIBUTING.md file.</li>
                 <li><strong>Telemetry Notice</strong> if the release has code that enables Microsoft to collect telemetry, also include in the repository instructions to turn off the telemetry and a specific data collection notice in a the README.md file.</li>
                 <li><strong>Trademark Notice</strong> your README should include the standard trademark notice that is a part of the default new repo templates.</li>
@@ -121,30 +89,26 @@
             <b>Prepare the code for release:</b>
             <ul class="ul mt-4">
                 <li><strong>Code license: </strong>
-                    The only pre-approved license is the MIT license - other licenses must 
-                    be cleared with your legal team. To apply the MIT license to your code, include 
-                    the language-appropriate comment at the head of each source file.
+                    Include the language-appropriate license comment at the head of each source file.
                 </li>
-                <li><strong>Remove sensitive assets: </strong>
+                <li><strong>Remove sensitive assets:</strong>
                     <ul class="ul mt-4">
                         <li>Remove any reference in the code to internal or confidential information, 
                             including internal paths, tools, codenames, proprietary fonts, internal 
                             telemetry and email aliases.
                         </li>
-                        <li>Remove any trademarks or product icons.</li>
                         <li>Prepare the code and commit history for publication, including running certain internal corporate tools for this purpose.</li>
                     </ul>
-
                 </li>
                 <li><strong>Third-party Open Source: </strong>
                     If your repository includes third-party OSS, describe its use and its 
-                    license in a NOTICE file. When in doubt, consult with your open source attorney team.
+                    license in a NOTICE file. Your open source attorney team may have additional details on this process for you.
                 </li>
             </ul>
         </li>
         <li>
             <b>Publish the code:</b>
-            Once your registration and review process is complete, make your GitHub repository public.
+            Once your registration and review process is complete, make your GitHub repository public using the Settings pane on GitHub.
         </li>
         <li>
             <b>Going forward:</b>
