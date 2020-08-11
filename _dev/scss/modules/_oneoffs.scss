@@ -3,6 +3,28 @@
 // ---------------------------------------------------------------------
 
 
+.skip-to-content {
+    position: fixed;
+    top: 80px;
+    width: 300px;
+    height: 44px;
+    left: calc(50% - 50px);
+    z-index: 100000;
+    background: $gray-900;
+    color: $white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    left: -99999px;
+
+    &:focus,
+    &:active {
+        left: calc(50% - 50px);
+    }
+}
+
 #refresh-feed {
     &[disabled="disabled"],
     &[disabled] {
