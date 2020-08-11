@@ -26,6 +26,7 @@
 }
 
 #refresh-feed {
+    color: $blue-600;
     &[disabled="disabled"],
     &[disabled] {
         color: $gray-400;
