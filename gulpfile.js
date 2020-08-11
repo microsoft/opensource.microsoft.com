@@ -83,7 +83,7 @@ function css() {
 	.pipe(rename({ basename: "index" }))
     .pipe(sass({includePaths: ['node_modules/']}).on('error', sass.logError))
     .pipe(autoprefixer({ cascade: false }))
-	//.pipe(cleanCSS())
+	.pipe(cleanCSS())
     .pipe(gulp.dest("./assets/css/"))
 	.pipe(browsersync.stream());
     //.pipe(browsersync.stream());

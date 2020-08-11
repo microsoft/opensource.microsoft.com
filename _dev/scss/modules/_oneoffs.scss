@@ -3,6 +3,14 @@
 // ---------------------------------------------------------------------
 
 
+#refresh-feed {
+    &[disabled="disabled"],
+    &[disabled] {
+        color: $gray-400;
+        pointer-events: none;
+    }
+}
+
 .IssueLabel {
     display: inline-block;
     vertical-align: middle;

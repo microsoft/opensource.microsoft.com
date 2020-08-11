@@ -13039,6 +13039,10 @@ body.menu-is-open {
 .foundation-list .img-gap {
   height: 40px; }
 
+#refresh-feed[disabled="disabled"], #refresh-feed[disabled] {
+  color: #959da5;
+  pointer-events: none; }
+
 .IssueLabel {
   display: inline-block;
   vertical-align: middle;
