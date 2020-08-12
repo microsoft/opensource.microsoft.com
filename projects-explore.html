@@ -123,8 +123,7 @@ title: Explore all Microsoft repos
     const urlParams = new URLSearchParams(window.location.search);
     const searchString = urlParams.get('q');
     if( searchString ) {
-        //console.log('Search param = ' + searchString);
-        var searchUrl = '/api/repos?q=' + searchString;
+        var searchUrl = '/api/repos?q=' + encodeURIComponent(searchString);
         $.ajax({
             type: 'GET',
             url: searchUrl,
