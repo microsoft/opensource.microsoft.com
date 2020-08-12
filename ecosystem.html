@@ -83,13 +83,12 @@ title: Ecosystem
                     {% else %}
                         <span class="mb-4 icon"></span>
                     {% endif %}
-                    {% if post.awarded %}
-                        <h3 class="h3 mb-3 text-brand">{{ post.title }}</h3>
-                    {% else %}
-                        <h3 class="h6 mb-3 text-brand">{{ post.title }}</h3>
-                    {% endif %}
+                    <h3 class="h3 mb-3 text-brand">{{ post.title }}</h3>
                 {% endif %}
                 <p>{{ post.description }}</p>
+                {% if post.processing %}
+                <p class="f5">{{ post.processing }}</p>
+                {% endif %}
                 {% if post.context %}
                 <p class="f5">{{ post.context }}</p>
                 {% endif %}
