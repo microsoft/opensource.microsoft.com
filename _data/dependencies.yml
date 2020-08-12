@@ -804,8 +804,6 @@
       repo: https://github.com/Raynos/iterate-files
     - title: jekyll
       repo: https://rubygems.org/gems/jekyll
-    - title: jekyll-feed
-      repo: https://rubygems.org/gems/jekyll-feed
     - title: jekyll-octicons
       repo: https://rubygems.org/gems/jekyll-octicons
     - title: jekyll-sass-converter

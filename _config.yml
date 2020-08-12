@@ -16,7 +16,6 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-seo-tag
-  - jekyll-feed
   - jekyll-octicons
 
 # Exclude from processing.
