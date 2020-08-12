@@ -29,6 +29,8 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
+    jekyll-feed (0.15.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-octicons (10.0.0)
       jekyll (>= 3.6, < 5.0)
       octicons (= 10.0.0)
@@ -50,6 +52,7 @@ GEM
     mini_portile2 (2.4.0)
     minima (2.5.1)
       jekyll (>= 3.5, < 5.0)
+      jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
@@ -75,6 +78,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.1.1)
+  jekyll-feed (~> 0.15.0)
   jekyll-octicons (~> 10.0)
   jekyll-seo-tag
   minima (~> 2.0)
