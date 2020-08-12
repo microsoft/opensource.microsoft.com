@@ -20,6 +20,9 @@
   - title: 'PostgreSQL'
     repo: 'https://www.postgresql.org/'
     description: 'PostgreSQL: The World''s Most Advanced Open Source Relational Database'
+  - title: 'BBC color-contrast-checker'
+    repo: 'https://github.com/bbc/color-contrast-checker'
+    description: 'An accessibility checker tool for validating the color contrast based on WCAG 2.0 and WCAG 2.1 standards, built by the British Broadcasting Corporation.'
 - skip:
   - title: '@primer/css'
   - title: 'jekyll'
