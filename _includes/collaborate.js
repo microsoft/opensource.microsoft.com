@@ -174,7 +174,6 @@
             qs = ''; // refresh should grab the latest
         }
         var url = '/api/stream' + qs;
-        console.log(url);
         $.ajax({
             type: 'GET',
             url: url,

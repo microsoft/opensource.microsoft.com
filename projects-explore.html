@@ -110,8 +110,6 @@ title: Explore all Microsoft repos
         url: '/api/repos',
         dataType: 'json',
         success: function(posts){
-            //do something with posts.
-            //console.log(posts.repos);
             results.addClass('is-thinking');
             setTimeout(function(){
                 html = template({apidata: posts.repos});
