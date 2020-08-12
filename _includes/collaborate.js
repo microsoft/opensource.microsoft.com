@@ -3,7 +3,9 @@
     var $ = jQuery,
         activityFeed = $('#activityFeed'),
         activityList = $('#activityList'),
-        refreshFeed = $('#refresh-feed'),
+        // refreshAction = $('#refresh-feed'),
+        resumeAction = $('#resume-feed'),
+        pauseAction = $('#pause-feed'),
         source = $("#activity-template").html(),
         template = Handlebars.compile(source);
 
@@ -22,16 +24,35 @@
     var refreshInterval = 7500;
     var displayInterval = 1500;
 
+    var refreshTimer = null;
+
     var initialDisplay = 5;
     var maximumVisible = 8;
 
-    function start() {
-        alive = true;
-        iteration();
-    }
-
     function refresh(isAutomatic) {
         iteration(isAutomatic);
+        return false;
+    }
+
+    function pause() {
+        pauseAction.hide();
+        resumeAction.show();
+        alive = false;
+        if (refreshTimer) {
+            clearInterval(refreshTimer);
+            refreshTimer = null;
+        }
+        return false;
+    }
+
+    function resume() {
+        resumeAction.hide();
+        pauseAction.show();
+        alive = true;
+        iteration(true);
+        if (!refreshTimer) {
+            refreshTimer = setInterval(refresh.bind(null, true), refreshInterval);
+        }
         return false;
     }
 
@@ -143,7 +164,7 @@
     }
 
     function updateRefreshFeed(enabled) {
-        refreshFeed.prop('disabled', !!enabled);
+        //refreshAction.prop('disabled', enabled ? null : 'disabled');
     }
 
     function iteration(isAutomatic) {
@@ -153,6 +174,7 @@
             qs = ''; // refresh should grab the latest
         }
         var url = '/api/stream' + qs;
+        console.log(url);
         $.ajax({
             type: 'GET',
             url: url,
@@ -178,9 +200,11 @@
         });
     }
 
-    iteration();
+    // refreshAction.click(refresh);
+    resumeAction.click(resume);
+    pauseAction.click(pause);
 
-    refreshFeed.click(refresh);
+    resume(); // iteration();
 
     // ---------------------
     // this is a one-time pull of "good first issue"
