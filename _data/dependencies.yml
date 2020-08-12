@@ -26,5 +26,6 @@
 - skip:
   - title: '@primer/css'
   - title: 'jekyll'
+  - title: 'color-contrast-checker'
 - components:
 - dependencies:
