@@ -19,7 +19,7 @@
         {% raw %}{{#if activity.labels }}{% endraw %}
         <div>
             {% raw %}{{#each activity.labels }}{% endraw %}
-            <span class="IssueLabel" style="background-color:#{% raw %}{{{this.color}}}{% endraw %}">
+            <span class="IssueLabel" style="background-color:#{% raw %}{{{this.color}}}{% endraw %};color:#{% raw %}{{{this.foreground}}}{% endraw %}">
             {% raw %}{{this.name}}{% endraw %}
             </span>
             {% raw %}{{/each}}{% endraw %}
