@@ -47,11 +47,15 @@
                     prefers, many projects are powered by GitHub Actions and Azure Pipelines.
                 </p>
                 <ul class="ul mt-4">
-                    <li><strong>GitHub Actions</strong> are the preferred way for projects to
+                    <li><strong><a href="https://github.com/features/actions"
+                        target="_blank">GitHub Actions</a></strong> are the preferred way for projects to
                         build and validate. Being built-in to the GitHub experience for developers,
                         configuration is quick and easy.
                     </li>
-                    <li><strong>Azure Pipelines</strong> can be exposed to public, open communities,
+                    <li><strong><a
+                        target="_blank"
+                        href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Azure Pipelines</a></strong> 
+                        can be exposed to public, open communities,
                         allowing many Microsoft projects to continue using the build system they've been
                         using for many years, but with a collaborative angle.
                     </li>
@@ -66,7 +70,7 @@
         </div>
         <div class="accordion__bd">
             <div>
-                <p>At Microsoft, a first-party extension to Azure DevOps called Component Governance
+                <p>At Microsoft, a internal extension for Azure DevOps called Component Governance
                     was created to help provide automatic inventory of all the open source components
                     used.
                 </p>
@@ -75,18 +79,19 @@
                         is connected to Component Governance. Detected open source is registered,
                         enabling teams to trace a specific build to the bill of materials it contained,
                         and providing historical snapshots and build-by-build analysis of change. The
-                        automatic inventory is connected to an alert and business review process as needed.
+                        automatic inventory is connected to an alerting system and business review system as needed.
                     </li>
                     <li><strong>Security alerts:</strong> by connecting to security data sources,
-                        public vulnerability data, and curated Microsoft-internal security knowledge, 
+                        public known vulnerability data such as CVEs, and curated Microsoft-internal security knowledge, 
                         alerts can be raised at any time to help engineers protect Microsoft and its customers.
                     </li>
                     <li><strong>Legal alerts:</strong> open source license data and algorithms specific
                         to Microsoft's open source approach are used to generate alerts when specific components
-                        have additional legal obligations or requirements.
+                        have additional legal obligations or requirements, such as publishing third-party source
+                        disclosures to <a href="https://3rdpartycode.microsoft.com/" target="_blank">https://3rdpartycode.microsoft.com/</a>.
                     </li>
                     <li><strong>Business review process:</strong> a legal and business review process, 
-                        backed by Azure Boards, is used for certain uses of open source.
+                        implemented as Azure Boards work items, is used for certain uses of open source.
                     </li>
                 </ul>
             </div>
@@ -141,6 +146,11 @@
                         comms are possible without having to ask the user to share their email address or other
                         information on their public profile.</li>
                 </ul>
+                <p>
+                    Microsoft's self-service GitHub management portal is implemented in TypeScript and is
+                    a Node.js service. The portal is open source at <a href="https://github.com/microsoft/opensource-portal"
+                    target="_blank">https://github.com/microsoft/opensource-portal</a>.
+                </p>
             </div>
         </div>
     </div>
@@ -151,7 +161,8 @@
         </div>
         <div class="accordion__bd">
             <div>
-                <p>ClearlyDefined provides license, source location, and attribution information on over 10 million 
+                <p><a target="_blank" href="https://clearlydefined.io/">ClearlyDefined</a>
+                    provides license, source location, and attribution information on over 10 million 
                     open source components. We rely on this data for our compliance systems.</p>
                 <p>This open source project provides compliance data about open source components from across the package ecosystems.
                     It uses multiple open source scanners and summarizes their results into a high-quality "definition" of the component 
@@ -164,6 +175,9 @@
                     <li><b>Facilitates data improvements upstream:</b> Over time, the corpus of ClearlyDefined curations are intended to be submitted back to 
                     the upstream projects as pull requests so that future versions of the component are more clearly defined. </li>
                 </ul>
+                <p>ClearlyDefined is an open source project of the Open Source Initiative (OSI) and
+                    its open source code is at <a href="https://github.com/clearlydefined" target="_blank">https://github.com/clearlydefined</a>.
+                </p>
             </div>
         </div>
     </div>
@@ -174,12 +188,21 @@
         </div>
         <div class="accordion__bd">
             <div>
-                <p>Originally build by SAP to meet its program needs, the <a href="https://github.com/cla-assistant/cla-assistant"
+                <p>Originally build by SAP to meet its program needs, the 
+                    <a href="https://github.com/cla-assistant/cla-assistant"
                     target="_blank" class="external">CLA Assistant</a>
                     is an open source Contributor License Agreement solution that integrates
                     nicely with GitHub pull requests to make sure that all contributors to a project
-                    have agreed to common terms. Microsoft has proudly contributed additional features and
+                    have agreed to common terms.
+                </p>
+                <p>
+                    Microsoft has proudly contributed additional features and
                     capabilities to the CLA Assistant.
+                </p>
+                <p>
+                    CLA Assistant is open source at 
+                    <a href="https://github.com/cla-assistant/cla-assistant"
+                    target="_blank" class="external">https://github.com/cla-assistant/cla-assistant</a>.
                 </p>
             </div>
         </div>
@@ -201,6 +224,7 @@
                     really quick for Microsoft engineers to be able to query data without having to
                     build specialized GitHub API integrations.
                 </p>
+                <p><em>Microsoft's 1ES team is in the process of open sourcing this technology.</em></p>
             </div>
         </div>
     </div>
@@ -216,6 +240,12 @@
                     system that includes Azure Boards. This helps meet engineers where they are,
                     providing an easy way to review requirements, manage approvals and workflow,
                     and eventually completing any necessary reviews.
+                </p>
+                <p>This system is built by using the 
+                    <a href="https://docs.microsoft.com/en-us/azure/devops/reference/add-modify-wit?view=azure-devops-2020"
+                    target="_blank">Work Item Tracking extensibility features</a>
+                    and the <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/wit/?view=azure-devops-rest-5.1"
+                    target="_blank">Azure DevOps REST API</a>.
                 </p>
             </div>
         </div>
