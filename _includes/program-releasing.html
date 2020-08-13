@@ -13,17 +13,8 @@
         be registered with your business and legal team using the workflow outlined in the release documentation.
     </p>
     <p>
-        In many cases, this process is lightweight and instant.
-    </p>
-    <p>
         In other cases, you may need to work with your management and legal teams to review the business case, success 
         plan, and IP management strategy around your proposal.
-    </p>
-    <p>
-        If you are looking to release non-product code (such as utility libraries, tools, and sample code), your registration likely will
-        not require further review if a set of specific conditions are met around purpose, publishing with the preferred license,
-        not distributing third-party code or content, and <em>a set of other specific
-        requirements that are specific to the company and provided inside the company to employees for review</em>.
     </p>
     <h5 class="h5">Location</h5>
     <p>
@@ -41,7 +32,8 @@
     </p>
     <h5 class="h5">Licensing</h5>
     <p>
-        All Microsoft open source code should be released under the MIT license.
+        Microsoft open source code should be released under the MIT license absent a 
+        compelling reason to do otherwise.
     </p>
 
     <h5 class="h5">Contributions</h5>
@@ -57,13 +49,7 @@
 
     <h4 class="h4">Release checklist</h4>
     <p>
-        <em>Releasing an open source code project is a different practice than releasing a 
-        product or service. This content only refers to standing up an open source project 
-        to a public repository on GitHub. Your organization may have a broad set of
-        additional criteria every release should complete.</em>
-    </p>
-    <p>
-        The following steps should be taken to release and maintain your open source project using the MIT license:
+        The following steps should be taken to release and maintain your open source project:
     </p>
     <ul class="ul mt-4">
         <li>
@@ -77,11 +63,8 @@
             <b>Include the following in your repo root directory. The default template may have placed these files for you as a start:</b>
             <ul class="ul mt-4">
                 <li><strong>A README.md file</strong> describing the purpose and state of the repository, with a link to the Microsoft Open Source Code of Conduct and a description of any third-party code included in the repository. A good README file is often critical to project success.</li>
-                <li><strong>A LICENSE file</strong> with the MIT license text. Licenses other than MIT must be cleared with your open source attorney team.</li>
+                <li><strong>A LICENSE file</strong> with an OSI approved license text.</li>
                 <li><strong>A CONTRIBUTING.md file</strong> with instructions on contributing to the project that must include at least the minimum required information. That minimum information includes that contributions to Microsoft projects are subject to our Contributor License Agreement. Additionally, consider providing technical guidance like build instructions, coding conventions, or a project roadmap in the CONTRIBUTING.md file.</li>
-                <li><strong>Telemetry Notice</strong> if the release has code that enables Microsoft to collect telemetry, also include in the repository instructions to turn off the telemetry and a specific data collection notice in a the README.md file.</li>
-                <li><strong>Trademark Notice</strong> your README should include the standard trademark notice that is a part of the default new repo templates.</li>
-                <li><strong>Security Reporting Instructions:</strong> Include instructions that enable users to privately report security vulnerabilities found in your project. Sample instructions are available inside the company internal docs.</li>
             </ul>
         </li>
         <li>
