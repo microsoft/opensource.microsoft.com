@@ -20,13 +20,14 @@
                 opacity: 0;
             }
         </style>
-        <!-- <script src="https://consentdeliveryfd.azurefd.net/mscc/lib/v2/wcp-consent.js"></script> -->
+        {% if jekyll.environment == "opensource.microsoft.com" %}{% include production-telemetry-head.html %}{% endif %}
         <script src="{{ site.cdn }}/assets/js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="{{ site.cdn }}/assets/js/jquery.timeago.js"></script>
         <script src="{{ site.cdn }}/assets/js/handlebars.js"></script>
     </head>
 
     <body class="page-loading no-js {{ page.id }}" id="page-{{ page.id }}">
+        {% if jekyll.environment == "opensource.microsoft.com" %}{% include production-telemetry.html %}{% endif %}
         <a class="skip-to-content" href="#content">skip to content</a>
 
         {% include header.html %}
@@ -40,5 +41,6 @@
         <script src="https://opensource.azureedge.net/assets/js/gsap.min.js"></script>
         <script src="https://opensource.azureedge.net/assets/js/DrawSVGPlugin.min.js"></script>
         <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+        {% if jekyll.environment == "opensource.microsoft.com" %}{% include production-telemetry-script.html %}{% endif %}
     </body>
 </html>
