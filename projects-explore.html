@@ -105,20 +105,7 @@ title: Explore all Microsoft repos
         });
     }
 
-    $.ajax({
-        type: 'GET',
-        url: '/api/repos',
-        dataType: 'json',
-        success: function(posts){
-            results.addClass('is-thinking');
-            setTimeout(function(){
-                html = template({apidata: posts.repos});
-                results.html(html);
-                results.removeClass('is-thinking');
-                checkFormats();
-            }, 1000);
-        }
-    });
+    // TODO: use filter values for backend
 
     const urlParams = new URLSearchParams(window.location.search);
     const searchString = urlParams.get('q');
@@ -140,8 +127,22 @@ title: Explore all Microsoft repos
                     } else {
                         searchText.html('<p class="h4 mb-5">Showing results for "' + searchString + '" (' + posts.repos.length + ')</p>');
                     }
-
-                }, 1000);
+                }, 200);
+            }
+        });
+    } else {
+        $.ajax({
+            type: 'GET',
+            url: '/api/repos',
+            dataType: 'json',
+            success: function(posts){
+                results.addClass('is-thinking');
+                setTimeout(function(){
+                    html = template({apidata: posts.repos});
+                    results.html(html);
+                    results.removeClass('is-thinking');
+                    checkFormats();
+                }, 200);
             }
         });
     }
