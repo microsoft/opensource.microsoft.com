@@ -1,0 +1,19 @@
+name: Manual build
+on:
+  workflow_dispatch
+jobs:
+  builder:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: prepare-jekyll
+      run: |
+        echo Getting ready to Jekyll...
+        gem install bundler
+        bundle config set deployment true
+        bundle config path "$PWD/vendor/bundle"
+        bundle install
+        npm install
+        echo Gulping...
+        ./node_modules/gulp/bin/gulp.js build
+        JEKYLL_ENV=opensource.microsoft.com bundle exec jekyll build

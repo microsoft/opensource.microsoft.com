@@ -12,9 +12,14 @@ RUN addgroup oss && adduser -D -G oss oss && chown -R oss:oss .
 RUN chown -R oss:oss /usr/gem
 USER oss
 
+RUN bundle config set deployment true
 RUN bundle install
 RUN npm install
 
+# Build the site
+#RUN ./node_modules/gulp/bin/gulp.js build
 #RUN jekyll build
+
+# Prepare to deploy static site
 #WORKDIR /usr/local/site/_site
 #RUN tar -cvf site.tar.gz .
