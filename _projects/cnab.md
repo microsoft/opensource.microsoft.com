@@ -1,5 +1,5 @@
 ---
-title: cnab
+title: CNAB
 logo: cnab.svg
 description: CNAB is a spec for packaging distributed apps
 linkText: Learn more

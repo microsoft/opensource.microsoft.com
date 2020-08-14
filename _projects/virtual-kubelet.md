@@ -1,5 +1,5 @@
 ---
-title: virtual-kubelet
+title: Virtual Kubelet
 logo: generic.svg
 description: Virtual Kubelet is an open source Kubernetes kubelet implementation
 linkText: Get involved
