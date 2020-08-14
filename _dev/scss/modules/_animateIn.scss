@@ -3,7 +3,7 @@
 // ---------------------------------------------------------------------
 
 *[data-animate-in="up"] {
-	opacity: 0;
+	// opacity: 0;
 	transform: translate3d(0, 12px, 0);
 	transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 
@@ -14,7 +14,7 @@
 }
 
 *[data-animate-in="fade"] {
-	opacity: 0;
+	// opacity: 0;
 	transition: opacity 0.8s ease-out;
 
 	&.in-view {
@@ -23,7 +23,7 @@
 }
 
 *[data-animate-in="left"] {
-	opacity: 0;
+	// opacity: 0;
 	transform: translate3d(-12px, 0, 0);
 	transition: transform 0.3s ease-out, opacity 0.6s ease-out;
 	transition-delay: 0.4s;
@@ -35,7 +35,7 @@
 }
 
 *[data-animate-in="right"] {
-	opacity: 0;
+	// opacity: 0;
 	transform: translate3d(12px, 0, 0);
 	transition: transform 0.3s ease-out, opacity 0.6s ease-out;
 	transition-delay: 0.4s;
