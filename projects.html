@@ -34,12 +34,12 @@ title: Featured Projects
             {% for project in site.projects %}
             <div class="mb-6 pb-lg-4" data-animate-in="up">
                 <div class="d-flex mb-3">
-                    {% if project.externalLogo %}
-                    {% assign img = project.externalLogo %}
+                    {% if project.logo == "" or project.logo == nil %}
+                    {% octicon repo height:32 style:"margin-right: 16px" aria-label:repository %}
                     {% else %}
                     {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
-                    {% endif %}
                     <img class="mr-3 icon" src="{{ img | relative_url }}" alt="{{ project.title }} logo" />
+                    {% endif %}
                     <h2>{{ project.title }}</h2>
                 </div>
                 <p>{{ project.description }}</p>
