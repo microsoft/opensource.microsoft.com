@@ -1,7 +1,6 @@
 ---
 layout: default
 title: PowerToys
-featured: true
 developer: Microsoft
 logo: powertoys.png
 projectUrl: https://aka.ms/powertoys
