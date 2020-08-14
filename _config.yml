@@ -61,5 +61,5 @@ defaults:
     scope:
       path: ""
     values:
-      image: assets/images/social-card.png
+      image: https://opensource.azureedge.net/assets/images/social-card.png
       layout: default
