@@ -2,6 +2,10 @@
 //  Animate In
 // ---------------------------------------------------------------------
 
+*[data-require-javascript="yes"] {
+	opacity: 0;
+}
+
 *[data-animate-in="up"] {
 	// opacity: 0;
 	transform: translate3d(0, 12px, 0);

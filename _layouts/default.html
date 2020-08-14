@@ -13,7 +13,7 @@
         <link rel="icon" href="{{ '/assets/images/favicons/android-favicon.png' | relative_url }}">
         {% seo %}
         <script type="text/javascript">
-            document.write('<style type="text/css">*[data-animate-in="up"], *[data-animate-in="up"], *[data-animate-in="fade"], *[data-animate-in="left"], *[data-animate-in="right"] { opacity: 0; }</style>');
+            document.write('<style type="text/css">*[data-animate-in="up"], *[data-animate-in="up"], *[data-animate-in="fade"], *[data-animate-in="left"], *[data-animate-in="right"] { opacity: 0; } .tabs__content { display: none; }</style>');
         </script>
         {% if jekyll.environment == "opensource.microsoft.com" %}{% include production-telemetry-head.html %}{% endif %}
         <script src="{{ site.cdn }}/assets/js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

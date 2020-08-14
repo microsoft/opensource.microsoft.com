@@ -41,7 +41,7 @@ permalink: /program/
     </div>
 
     <div class="tabs">
-        <nav class="wrapper my-6">
+        <nav class="wrapper my-6" data-require-javascript="yes" data-animate-in="fade" data-animate-in-delay="20">
             <div class="col-md-10 col-lg-7 mx-auto">
                 <ul class="tabs__tabs">
                     <li class="tabs__tab is-active" data-tab="program-overview">
@@ -65,23 +65,28 @@ permalink: /program/
 
         <div class="wrapper my-6 pt-lg-3 pb-4">
             <div class="col-md-10 col-lg-7 mx-auto">
+                <noscript><h2>Overview</h2></noscript>
                 <div class="tabs__content is-active" data-tab="program-overview">
                     {% include program-overview.html %}
                 </div>
 
                 <div class="tabs__content" data-tab="program-tools">
+                    <noscript><h2>Tools &amp; resources</h2></noscript>
                     {% include program-tools.html %}
                 </div>
 
                 <div class="tabs__content" data-tab="program-using">
+                    <noscript><h2>Using open source</h2></noscript>
                     {% include program-using.html %}
                 </div>
 
                 <div class="tabs__content" data-tab="program-contributing">
+                    <noscript><h2>Contributing</h2></noscript>
                     {% include program-contributing.html %}
                 </div>
 
                 <div class="tabs__content" data-tab="program-releasing">
+                    <noscript><h2>Releasing projects</h2></noscript>
                     {% include program-releasing.html %}
                 </div>
 
