@@ -123,9 +123,9 @@ title: Explore all Microsoft repos
                     results.removeClass('is-thinking');
                     checkFormats();
                     if( posts.repos.length === 0 ) {
-                        results.html('<p>No results found for "' + searchString + '".</p>');
+                        results.html('<p>No results found.</p>');
                     } else {
-                        searchText.html('<p class="h4 mb-5">Showing results for "' + searchString + '" (' + posts.repos.length + ')</p>');
+                        searchText.html('<p class="h4 mb-5">Showing results, ' + posts.repos.length + ' repos found.</p>');
                     }
                 }, 200);
             }
