@@ -35,7 +35,7 @@ title: Featured Projects
             <div class="mb-6 pb-lg-4" data-animate-in="up">
                 <div class="d-flex mb-3">
                     {% if project.logo == "" or project.logo == nil %}
-                    {% octicon repo height:32 style:"margin-right: 16px" aria-label:repository %}
+                    {% octicon repo height:32 style:"margin-right: 12px" aria-label:repository %}
                     {% else %}
                     {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
                     <img class="mr-3 icon" src="{{ img | relative_url }}" alt="{{ project.title }} logo" />
