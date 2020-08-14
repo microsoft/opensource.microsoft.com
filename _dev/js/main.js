@@ -310,7 +310,6 @@ APP.Accordion = {
 // ---------------------------------------------------------------------
 
 APP.Draw = {
-
     init: function() {
         if( $('#draw-svg').length ) {
             this.bind();
@@ -321,22 +320,35 @@ APP.Draw = {
 
     bind: function() {
 
-
         var svg = $('#draw-svg'),
 			path = $('#draw-svg path'),
             rect = $(' #draw-svg rect'),
             circle = $('#draw-svg circle'),
 			done = false,
             rotate = $('.rotate'),
-            square = $('.sqaure rect');
+            square = $('.square rect'),
+            heroAccessibilityControls = $('#hero-accessibility-controls');
 
-        //console.log(path.length);
-		gsap.fromTo(circle, 0, {drawSVG:0}, {duration: 0, drawSVG:false});
+        var activeGsapHandlers = [];
 
+        gsap.fromTo(circle, 0, {drawSVG:0}, {duration: 0, drawSVG:false});
         gsap.fromTo(rect, 0, {drawSVG:0}, {duration: 0, drawSVG:false});
 
-		function detect(){
-			//if( svg.hasClass('in-view')) {
+        if (heroAccessibilityControls.length) {
+            heroAccessibilityControls.on('hero-pause', function () {
+                activeGsapHandlers.forEach(function (tween) {
+                    tween.pause();
+                });
+            });
+            heroAccessibilityControls.bind('hero-resume', function () {
+                activeGsapHandlers.forEach(function (tween) {
+                    tween.resume();
+                });
+            });
+        }
+
+        function detect(){
+            //if( svg.hasClass('in-view')) {
 				if(done) return;
 
 				setTimeout(function(){
@@ -347,21 +359,16 @@ APP.Draw = {
 			//	done = true;
 			//}
 		}
-
         function randNum(min, max) { // min and max included
           return Math.floor(Math.random() * (max - min + 1) + min);
         }
-        gsap.to(rotate, 10, {rotation:"360", ease:Linear.easeNone, repeat:-1, transformOrigin:"50% 50%"});
-
+        activeGsapHandlers.push(gsap.to(rotate, 10, {rotation:"360", ease:Linear.easeNone, repeat:-1, transformOrigin:"50% 50%"}));
         square.each(function(){
             var el = $(this),
                 speed = randNum(.5, 4),
                 scale = randNum(0, .5);
-
-            gsap.to(el, speed, {scaleX:scale, ease:Linear.easeNone, repeat:-1, transformOrigin:"50% 50%", yoyo: true});
+            activeGsapHandlers.push(gsap.to(el, speed, {scaleX:scale, ease:Linear.easeNone, repeat:-1, transformOrigin:"50% 50%", yoyo: true}));
         });
-
-
 
 		$(document).ready(function(){
 			detect();
@@ -369,7 +376,6 @@ APP.Draw = {
 
 		// window.addEventListener('scroll', detect);
         // window.addEventListener('resize', detect);
-
     }
 };
 

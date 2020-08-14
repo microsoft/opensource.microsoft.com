@@ -1,5 +1,32 @@
 var $ = jQuery;
 
+var resumeAction = $('#resume-graphics');
+var pauseAction = $('#pause-graphics');
+var pageHeroAccessibilityControls = $('#hero-accessibility-controls');
+
+var paused = true;
+
+function pause() {
+  paused = true;
+  pauseAction.hide();
+  resumeAction.show();
+  pageHeroAccessibilityControls.trigger("hero-pause");
+  return false;
+}
+
+function resume() {
+  paused = false;
+  resumeAction.hide();
+  pauseAction.show();
+  pageHeroAccessibilityControls.trigger("hero-resume");
+  return false;
+}
+
+resumeAction.click(resume);
+pauseAction.click(pause);
+
+resume(); // startup
+
 var workerFrequencyMs = 500;
 var startupDelayMs = 50;
 var firstDisplayDelayMs = 1700;
@@ -176,9 +203,11 @@ function onResize() {
 }
 
 function worker() {
-  var availableSquare = tryGetAvailableSquare();
-  if (availableSquare !== undefined) {
-    featureNextAvatar(availableSquare);
+  if (!paused) {
+    var availableSquare = tryGetAvailableSquare();
+    if (availableSquare !== undefined) {
+      featureNextAvatar(availableSquare);
+    }
   }
   setTimeout(worker, workerFrequencyMs);
 }
