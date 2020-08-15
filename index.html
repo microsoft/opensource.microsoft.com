@@ -63,7 +63,7 @@ description: "Microsoft Open Source: get involved in open source communities, di
             {% for project in site.projects %}
             {% if project.featured and featured_projects_count < 3 %}
             {% assign featured_projects_count = featured_projects_count | plus: 1 %}
-            <a class="tile" href="{{ project.projectUrl }}" target="_blank">
+            <a class="tile" href="{{ project.projectUrl }}" target="_blank" rel= "noopener">
                 <div>
                     {% if project.externalLogo %}
                     {% assign img = project.externalLogo %}
@@ -206,7 +206,7 @@ description: "Microsoft Open Source: get involved in open source communities, di
 
         <div class="blog-list">
             {% for post in site.posts %}
-            <a class="blog-preview" href="{{ post.articleUrl }}" target="_blank" data-animate-in="up"
+            <a class="blog-preview" href="{{ post.articleUrl }}" target="_blank" rel= "noopener" data-animate-in="up"
                 data-animate-in-delay="200">
                 <div>
                     <h3 class="h5 text-brand font-weight-600 mb-2">{{ post.title }}</h3>

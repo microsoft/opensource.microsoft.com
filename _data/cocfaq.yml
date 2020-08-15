@@ -9,7 +9,7 @@
     </ul>
 
 - question: Why this Code of Conduct?
-  answer: The Microsoft Open Source Code of Conduct is an instantiation of the <a href="https://todogroup.org/" target="_blank">TODO Group</a> Code of Conduct template, that captures the Microsoft culture of equality, respect and inclusion. This same template is used by industry colleagues such as Facebook, Twitter, GitHub, Yahoo and others in their open source projects.
+  answer: The Microsoft Open Source Code of Conduct is an instantiation of the <a href="https://todogroup.org/" target="_blank" rel= "noopener">TODO Group</a> Code of Conduct template, that captures the Microsoft culture of equality, respect and inclusion. This same template is used by industry colleagues such as Facebook, Twitter, GitHub, Yahoo and others in their open source projects.
 
 
 - question: Why do this across all repos?
