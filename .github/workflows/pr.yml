@@ -1,0 +1,87 @@
+#
+# Build authorized pull requests, creating a compressed content tgz
+# with the generated site, storing it as an artifact.
+#
+name: Consider building pull request content
+on:
+  pull_request: # considered pull_request_target, not needed
+    types: [opened]
+  issue_comment:
+    types: [created, edited]
+jobs:
+  potentialPullRequestBuild:
+    runs-on: ubuntu-latest
+    steps:
+    #       actions/github-script@v2
+    - uses: actions/github-script@44b873bc975058192f5279ebe7579496381f575d
+      id: authorizeAction
+      if: github.sha
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const creator = context.payload.sender.login
+          let association = 'NONE';
+          let couldAction = false;
+          if (context.payload.pull_request) {
+            association = context.payload.pull_request.author_association;
+            couldAction = true;
+            console.log('This is a new pull request.');
+          } else if (context.payload.comment) {
+            association = context.payload.comment.author_association;
+            const comment = context.payload.comment;
+            if (comment.body && comment.body.includes('/startContentBuild')) {
+              console.log('Comment includes /startContentBuild');
+              couldAction = true;
+            }
+          }
+          console.log(`Author ${creator} has association ${association}`);
+          switch (association) {
+            case 'COLLABORATOR':
+            case 'OWNER':
+              console.log('Owner or collaboration, authorized to approve pull request or issue actions');
+              return { collaborator: true, action: couldAction === true };
+            default:
+              return { collaborator: false, action: false };
+          }
+    - name: "No action required"
+      if: steps.authorizeAction.outputs.action != true and github.sha
+      run: |
+        echo No further action necessary or approved at this time.
+        echo To authorize a pull request build, conditions are either:
+        echo - Pull request is opened by a current repository collaborator with write or admin permissions
+        echo - Pull request comment is made by a repository collaborator with the string "/startContentBuild" to approve building the content
+    - name: "Approval for build"
+      if: steps.authorizeAction.outputs.action == true and github.sha
+      run: |
+        echo Building the content for this commit has been approved, either because the PR was opened by a collaborator, or an authorized individual passed the "/startContentBuild" value inside a comment.
+      #       actions/checkout@v2
+    - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
+      if: steps.authorizeAction.outputs.action == true
+    - uses: azure/docker-login@210cfedcb2e18efca1a159af35649e6f3b092f22
+      if: steps.authorizeAction.outputs.action == true and github.sha
+      with:
+        login-server: 'docker.pkg.github.com'
+        username: ${{ secrets.READONLY_PACKAGE_SP }}
+        password: ${{ secrets.READONLY_PACKAGE_TOKEN }}
+    - name: jekyll-build
+      if: steps.authorizeAction.outputs.action == true and github.sha
+      run: |
+        docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
+        pwd && whoami
+        cd /usr/local/site
+        ls -la
+        bundle install
+        npm i
+        ./node_modules/gulp/bin/gulp.js build
+        JEKYLL_ENV=opensource.microsoft.com jekyll build
+        COMMANDS
+    - name: compress-site
+      if: steps.authorizeAction.outputs.action == true
+      run: tar -czvf ../pullrequest.$GITHUB_SHA.tar.gz .
+      working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
+    #       actions/upload-artifact/v2
+    - uses: actions/upload-artifact@58740802ef971a2d71eff71e63d48ab68d1f5507
+      if: steps.authorizeAction.outputs.action == true and github.sha
+      with:
+        name: pullrequest-commit-${{ github.sha }}-content
+        path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/pullrequest.$GITHUB_SHA.tar.gz
