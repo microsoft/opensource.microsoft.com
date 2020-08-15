@@ -14,6 +14,7 @@ jobs:
     steps:
     #       actions/github-script@v2
     - uses: actions/github-script@44b873bc975058192f5279ebe7579496381f575d
+      name: "Authorization check"
       id: authorizeAction
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
