@@ -8,6 +8,7 @@ on:
       - 'Gemfile.lock'
       - 'package.json'
       - 'package-lock.json'
+      - '.github/workflows/builder.yml'
 jobs:
   builder:
     runs-on: ubuntu-latest
