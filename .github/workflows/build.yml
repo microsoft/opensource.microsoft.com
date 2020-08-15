@@ -15,7 +15,7 @@ jobs:
       env:
         GITSHA: ${{ github.sha }}
       run: |
-          echo "{\"commitId"\":\"$GITSHA\"}" > content.json
+          echo "{\"commitId\":\"$GITSHA\"}" > content.json
           cat ./content.json
     - name: debug-startup
       run: pwd
