@@ -11,8 +11,14 @@ jobs:
     steps:
     #       actions/checkout@v2
     - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
+    - name: "Write content.json"
+      env:
+        GITSHA: ${{ github.sha }}
+      run: |
+          echo "{\commitId"\":\"$GITSHA\"}" > content.json
+          cat ./content.json
     - name: debug-startup
-      run: pwd && whoami
+      run: pwd
     #       azure/docker-login@v1
     - uses: azure/docker-login@210cfedcb2e18efca1a159af35649e6f3b092f22
       with:

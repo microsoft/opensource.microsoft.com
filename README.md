@@ -82,7 +82,9 @@ Microsoft's standard cookie compliance and analytics code to connect with Applic
 
 * **Data Collection**. The software may collect information about you and your use of the software and send it to Microsoft. Microsoft may use this information to provide services and improve our products and services. You may turn off the telemetry as described in the repository. There are also some features in the software that may enable you and Microsoft to collect data from users of your applications. If you use these features, you must comply with applicable law, including providing appropriate notices to users of your applications together with a copy of Microsoft's privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data collection and use in the help documentation and our privacy statement. Your use of the software operates as your consent to these practices.
 
-# Developing locally
+# Development
+
+## Developing locally
 
 Ensure you have a working copy of Ruby, Node.js and Gulp.
 
@@ -96,3 +98,10 @@ bundle exec jekyll serve
 The `Dockerfile` is available to host a local `nginx` version of the static site,
 although dynamic site features are not available when running local, and Gulp is
 not currently run in the container.
+
+## GitHub Actions
+
+This repo uses GitHub Actions for several purposes. The primary build from the `main`
+branch creates the static version of the site and stores it as an artifact. This is
+done using a Docker container specific to this build environment inc. Ruby Gems,
+Node packages, etc.
