@@ -18,7 +18,7 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          const creator = context.payload.sender.login
+          const creator = context.payload.sender.login;
           let association = 'NONE';
           let couldAction = false;
           if (context.payload.pull_request) {
@@ -35,9 +35,9 @@ jobs:
           }
           console.log(`Author ${creator} has association ${association}`);
           const permissionLevel = await github.repos.getCollaboratorPermissionLevel({
-            'microsoft',
-            'opensource.microsoft.com',
-            creator,
+            owner: 'microsoft',
+            repo: 'opensource.microsoft.com',
+            username: creator,
           });
           if (permissionLevel && permissionLevel.permission) {
             console.log(`User ${creator} has permission level: ${permissionLevel.permission}`);
@@ -46,6 +46,7 @@ jobs:
               case 'admin':
               case 'write':
                 authorizedWriter = true;
+                break;
               default:
                 break;
             }
