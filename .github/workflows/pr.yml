@@ -40,6 +40,7 @@ jobs:
             repo: 'opensource.microsoft.com',
             username: creator,
           });
+          console.dir(permissionLevel);
           if (permissionLevel && permissionLevel.permission) {
             console.log(`User ${creator} has permission level: ${permissionLevel.permission}`);
             switch (permissionLevel.permission) {
@@ -50,12 +51,14 @@ jobs:
               default:
                 break;
             }
+          } else {
+            console.log('Permission level for the user could not be retrieved.');
           }
           switch (association) {
             case 'COLLABORATOR':
             case 'MEMBER':
             case 'OWNER':
-              console.log('Owner or collaboration, authorized to approve pull request or issue actions');
+              console.log('Owner, member or ccollaborator');
               return { collaborator: true, action: couldAction === true, authorizedWriter };
             default:
               return { collaborator: false, action: false, authorizedWriter: false };
