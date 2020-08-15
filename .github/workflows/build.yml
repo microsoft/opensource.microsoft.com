@@ -18,9 +18,11 @@ jobs:
     - name: jekyll-build
       run: |
         docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
+        pwd && whoami
         cd /usr/local/site
-        # bundle install
-        # npm i
+        ls -la
+        bundle install
+        npm i
         ./node_modules/gulp/bin/gulp.js build
         JEKYLL_ENV=opensource.microsoft.com jekyll build
         COMMANDS
