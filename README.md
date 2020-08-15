@@ -101,7 +101,16 @@ not currently run in the container.
 
 ## GitHub Actions
 
-This repo uses GitHub Actions for several purposes. The primary build from the `main`
+This repo uses GitHub Actions for several purposes.
+
+### Build
+
+The primary build from the `main`
 branch creates the static version of the site and stores it as an artifact. This is
 done using a Docker container specific to this build environment inc. Ruby Gems,
 Node packages, etc.
+
+### Pull requests
+
+A development deployment can be configured to use a version of this site, if
+a maintainer of the project approves it.
