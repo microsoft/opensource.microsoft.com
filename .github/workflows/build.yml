@@ -77,3 +77,28 @@ jobs:
     - name: "Disconnect from Azure Files"
       run: |
         sudo umount /mnt/files
+    - name: "Prepare to AzCopy..."
+      working-directory: /home/runner/work
+      run: |
+        mkdir azcopy
+        cd azcopy
+        wget https://aka.ms/downloadazcopy-v10-linux
+        mv downloadazcopy-v10-linux azcopy.tar.gz
+        tar -xvf azcopy.tar.gz
+        cd azcopy
+        mv azcopy_linux* azcopy_linux
+        mv azcopy_linux/azcopy ./
+        ls -la
+    - name: "Copy to CDN"
+      working-directory: /home/runner/work/azcopy
+      env:
+        SASTOKEN: ${{ secrets.AZURE_CDN_SAS }}
+      run: |
+        ./azcopy sync /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site "https://osssite.blob.core.windows.net/cdn/$SASTOKEN" --recursive=true
+    - name: "Copy to static web container"
+      working-directory: /home/runner/work/azcopy
+      env:
+        SASTOKEN: ${{ secrets.AZURE_WEB_SAS }}
+      run: |
+        ./azcopy sync /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site "https://osssite.blob.core.windows.net/\$web/$SASTOKEN" --recursive=true
+  
