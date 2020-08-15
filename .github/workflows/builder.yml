@@ -1,11 +1,13 @@
 name: Build the builder
 on:
   push:
+    branches:
+      - main
     paths:
-    - 'Gemfile'
-    - 'Gemfile.lock'
-    - 'package.json'
-    - 'package-lock.json'
+      - 'Gemfile'
+      - 'Gemfile.lock'
+      - 'package.json'
+      - 'package-lock.json'
 jobs:
   builder:
     runs-on: ubuntu-latest
