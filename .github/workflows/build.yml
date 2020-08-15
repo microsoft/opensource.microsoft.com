@@ -7,10 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    #       actions/checkout@v2
+    - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
     - name: debug-startup
       run: pwd && whoami
-    - uses: azure/docker-login@v1
+    #       azure/docker-login@v1
+    - uses: azure/docker-login@210cfedcb2e18efca1a159af35649e6f3b092f22
       with:
         login-server: 'docker.pkg.github.com'
         username: ${{ secrets.READONLY_PACKAGE_SP }}
@@ -29,7 +31,8 @@ jobs:
     - name: compress-site
       run: tar -czvf ../site.tar.gz .
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
-    - uses: actions/upload-artifact@v2
+    #       actions/upload-artifact/v2
+    - uses: actions/upload-artifact@58740802ef971a2d71eff71e63d48ab68d1f5507
       with:
         name: website
         path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.tar.gz

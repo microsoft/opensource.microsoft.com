@@ -14,8 +14,10 @@ jobs:
   builder:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: docker/build-push-action@v1
+    #       actions/checkout@v2
+    - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
+    #       docker/build-push-action@v1
+    - uses: docker/build-push-action@92e71463491f2d026a477188b8ad3a0fdd9d672c
       with:
         dockerfile: Dockerfile.builder
         tags: latest
