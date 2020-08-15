@@ -11,21 +11,23 @@ jobs:
     steps:
     #       actions/checkout@v2
     - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
+      name: "Check it out"
     - name: "Write content.json"
       env:
         GITSHA: ${{ github.sha }}
       run: |
           echo "{\"commitId\":\"$GITSHA\"}" > content.json
           cat ./content.json
-    - name: debug-startup
+    - name: "Startup"
       run: pwd
     #       azure/docker-login@v1
     - uses: azure/docker-login@210cfedcb2e18efca1a159af35649e6f3b092f22
+      name: "Connect to GitHub Packages"
       with:
         login-server: 'docker.pkg.github.com'
         username: ${{ secrets.READONLY_PACKAGE_SP }}
         password: ${{ secrets.READONLY_PACKAGE_TOKEN }}
-    - name: jekyll-build
+    - name: "Build the site"
       run: |
         docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
         pwd && whoami
@@ -36,11 +38,12 @@ jobs:
         ./node_modules/gulp/bin/gulp.js build
         JEKYLL_ENV=opensource.microsoft.com jekyll build
         COMMANDS
-    - name: compress-site
+    - name: "Compress the static site"
       run: zip -r ../site.zip .
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
     #       actions/upload-artifact/v2
     - uses: actions/upload-artifact@58740802ef971a2d71eff71e63d48ab68d1f5507
+      name: "Store the site as an artifact"
       with:
         name: website
         path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip
@@ -85,7 +88,6 @@ jobs:
         wget https://aka.ms/downloadazcopy-v10-linux
         mv downloadazcopy-v10-linux azcopy.tar.gz
         tar -xvf azcopy.tar.gz
-        cd azcopy
         mv azcopy_linux* azcopy_linux
         mv azcopy_linux/azcopy ./
         ls -la
