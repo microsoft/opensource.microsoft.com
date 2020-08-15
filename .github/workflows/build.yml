@@ -26,5 +26,10 @@ jobs:
         ./node_modules/gulp/bin/gulp.js build
         JEKYLL_ENV=opensource.microsoft.com jekyll build
         COMMANDS
-    - name: list-directory
-      run: ls -la
+    - name: compress-site
+      run: tar -czvf ../site.tar.gz .
+      working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
+    - uses: actions/upload-artifact@v2
+      with:
+        name: website
+        path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.tar.gz
