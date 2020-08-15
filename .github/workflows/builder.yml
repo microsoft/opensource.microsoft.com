@@ -1,6 +1,11 @@
 name: Build the builder
 on:
-  workflow_dispatch
+  push:
+    paths:
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'package.json'
+    - 'package-lock.json'
 jobs:
   builder:
     runs-on: ubuntu-latest

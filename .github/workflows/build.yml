@@ -1,0 +1,28 @@
+name: Build the content
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: debug-startup
+      run: pwd && whoami
+    - uses: azure/docker-login@v1
+      with:
+        login-server: 'docker.pkg.github.com'
+        username: ${{ secrets.READONLY_PACKAGE_SP }}
+        password: ${{ secrets.READONLY_PACKAGE_TOKEN }}
+    - name: jekyll-build
+      run: |
+        docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
+        cd /usr/local/site
+        # bundle install
+        # npm i
+        ./node_modules/gulp/bin/gulp.js build
+        JEKYLL_ENV=opensource.microsoft.com jekyll build
+        COMMANDS
+    - name: list-directory
+      run: ls -la

@@ -10,6 +10,12 @@ COPY package-lock.json /usr/local/site
 
 RUN addgroup oss && adduser -D -G oss oss && chown -R oss:oss .
 RUN chown -R oss:oss /usr/gem
+
+# This may not be necessary, but local runs do not have these folders
+# RUN mkdir -p /github/workflow
+# RUN chown -R oss:oss /github
+# RUN chmod -R 777 /github
+
 USER oss
 
 RUN bundle config set deployment true
