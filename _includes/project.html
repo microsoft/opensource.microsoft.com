@@ -17,7 +17,10 @@
         {% octicon repo %}
 
         <div class="project__overview">
-            <a class="project__name" href="{% raw %}{{ html_url }}{% endraw %}" target="_blank">{% raw %}{{ name }}{% endraw %}</a>
+            <a class="project__name" 
+               href="{% raw %}{{ html_url }}{% endraw %}" 
+               rel="noopener"
+               target="_blank">{% raw %}{{ name }}{% endraw %}</a>
         </div>
 
         <p>{% raw %}{{ description }}{% endraw %}</p>
