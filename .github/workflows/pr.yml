@@ -15,7 +15,6 @@ jobs:
     #       actions/github-script@v2
     - uses: actions/github-script@44b873bc975058192f5279ebe7579496381f575d
       id: authorizeAction
-      if: github.sha
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
@@ -47,7 +46,7 @@ jobs:
       if: steps.authorizeAction.outputs.action != true && github.sha
       run: |
         echo No further action necessary or approved at this time.
-        echo To authorize a pull request build, conditions are either:
+        echo To authorize a pull request build, the event must be associated with a commit (github.sha), and conditions then are either:
         echo - Pull request is opened by a current repository collaborator with write or admin permissions
         echo - Pull request comment is made by a repository collaborator with the string "/startContentBuild" to approve building the content
     - name: "Approval for build"
