@@ -37,13 +37,13 @@ jobs:
         JEKYLL_ENV=opensource.microsoft.com jekyll build
         COMMANDS
     - name: compress-site
-      run: tar -czvf ../site.tar.gz .
+      run: zip -r ../site.zip .
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
     #       actions/upload-artifact/v2
     - uses: actions/upload-artifact@58740802ef971a2d71eff71e63d48ab68d1f5507
       with:
         name: website
-        path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.tar.gz
+        path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip
     - name: "Connect to Azure Files"
       env:
         AZURE_FILES_ENDPOINT: ${{ secrets.AZURE_FILES_ENDPOINT }}
@@ -69,6 +69,11 @@ jobs:
         echo Writing to /etc/fstab
         echo Mounting...
         sudo mount -t cifs //$AZURE_FILES_ENDPOINT/dev /mnt/files -o vers=3.0,credentials=/etc/smbcredentials/files.cred,dir_mode=0777,file_mode=0777,serverino
+    - name: "Copy site"
+      working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com
+      run: |
+        cp site.zip /mnt/files/
+        cp content.json /mnt/files/
     - name: "Disconnect from Azure Files"
       run: |
         sudo umount /mnt/files
