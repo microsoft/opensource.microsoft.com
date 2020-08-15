@@ -18,7 +18,7 @@ RUN chown -R oss:oss /usr/gem
 
 USER oss
 
-RUN bundle config set deployment true
+#RUN bundle config set deployment true
 RUN bundle install
 RUN npm install
 
