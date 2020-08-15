@@ -19,8 +19,9 @@ jobs:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
           const creator = context.payload.sender.login;
-          let association = 'NONE';
-          let couldAction = false;
+          let association = 'NONE'; // built into the action data
+          let authorizedWriter = false; // dynamic real-time lookup at execution time
+          let couldAction = false; // whether it would meet the need to take action given permission
           if (context.payload.pull_request) {
             association = context.payload.pull_request.author_association;
             couldAction = true;
@@ -41,7 +42,6 @@ jobs:
           });
           if (permissionLevel && permissionLevel.permission) {
             console.log(`User ${creator} has permission level: ${permissionLevel.permission}`);
-            let authorizedWriter = false;
             switch (permissionLevel.permission) {
               case 'admin':
               case 'write':
