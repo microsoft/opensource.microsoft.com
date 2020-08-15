@@ -75,9 +75,9 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 
 # Telemetry
 
-By default, this project **does not include telemetry**.
+By default, this project **does not include telemetry**; however, the GitHub Actions may generate the production version of the site without modification.
 
-However, when the Jekyll build environment is set to Microsoft's production environment name - "opensource.microsoft.com" -
+When the Jekyll build environment is set to Microsoft's production environment name - "opensource.microsoft.com" -
 Microsoft's standard cookie compliance and analytics code to connect with Application Insights is included in the site.
 
 * **Data Collection**. The software may collect information about you and your use of the software and send it to Microsoft. Microsoft may use this information to provide services and improve our products and services. You may turn off the telemetry as described in the repository. There are also some features in the software that may enable you and Microsoft to collect data from users of your applications. If you use these features, you must comply with applicable law, including providing appropriate notices to users of your applications together with a copy of Microsoft's privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data collection and use in the help documentation and our privacy statement. Your use of the software operates as your consent to these practices.

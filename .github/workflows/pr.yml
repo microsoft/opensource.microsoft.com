@@ -98,7 +98,7 @@ jobs:
         bundle install
         npm i
         ./node_modules/gulp/bin/gulp.js build
-        JEKYLL_ENV=opensource.microsoft.com jekyll build
+        JEKYLL_ENV=opensource-dev.microsoft.com jekyll build
         COMMANDS
     - name: compress-site
       if: steps.authorizeAction.outputs.action == true && steps.authorizeAction.outputs.authorizedWriter == true
