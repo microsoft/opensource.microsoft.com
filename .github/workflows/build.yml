@@ -12,12 +12,6 @@ jobs:
     #       actions/checkout@v2
     - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
       name: "Check it out"
-    - name: "Write content.json"
-      env:
-        GITSHA: ${{ github.sha }}
-      run: |
-          echo "{\"commitId\":\"$GITSHA\"}" > content.json
-          cat ./content.json
     - name: "Startup"
       run: pwd
     #       azure/docker-login@v1
@@ -38,6 +32,13 @@ jobs:
         ./node_modules/gulp/bin/gulp.js build
         JEKYLL_ENV=opensource.microsoft.com jekyll build
         COMMANDS
+    - name: "Write content.json"
+      env:
+        GITSHA: ${{ github.sha }}
+      run: |
+          echo "{\"commitId\":\"$GITSHA\"}" > content.json
+          cat ./content.json
+          cp content.json _site/
     - name: "Compress the static site"
       run: zip -r ../site.zip .
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
