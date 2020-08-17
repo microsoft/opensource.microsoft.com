@@ -51,7 +51,6 @@ jobs:
     #       actions/checkout@v2
     - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
     - uses: azure/docker-login@210cfedcb2e18efca1a159af35649e6f3b092f22
-      if: steps.authorize.outputs.result == 'authorized-writer' && github.sha
       with:
         login-server: 'docker.pkg.github.com'
         username: ${{ secrets.READONLY_PACKAGE_SP }}
