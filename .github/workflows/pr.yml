@@ -82,5 +82,5 @@ jobs:
     #       actions/upload-artifact/v2
     - uses: actions/upload-artifact@58740802ef971a2d71eff71e63d48ab68d1f5507
       with:
-        name: pullrequest-commit-${{ github.sha }}-content
+        name: pullrequest-${{ steps.pull_request_number.outputs.result }}-content
         path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/pullrequest.${{ steps.pull_request_number.outputs.result }}.tar.gz
