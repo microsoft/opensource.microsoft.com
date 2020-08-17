@@ -2,94 +2,71 @@
 # Build authorized pull requests, creating a compressed content tgz
 # with the generated site, storing it as an artifact.
 #
-name: Consider building pull request content
+name: Stage content
 on:
   pull_request: # considered pull_request_target, not needed
     types: [opened]
-  issue_comment:
+  pull_request_review:
+    types: [submitted, edited]
+  pull_request_review_comment:
     types: [created, edited]
 jobs:
-  potentialPullRequestBuild:
+  authorize:
+    name: "Maintainer approval"
     runs-on: ubuntu-latest
+    outputs:
+      isMaintainerApproved: ${{ steps.authorize.outputs.result }}
     steps:
+    #       actions/checkout@v2
+    - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
     #       actions/github-script@v2
     - uses: actions/github-script@44b873bc975058192f5279ebe7579496381f575d
       name: "Authorization check"
-      id: authorizeAction
+      id: authorize
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        result-encoding: string
         script: |
-          const creator = context.payload.sender.login;
-          let association = 'NONE'; // built into the action data
-          let authorizedWriter = false; // dynamic real-time lookup at execution time
-          let couldAction = false; // whether it would meet the need to take action given permission
-          if (context.payload.pull_request) {
-            association = context.payload.pull_request.author_association;
-            couldAction = true;
-            console.log('This is a new pull request.');
-          } else if (context.payload.comment) {
-            association = context.payload.comment.author_association;
-            const comment = context.payload.comment;
-            if (comment.body && comment.body.includes('/startContentBuild')) {
-              console.log('Comment includes /startContentBuild');
-              couldAction = true;
-            }
-          }
-          console.log(`Author ${creator} has association ${association}`);
-          const response = await github.repos.getCollaboratorPermissionLevel({
-            owner: 'microsoft',
-            repo: 'opensource.microsoft.com',
-            username: creator,
-          });
-          let permission = null;
-          if (response && response.data && response.data.permission) {
-            permission = response.data.permission;
-          }
-          if (permission) {
-            console.log(`User ${creator} has permission level: ${permission}`);
-            switch (permission) {
-              case 'admin':
-              case 'write':
-                authorizedWriter = true;
-                console.log('User is authorized to contribute.');
-                break;
-              default:
-                break;
-            }
-          } else {
-            console.log('Permission level for the user could not be retrieved.');
-          }
-          switch (association) {
-            case 'COLLABORATOR':
-            case 'MEMBER':
-            case 'OWNER':
-              console.log('Owner, member or collaborator');
-              return { collaborator: true, action: couldAction === true, authorizedWriter };
-            default:
-              return { collaborator: false, action: false, authorizedWriter: false };
-          }
+          const authorizationCheck = require(`${process.env.GITHUB_WORKSPACE}/.github/workflows/authorizationCheck.js`)
+          const output = await authorizationCheck({github, context});
+          const authorized = output && output.authorized === true ? 'authorized-writer' : 'false';
+          return authorized;
     - name: "No action required"
-      if: (steps.authorizeAction.outputs.action != true || steps.authorizeAction.outputs.authorizedWriter != true) && github.sha
+      if: steps.authorize.outputs.result != 'authorized-writer'
       run: |
         echo No further action necessary or approved at this time.
-        echo To authorize a pull request build, the event must be associated with a commit github.sha, and conditions then are either:
-        echo - Pull request is opened by a current repository collaborator with write or admin permissions
-        echo - Pull request comment is made by a repository collaborator with the string "/startContentBuild" to approve building the content
-    - name: "Approval for build"
-      if: steps.authorizeAction.outputs.action == true && github.sha && steps.authorizeAction.outputs.authorizedWriter == true
+        echo To authorize a pull request build, one of:
+        echo - Pull request is needs to be opened by a current repository maintainer with write permission
+        echo - Pull request comment is made by a repository maintainer with the string "/build" to approve building the content
+        echo - Pull request is approved by a repository maintainer
+    - name: "Build approval"
+      if: steps.authorize.outputs.result == 'authorized-writer' && github.sha
       run: |
-        echo Building the content for this commit has been approved, either because the PR was opened by a collaborator, or an authorized individual passed the "/startContentBuild" value inside a comment.
-      #       actions/checkout@v2
+        echo Building the content for this commit has been approved, either because the PR was opened by a maintainer, or the PR was approved by a maintainer, or a maintainer passed the "/build" value inside a comment.
+  build:
+    name: "Build content"
+    runs-on: ubuntu-latest
+    needs: authorize
+    if: ${{ needs.authorize.outputs.isMaintainerApproved == 'authorized-writer' }}
+    steps:
+    #       actions/checkout@v2
     - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
-      if: steps.authorizeAction.outputs.action == true && steps.authorizeAction.outputs.authorizedWriter == true
     - uses: azure/docker-login@210cfedcb2e18efca1a159af35649e6f3b092f22
-      if: steps.authorizeAction.outputs.action == true && github.sha && steps.authorizeAction.outputs.authorizedWriter == true
+      if: steps.authorize.outputs.result == 'authorized-writer' && github.sha
       with:
         login-server: 'docker.pkg.github.com'
         username: ${{ secrets.READONLY_PACKAGE_SP }}
         password: ${{ secrets.READONLY_PACKAGE_TOKEN }}
+    #       actions/github-script@v2
+    - uses: actions/github-script@44b873bc975058192f5279ebe7579496381f575d
+      name: "Get PR number"
+      id: pull_request_number
+      with:
+        result-encoding: string
+        script: |      
+          const { payload, eventName } = context;
+          const { sender, action, pull_request, review, repository } = payload;
+          return pull_request ? pull_request.number : '';
     - name: jekyll-build
-      if: steps.authorizeAction.outputs.action == true && github.sha && steps.authorizeAction.outputs.authorizedWriter == true
       run: |
         docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
         pwd && whoami
@@ -98,15 +75,13 @@ jobs:
         bundle install
         npm i
         ./node_modules/gulp/bin/gulp.js build
-        JEKYLL_ENV=opensource-dev.microsoft.com jekyll build
+        JEKYLL_ENV=opensource-dev.microsoft.com PR_NUMBER=${{ steps.pull_request_number.outputs.result }} jekyll build
         COMMANDS
     - name: compress-site
-      if: steps.authorizeAction.outputs.action == true && steps.authorizeAction.outputs.authorizedWriter == true
-      run: tar -czvf ../pullrequest.$GITHUB_SHA.tar.gz .
+      run: tar -czvf ../pullrequest.${{ steps.pull_request_number.outputs.result }}.tar.gz .
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
     #       actions/upload-artifact/v2
     - uses: actions/upload-artifact@58740802ef971a2d71eff71e63d48ab68d1f5507
-      if: steps.authorizeAction.outputs.action == true && github.sha && steps.authorizeAction.outputs.authorizedWriter == true
       with:
         name: pullrequest-commit-${{ github.sha }}-content
-        path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/pullrequest.$GITHUB_SHA.tar.gz
+        path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/pullrequest.${{ steps.pull_request_number.outputs.result }}.tar.gz
