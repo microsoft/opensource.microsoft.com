@@ -7,7 +7,7 @@ RUN chown -R oss:oss /usr/gem
 USER oss
 RUN bundle install
 RUN npm install
-./node_modules/gulp/bin/gulp.js build
+RUN ./node_modules/gulp/bin/gulp.js build
 RUN jekyll build
 
 FROM nginx:alpine
