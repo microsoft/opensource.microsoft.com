@@ -191,6 +191,17 @@ $projectWidth: 832px;
         }
     }
 
+    input:focus + label {
+
+        &:before {
+            border: 2px solid $brand;
+        }
+
+        &:after {
+            //transform: scale(1);
+        }
+    }
+
     input {
         margin-right: 4px;
     }

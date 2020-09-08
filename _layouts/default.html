@@ -25,7 +25,7 @@
 
     <body class="page-loading no-js {{ page.id }}" id="page-{{ page.id }}">
         {% if jekyll.environment == "opensource.microsoft.com" %}{% include production-telemetry.html %}{% endif %}
-        <a class="skip-to-content" href="#content">skip to content</a>
+        <a class="skip-to-content" href="#content" tabindex="1">skip to content</a>
 
         {% include header.html %}
 

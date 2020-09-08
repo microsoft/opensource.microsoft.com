@@ -21,6 +21,10 @@
     overflow-y: auto;
     display: none;
 
+    @include stop-at($header-breakpoint) {
+        padding-bottom: 200px;
+    }
+
     @include start-at($header-breakpoint) {
         display: none !important;
         border: 0;
@@ -48,6 +52,10 @@
 
         li {
             border-bottom: 1px solid $gray-700;
+
+            &:first-child {
+                padding-top: 1px;
+            }
         }
 
         a:not(.sign-in) {

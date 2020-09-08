@@ -125,6 +125,46 @@ APP.Header = {
             }
         });
 
+        var mobileMenuLink = $('.main-nav a');
+
+        mobileMenuLink.each(function(){
+            if( $(this).is(":focus") ) {
+                $('body').addClass('menu-is-open');
+            }
+        });
+
+        // $(document).ready(function(){
+        //     if ($(window).width() < 800) {
+        //         //$('.site-header__search').attr('tabindex', '3');
+        //         //$('.search-form-mobile .search-form').attr('tabindex', '3');
+        //     }
+        // });
+
+        $(window).keyup(function (e) {
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if (code == 9){
+                if ($(window).width() < 800) {
+                    if ( $('.main-nav a:focus, .main-nav input:focus').length) {
+                        $('body').addClass('menu-is-open');
+                    } else {
+                        $('body').removeClass('menu-is-open');
+                    }
+
+                    // if (code == 9 && $('#mobile-search:focus').length) {
+                    //     //$('body').addClass('search-is-open');
+                    //     alert('asdfas');
+                    //     //  $('.search-form-mobile input').focus();
+                    // } else {
+                    //     $(':focus').addClass('asfasfasfasdf')
+                    //     //$('body').removeClass('search-is-open');
+                    // }
+
+                }
+
+            }
+
+        });
+
 
         // var playBtn = document.getElementById('arctic-vault-video-play');
         // if( playBtn ) {

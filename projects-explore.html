@@ -67,7 +67,10 @@ title: Explore all Microsoft repos
             </form>
 
             <div class="project-wrap">
-                <div id="search-for"></div>
+                <div id="search-for" tabindex="0">
+                    <p class="sr-only">No projects searched yet</p>
+                </div>
+
                 <div id="projectResults"></div>
                 <script id="project-template" type="text/x-handlebars-template">
                     <ul class="project-list">
@@ -125,7 +128,7 @@ title: Explore all Microsoft repos
                     if( posts.repos.length === 0 ) {
                         results.html('<p>No results found.</p>');
                     } else {
-                        searchText.html('<p class="h4 mb-5">Showing results, ' + posts.repos.length + ' repos found.</p>');
+                        searchText.html('<p class="h4 mb-5" tabindex>Showing results, ' + posts.repos.length + ' repos found.</p>');
                     }
                 }, 200);
             }

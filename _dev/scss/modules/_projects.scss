@@ -76,6 +76,9 @@
     }
 }
 
+.project__name {
+    color: darken($brand, 8%);
+}
 
 .project__details > p {
     font-size: 14px;

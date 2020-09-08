@@ -1,7 +1,7 @@
 <header id="site-header" role="banner">
     <div class="site-header__inner">
         <div class="site-logo">
-            <a href="{{ '/' | relative_url }}">
+            <a href="{{ '/' | relative_url }}" tabindex="2">
                 <img src="https://opensource.azureedge.net/assets/images/Microsoft-Open-Source-logo.svg"
                     alt="Microsoft | Open Source logo" />
                 <span class="sr-only">Return to homepage</span>
@@ -39,7 +39,6 @@
         </ul>
 
         <div class="site-header__utilities">
-
             <div class="site-header__search">
                 <form class="search-form" role="search" action="/projects/explore" method="GET">
                     <label for="header-search">
@@ -67,10 +66,21 @@
     </div>
 </header>
 
+
+
 <nav id="navigation">
     <div class="site-navigation">
         <div>
             <ul class="main-nav">
+                <li>
+                    <form class="search-form" role="search" action="/projects/explore" method="GET">
+                        <label>
+                            <span class="sr-only">Search projects</span>
+                            {% octicon search %}
+                        </label>
+                        <input id="mobile-search" type="text" name="q" placeholder="Search" />
+                    </form>
+                </li>
                 <li>
                     <a class="is-active" href="{{ "/" | relative_url }}">Home</a>
                 </li>
@@ -122,6 +132,6 @@
             <span class="sr-only">Search projects</span>
             {% octicon search %}
         </label>
-        <input type="text" name="q" placeholder="Search" />
+        <input id="mobile-search" type="text" name="q" placeholder="Search" />
     </form>
 </div>
