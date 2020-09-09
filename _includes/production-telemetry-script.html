@@ -23,7 +23,7 @@
         evaluateShowManagement();
     }
     function evaluateShowManagement() {
-        document.getElementById('manageCookies').style.display = siteConsent.isConsentRequired ? 'inline' : 'none';
+        document.getElementById('manageCookies').style.display = siteConsent.isConsentRequired ? 'inline-block' : 'none';
     }
     function evaluateUserConsent() {
         if (siteConsent && siteConsent.getConsentFor(WcpConsent.consentCategories.Analytics)) {
