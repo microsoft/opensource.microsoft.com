@@ -20,6 +20,10 @@
     }
     function onConsentChanged(categoryPreferences) {
         evaluateUserConsent();
+        evaluateShowManagement();
+    }
+    function evaluateShowManagement() {
+        document.getElementById('manageCookies').style.display = siteConsent.isConsentRequired ? 'inline' : 'none';
     }
     function evaluateUserConsent() {
         if (siteConsent && siteConsent.getConsentFor(WcpConsent.consentCategories.Analytics)) {
@@ -32,7 +36,7 @@
         } else {
             siteConsent = _siteConsent;
         }
-        document.getElementById('manageCookies').style.display = siteConsent.isConsentRequired ? 'inline' : 'none';
+        evaluateShowManagement();
     }, onConsentChanged);
     function manageCookies() {
         if(siteConsent.isConsentRequired){
