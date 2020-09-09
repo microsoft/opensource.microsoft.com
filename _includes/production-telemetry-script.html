@@ -28,24 +28,15 @@
     }
     WcpConsent.init('en-US', 'msccBanner', function (err, _siteConsent) {
         if (err != undefined) {
-            console.dir(error);
             return error;
         } else {
             siteConsent = _siteConsent;
         }
-
-        if(siteConsent.isConsentRequired){
-            console.log('consent is required, show manage cookies UI');
-            $('#manageCookies').show();
-            siteConsent.manageConsent();
-        }
+        document.getElementById('manageCookies').style.display = siteConsent.isConsentRequired ? 'inline' : 'none';
     }, onConsentChanged);
     function manageCookies() {
-        console.log('MANAGE COOKIES');
         if(siteConsent.isConsentRequired){
             siteConsent.manageConsent();
-        } else {
-            console.log('but consent is not required');
         }
     }
 </script>
