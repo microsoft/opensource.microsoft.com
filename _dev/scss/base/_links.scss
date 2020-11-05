@@ -123,6 +123,10 @@
     }
 }
 
+.program > a, .link-standard {
+    color: $blue-400 !important;
+    text-decoration: underline;
+}
 
 .link-arrow {
     display: inline-flex;
