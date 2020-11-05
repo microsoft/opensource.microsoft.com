@@ -212,13 +212,12 @@ title: Ecosystem
                 {% endif %}
                 <p>{{ post.description }}</p>
                 {% if post.projectUrl %}
-                <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">
+                    <!-- without descriptive text, no link -->    
                     {% if post.linkText %}
-                    {{ post.linkText }}
-                    {% else %}
-                    Learn more
+                        <a class="link-arrow-external mt-3" href="{{ post.projectUrl }}">
+                            {{ post.linkText }}
+                        </a>
                     {% endif %}
-                </a>
                 {% endif %}
             </div>
             {% endfor %}
