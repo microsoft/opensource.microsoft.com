@@ -1,29 +1,43 @@
 var $ = jQuery;
 
-var resumeAction = $('#resume-graphics');
-var pauseAction = $('#pause-graphics');
+var toggleAction = $('#toggle-graphics');
+var toggleText = $('#toggle-text');
+var pauseIcon = $('#pause-icon');
+var resumeIcon = $('#resume-icon');
 var pageHeroAccessibilityControls = $('#hero-accessibility-controls');
+var toggleLink = $('#toggle-graphics');
 
 var paused = true;
 
+function toggle() {
+  if (paused) {
+    return resume();
+  } else {
+    return pause();
+  }
+}
+
 function pause() {
   paused = true;
-  pauseAction.hide();
-  resumeAction.show();
+  pauseIcon.hide();
+  resumeIcon.show();
+  toggleText.text('Resume');
+  toggleLink.prop('title', 'Resume graphics');
   pageHeroAccessibilityControls.trigger("hero-pause");
   return false;
 }
 
 function resume() {
   paused = false;
-  resumeAction.hide();
-  pauseAction.show();
+  pauseIcon.show();
+  resumeIcon.hide();
+  toggleLink.prop('title', 'Pause graphics');
+  toggleText.text('Pause');
   pageHeroAccessibilityControls.trigger("hero-resume");
   return false;
 }
 
-resumeAction.click(resume);
-pauseAction.click(pause);
+toggleAction.click(toggle);
 
 resume(); // startup
 
