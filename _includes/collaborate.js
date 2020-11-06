@@ -4,8 +4,9 @@
         activityFeed = $('#activityFeed'),
         activityList = $('#activityList'),
         // refreshAction = $('#refresh-feed'),
-        resumeAction = $('#resume-feed'),
-        pauseAction = $('#pause-feed'),
+        toggleAction = $('#toggle-feed'),
+        resumeIcon = $('#resume-icon'),
+        pauseIcon = $('#pause-icon'),
         source = $("#activity-template").html(),
         template = Handlebars.compile(source);
 
@@ -34,9 +35,18 @@
         return false;
     }
 
+    function toggle() {
+        if (alive) {
+            return pause();
+        } else {
+            return resume();
+        }
+    }
+
     function pause() {
-        pauseAction.hide();
-        resumeAction.show();
+        toggleAction.text('Resume');
+        resumeIcon.show();
+        pauseIcon.hide();
         alive = false;
         if (refreshTimer) {
             clearInterval(refreshTimer);
@@ -46,9 +56,10 @@
     }
 
     function resume() {
-        resumeAction.hide();
-        pauseAction.show();
+        toggleAction.text('Pause');
         alive = true;
+        resumeIcon.hide();
+        pauseIcon.show();
         iteration(true);
         if (!refreshTimer) {
             refreshTimer = setInterval(refresh.bind(null, true), refreshInterval);
@@ -199,9 +210,7 @@
         });
     }
 
-    // refreshAction.click(refresh);
-    resumeAction.click(resume);
-    pauseAction.click(pause);
+    toggleAction.click(toggle);
 
     resume(); // iteration();
 

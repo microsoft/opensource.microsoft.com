@@ -52,13 +52,11 @@ title: Get involved
                 <div data-javascript-show="immediate" data-require-javascript="yes">
                     <p>
                         <a class="refresh"
-                            id="pause-feed"
+                            id="toggle-feed"
                             href="#"
-                            title="Pause recent activity feed">Pause feed {% octicon bell-slash %}</a>
-                        <a class="refresh"
-                            id="resume-feed"
-                            href="#"
-                            title="Resume feed">Resume feed {% octicon sync %}</a></p>
+                            title="Pause recent activity feed">
+                            Pause feed <span id="pause-icon">{% octicon bell-slash %}</span><span id="resume-icon" style="display:none">{% octicon sync %}</span>
+                        </a>
                         <!--
                         <p><a class="refresh"
                                 id="refresh-feed"
