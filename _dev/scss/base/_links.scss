@@ -123,9 +123,13 @@
     }
 }
 
-.program a, .program > a, .link-standard {
+.program-page a, .program-page > a, .link-standard {
     color: $blue-400 !important;
     text-decoration: underline;
+
+    :hover {
+        text-decoration: underline;
+    }
 }
 
 .link-arrow {
