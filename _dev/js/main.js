@@ -446,9 +446,9 @@ APP.Tabs = {
             tabsBody = group.find('.tabs__content');
             tabs.removeClass('is-active');
             $(this).addClass('is-active');
-            tabs.children('a').attr('aria-selected', false);
+            tabs.children('a').attr('aria-current', false);
             var subLinks = $(this).children('a');
-            subLinks.attr('aria-selected', true);
+            subLinks.attr('aria-current', true);
             $('.tabs__content').hide().removeClass('is-active');
             var tabId = $(this).attr('data-tab');
                 // target = $('#' + tabId);
@@ -466,7 +466,7 @@ APP.Tabs = {
             tabs = group.find('.tabs__tab'),
             tabsBody = group.find('.tabs__content');
             tabs.removeClass('is-active');
-            tabs.children('a').attr('aria-selected', false);
+            tabs.children('a').attr('aria-current', false);
             $(this).parent().addClass('is-active');
             $('.tabs__content').hide().removeClass('is-active');
             var tabId = $(this).parent().attr('data-tab');
@@ -477,7 +477,7 @@ APP.Tabs = {
                     $(this).fadeIn(300).addClass('is-active');
                 }
             })
-            $(this).attr('aria-selected', true);
+            $(this).attr('aria-current', true);
             history.replaceState(null, '', '#' + tabId);
             $(window).trigger('resize');
             return false; // prevent default
