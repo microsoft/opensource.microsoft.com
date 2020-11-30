@@ -435,35 +435,48 @@ APP.Tabs = {
     },
 
     bind: function() {
-
         var tab = $('.tabs__tab'),
-			tabBody = $('.tabs__content');
+            tabBody = $('.tabs__content'),
+            tabLink = $('.tabs__link');
         tabBody.hide();
-
         $('.tabs__content.is-active').show();
-
-		tab.click(function(){
-			var group = $(this).parents('.tabs'),
-				tabs = group.find('.tabs__tab'),
-				tabsBody = group.find('.tabs__content');
-			tabs.removeClass('is-active');
+        tab.click(function() { // tab interface
+            var group = $(this).parents('.tabs'),
+            tabs = group.find('.tabs__tab'),
+            tabsBody = group.find('.tabs__content');
+            tabs.removeClass('is-active');
             $(this).addClass('is-active');
             $('.tabs__content').hide().removeClass('is-active');
-
-            var tabId = $(this).attr('data-tab'),
-				target = $('#' + tabId);
-
+            var tabId = $(this).attr('data-tab');
+                // target = $('#' + tabId);
             tabsBody.each(function(){
                 if( $(this).attr('data-tab') == tabId) {
                     $(this).addClass('is-active');
                     $(this).fadeIn(300).addClass('is-active');
                 }
             })
-
             history.replaceState(null, '', '#' + tabId);
             $(window).trigger('resize');
-		});
-
+        });
+        tabLink.click(function() { // accessible link
+            var group = $(this).parents('.tabs'),
+            tabs = group.find('.tabs__tab'),
+            tabsBody = group.find('.tabs__content');
+            tabs.removeClass('is-active');
+            $(this).parent.addClass('is-active');
+            $('.tabs__content').hide().removeClass('is-active');
+            var tabId = $(this).parent.attr('data-tab');
+                // target = $('#' + tabId);
+            tabsBody.each(function(){
+                if( $(this).attr('data-tab') == tabId) {
+                    $(this).addClass('is-active');
+                    $(this).fadeIn(300).addClass('is-active');
+                }
+            })
+            history.replaceState(null, '', '#' + tabId);
+            $(window).trigger('resize');
+            return false; // prevent default
+        });
         $(document).ready(function(){
             var hash = window.location.hash.replace('#', '');
             $('.tabs__tab').each(function() {
