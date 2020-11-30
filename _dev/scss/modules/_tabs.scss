@@ -28,6 +28,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
 }
 
 
