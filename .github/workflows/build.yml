@@ -14,8 +14,8 @@ jobs:
       name: "Check it out"
     - name: "Startup"
       run: pwd
-    #       azure/docker-login@v1
-    - uses: azure/docker-login@210cfedcb2e18efca1a159af35649e6f3b092f22
+    #       azure/docker-login latest with updated environment logic
+    - uses: azure/docker-login@944f3176a9cfe29e1c53e92dff83e4f8c6eef52b
       name: "Connect to GitHub Packages"
       with:
         login-server: 'docker.pkg.github.com'
