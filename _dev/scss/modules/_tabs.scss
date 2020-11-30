@@ -31,7 +31,9 @@
 
     a {
         text-decoration: none;
-        color: inherit;
+        color: $black;
+        font-weight: 600;
+        font-size: 13px;
     }
 
 }
@@ -53,6 +55,7 @@
         margin-right: 24px;
     }
 
+    /*
     &:after {
         content: '';
         display: block;
@@ -66,7 +69,6 @@
         transform: scaleX(0);
         transition: transform $trans;
     }
-
 
     &:hover {
         cursor: pointer;
@@ -85,6 +87,7 @@
         }
     }
 
+    */
 
 
     &.is-active {
