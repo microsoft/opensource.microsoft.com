@@ -463,9 +463,9 @@ APP.Tabs = {
             tabs = group.find('.tabs__tab'),
             tabsBody = group.find('.tabs__content');
             tabs.removeClass('is-active');
-            $(this).parent.addClass('is-active');
+            $(this).parent().addClass('is-active');
             $('.tabs__content').hide().removeClass('is-active');
-            var tabId = $(this).parent.attr('data-tab');
+            var tabId = $(this).parent().attr('data-tab');
                 // target = $('#' + tabId);
             tabsBody.each(function(){
                 if( $(this).attr('data-tab') == tabId) {
