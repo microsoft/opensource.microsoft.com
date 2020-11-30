@@ -27,16 +27,16 @@
 
         <div class="project__meta">
             <div class="pr-4">
-
-                <span class="sr-only">favorites</span>{% octicon star %} <span class="format-number">{% raw %}{{ stargazers_count }}{% endraw %} </span>
+                <span class="sr-only">{% raw %}{{ stargazers_count }}{% endraw %} favorites</span>
+                <span aria-hidden="true">{% octicon star %} <span class="format-number">{% raw %}{{ stargazers_count }}{% endraw %}</span></span>
             </div>
-
             <div class="pr-4">
-                <span class="sr-only">forks</span>{% octicon repo-forked %} <span class="format-number">{% raw %}{{ forks_count }}{% endraw %}</span>
+                <span class="sr-only">{% raw %}{{ forks_count }}{% endraw %} forks</span>
+                <span aria-hidden="true">{% octicon repo-forked %} <span class="format-number">{% raw %}{{ forks_count }}{% endraw %}</span></span>
             </div>
-
             <div class="project__tags">
-                <span>{% raw %}{{ language }}{% endraw %}<span class="sr-only"> project language</span></span>
+                <span aria-hidden="true">{% raw %}{{ language }}{% endraw %}</span>
+                <span class="sr-only">{% raw %}{{ language }}{% endraw %} project language</span>
             </div>
         </div>
     </div>
