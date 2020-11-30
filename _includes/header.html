@@ -9,17 +9,17 @@
         </div>
 
         <ul class="site-header__nav">
-            <li{% if page.id == 'collaborate' %} class="is-active" {% endif %}>
+            <li{% if page.id == 'collaborate' %} class="is-active" aria-selected="true" {% endif %}>
                 <a href="{{ "/collaborate/" | relative_url }}">Get involved</a>
             </li>
-            <li{% if page.id == 'projects' %} class="is-active" {% endif %}>
+            <li{% if page.id == 'projects' %} class="is-active" aria-selected="true" {% endif %}>
                 <a href="{{ "/projects/" | relative_url }}">Projects</a>
             </li>
-            <li{% if page.id == 'ecosystem' %} class="is-active" {% endif %}>
+            <li{% if page.id == 'ecosystem' %} class="is-active" aria-selected="true" {% endif %}>
                 <a href="{{ "/ecosystem/" | relative_url }}">Ecosystem</a>
             </li>
             <li{% if page.id == 'program' or page.id == 'governance' or page.id == 'best-practices' %}
-                class="is-active" {% endif %}>
+                class="is-active" aria-selected="true" {% endif %}>
                 <a href="{{ "/program/" | relative_url }}">Our program</a>
             </li>
             <li>

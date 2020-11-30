@@ -446,6 +446,9 @@ APP.Tabs = {
             tabsBody = group.find('.tabs__content');
             tabs.removeClass('is-active');
             $(this).addClass('is-active');
+            tabs.children('a').attr('aria-selected', false);
+            var subLinks = $(this).children('a');
+            subLinks.attr('aria-selected', true);
             $('.tabs__content').hide().removeClass('is-active');
             var tabId = $(this).attr('data-tab');
                 // target = $('#' + tabId);
@@ -463,6 +466,7 @@ APP.Tabs = {
             tabs = group.find('.tabs__tab'),
             tabsBody = group.find('.tabs__content');
             tabs.removeClass('is-active');
+            tabs.children('a').attr('aria-selected', false);
             $(this).parent().addClass('is-active');
             $('.tabs__content').hide().removeClass('is-active');
             var tabId = $(this).parent().attr('data-tab');
@@ -473,6 +477,7 @@ APP.Tabs = {
                     $(this).fadeIn(300).addClass('is-active');
                 }
             })
+            $(this).attr('aria-selected', true);
             history.replaceState(null, '', '#' + tabId);
             $(window).trigger('resize');
             return false; // prevent default
