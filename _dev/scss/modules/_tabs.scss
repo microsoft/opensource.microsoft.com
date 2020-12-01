@@ -130,5 +130,10 @@
 
 
 // ----------------------------------------
-//
+// high contrast Windows mode
 // ----------------------------------------
+@media (forced-colors: active) {
+    li.is-active {
+        border-bottom: 3px solid ButtonText;
+    }
+}
