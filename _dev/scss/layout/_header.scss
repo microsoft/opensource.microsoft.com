@@ -155,6 +155,10 @@ body {
 			transform-origin: center;
 			transform: scaleX(0);
 			transition: transform $trans;
+
+			@media (forced-colors: active) {
+				background: $white;
+			}
 		}
 
 		&.external {
@@ -395,8 +399,3 @@ body.search-is-open {
 		}
 	}
 }
-
-
-// ----------------------------------------
-//
-// ----------------------------------------
