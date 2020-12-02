@@ -6,6 +6,7 @@
         // refreshAction = $('#refresh-feed'),
         toggleAction = $('#toggle-feed'),
         toggleText = $('#toggle-text'),
+        toggleText2 = $('#toggle-text2'),
         resumeIcon = $('#resume-icon'),
         pauseIcon = $('#pause-icon'),
         source = $("#activity-template").html(),
@@ -46,6 +47,7 @@
 
     function pause() {
         toggleText.text('Resume');
+        toggleText2.text('Resume real-time activity feed');
         resumeIcon.show();
         pauseIcon.hide();
         alive = false;
@@ -58,6 +60,7 @@
 
     function resume() {
         toggleText.text('Pause');
+        toggleText2.text('Pause real-time activity feed');
         alive = true;
         resumeIcon.hide();
         pauseIcon.show();
