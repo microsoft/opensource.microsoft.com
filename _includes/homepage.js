@@ -2,6 +2,7 @@ var $ = jQuery;
 
 var toggleAction = $('#toggle-graphics');
 var toggleText = $('#toggle-text');
+var toggleText2 = $('#toggle-text2');
 var pauseIcon = $('#pause-icon');
 var resumeIcon = $('#resume-icon');
 var pageHeroAccessibilityControls = $('#hero-accessibility-controls');
@@ -22,6 +23,7 @@ function pause() {
   pauseIcon.hide();
   resumeIcon.show();
   toggleText.text('Resume');
+  toggleText2.text('Resume animations and start showing new graphics');
   toggleLink.prop('title', 'Resume graphics');
   pageHeroAccessibilityControls.trigger("hero-pause");
   return false;
@@ -33,6 +35,7 @@ function resume() {
   resumeIcon.hide();
   toggleLink.prop('title', 'Pause graphics');
   toggleText.text('Pause');
+  toggleText2.text('Pause animations and stop showing new graphics');
   pageHeroAccessibilityControls.trigger("hero-resume");
   return false;
 }
