@@ -208,8 +208,6 @@
       repo: https://github.com/kevva/bin-wrapper#readme
     - title: binary-extensions
       repo: https://github.com/sindresorhus/binary-extensions#readme
-    - title: bindings
-      repo: https://github.com/TooTallNate/node-bindings
     - title: bl
       repo: https://github.com/rvagg/bl
     - title: blob
@@ -509,8 +507,6 @@
       repo: https://github.com/sindresorhus/figures#readme
     - title: file-type
       repo: https://github.com/sindresorhus/file-type#readme
-    - title: file-uri-to-path
-      repo: https://github.com/TooTallNate/file-uri-to-path
     - title: filename-reserved-regex
       repo: https://github.com/sindresorhus/filename-reserved-regex#readme
     - title: filenamify
@@ -557,8 +553,6 @@
       repo: https://github.com/gulpjs/fs-mkdirp-stream#readme
     - title: fs.realpath
       repo: https://github.com/isaacs/fs.realpath#readme
-    - title: fsevents
-      repo: https://github.com/strongloop/fsevents
     - title: fstream
       repo: https://github.com/npm/fstream#readme
     - title: function-bind

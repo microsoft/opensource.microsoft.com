@@ -142,7 +142,7 @@
 .project__repo_url,
 .project__url {
     font-size: 14px;
-    color: $brand;
+    color: $brand-dark !important;
     display: inline-flex;
     align-items: center;
     transition: color $trans;
