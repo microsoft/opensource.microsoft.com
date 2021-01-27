@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@primer/css": "^14.3.0",
-    "gsap": "3.1.1",
+    "gsap": "3.6.0",
     "primer-core": "^6.7.0",
     "timeago": "1.6.7"
   }
