@@ -1,0 +1,168 @@
+<div class="pb-6">
+    <h3 class="h3 mb-4">Securing the open source supply chain</h3>
+    <p><em>This is a summary of how we approach securing the open source supply chain at Microsoft.</em></p>
+    <p>
+        Microsoft’s software supply chain depends on Open-Source Software (OSS) components at all stages of
+        the developer lifecycle. With Microsoft’s usage of tens of thousands of OSS dependencies in nearly
+        10 million instances today, it is imperative for us to secure our OSS supply chain as it represents
+        a critical piece of our overall software security posture.
+    </p>
+    <p>
+        Our approach to securing the OSS supply chain includes both ecosystem and internal initiatives.
+    </p>
+    <h4 class="h4">Ecosystem</h4>
+    <p>
+        At the ecosystem level, we are working on two efforts: industry standards and open source security. 
+    </p>
+    <p>
+       <b>Industry Standards.</b> Microsoft is active in defining industry standards for supply chain security,
+       working toward an overall system for transmitting software artifacts across end-to-end supply chains, with
+       integrity and policy verification at each step. Our work includes participation in the
+       <a href='https://www.it-cisq.org/software-bill-of-materials/index.htm'>3T-SBOM</a>,
+       <a href='https://spdx.dev/'>SPDX</a>,
+       <a href='https://in-toto.io/'>in-toto</a>,
+       <a href='https://theupdateframework.io/'>TUF</a>,
+       and other security specification communities.
+    </p>
+    <p>
+        Open Source Security. In August 2020, Microsoft joined with others in the industry to form the Open Source
+        Security Foundation (OpenSSF). The aim of the OpenSSF is to pool resources, including people and direct
+        contributions, to design and deliver ecosystem-level solutions for OSS security. Efforts within the OpenSSF
+        include the following:
+    </p> 
+    <ul class="ul mt-4">
+        <li>
+            <a href='https://github.com/ossf/wg-identifying-security-threats'>
+            Identifying Security Threats</a> - security metrics for open-source projects
+        </li>
+        <li>
+            <a href='https://github.com/ossf/wg-security-tooling'>
+            Security Tooling</a> - state of the art, globally accessible security tools 
+        </li>
+        <li>
+            <a href='https://github.com/ossf/wg-identifying-security-threats'>
+            Best Practices</a> - awareness and education of security best practices 
+        </li>
+        <li>
+            <a href='https://github.com/ossf/wg-best-practices-os-developers'>
+            Vulnerability Disclosures</a> – efficient vulnerability reporting and remediation
+        </li>
+        <li>
+            <a href='https://github.com/ossf/wg-digital-identity-attestation'>
+            Digital Identity Attestation</a> – ensuring the provenance of open source code
+        </li>
+        <li>
+            <a href='https://github.com/ossf/wg-securing-critical-projects'>
+            Securing Critical Projects</a> – hands-on help for critical open source projects
+        </li>
+    </ul>
+    <p>
+        We're excited to work with the OpenSSF in collaborating to secure the open-source
+        ecosystem and encourage others to <a href='https://openssf.org/getinvolved/'>get involved</a>.
+    </p>
+    <h4 class="h4">Internal</h4>
+    <p>
+        Microsoft’s goal to secure internal open-source consumption and to protect Microsoft products
+        and customers against OSS supply chain attacks follows a framework we call the Jobs-to-be-Done
+        (JTBDs).
+    </p>
+    <ol class="ol mt-4">
+        <li>
+            <p>
+                <b>INGEST IT</b> - ensure we have a saved copy of any external artifact we use for
+                development or in production.
+            </p>
+            <p>
+                Threat Scenario: A public package repository becomes compromised, or is unavailable.
+            </p>
+            <p>
+                Value Proposition: Teams can still ship any existing assets even if external sources
+                are compromised or unavailable.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>REBUILD IT</b> - ensure OSS can be rebuilt from source code.
+            </p>
+            <p>
+                Threat Scenario: An attacker gains access to build infrastructure and injects
+                malicious changes that modify the generated binaries.
+            </p>
+            <p>
+                Value Proposition: Teams have confidence that the OSS binaries being consumed
+                match the purported source code. This also enables private fix scenarios in the case
+                of zero- day vulnerabilities.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>SCAN IT</b> - ensure OSS can be rebuilt from source code.
+            </p>
+            <p>
+                Threat Scenario: A team tries to use an OSS package that is malicious (i.e. the
+                <i>eslint</i> scenario) or has vulnerabilities that could lead to a security incident
+                (e.g. apache struts vulnerability in Equifax incident).
+            </p>
+            <p>
+                Value Proposition: Teams are alerted if they introduce or are already using vulnerable
+                or malicious OSS.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>INVENTORY AND UPDATE IT</b> - ensure we know where external artifacts are deployed
+                in production.
+            </p>
+            <p>
+                Threat Scenario: A critical vulnerability is discovered in an OSS package, and our
+                Security Response Center wants to know all the production services using the package
+                to drive response.
+            </p>
+            <p>
+                Value Proposition: Teams can prioritize remediation efforts to address the highest
+                risk / “blast radius” issues first.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>AUDIT IT</b> - verify provenance of all OSS artifacts and ensure they come through
+                the official supply chain.
+            </p>
+            <p>
+                Threat Scenario: A build contains an unknown or insecure OSS dependency (see four risk
+                categories above) or was tampered with between lifecycle phases, either by the original
+                developer or a hostile actor.
+            </p>
+            <p>
+                Value Proposition: Teams have confidence that their product only contains trusted
+                dependencies and the code that they have produced.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>ENFORCE IT</b> - ensure OSS artifacts are consumed through the official supply chain.
+            </p>
+            <p>
+                Threat Scenario: A developer bypasses the official supply chain to consume or 
+                update an OSS package with a known vulnerability.
+            </p>
+            <p>
+                Value Proposition: Teams and Leadership can rely on secure and trusted OSS consumption
+                within the organization.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>PRIVATE FIX IT</b> - ensure all OSS can be privately serviced.
+            </p>
+            <p>
+                Threat Scenario: A team with a package dependency is unable to get a critical
+                vulnerability fixed quickly enough by the maintainer.
+            </p>
+            <p>
+                Value Proposition: Teams can fix critical vulnerabilities without waiting for public fixes.
+            </p>
+        </li>
+      </ol>
+    <p>Today, we are actively working to implement the complete JTBD framework.</p>
+</div>
