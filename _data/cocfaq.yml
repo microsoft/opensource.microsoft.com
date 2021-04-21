@@ -9,7 +9,7 @@
     </ul>
 
 - question: Why this Code of Conduct?
-  answer: The Microsoft Open Source Code of Conduct is an instantiation of the <a href="https://todogroup.org/" target="_blank" rel= "noopener">TODO Group</a> Code of Conduct template, that captures the Microsoft culture of equality, respect and inclusion. This same template is used by industry colleagues such as Facebook, Twitter, GitHub, Yahoo and others in their open source projects.
+  answer: The Microsoft Open Source Code of Conduct is an instantiation of the  <a href="https://www.contributor-covenant.org/version/2/0/code_of_conduct/">Contributor's Covenant 2.0</a>, that captures the Microsoft culture of equality, respect and inclusion. By leveraging this template, which is used by many <a href="https://www.contributor-covenant.org/adopters/">open source projects</a>, we acknowledge both the opportunity gained by leveraging a community-based effort for inclusion,  and responsibility to contribute to its evolution.
 
 
 - question: Why do this across all repos?
@@ -17,15 +17,7 @@
 
 - question: How does a project adopt the code and process?
   answer: |
-    All Microsoft projects are automatically covered by the Code of Conduct and the Issue Resolution Process. However, it is critical that everyone in the communities be aware of the code and process. For that reason, all projects must link to the Code of Conduct in their README and/or CONTRIBUTING files using the following markdown.<br><br>
-    <pre>
-    This project has adopted the [Microsoft Open Source Code of
-    Conduct](https://opensource.microsoft.com/codeofconduct/).
-    For more information see the [Code of Conduct
-    FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-    contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
-    with any additional questions or comments.
-    </pre>
+    <p>All Microsoft projects are automatically covered by the Code of Conduct and the Issue Resolution Process. However, it is critical that everyone in the communities be aware of the code and process. For that reason, all projects must link to the Code of Conduct. Please refer to this <a href="https://github.com/microsoft/repo-templates/blob/main/shared/CODE_OF_CONDUCT.md">repository standard</a> for the current CODE_OF_CONDUCT.md version.</p>
 
 
 - question: What if my Microsoft project already has a Code of Conduct?
@@ -36,27 +28,28 @@
 
 - question: How do I raise a concern?
   answer: |
-   <p>If you have witnessed or been subjected to a violation of the Code of Conduct, please send an email to <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a>. Your message will be handled in a secure and confidential manner. This email address is monitored by people who are not active in open source projects or communities — so you can be sure that you are not communicating with a person involved in the issue you are reporting. You will receive a response within one business day acknowledging receipt of your email and describing the process for its resolution. (See below for more details.)</p>
-
+   <p>If you have witnessed or been subjected to a violation of the Code of Conduct, please send an email to <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a>. Your message will be handled in a secure and confidential manner. This email address is monitored by the Open Source Program's Office, who are not directly active in open source projects or communities — so you can be sure that you are not communicating with a person involved in the issue you are reporting.</p>
+   <p> You will receive a response within one business day acknowledging receipt of your email and describing the process for its resolution. (See below for more details.)</p>
+   <p>NOTE: this process is not appropriate for reporting spamming. Please reach out to <a href="https://support.github.com/contact">GitHub Support</a> for these issues.</p>
 - question: What is the process for addressing issues that arise?
   answer: |
-    <p>Emails sent to <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a> kick off the following process:</p>
+    <p>Emails sent to <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a> or reported directly to a member of the OSPO team,  kick off the following process:</p>
     <ol>
         <li><span>Your message will be acknowledged within one business day.</span></li>
-        <li><span>Within the following business day, a small, 2-3, person team will be assembled from a pool of Microsoft employee volunteers to review your concern. This team will be as diverse as possible given its size and will pull in additional people as needed to gain further insight and provide guidance. The team will not include anyone directly involved in the issue that has been raised.</span></li>
-        <li><span>From there team will work with you and the others involved to come to a conclusion. While issue complexity varies, the goal is to resolve issues within five working days.</span></li>
+        <li><span>Within the following business day a small, (2-3) person team will be assembled from a pool of Microsoft employee volunteers to review your concern. This team will be as diverse as possible given its size and will pull in additional people as needed to gain further insight and provide guidance. The team will not include anyone directly involved in the issue that has been raised.</span></li>
+        <li><span>From there the team will work with you and the others involved to come to a conclusion. While issue complexity varies, the goal is to resolve issues within five working days.</span></li>
         <li><span>All communication will be confidential with very limited circulation.</span></li>
     </ol>
     <div class="pre">
         <div>
             <p>Step 1: Issue Reported</p>
-            <p><span class="org">Originator</span> reports issue via email to <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a></p>
+            <p><span class="org">Reporter</span> reports directly to a member of the OSPO team or via email to <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a></p>
             <small>Email address is published with Code of Conduct, linked from every Microsoft Open Source project’s repo.</small>
             <hr>
         </div>
         <div>
             <p>Step 2: Acknowledgment</p>
-            <p><span class="co">Coordinator</span> acknowledges to <span class="org">Originator</span> receipt of issue</p>
+            <p><span class="co">Coordinator</span> acknowledges to <span class="org">Reporter</span> receipt of issue</p>
             <small>Coordinator replies via email to set expectations and explain resolution process.</small>
             <hr>
         </div>
@@ -68,21 +61,16 @@
         </div>
         <div>
             <p>Step 4: Resolution</p>
-            <p><span class="rt">Resolution Team</span> to works with to solve the issue <span class="org">Originator</span>.</p>
+            <p><span class="rt">Resolution Team</span> to works with to solve the issue <span class="org">in coordination with the Reporter</span>.</p>
             <small>Resolution Team contacts Originator to collect information as needed, agree on appropriate steps, and drive resolution.</small>
         </div>
     </div>
-
-
 - question: How does the resolution team work?
   answer: |
     <p>Beyond the norms and values set out in the Code of Conduct, issue review teams operate under the following principles:</p>
     <ul>
-        <li><b>Less is more</b> — As much as possible, let the community work it out. It is much better to have communities self-correct than to have outsiders come in and “fix” problems.</li>
+        <li><b>Safety & Privacy</b> — Safety and privacy of all involved are at the center of resolution procedure.</li>
         <li><b>Equality</b> — Contribution value or status in the community are not relevant to the review. Key people do not have more rights (either to abuse or be protected from abuse) than others in the community.</li>
         <li><b>Independence</b> — Reviewers must act and be seen to act with independence from the project(s) in question and from Microsoft.</li>
+        <li><b>Consequence</b> - If a report is validated by the resolution team, appropriate consequences will be applied. These can be very minimal (written warning) or serious (full ban) depending on the violation. Repeated violations will result in escalation of consequence.</li>
     </ul>
-
-- question: Can I use this Code of Conduct in my projects?
-  answer: |
-    <p>Yes. The document is licenced under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>. You will of course need to update the document to suit the specifics of your projects, but by all means use this however you can to drive great communities.</p>
