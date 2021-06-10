@@ -97,9 +97,7 @@ title: Explore all Microsoft repos
         source = $("#project-template").html(),
         template = Handlebars.compile(source),
         results = $("#projectResults"),
-        searchText = $('#search-for'),
-        headerSearch = $('#header-search'),
-        mobileSearch = $('#mobile-search');
+        searchText = $('#search-for');
 
     function checkFormats() {
         var numbers = $('.format-number');
@@ -115,9 +113,11 @@ title: Explore all Microsoft repos
 
     const urlParams = new URLSearchParams(window.location.search);
     const searchString = urlParams.get('q');
+    try {
+        document.getElementById('header-search').value = searchSearch || '';
+        document.getElementById('mobile-search').value = searchSearch || '';
+    } catch (ignore) {}
     if(searchString) {
-        headerSearch.val(searchString);
-        mobileSearch.val(searchString);
         var searchUrl = '/api/repos?q=' + encodeURIComponent(searchString);
         $.ajax({
             type: 'GET',
@@ -131,15 +131,17 @@ title: Explore all Microsoft repos
                     results.removeClass('is-thinking');
                     checkFormats();
                     if( posts.repos.length === 0 ) {
-                        results.html('<p>No results found.</p>');
-                        document.title = 'No results found - Explore Microsoft repos';
-                        results.focus();
+                        results.html('<p></p>');
+                        document.title = 'No projects found - Explore Microsoft projects';
+                        searchText.html('<p class="h4 mb-5" tabindex>No projects found, sorry.</p>');
+                        searchText.focus();
                     } else {
-                        searchText.html('<p class="h4 mb-5" tabindex>Showing results, ' + posts.repos.length + ' repos found.</p>');
-                        document.title = posts.repos.length + ' repos found - Explore Microsoft repos';
+                        var plural = posts.repos.length === 1 ? 'project' : 'projects';
+                        searchText.html('<p class="h4 mb-5" tabindex>' + posts.repos.length + ' ' + plural + ' found.</p>');
+                        document.title = posts.repos.length + ' ' + plural + ' found - Explore Microsoft projects';
                         searchText.focus();
                     }
-                }, 200);
+                }, 1);
             }
         });
     } else {
@@ -154,11 +156,10 @@ title: Explore all Microsoft repos
                     results.html(html);
                     results.removeClass('is-thinking');
                     checkFormats();
-                }, 200);
+                }, 1);
             }
         });
     }
-
 
     var filterForm = $('#filter-projects'),
         filterSubmit = $('#filter-submit'),
