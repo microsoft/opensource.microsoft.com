@@ -114,8 +114,8 @@ title: Explore all Microsoft repos
     const urlParams = new URLSearchParams(window.location.search);
     const searchString = urlParams.get('q');
     try {
-        document.getElementById('header-search').value = searchSearch || '';
-        document.getElementById('mobile-search').value = searchSearch || '';
+        document.getElementById('header-search').value = searchString || '';
+        document.getElementById('mobile-search').value = searchString || '';
     } catch (ignore) {}
     if(searchString) {
         var searchUrl = '/api/repos?q=' + encodeURIComponent(searchString);
