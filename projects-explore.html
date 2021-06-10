@@ -10,6 +10,7 @@ title: Explore all Microsoft repos
     <header class="wrapper-full explore-header pb-4 pt-6">
         <div class="wrapper py-6">
             <h1 class="h2">Explore</h1>
+            <!--
             <form class="search-form search-form--dark" id="search-projects" role="search" action="/projects/explore" method="GET">
                 <label for="project-search-field">
                     <span class="sr-only">Search open source projects on Microsoft.com</span>
@@ -18,6 +19,7 @@ title: Explore all Microsoft repos
                 <input type="text" id="project-search-field" name="q" placeholder="Search" value="" />
                 <button type="submit" class="d-none"></button>
             </form>
+            -->
         </div>
 
         <img class="explore-header__img" src="{{ '/assets/images/direction/explore-shapes.svg' | relative_url }}" alt="" />
@@ -69,7 +71,7 @@ title: Explore all Microsoft repos
 
             <div class="project-wrap">
                 <div id="search-for" tabindex="0">
-                    <p class="sr-only">No projects searched yet</p>
+                    <p class="sr-only" id="search-text-field">No projects searched yet</p>
                 </div>
 
                 <div id="projectResults"></div>
@@ -95,7 +97,9 @@ title: Explore all Microsoft repos
         source = $("#project-template").html(),
         template = Handlebars.compile(source),
         results = $("#projectResults"),
-        searchText = $('#search-for');
+        searchText = $('#search-for'),
+        headerSearch = $('#header-search'),
+        mobileSearch = $('#mobile-search');
 
     function checkFormats() {
         var numbers = $('.format-number');
@@ -109,11 +113,11 @@ title: Explore all Microsoft repos
         });
     }
 
-    // TODO: use filter values for backend
-
     const urlParams = new URLSearchParams(window.location.search);
     const searchString = urlParams.get('q');
-    if( searchString ) {
+    if(searchString) {
+        headerSearch.val(searchString);
+        mobileSearch.val(searchString);
         var searchUrl = '/api/repos?q=' + encodeURIComponent(searchString);
         $.ajax({
             type: 'GET',
@@ -129,9 +133,11 @@ title: Explore all Microsoft repos
                     if( posts.repos.length === 0 ) {
                         results.html('<p>No results found.</p>');
                         document.title = 'No results found - Explore Microsoft repos';
+                        results.focus();
                     } else {
                         searchText.html('<p class="h4 mb-5" tabindex>Showing results, ' + posts.repos.length + ' repos found.</p>');
                         document.title = posts.repos.length + ' repos found - Explore Microsoft repos';
+                        searchText.focus();
                     }
                 }, 200);
             }
