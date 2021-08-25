@@ -299,6 +299,8 @@
       repo: https://github.com/isaacs/color-support#readme
     - title: colorator
       repo: https://rubygems.org/gems/colorator
+    - title: colorette
+      repo: https://github.com/jorgebucaran/colorette#readme
     - title: combined-stream
       repo: https://github.com/felixge/node-combined-stream
     - title: commander
@@ -421,8 +423,6 @@
       repo: https://github.com/quartzjer/ecc-jsbn
     - title: ee-first
       repo: https://github.com/jonathanong/ee-first#readme
-    - title: electron-to-chromium
-      repo: https://github.com/kilian/electron-to-chromium#readme
     - title: em-websocket
       repo: https://rubygems.org/gems/em-websocket
     - title: encodeurl
@@ -497,6 +497,8 @@
       repo: https://github.com/mrmlnc/fast-glob#readme
     - title: fast-json-stable-stringify
       repo: https://github.com/epoberezkin/fast-json-stable-stringify
+    - title: fast-xml-parser
+      repo: https://github.com/NaturalIntelligence/fast-xml-parser#readme
     - title: fastq
       repo: https://github.com/mcollina/fastq#readme
     - title: fd-slicer
@@ -652,8 +654,6 @@
       repo: https://github.com/doowb/homedir-polyfill
     - title: hosted-git-info
       repo: https://github.com/npm/hosted-git-info
-    - title: html-comment-regex
-      repo: https://github.com/stevemao/html-comment-regex
     - title: http-cache-semantics
       repo: https://github.com/pornel/http-cache-semantics#readme
     - title: http-errors
@@ -864,8 +864,6 @@
       repo: https://github.com/sindresorhus/load-json-file#readme
     - title: localtunnel
       repo: https://github.com/localtunnel/localtunnel#readme
-    - title: locate-path
-      repo: https://github.com/sindresorhus/locate-path#readme
     - title: lodash
     - title: lodash.isfinite
     - title: logalot
@@ -943,8 +941,6 @@
       repo: https://github.com/electerious/nice-try
     - title: node-gyp
       repo: https://github.com/nodejs/node-gyp#readme
-    - title: node-releases
-      repo: https://github.com/chicoxyzzy/node-releases#readme
     - title: node-sass
       repo: https://github.com/sass/node-sass
     - title: nokogiri
@@ -1036,10 +1032,6 @@
       repo: https://github.com/sindresorhus/p-finally#readme
     - title: p-is-promise
       repo: https://github.com/sindresorhus/p-is-promise#readme
-    - title: p-limit
-      repo: https://github.com/sindresorhus/p-limit#readme
-    - title: p-locate
-      repo: https://github.com/sindresorhus/p-locate#readme
     - title: p-map
       repo: https://github.com/sindresorhus/p-map#readme
     - title: p-map-series
@@ -1050,8 +1042,6 @@
       repo: https://github.com/sindresorhus/p-reduce#readme
     - title: p-timeout
       repo: https://github.com/sindresorhus/p-timeout#readme
-    - title: p-try
-      repo: https://github.com/sindresorhus/p-try#readme
     - title: parse-filepath
       repo: https://github.com/jonschlinkert/parse-filepath
     - title: parse-json
@@ -1098,8 +1088,6 @@
       repo: https://github.com/floatdrop/pinkie#readme
     - title: pinkie-promise
       repo: https://github.com/floatdrop/pinkie-promise#readme
-    - title: pkg-up
-      repo: https://github.com/sindresorhus/pkg-up#readme
     - title: plugin-error
       repo: https://github.com/gulpjs/plugin-error#readme
     - title: plur
@@ -1140,6 +1128,8 @@
       repo: https://github.com/ljharb/qs
     - title: query-string
       repo: https://github.com/sindresorhus/query-string#readme
+    - title: racc
+      repo: https://rubygems.org/gems/racc
     - title: range-parser
       repo: https://github.com/jshttp/range-parser#readme
     - title: raw-body
