@@ -84,6 +84,18 @@ Microsoft's standard cookie compliance and analytics code to connect with Applic
 
 # Development
 
+## Developing with Codespaces
+
+Run these commands in your Codespace:
+
+```sh
+bundle
+npm install
+bundle exec jekyll serve
+```
+
+Then the editor should direct you to go to the forwarded port to test.
+
 ## Developing locally
 
 Ensure you have a working copy of Ruby, Node.js and Gulp.
