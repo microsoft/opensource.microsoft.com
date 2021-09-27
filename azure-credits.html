@@ -1,0 +1,65 @@
+---
+layout: default
+id: azure-credits
+title: Azure Credits for Open Source Projects
+permalink: /azure-credits/
+---
+
+<article class="program-page">
+    <div class="page-header">
+        <div class="wrapper">
+            <div class="col-md-10 col-lg-7 mx-auto">
+                <h1 class="h2">Azure credits for open source projects</h2>
+            </div>
+        </div>
+    </div>
+<!--
+    <div class="wrapper-full bg-light">
+        <div class="wrapper my-6 py-4">
+            <div class="col-md-10 col-lg-7 mx-auto">
+                <h3 class="h4 font-weight-400 mb-4">
+                  We are offering Azure credits to open source projects for their use for testing, builds, 
+                  and other infrustructure support needs. Projects must apply for credits. Applications are 
+                  reviewed and applicants will be contacted with a decision within 3-4 weeks.
+                </h3>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="tabs">
+        <nav class="wrapper my-6" data-require-javascript="yes" data-javascript-show="immediate">
+            <div class="col-md-10 col-lg-7 mx-auto">
+                <ul class="tabs__tabs" role="tablist">
+                    <li class="tabs__tab is-active" data-tab="credits-overview">
+                        <a class="tabs__link" href="#credits-overview">Overview</a>
+                    </li>
+                    <li class="tabs__tab" data-tab="credits-faq">
+                        <a class="tabs__link" href="#credits-faq">FAQ</a>
+                    </li>
+                    <li class="tabs__tab" data-tab="credits-apply">
+                        <a class="tabs__link" href="#credits-apply">Apply</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="wrapper my-6 pt-lg-3 pb-4">
+            <div class="col-md-10 col-lg-7 mx-auto">
+                <noscript><h2>Overview</h2></noscript>
+                <div class="tabs__content is-active" data-tab="credits-overview">
+                    {% include credits-overview.html %}
+                </div>
+
+                <div class="tabs__content" data-tab="credits-faq">
+                    <noscript><h2>FAQ</h2></noscript>
+                    {% include credits-faq.html %}
+                </div>
+
+                <div class="tabs__content" data-tab="credits-apply">
+                    <noscript><h2>Apply</h2></noscript>
+                    {% include credits-apply.html %}
+                </div>
+        </div>
+    </div>
+
+</article>
