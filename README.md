@@ -1,4 +1,4 @@
-# opensource.microsoft.com
+#  opensource.microsoft.com
 
 The `opensource.microsoft.com` web site is a simple, factual web site sharing information about Microsoft's
 open source program, the open source ecosystem that we support, and opportunities to get involved in projects
