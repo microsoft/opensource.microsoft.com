@@ -15,13 +15,10 @@ jobs:
       name: "Check it out"
     - name: "Startup"
       run: pwd
-    #       azure/docker-login latest with updated environment logic on 11/4/2021
-    - uses: azure/docker-login@ca8651078d07f7e9b8070b92c5a9325dfe393ab4
-      name: "Connect to GitHub Packages"
-      with:
+    - name: Login to GitHub Packages
+      run: |
+        run: echo ${{ secrets.READONLY_PACKAGE_TOKEN }} | docker login -u ${{ secrets.READONLY_PACKAGE_SP }} --password-stdin
         login-server: 'docker.pkg.github.com'
-        username: ${{ secrets.READONLY_PACKAGE_SP }}
-        password: ${{ secrets.READONLY_PACKAGE_TOKEN }}
     - name: "Build the site"
       run: |
         docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
