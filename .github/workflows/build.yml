@@ -6,6 +6,10 @@ on:
       - main
     paths-ignore:
       - '.github/workflows/*.yml'
+
+env:
+  REGISTRY: docker.pkg.github.com
+  IMAGE_NAME: ${{ github.repository }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,6 +25,13 @@ jobs:
       name: "Check it out"
     - name: "Startup"
       run: pwd
+    - name: Package registry login
+      if: github.event_name != 'pull_request'
+      uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     #- name: Login to GitHub Packages
     #  run: |
     #    run: echo ${{ secrets.READONLY_PACKAGE_TOKEN }} | docker login -u ${{ secrets.READONLY_PACKAGE_SP }} --password-stdin
