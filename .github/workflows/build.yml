@@ -9,13 +9,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    #       actions/checkout@v2
-    - uses: actions/checkout@2036a08e25fa78bbd946711a407b529a0a1204bf
+    #       actions/checkout@v2 on 11/4/2021
+    - uses: actions/checkout@230611dbd0eb52da1e1f4f7bc8bb0c3a339fc8b7
       name: "Check it out"
     - name: "Startup"
       run: pwd
-    #       azure/docker-login latest with updated environment logic
-    - uses: azure/docker-login@944f3176a9cfe29e1c53e92dff83e4f8c6eef52b
+    #       azure/docker-login latest with updated environment logic on 11/4/2021
+    - uses: azure/docker-login@ca8651078d07f7e9b8070b92c5a9325dfe393ab4
       name: "Connect to GitHub Packages"
       with:
         login-server: 'docker.pkg.github.com'
@@ -42,8 +42,8 @@ jobs:
     - name: "Compress the static site"
       run: zip -r ../site.zip .
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
-    #       actions/upload-artifact/v2
-    - uses: actions/upload-artifact@58740802ef971a2d71eff71e63d48ab68d1f5507
+    #       actions/upload-artifact/v2 on 11/4/2021
+    - uses: actions/upload-artifact@6fc84b101e3160d153b2b53314fa13f02a36ae96
       name: "Store the site as an artifact"
       with:
         name: website
