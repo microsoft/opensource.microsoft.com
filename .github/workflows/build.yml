@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    services:
+    #services:
       #sitebuildercontainer:
         #image: docker.pkg.github.com/microsoft/opensource.microsoft.com/xxx:latest
         #credentials:
