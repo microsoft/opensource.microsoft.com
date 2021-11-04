@@ -9,16 +9,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      #sitebuildercontainer:
+        #image: docker.pkg.github.com/microsoft/opensource.microsoft.com/xxx:latest
+        #credentials:
+          #username: ${{ github.actor }}
+          #password: ${{ secrets.GITHUB_TOKEN }}
     steps:
     #       actions/checkout@v2 on 11/4/2021
     - uses: actions/checkout@230611dbd0eb52da1e1f4f7bc8bb0c3a339fc8b7
       name: "Check it out"
     - name: "Startup"
       run: pwd
-    - name: Login to GitHub Packages
-      run: |
-        run: echo ${{ secrets.READONLY_PACKAGE_TOKEN }} | docker login -u ${{ secrets.READONLY_PACKAGE_SP }} --password-stdin
-        login-server: 'docker.pkg.github.com'
+    #- name: Login to GitHub Packages
+    #  run: |
+    #    run: echo ${{ secrets.READONLY_PACKAGE_TOKEN }} | docker login -u ${{ secrets.READONLY_PACKAGE_SP }} --password-stdin
+    #    login-server: 'docker.pkg.github.com'
     - name: "Build the site"
       run: |
         docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
