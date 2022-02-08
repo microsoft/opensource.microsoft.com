@@ -102,6 +102,10 @@
         width: 24px;
     }
 
+    .link-decorated {
+        text-decoration: underline;
+    }
+
     @include start-at($large) {
         display: flex;
         align-items: center;

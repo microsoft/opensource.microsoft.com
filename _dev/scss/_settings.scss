@@ -48,6 +48,7 @@ $xlarge: 1280px;
 $large: 1012px;
 $medium: 768px;
 $small: 544px;
+$mobile: 1px;
 
 @mixin start-at($device-width) {
   @media (min-width: $device-width) {
