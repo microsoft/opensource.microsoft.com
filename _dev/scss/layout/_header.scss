@@ -78,33 +78,41 @@ body {
 	width: 200px;
 
 	@include start-at($small) {
-		//width: 25%;
 		margin-right: 32px;
 		width: 260px;
 	}
 
 	@include start-at($header-breakpoint) {
-		//width: 25%;
 		margin-right: 32px;
 		width: 200px;
 	}
 
 	@include start-at($large) {
-		//width: 25%;
 		margin-right: 48px;
 		width: 260px;
 	}
 
+    @include start-at($medium) {
+		margin-right: 48px;
+		width: 300px;
+        font-size: $base-font-size;
+	}
+
+    @include start-at($mobile) {
+		margin-right: 48px;
+		width: 350px;
+        font-size: $base-font-size;
+	}
+
 	a {
-		display: block;
+		display: flex;
+        align-items: center;
 		width: 100%;
 		max-width: 100%;
 		position: relative;
 	}
 
 	img {
-		display: block;
-		width: 100%;
 		transition: opacity 0.2s ease;
 	}
 }
