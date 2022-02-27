@@ -22,7 +22,7 @@ body {
 	width: 100%;
 	padding: 0;
 	color: $white;
-	transition: opacity $trans, filter $trans, background $trans;
+	transition: opacity $trans, filter $trans, background $trans, visibility $trans;
 	font-size: 13px;
 	border-bottom: 1px solid #484644;
 
@@ -32,10 +32,12 @@ body {
 
 	&.is-sticky {
 		opacity: 0;
+		visibility: hidden;
 
 		&.scrolling-up {
 			background: $black;
 			opacity: 1;
+			visibility: inherit;
 		}
 	}
 
