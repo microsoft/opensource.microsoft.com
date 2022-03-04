@@ -45,6 +45,9 @@ title: Featured Projects
                 <p>{{ project.description }}</p>
 
                 <a class="link-arrow-external mt-3" href="{{ project.projectUrl }}" target="_blank" rel= "noopener">{{ project.linkText }}</a>
+                {% unless project.storeUrl == "" or project.storeUrl == nil %}
+                 <a class="link-arrow-external mt-3" href="https://apps.microsoft.com/store/detail/{{ project.storeUrl }}" target="_blank" rel= "noopener">View Microsoft Store page</a>
+                {% endunless %}
             </div>
             {% endfor %}
 
