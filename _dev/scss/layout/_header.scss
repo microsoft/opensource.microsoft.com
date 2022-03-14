@@ -295,6 +295,11 @@ form.search-form {
 		padding: 0 18px 0 30px;
 		color: $gray-200;
 		font-size: 13px !important;
+		
+		&::placeholder {
+			color: $gray-200;
+			opacity: 1;
+		}
 	}
 }
 
