@@ -8,9 +8,15 @@
         <!--[if IE]><meta http-equiv="cleartype" content="on" /><![endif]-->
         <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
         <link rel="stylesheet" media="screen" href="{{ '/assets/css/index.css' | relative_url }}?v=1d" />
-        <link rel="shortcut icon" type="image/ico" href="{{ '/assets/images/favicons/favicon.png' | relative_url }}" />
-        <link rel="apple-touch-icon" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}" />
-        <link rel="icon" href="{{ '/assets/images/favicons/android-favicon.png' | relative_url }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicons/apple-touch-icon.png' | relative_url }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicons/favicon-32x32.png' | relative_url }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | relative_url }}">
+        <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | relative_url }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/images/favicons/favicon.ico' | relative_url }}">
+        <link rel="mask-icon" href="{{ '/assets/images/favicons/safari-pinned-tab.svg' | relative_url }}" color="#11100f">
+        <meta name="msapplication-config" content="{{ '/assets/images/favicons/browserconfig.xml' | relative_url }}" />
+        <meta name="msapplication-TileColor" content="#11100f">
+        <meta name="theme-color" content="#11100f">
         {% seo %}
         <script type="text/javascript">
             document.write('<style type="text/css">*[data-animate-in="up"], *[data-animate-in="up"], *[data-animate-in="fade"], *[data-animate-in="left"], *[data-animate-in="right"] { opacity: 0; } .tabs__content { display: none; } *[data-javascript-show="immediate"] { opacity: 1.0 }</style>');
