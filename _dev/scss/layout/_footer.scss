@@ -16,7 +16,7 @@
         margin-bottom: 0;
     }
 
-    @include start-at($large) {
+    @include start-at($xlarge) {
         text-align: left;
     }
 
@@ -106,7 +106,7 @@
         text-decoration: underline;
     }
 
-    @include start-at($large) {
+    @include start-at($xlarge) {
         display: flex;
         align-items: center;
         justify-content: flex-start;
