@@ -1,6 +1,6 @@
 ---
 title: Coloroma
-logo: 
+logo: coloroma.svg
 projectUrl: github.com/tartley/colorama
 linkText: "https://github.com/tartley/colorama"
 description: "A simple cross-platform colored terminal text in Python"

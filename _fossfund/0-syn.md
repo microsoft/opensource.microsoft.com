@@ -1,6 +1,6 @@
 ---
 title: syn
-logo: 
+logo: syn.svg
 projectUrl: https://github.com/dtolnay/syn
 linkText: "github.com/dtolnay/syn"
 description: "Syn is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code."

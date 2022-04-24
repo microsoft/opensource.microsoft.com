@@ -1,6 +1,6 @@
 ---
 title: SharpLab
-logo: 
+logo: sharplab.svg
 projectUrl: https://github.com/ashmind/SharpLab
 linkText: "github.com/Sharplab"
 description: "SharpLab is a .NET code playground that shows intermediate steps and results of code compilation."
