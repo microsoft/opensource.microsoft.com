@@ -32,7 +32,10 @@ Other content includes:
 - Jobs (an external link)
 - Blog (an external link)
 - Code of Conduct text
+- Community Resources
 - a "thank you" page about the open source powering the project
+- OpenAtMicrosoft Twitter
+- This repository
 
 # Contributing
 
