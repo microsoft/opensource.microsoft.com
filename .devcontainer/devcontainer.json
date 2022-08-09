@@ -1,0 +1,5 @@
+{
+	"name": "opensource.microsoft.com Development Environment",
+	"dockerFile": "../Dockerfile.builder",
+	"postCreateCommand": "jekyll server",
+}
