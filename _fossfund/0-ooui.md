@@ -1,6 +1,6 @@
 ---
 title: Ooui
-logo: 
+logo: ooui.png
 projectUrl: https://github.com/praeclarum/Ooui
 linkText: "github.com/praeclarum/Ooui"
 description: "A small cross-platform UI library that brings the simplicity of native UI development to the web."
