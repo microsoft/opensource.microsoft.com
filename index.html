@@ -192,14 +192,11 @@ description: "Microsoft Open Source: get involved in open source communities, di
 
 
 
-    <div class="wrapper pt-6 pb-6 mt-6 mb-6" style="display: none">
+    <div class="wrapper pt-6 pb-6 mt-6 mb-6" >
         <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="400">
-            <h2 class="h3">Open Source Updates</h2>
+            <h2 class="h3">Microsoft Open Source Updates</h2>
         </div>
-        <div class="text-center mt-6 pb-6">
-            <a class="link-arrow-external" href="https://cloudblogs.microsoft.com/opensource/">Microsoft's Open Source
-                Blog</a>
-        </div>
+      
 
         <div class="blog-list">
             {% for post in site.posts %}
@@ -226,9 +223,18 @@ description: "Microsoft Open Source: get involved in open source communities, di
                     <!--
                     <p class="blog-preview__meta mb-2">{{ post.publishDate }}</p>
                     -->
+                    {% if post.video_url %}
+                    <div class="blog-preview__video">
+                        <iframe loading="lazy"  src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed.html?id=ec3d794c-eb61-42fe-a0ae-016cfa1663a4" allowFullScreen title="{{video.title}}" tabindex="0" allow="autoplay"></iframe>
+                    </div>
+                    {% endif %}
                     {{ post.content }}
                 </div>
+                {% if post.azure-oss-post %}
+                <div class="link-arrow-external mt-4">Learn more about open source on Azure</div>
+                {% else %}
                 <div class="link-arrow-external mt-4">Read post</div>
+                {% endif %}
             </a>
             {% endfor %}
         </div>
