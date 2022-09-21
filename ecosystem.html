@@ -57,7 +57,6 @@ title: Ecosystem
     </div>
 
     <div class="wrapper py-6 my-6">
-
         <div class="d-sm-flex flex-wrap">
             {% for post in site.fossfund %}
             {% assign img = nil %}
@@ -108,57 +107,7 @@ title: Ecosystem
         {% endfor %}
         </div>
     </div>
-
-
-
     <hr class="wrapper" />
-
-
-
-
-    <div class="wrapper my-6 py-6">
-        <div class="col-lg-8 mx-auto">
-            <div>
-                <h2 class="h2">Recent Contributions</h2>
-                <p>
-                    Whether an official contribution as part of a team's business goals,
-                    an after-hours project in robotics and hackathons, or contributions to
-                    non-profits and communities, our employees are always involved.
-                </p>
-            </div>
-        </div>
-    </div>
-    {% include octicons.html %}
-    <div class="wrapper py-6 my-6">
-        <div class="col-lg-8 mx-auto">
-            <div class="d-sm-flex flex-wrap" style="min-height:350px">
-                <div id="contributionsFeed" class="col-12">
-                    <noscript>
-                        <h2>JavaScript is required for this interactive feature.</h2>
-                        <p>This section works best with JavaScript. A feed of recent contributions is used with a REST API and JavaScript.</p>
-                    </noscript>
-                    <ul class="project-list" id="contributionsList"></ul>
-                </div>
-                <script id="contributions-template" type="text/x-handlebars-template">
-                    <li>
-                        {% include activity.html %}
-                        {% comment %}
-                        {# include upstream-contribution.html #}
-                        {% endcomment %}
-                    </li>
-                </script>
-            </div>
-        </div>
-        <div class="mt-6 col-lg-8 mx-auto">
-            <p class="t6">NOTE: This data represents contributions on GitHub that some of our employees have opted in to sharing. Microsoft does not endorse any particular contribution here, as this list will include everything from hobbyist work through official upstream contributions.</p>
-        </div>
-    </div>
-
-
-
-
-    <hr class="wrapper" />
-
     <div class="wrapper my-6 py-6">
         <div class="d-md-flex flex-items-center">
             <div class="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
@@ -177,7 +126,6 @@ title: Ecosystem
     -->
 
     <div class="wrapper py-6 my-6">
-
         <div class="d-sm-flex flex-wrap foundation-list">
             {% for post in site.community %}
             {% assign img = nil %}
@@ -223,9 +171,6 @@ title: Ecosystem
             {% endfor %}
         </div>
     </div>
-
-
-
     <!--
     <div class="wrapper py-6 my-6">
 
@@ -287,9 +232,44 @@ title: Ecosystem
             </div>
         </div>
     </div>
-
-
-
+    <hr class="wrapper" />
+    <div class="wrapper my-6 py-6">
+        <div class="col-lg-8 mx-auto">
+            <div>
+                <h2 class="h2">Recent Contributions</h2>
+                <p>
+                    Whether an official contribution as part of a team's business goals,
+                    an after-hours project in robotics and hackathons, or contributions to
+                    non-profits and communities, our employees are always involved.
+                </p>
+            </div>
+        </div>
+    </div>
+    {% include octicons.html %}
+    <div class="wrapper py-6 my-6">
+        <div class="col-lg-8 mx-auto">
+            <div class="d-sm-flex flex-wrap" style="min-height:350px">
+                <div id="contributionsFeed" class="col-12">
+                    <noscript>
+                        <h2>JavaScript is required for this interactive feature.</h2>
+                        <p>This section works best with JavaScript. A feed of recent contributions is used with a REST API and JavaScript.</p>
+                    </noscript>
+                    <ul class="project-list" id="contributionsList"></ul>
+                </div>
+                <script id="contributions-template" type="text/x-handlebars-template">
+                    <li>
+                        {% include activity.html %}
+                        {% comment %}
+                        {# include upstream-contribution.html #}
+                        {% endcomment %}
+                    </li>
+                </script>
+            </div>
+        </div>
+        <div class="mt-6 col-lg-8 mx-auto">
+            <p class="t6">NOTE: This data represents contributions on GitHub that some of our employees have opted in to sharing. Microsoft does not endorse any particular contribution here, as this list will include everything from hobbyist work through official upstream contributions.</p>
+        </div>
+    </div>
     <div class="wrapper-full bg-brand-dark text-white">
         <div class="wrapper py-6 my-6">
             <h3 class="h3">Community Resources</h3>
@@ -314,8 +294,6 @@ title: Ecosystem
         </div>
     </div>
 </article>
-
-
 <script>
     {% include upstream-contributions.js %}
 </script>
