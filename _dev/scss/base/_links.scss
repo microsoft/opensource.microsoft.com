@@ -29,8 +29,6 @@
         font-size: 18px;
     }
 
-
-
     &:hover {
         cursor: pointer;
         color: $white;
@@ -53,14 +51,9 @@
 }
 
 .btn--outline {
-
     background: transparent;
     color: $blue-400;
     border-color: $blue-400;
-
-    &:hover {
-
-    }
 }
 
 .btn--download {
@@ -103,14 +96,13 @@
     }
 }
 
-
 // ----------------------------------------
 // Links
 // ----------------------------------------
 
 .link {
     font-size: 15px;
-    letter-spacing: -.02px;
+    letter-spacing: -0.02px;
     color: $blue-400;
     font-weight: 500;
     margin-top: 24px;
@@ -123,8 +115,10 @@
     }
 }
 
-.program-page a, .program-page > a, .link-standard {
-    color: $blue-400 !important;
+.program-page a,
+.program-page > a,
+.link-standard {
+    color: #1b73d9 !important;
     text-decoration: underline;
 
     :hover {
@@ -189,7 +183,6 @@
         }
     }
 }
-
 
 // ----------------------------------------
 //
