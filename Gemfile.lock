@@ -73,7 +73,13 @@ GEM
       ffi (~> 1.9)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2022.7)
+      tzinfo (>= 1.0.0)
     unicode-display_width (1.7.0)
+    wdm (0.1.1)
+    webrick (1.7.0)
 
 PLATFORMS
   ruby
@@ -85,6 +91,8 @@ DEPENDENCIES
   jekyll-seo-tag
   minima (~> 2.0)
   tzinfo-data
+  wdm (~> 0.1.0)
+  webrick (~> 1.7)
 
 BUNDLED WITH
    2.1.4
