@@ -3,7 +3,8 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - main0x22d7ec264f78C31bF0977723cB34dDF6754b01bd
+
     paths-ignore:
       - '.github/workflows/*.yml'
 
