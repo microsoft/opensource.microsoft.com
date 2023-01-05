@@ -17,20 +17,19 @@ jobs:
         with:
           stale-issue-message:
             This issue has been identified as stale because it
-            has gone 14 days with no activity.
+            has gone 7 days with no activity.
 
-            The issue will be closed in 5 days. If this is incorrect,
+            The issue will be closed in 2 days. If this is incorrect,
             simply comment on the issue, or remove the stale label.
           stale-pr-message:
-            This pull request has been identified as stale because
-            it has gone 14 days with no activity.
+            This PR has been identified as stale because it
+            has gone 7 days with no activity.
 
-            The pull request will be closed in 5 days. If this is incorrect,
-            simply comment on the PR, remove the label, or merge the PR.
-
-            Reminder, once a PR is approved, and checks have passed,
-            you **can merge it yourself.**
-          days-before-stale: 14
-          days-before-close: 5
-          exempt-issue-labels: "keep-me"
+            The PR will be closed in 2 days. If this is incorrect,
+            simply comment on the PR, or remove the stale label.
+          days-before-stale: 7
+          days-before-close: 2
+          exempt-issue-labels: "bug,dependency,accessibility"
           exempt-pr-labels: "keep-me"
+          close-issue-reason: "not_planed"
+          days-before-pr-close: -1
