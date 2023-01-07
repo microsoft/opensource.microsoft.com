@@ -54,7 +54,7 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
-    nokogiri (1.13.9)
+    nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     octicons (10.0.0)
@@ -62,7 +62,7 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
-    racc (1.6.0)
+    racc (1.6.1)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -73,13 +73,7 @@ GEM
       ffi (~> 1.9)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    tzinfo (2.0.5)
-      concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2022.7)
-      tzinfo (>= 1.0.0)
     unicode-display_width (1.7.0)
-    wdm (0.1.1)
-    webrick (1.7.0)
 
 PLATFORMS
   ruby
@@ -91,8 +85,6 @@ DEPENDENCIES
   jekyll-seo-tag
   minima (~> 2.0)
   tzinfo-data
-  wdm (~> 0.1.0)
-  webrick (~> 1.7)
 
 BUNDLED WITH
    2.1.4
