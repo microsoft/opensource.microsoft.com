@@ -23,7 +23,7 @@
     "gulp-load-plugins": "^2.0.2",
     "gulp-newer": "^1.4.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^8.0.0",
     "npm-clean": "^1.0.3",
