@@ -22,9 +22,7 @@ function pause() {
   paused = true;
   pauseIcon.hide();
   resumeIcon.show();
-  toggleText.text('Resume');
-  toggleText2.text('Resume animations and start showing new graphics');
-  toggleLink.prop('title', 'Resume graphics');
+  updateToggleText('Resume', 'Resume animations and start showing new graphics', 'Resume graphics');
   pageHeroAccessibilityControls.trigger("hero-pause");
   return false;
 }
@@ -33,11 +31,15 @@ function resume() {
   paused = false;
   pauseIcon.show();
   resumeIcon.hide();
-  toggleLink.prop('title', 'Pause graphics');
-  toggleText.text('Pause');
-  toggleText2.text('Pause animations and stop showing new graphics');
+  updateToggleText('Pause', 'Pause animations and stop showing new graphics', 'Pause graphics');
   pageHeroAccessibilityControls.trigger("hero-resume");
   return false;
+}
+
+function updateToggleText(text, text2, title) {
+  toggleText.text(text);
+  toggleText2.text(text2);
+  toggleLink.prop('title', title);
 }
 
 toggleAction.click(toggle);
