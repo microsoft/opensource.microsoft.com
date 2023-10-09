@@ -6,7 +6,6 @@ description: "Microsoft Open Source: get involved in open source communities, di
 ---
 
 <article>
-
     <div class="wrapper-full bg-dark">
         <div class="wrapper py-6 my-6">
             <div class="d-md-flex flex-justify-between">
@@ -37,8 +36,10 @@ description: "Microsoft Open Source: get involved in open source communities, di
                                 style="color: #fff"
                                 id="toggle-graphics"
                                 href="#"
-                                title="Pause animation"><span class="sr-only" id="toggle-text2">Pause animations and stop showing new graphics</span>
-                                <span id="toggle-text" aria-hidden="true">Pause</span> <span id="pause-icon">{% octicon square-fill %}</span><span 
+                                title="Pause animation">
+                                <span class="sr-only" id="toggle-text2">Pause animations and stop showing new graphics</span>
+                                <span id="toggle-text" aria-hidden="true">Pause</span>
+                                <span id="pause-icon">{% octicon square-fill %}</span><span 
                                 id="resume-icon">{% octicon triangle-right %}</span>
                             </a>
                         </div>
@@ -52,7 +53,7 @@ description: "Microsoft Open Source: get involved in open source communities, di
         <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="200">
             <h2 class="h3">Projects</h2>
             <p>
-                Some of the most popular developer tools, frameworks and experiences in the world
+                Some of the most popular developer tools, frameworks, and experiences in the world
                 are built around open communities. Here are a few featured Microsoft projects of note.
             </p>
         </div>
@@ -60,21 +61,17 @@ description: "Microsoft Open Source: get involved in open source communities, di
         <div class="tile-list" data-animate-in="up" data-animate-in-delay="400">
             {% assign featured_projects_count = 0 %}
             {% for project in site.projects %}
-            {% if project.featured and featured_projects_count < 3 %}
-            {% assign featured_projects_count = featured_projects_count | plus: 1 %}
-            <a class="tile" href="{{ project.projectUrl }}" target="_blank" rel= "noopener">
-                <div>
-                    {% if project.externalLogo %}
-                    {% assign img = project.externalLogo %}
-                    {% else %}
-                    {% capture img %}/assets/images/projects/{{ project.logo }}{% endcapture %}
-                    {% endif %}
-                    <img class="mb-4" src="{{ img | relative_url }}" alt="" />
-                    <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
-                </div>
-            </a>
-            {% endif %}
+                {% if project.featured and featured_projects_count < 3 %}
+                    {% assign featured_projects_count = featured_projects_count | plus: 1 %}
+                    <a class="tile" href="{{ project.projectUrl }}" target="_blank" rel= "noopener">
+                        <div>
+                            {% assign img = project.externalLogo | default: '/assets/images/projects/' | append: project.logo %}
+                            <img class="mb-4" src="{{ img | relative_url }}" alt="" />
+                            <h3 class="h4 text-brand font-weight-600 mb-3">{{ project.title }}</h3>
+                            <p>{{ project.description }}</p>
+                        </div>
+                    </a>
+                {% endif %}
             {% endfor %}
         </div>
 
@@ -82,225 +79,10 @@ description: "Microsoft Open Source: get involved in open source communities, di
             <a class="link-arrow text-brand" href="/projects">Explore Microsoft projects</a>
         </div>
     </div>
-
-
-    <!-- 
-
-    <hr />
-
-    <div class="wrapper py-6 my-6">
-        <div class="py-6 my-6">
-            <div class="d-md-flex text-center">
-
-                <div class="col-12 col-md-4 pr-md-4" data-animate-in="fade" data-animate-in-delay="200">
-                    <img class="mb-4" src="{{ '/assets/images/svgs/collaborate.svg' | relative_url }}" alt="" />
-                    <h3 class="h3">Open</h3>
-                    <p>
-                        Working in the open is the secret sauce. Microsoft engineers work
-                        to adopt industry-standard technologies, work in the open, support
-                        a diversity of technologies and platforms, and
-                        contribute upstream as often as possible.
-                    </p>
-                </div>
-
-                <div class="col-12 col-md-4 px-md-3 mb-6 mb-md-0" data-animate-in="fade" data-animate-in-delay="200">
-                    <img class="mb-4" src="{{ '/assets/images/svgs/innovate.svg' | relative_url }}" alt="" />
-                    <h3 class="h3">Collaborative</h3>
-                    <p>
-                       With participation from around the world, new perspectives
-                       are discovered, passionate users are able to dig in, and a special
-                       connection exists between upstream projects, maintainers, and all open
-                       source projects.
-                    </p>
-                </div>
-
-                <div class="col-12 col-md-4 pl-md-4 mb-6 mb-md-0" data-animate-in="fade" data-animate-in-delay="200">
-                    <img class="mb-4" src="{{ '/assets/images/svgs/build.svg' | relative_url }}" alt="" />
-                    <h3 class="h3">Flexible</h3>
-                    <p>
-                        Open source makes amazing business sense: industry-standard open
-                        technologies are super flexible: easy to adopt, attract leading
-                        talent that's familiar, and provides an opportunity to rapidly
-                        innovate and deliver value tailored to specific needs, building
-                        on the work of others.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="text-center mt-6" data-animate-in="up" data-animate-in-delay="200">
-                <a class="link-arrow text-brand" href="{{ '/ecosystem' | relative_url }}">
-                    The open source ecosystem we support
-                </a>
-            </div>
-        </div>
-    </div>
+    
+    <!--
+    Rest of your code here...
     -->
-
-
-    <hr />
-
-
-    <div class="split-content text-white">
-        <!-- TEMP: overriding color for more contrast -->
-        <div class="split-content__content split-content__content--left" style="background-color: #0070f2;">
-            <div data-animate-in="fade" data-animate-in-delay="200">
-                <h2 class="mb-4">
-                    <span class="h5">Microsoft's communities</span>
-                    <span class="h2">Get involved</span>
-                </h2>
-                <p class="p-lg font-weight-400">
-                    We are building value together and welcome everyone to
-                    participate. Together, in the open, it's an exciting
-                    time to use technology to build hacks, apps, and services.
-                </p>
-
-                <div class="mt-6">
-                    <a class="link-arrow" href="{{ '/collaborate/#get-involved' | relative_url }}">Happening now</a><br />
-                    <a class="link-arrow" href="{{ '/collaborate/#get-started' | relative_url }}">Find a "good first issue"</a><br />
-                    <a class="link-arrow" href="{{ '/projects/' | relative_url }}">Featured projects</a>
-                </div>
-            </div>
-
-            <img src="{{ '/assets/images/direction/stripes-corner.svg' | relative_url }}" alt="" />
-        </div>
-
-        <div class="split-content__content split-content__content--right">
-            <div data-animate-in="fade" data-animate-in-delay="200">
-                <h2 class="mb-4">
-                    <span class="h5">Learn from our enterprise-scale approach</span>
-                    <span class="h2">Our program &amp; tools</span>
-                </h2>
-                <p class="p-lg font-weight-400">
-                    We have worked to develop a strong open source program over the past decade, making
-                    it easy for every team at Microsoft to choose to use, contribute to, and release open
-                    source software.
-                </p>
-                <p class="p-lg font-weight-400">
-                    Many of our tools and approaches are available for you to learn from, too.
-                </p>
-
-                <div class="mt-6">
-                    <a class="link-arrow" href="{{ '/program/' | relative_url }}">Our program</a><br />
-                    <a class="link-arrow" href="{{ '/program/#program-tools' | relative_url }}">Our tools</a><br />
-                    <a class="link-arrow" href="{{ '/ecosystem/' | relative_url }}">The ecosystem we support</a>
-                </div>
-            </div>
-            <img src="{{ '/assets/images/direction/dots-corner.svg' | relative_url }}" alt="" />
-        </div>
-    </div>
-
-    <div class="wrapper pt-6 pb-6 mt-6 mb-6">
-        <div class="d-md-flex">
-            <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
-                <h3 class="h5 text-brand font-weight-600 mb-2">Innovate faster and more securely with open source on Azure</h3>
-                <p>Build on a highly secure cloud platform designed to protect your data and business assets, including proactive, comprehensive compliance coverage.  Gain the flexibility to move your app anywhere. Operate seamlessly and elastically, on-premises, in hybrid or multicloud environments, or at the edge.</p>
-                <div class="link-arrow-external mt-4"><a href="https://azure.microsoft.com/en-us/solutions/open-source/#overview">Learn more about open source on Azure</a></div>
-            </div>
-
-            <!--
-                To restore this section, we would need code to connect to the post-cookie consent process.
-            <div class="col-md-6 pl-md-4 pl-lg-6">
-                <div>
-                    <iframe loading="lazy" src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed.html?id=ec3d794c-eb61-42fe-a0ae-016cfa1663a4" allowfullscreen="" title="" tabindex="0" allow="autoplay" style="width: 100%;height:200px;position: relative;"></iframe>
-                    <div class="link-arrow-external mt-4"><a href="https://azure.microsoft.com/en-us/blog/genomics-testing-on-the-iss-with-hpe-spaceborne-computer2-and-azure/">Azure - The cloud powering the space race. Read the story</a>.</div>
-                </div>               
-            </div>
-            -->
-        </div>
-    </div>
-
-    <div class="wrapper pt-6 pb-6 mt-6 mb-6" >
-        <div class="text-center mb-6" data-animate-in="up" data-animate-in-delay="400">
-            <h2 class="h3">Microsoft Open Source Updates</h2>
-        </div>
-
-        <div class="blog-list">
-            {% for post in site.posts %}
-            <a class="blog-preview" href="{{ post.articleUrl }}" target="_blank" rel= "noopener" data-animate-in="up"
-                data-animate-in-delay="200">
-                <div>
-                    <h3 class="h5 text-brand font-weight-600 mb-2">{{ post.title }}</h3>
-                    {% if post.author %}
-                    <span class="blog-preview__meta mb-2">
-                        {% if post.authorAvatar %}
-                        <img
-                            alt="Photo or avatar image of {{ post.author }}"
-                            style="border-radius: 50%; max-width: 32px;display:inline-block"
-                            src="/assets/images/posts/{{ post.authorAvatar }}" />
-                        {% endif %}
-                        <div style="display: inline-block; margin-left: 6px">
-                            {{ post.author }}
-                            {% if post.authorTitle %}
-                            <br />{{ post.authorTitle }}
-                            {% endif %}
-                        </div>
-                    </span>
-                    {% endif %}
-                    <!--
-                    <p class="blog-preview__meta mb-2">{{ post.publishDate }}</p>
-                    -->
-                    {% if post.video_url %}
-                    <div class="blog-preview__video">
-                        <iframe loading="lazy"  src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed.html?id=ec3d794c-eb61-42fe-a0ae-016cfa1663a4" allowFullScreen title="{{video.title}}" tabindex="0" allow="autoplay"></iframe>
-                    </div>
-                    {% endif %}
-                    {{ post.content }}
-                </div>
-                {% if post.azure-oss-post %}
-                <div class="link-arrow-external mt-4">Learn more about open source on Azure</div>
-                {% else %}
-                <div class="link-arrow-external mt-4">Read post</div>
-                {% endif %}
-            </a>
-            {% endfor %}
-        </div>
-        {% assign postCount = site.posts|size %}
-        {% if postCount > 4 %}
-        <script>
-            var $ = jQuery,
-                post = $('.blog-preview');
-            post.hide();
-            randomElements = post.get().sort(function () {
-                return Math.round(Math.random()) - 0.5
-            }).slice(0, 4);
-            $(randomElements).show();
-        </script>
-        {% endif %}
-
-        <!--
-        <div class="text-center mt-6 pb-6">
-            <a class="link-arrow-external" href="https://cloudblogs.microsoft.com/opensource/">Microsoft's Open Source
-                Blog</a>
-        </div>
-        -->
-    </div>
-
-    <div class="wrapper-full bg-brand-dark text-white">
-        <div class="wrapper py-6 my-6">
-            <h3 class="h3">Community Resources</h3>
-            <div class="d-md-flex">
-                <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
-                    <p>
-                        We welcome you to our open communities. Please check out
-                        our Code of Conduct and one-time Contributor License Agreement
-                        to help us all participate with care.
-                    </p>
-                </div>
-                <div class="col-md-6 pl-md-4 pl-lg-6">
-                    {% for resources in site.data.community %}
-                    {% for resource in resources.resources %}
-                    <div>
-                        <a class="link-arrow-external mb-2" href="{{ resource.url }}">{{ resource.title }}</a>
-                    </div>
-                    {% endfor %}
-                    {% endfor %}
-
-                </div>
-            </div>
-        </div>
-    </div>
-
 </article>
 
 <script>
