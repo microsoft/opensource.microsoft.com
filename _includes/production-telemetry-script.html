@@ -92,6 +92,7 @@ function getCookie(cookieName) {
             }
         }
         evaluateShowManagement();
+        evaluateUserConsent();
     }, onConsentChanged);
     function manageCookies() {
         if(siteConsent.isConsentRequired){
