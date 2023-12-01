@@ -108,14 +108,12 @@ jobs:
             --account-key ${{ secrets.AZURE_FILES_SP }} \
             --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip \
-            -s prod \
-            --path temp-site-2024.zip
+            -s dev
           az storage file upload \
             --account-key ${{ secrets.AZURE_FILES_SP }} \
             --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
-            -s prod \
-            --path temp-content-2024.zip
+            -s dev
     - name: "Disconnect from Azure Files"
       if: false
       run: |
