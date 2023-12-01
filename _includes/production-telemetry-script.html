@@ -32,7 +32,14 @@ function getCookie(cookieName) {
     <!-- <script src="https://az725175.vo.msecnd.net/scripts/jsll-4.js"></script> -->
     <script>
     var siteConsent = null;
-    var showTelemetryDebug = true;
+
+    const currentUrl = window.location.href;
+    const searchParams = new URLSearchParams(new URL(currentUrl).search);
+    var showTelemetryDebug = searchParams.has('console');
+    if (showTelemetryDebug) {
+        console.log('Will show telemetry debug in the console.');
+    }
+
     function enableAnalytics() {
         var config = {
             coreData: {
@@ -46,6 +53,7 @@ function getCookie(cookieName) {
         enableAnalytics();
     }
     function onConsentChanged(categoryPreferences) {
+        showTelemetryDebug && console.log('onConsentChanged.');
         evaluateUserConsent();
         evaluateShowManagement();
     }
@@ -53,23 +61,35 @@ function getCookie(cookieName) {
         document.getElementById('manageCookies').style.display = siteConsent.isConsentRequired ? 'inline-block' : 'none';
     }
     function evaluateUserConsent() {
-        // only connect if there is opt-in (Cali.) and/or cookie banner consent in a required place
-        if (GPC_DataSharingOptIn === true && siteConsent && siteConsent.getConsentFor(WcpConsent.consentCategories.Analytics)) {
-            addTelemetry();
-            showTelemetryDebug && console.log('Telemetry added.');
-        } else {
-            if (GPC_DataSharingOptIn === false) {
-                showTelemetryDebug && console.log('No data sharing opt-in present.');
+        try {
+            // only connect if there is opt-in (Cali.) and/or cookie banner consent in a required place
+            if (GPC_DataSharingOptIn === true && siteConsent && siteConsent.getConsentFor(WcpConsent.consentCategories.Analytics)) {
+                addTelemetry();
+                showTelemetryDebug && console.log('Telemetry added.');
             } else {
-                showTelemetryDebug && console.log('No site consent for telemetry.');
+                if (GPC_DataSharingOptIn === false) {
+                    showTelemetryDebug && console.log('No data sharing opt-in present.');
+                } else {
+                    showTelemetryDebug && console.log('No site consent for telemetry.');
+                }
+            }
+        } catch (error) {
+            if (showTelemetryDebug) {
+                console.dir(error);
             }
         }
     }
     WcpConsent.init('en-US', 'cookiebanner', function (err, _siteConsent) {
         if (err != undefined) {
+            if (showTelemetryDebug) {
+                console.log('WcpConsent.init error', err);
+            }
             return error;
         } else {
             siteConsent = _siteConsent;
+            if (showTelemetryDebug) {
+                console.log('WcpConsent.init', siteConsent);
+            }
         }
         evaluateShowManagement();
     }, onConsentChanged);

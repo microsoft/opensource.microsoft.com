@@ -193,6 +193,8 @@ function dismissAvatar(avatar) {
 }
 
 function loadAvatars() {
+  // const hostname = window.location.hostname;
+  // const isLocalhost = (hostname === 'localhost' || hostname === '127.0.0.1');
   $.ajax({
     type: 'GET',
     url: '/api/avatars',
