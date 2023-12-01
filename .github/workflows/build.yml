@@ -71,7 +71,9 @@ jobs:
       run: |
         echo installing extra modules for azure
         sudo apt-get update
-        sudo apt-get install linux-modules-extra-azure -y
+        # sudo apt-get install linux-modules-extra-azure -y
+        sudo apt-get install cifs-utils -y
+
         echo Making mountpoint /mnt/files
         sudo mkdir -p /mnt/files
         echo Preparing creds...
