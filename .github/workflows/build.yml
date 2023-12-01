@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '.github/workflows/*.yml'
+    #paths-ignore:
+    #  - '.github/workflows/*.yml'
 
 env:
   REGISTRY: docker.pkg.github.com
@@ -69,7 +69,8 @@ jobs:
         AZURE_FILES_SP: ${{ secrets.AZURE_FILES_SP }}
         AZURE_FILES_USERNAME: ${{ secrets.AZURE_FILES_USERNAME }}
       run: |
-        echo sudo apt-get install linux-modules-extra-azure -y
+        echo installing extra modules for azure
+        sudo apt-get update
         sudo apt-get install linux-modules-extra-azure -y
         echo Making mountpoint /mnt/files
         sudo mkdir -p /mnt/files
