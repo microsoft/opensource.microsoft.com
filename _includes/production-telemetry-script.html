@@ -1,3 +1,29 @@
+<script id="uhf-footer-ccpa">
+// Detect GPC
+const globalPrivacyControlEnabled = navigator.globalPrivacyControl;
+
+// Set data sharing opt-in to false when GPC/AMC controls detected
+const GPC_DataSharingOptIn = (globalPrivacyControlEnabled) ? false : checkThirdPartyAdsOptOutCookie();
+
+// Detect AMC opt out choice
+function checkThirdPartyAdsOptOutCookie() {
+    try {
+        const ThirdPartyAdsOptOutCookieName = '3PAdsOptOut';
+        var cookieValue = getCookie(ThirdPartyAdsOptOutCookieName);
+        
+        //for unauthenticated users
+        return cookieValue != 1;
+    } catch {
+        return true;
+    }
+}
+
+function getCookie(cookieName) {
+    var cookieValue = document.cookie.match('(^|;)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
+    return (cookieValue) ? cookieValue[2] : '';
+}
+
+</script>
 <script type="text/javascript">
     function enableAppInsights() {
         var appInsights=window.appInsights||function(config){function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t}({instrumentationKey:"98f90d2e-54e0-4e9c-a919-deea70bad056"/*the telemetry instrumentation key is NOT a secret FYI */});window.appInsights=appInsights;appInsights.trackPageView();
@@ -6,13 +32,14 @@
     <!-- <script src="https://az725175.vo.msecnd.net/scripts/jsll-4.js"></script> -->
     <script>
     var siteConsent = null;
+    var showTelemetryDebug = true;
     function enableAnalytics() {
         var config = {
             coreData: {
                 appId: 'opensource.microsoft.com'
             }
         };
-        // no longer using this secondary provider for now: awa.init(config);
+        // no longer using this secondary provider: awa.init(config);
     }
     function addTelemetry() {
         enableAppInsights();
@@ -26,8 +53,16 @@
         document.getElementById('manageCookies').style.display = siteConsent.isConsentRequired ? 'inline-block' : 'none';
     }
     function evaluateUserConsent() {
-        if (siteConsent && siteConsent.getConsentFor(WcpConsent.consentCategories.Analytics)) {
+        // only connect if there is opt-in (Cali.) and/or cookie banner consent in a required place
+        if (GPC_DataSharingOptIn === true && siteConsent && siteConsent.getConsentFor(WcpConsent.consentCategories.Analytics)) {
             addTelemetry();
+            showTelemetryDebug && console.log('Telemetry added.');
+        } else {
+            if (GPC_DataSharingOptIn === false) {
+                showTelemetryDebug && console.log('No data sharing opt-in present.');
+            } else {
+                showTelemetryDebug && console.log('No site consent for telemetry.');
+            }
         }
     }
     WcpConsent.init('en-US', 'cookiebanner', function (err, _siteConsent) {
