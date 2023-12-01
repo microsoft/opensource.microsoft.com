@@ -63,43 +63,10 @@ jobs:
       with:
         name: website
         path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip
-    - name: "Connect to Azure Files"
-      if: false
-      env:
-        AZURE_FILES_ENDPOINT: ${{ secrets.AZURE_FILES_ENDPOINT }}
-        AZURE_FILES_SP: ${{ secrets.AZURE_FILES_SP }}
-        AZURE_FILES_USERNAME: ${{ secrets.AZURE_FILES_USERNAME }}
-      run: |
-        echo installing extra modules for azure
-        sudo apt-get update
-        # sudo apt-get install linux-modules-extra-azure -y
-        sudo apt-get install cifs-utils -y
-
-        echo Making mountpoint /mnt/files
-        sudo mkdir -p /mnt/files
-        echo Preparing creds...
-        if [ ! -d "/etc/smbcredentials" ]; then
-          echo creating smb creds folder
-          sudo mkdir /etc/smbcredentials
-        fi
-        echo Preparing share-specific creds...
-        if [ ! -f "/etc/smbcredentials/files.cred" ]; then
-          echo Storing share info...
-          echo username=$AZURE_FILES_USERNAME >> ./files.cred
-          echo password=$AZURE_FILES_SP >> ./files.cred
-          sudo mv ./files.cred /etc/smbcredentials/
-        fi
-        echo Setting file mode...
-        sudo chmod 600 /etc/smbcredentials/files.cred
-        echo Writing to /etc/fstab
-        echo Mounting...
-        sudo mount -t cifs //$AZURE_FILES_ENDPOINT/dev /mnt/files -o vers=3.0,credentials=/etc/smbcredentials/files.cred,dir_mode=0777,file_mode=0777,serverino
     - name: "List site files"
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com
       run: |
-        ls -la *.zip *.json
-        # cp site.zip /mnt/files/
-        # cp content.json /mnt/files/    
+        ls -la site.zip content.json
     - uses: azure/CLI@v1
       name: "Upload to share via CLI"
       with:
@@ -114,10 +81,6 @@ jobs:
             --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
             -s dev
-    - name: "Disconnect from Azure Files"
-      if: false
-      run: |
-        sudo umount /mnt/files
     - name: "Prepare to AzCopy..."
       working-directory: /home/runner/work
       run: |
@@ -131,14 +94,12 @@ jobs:
         ls -la
     - name: "Copy to CDN"
       working-directory: /home/runner/work/azcopy
-      if: false
       env:
         SASTOKEN: ${{ secrets.AZURE_CDN_SAS }}
       run: |
         ./azcopy sync /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site "https://osssite.blob.core.windows.net/cdn/$SASTOKEN" --recursive=true
     - name: "Copy to static web container"
       working-directory: /home/runner/work/azcopy
-      if: false
       env:
         SASTOKEN: ${{ secrets.AZURE_WEB_SAS }}
       run: |
