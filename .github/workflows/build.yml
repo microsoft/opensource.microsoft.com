@@ -69,6 +69,8 @@ jobs:
         AZURE_FILES_SP: ${{ secrets.AZURE_FILES_SP }}
         AZURE_FILES_USERNAME: ${{ secrets.AZURE_FILES_USERNAME }}
       run: |
+        echo sudo apt-get install linux-modules-extra-azure -y
+        sudo apt-get install linux-modules-extra-azure -y
         echo Making mountpoint /mnt/files
         sudo mkdir -p /mnt/files
         echo Preparing creds...
