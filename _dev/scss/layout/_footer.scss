@@ -17,7 +17,7 @@
     }
 
     @include start-at($xlarge) {
-        text-align: center;
+        text-align: left;
     }
 
 
@@ -107,13 +107,13 @@
     }
 
     @include start-at($xlarge) {
-        display: block;
+        display: flex;
         align-items: center;
-        text-align: center;
+        justify-content: flex-start;
+        margin-bottom: 0;
 
         img {
-            margin: 0 auto 16px;
-            width: 24px;
+            margin: 0 20px 0 0;
         }
     }
 }
