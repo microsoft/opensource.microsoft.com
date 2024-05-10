@@ -1,4 +1,7 @@
 name: Build the builder
+permissions:
+  contents: read
+  packages: write
 on:
   push:
     branches:
