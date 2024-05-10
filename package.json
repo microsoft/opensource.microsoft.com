@@ -10,7 +10,7 @@
     "build": "node_modules/gulp/bin/gulp.js build"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^3.0.2",
     "child_process": "^1.0.2",
     "color-contrast-checker": "1.5.0",
     "del": "^5.1.0",
