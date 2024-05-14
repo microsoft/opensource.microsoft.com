@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    #paths-ignore:
-    #  - '.github/workflows/*.yml'
 
 env:
   REGISTRY: docker.pkg.github.com
@@ -13,12 +11,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    #services:
-      #sitebuildercontainer:
-        #image: docker.pkg.github.com/microsoft/opensource.microsoft.com/xxx:latest
-        #credentials:
-          #username: ${{ github.actor }}
-          #password: ${{ secrets.GITHUB_TOKEN }}
     steps:
     #       actions/checkout@v2 on 11/4/2021
     - uses: actions/checkout@230611dbd0eb52da1e1f4f7bc8bb0c3a339fc8b7
@@ -32,14 +24,9 @@ jobs:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    #- name: Login to GitHub Packages
-    #  run: |
-    #    run: echo ${{ secrets.READONLY_PACKAGE_TOKEN }} | docker login -u ${{ secrets.READONLY_PACKAGE_SP }} --password-stdin
-    #    login-server: 'docker.pkg.github.com'
     - name: "Build the site"
       run: |
         docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
-        pwd && whoami
         cd /usr/local/site
         ls -la
         bundle install
@@ -81,6 +68,20 @@ jobs:
             --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
             -s dev
+    - uses: azure/CLI@v1
+      name: "Upload to share via CLI (2024)"
+      with:
+        inlineScript: |
+          az storage file upload \
+            --account-key ${{ secrets.AZURE_FILES_SP }} \
+            --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
+            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip \
+            -s oss-live
+          az storage file upload \
+            --account-key ${{ secrets.AZURE_FILES_SP }} \
+            --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
+            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
+            -s oss-live
     - name: "Prepare to AzCopy..."
       working-directory: /home/runner/work
       run: |
