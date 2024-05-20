@@ -54,7 +54,7 @@ jobs:
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com
       run: |
         ls -la site.zip content.json
-    - uses: azure/CLI@v1
+    - uses: azure/cli@v2
       name: "Upload to share via CLI"
       with:
         inlineScript: |
@@ -68,7 +68,7 @@ jobs:
             --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
             -s dev
-    - uses: azure/CLI@v1
+    - uses: azure/cli@v2
       name: "Upload to share via CLI (2024)"
       with:
         inlineScript: |
