@@ -55,31 +55,17 @@ jobs:
       run: |
         ls -la site.zip content.json
     - uses: azure/cli@v2
-      name: "Upload to share via CLI"
-      with:
-        inlineScript: |
-          az storage file upload \
-            --account-key ${{ secrets.AZURE_FILES_SP }} \
-            --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
-            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip \
-            -s dev
-          az storage file upload \
-            --account-key ${{ secrets.AZURE_FILES_SP }} \
-            --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
-            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
-            -s dev
-    - uses: azure/cli@v2
       name: "Upload to share via CLI (2024)"
       with:
         inlineScript: |
           az storage file upload \
             --account-key ${{ secrets.AZURE_FILES_SP }} \
-            --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
+            --account-name ${{ vars.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip \
             -s oss-live
           az storage file upload \
             --account-key ${{ secrets.AZURE_FILES_SP }} \
-            --account-name ${{ secrets.AZURE_FILES_USERNAME }} \
+            --account-name ${{ vars.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
             -s oss-live
     - name: "Prepare to AzCopy..."
