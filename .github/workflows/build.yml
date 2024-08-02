@@ -80,15 +80,17 @@ jobs:
         mv azcopy_linux/azcopy ./
         ls -la
     - name: "Copy to CDN"
+      if: false
       working-directory: /home/runner/work/azcopy
       env:
         SASTOKEN: ${{ secrets.AZURE_CDN_SAS }}
       run: |
         ./azcopy sync /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site "https://osssite.blob.core.windows.net/cdn/$SASTOKEN" --recursive=true
     - name: "Copy to static web container"
+      if: false
       working-directory: /home/runner/work/azcopy
       env:
-        SASTOKEN: ${{ secrets.AZURE_WEB_SAS }}
+        AZCOPY_AUTO_LOGIN_TYPE: AZCLI
       run: |
         ./azcopy sync /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site "https://osssite.blob.core.windows.net/\$web/$SASTOKEN" --recursive=true
   
