@@ -5,7 +5,7 @@ description: Microsoft Open Source
 twitter_username: openatmicrosoft
 github_username: microsoft
 
-cdn: https://opensource.azureedge.net
+cdn:
 
 # Build settings
 markdown: kramdown
