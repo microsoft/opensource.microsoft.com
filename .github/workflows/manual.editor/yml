@@ -1,13 +1,13 @@
 name: Manual build
-on:
+on: 🧠
   workflow_dispatch
-jobs:
-  builder:
+jobs: ⚡️
+  builder: 🧠
     runs-on: ubuntu-latest
-    steps:
+    steps: editor
     - uses: actions/checkout@v2
     - name: prepare-jekyll
-      run: |
+      run: ./
         echo Getting ready to Jekyll...
         gem install bundler
         bundle config set deployment true
