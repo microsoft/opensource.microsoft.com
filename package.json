@@ -28,7 +28,7 @@
     "imagemin-pngquant": "^8.0.0",
     "npm-clean": "^1.0.3",
     "sass": "1.79.2",
-    "yaml": "2.5.1"
+    "yaml": "2.7.0"
   },
   "dependencies": {
     "@primer/css": "^14.3.0",
