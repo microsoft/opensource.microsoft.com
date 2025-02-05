@@ -43,7 +43,7 @@ jobs:
     - name: "Compress the static site"
       run: zip -r ../site.zip .
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       name: "Store the site as an artifact"
       with:
         name: website
