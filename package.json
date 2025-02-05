@@ -27,7 +27,7 @@
     "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^8.0.0",
     "npm-clean": "^1.0.3",
-    "sass": "1.79.2",
+    "sass": "1.83.4",
     "yaml": "2.7.0"
   },
   "dependencies": {
