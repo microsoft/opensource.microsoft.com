@@ -1,53 +1,50 @@
 import React from 'react';
 import Link from 'next/link';
-import '../styles/globals.css';
 
 const Header = () => {
   return (
     <header id="site-header" role="banner">
       <div className="site-header__inner">
         <div className="site-logo">
-          <Link href="/">
-            <a tabIndex="2">
-              <img
-                className="mr-3 icon"
-                src="/assets/images/svgs/microsoft-logo-no-text.svg"
-                alt="Microsoft | Open Source logo"
-              />
-              <span className="p-lg text-white">Microsoft | Open Source</span>
-            </a>
+          <Link href="/" tabIndex="2">
+            <img
+              className="mr-3 icon"
+              src="/assets/images/svgs/microsoft-logo-no-text.svg"
+              alt="Microsoft | Open Source logo"
+            />
+            <span className="p-lg text-white">Microsoft | Open Source</span>
           </Link>
         </div>
 
         <ul className="site-header__nav">
           <li>
             <Link href="/collaborate">
-              <a>Get involved</a>
+              Get involved
             </Link>
           </li>
           <li>
             <Link href="/projects">
-              <a>Projects</a>
+              Projects
             </Link>
           </li>
           <li>
             <Link href="/ecosystem">
-              <a>Ecosystem</a>
+              Ecosystem
             </Link>
           </li>
           <li>
             <Link href="/program">
-              <a>Our program</a>
+              Our program
             </Link>
           </li>
           <li>
             <Link href="/blog">
-              <a>Blog</a>
+              Blog
             </Link>
           </li>
           <li>
-            <Link href="https://careers.microsoft.com/us/en/search-results?keywords=open%20source">
-              <a target="_new">Jobs</a>
+            <Link href="https://careers.microsoft.com/us/en/search-results?keywords=open%20source" target="_new">
+              Jobs
             </Link>
           </li>
         </ul>
