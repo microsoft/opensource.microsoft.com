@@ -6,7 +6,6 @@ import GoodFirstIssue from '../components/GoodFirstIssue';
 import CreditsOverview from '../components/CreditsOverview';
 import CreditsFAQ from '../components/CreditsFAQ';
 import CreditsApply from '../components/CreditsApply';
-import '../styles/globals.css';
 
 const Home = () => {
   return (

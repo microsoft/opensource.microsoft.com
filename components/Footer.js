@@ -1,7 +1,17 @@
-import React from 'react';
-import '../styles/globals.css';
+import React, { useEffect } from 'react';
 
 const Footer = () => {
+  useEffect(() => {
+    const year = document.getElementById('year');
+    if (year) {
+      year.innerHTML = new Date().getFullYear();
+    }
+  }, []);
+
+  const manageCookies = () => {
+    // Add cookie management logic here
+  };
+
   return (
     <footer className="site-footer" role="contentinfo">
       <div className="wrapper d-xl-flex flex-justify-between flex-items-center flex-column">
@@ -52,13 +62,6 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <script>
-        var date = new Date().getFullYear(),
-            year = document.getElementById('year');
-            if(year) {
-                document.getElementById('year').innerHTML = date;
-            }
-      </script>
     </footer>
   );
 };
