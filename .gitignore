@@ -9,6 +9,7 @@ node_modules
 bin/
 vendor/
 
+out/
 
 # Logs
 logs

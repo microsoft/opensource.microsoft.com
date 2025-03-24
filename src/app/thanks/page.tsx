@@ -8,6 +8,8 @@
 import fs from 'fs';
 import path from 'path';
 
+const SHOW_SKIPS = false;
+
 type FeaturedDependency = {
   title: string;
   identity: string;
@@ -70,7 +72,9 @@ function fromPackage(src: any, dest: DependencyEntry[]) {
     try {
       const dataPath = path.join(process.cwd(), 'node_modules', name, 'package.json');
       if (!fs.existsSync(dataPath)) {
-        console.log(`skipping ${name}; no package.json or path issue: ${dataPath}`);
+        if (SHOW_SKIPS) {
+          console.log(`skipping ${name}; no package.json or path issue: ${dataPath}`);
+        }
         continue;
       }
       const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
@@ -81,7 +85,7 @@ function fromPackage(src: any, dest: DependencyEntry[]) {
       }
       dest.push(entry);
     } catch (error) {
-      console.log(`skipping ${name}; error: ${error}`);
+      console.log(`issue reviewing dependency ${name}; error: ${error}`);
     }
   }
 }

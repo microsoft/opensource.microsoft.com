@@ -27,7 +27,7 @@ export default function Collaborate() {
             {/*
             <div data-animate-in="fade" data-animate-in-delay="240">
               <a className="link-arrow text-white mt-4" href="/collaborate">
-                <a className="link-arrow text-white mt-4" href="{{ '/' | relative_url }}">Join the community</a>
+                <a className="link-arrow text-white mt-4" href="/">Join the community</a>
               </a>
             </div>
             */}
@@ -42,7 +42,7 @@ export default function Collaborate() {
                   <h2 className="h2">Happening now</h2>
               </div>
               <div className="col-md-6 pl-md-4 col-lg-4">
-                  <img className="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
+                  <img className="mb-4" src="/images/direction/community-shapes.svg" alt="" />
               </div>
           </div>
       </div>

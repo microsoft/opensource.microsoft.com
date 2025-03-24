@@ -97,9 +97,9 @@ export default function Projects() {
                 <p>
                     Search, filter and explore to find what you're looking for, or an opportunity to join in the fun.
                 </p>
-                <a className="link-arrow text-white mt-4" href="{{ '/projects/explore/' | relative_url }}">View all projects</a>
+                <a className="link-arrow text-white mt-4" href="/projects/explore">View all projects</a>
                 <br />
-                <a className="link-arrow text-white mt-4" href="{{ '/collaborate/' | relative_url }}">Get involved</a>
+                <a className="link-arrow text-white mt-4" href="/collaborate">Get involved</a>
                 <br/>
                 <a className="link-arrow text-white mt-4" href="https://github.com/microsoft">Microsoft on GitHub</a>
               */}

@@ -109,7 +109,7 @@ export default function Ecosystem() {
           </p>
       </div>
       <div className="col-md-6 pl-md-4 col-lg-4">
-        <img className="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
+        <img className="mb-4" src="/images/direction/community-shapes.svg" alt="" />
       </div>
     </div>
   </div>
@@ -168,7 +168,7 @@ export default function Ecosystem() {
           </p>
           </div>
           <div className="col-md-6 pl-md-4 col-lg-4">
-            <img className="mb-4" src="{{ '/assets/images/direction/community-shapes.svg' | relative_url }}" alt="" />
+            <img className="mb-4" src="/images/direction/community-shapes.svg" alt="" />
           </div>
         </div>
       </div>

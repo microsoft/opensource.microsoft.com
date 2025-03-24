@@ -16,14 +16,14 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 import './OpenSourceHeader.scss';
-import '@primer/css/layout/index.scss' with { "with": "sass:map" };
-import '@primer/css/buttons/index.scss' with { "with": "sass:map" };
+import '@primer/css/layout/index.scss'; // with { "with": "sass:map" };
+import '@primer/css/buttons/index.scss'; // with { "with": "sass:map" };
+
 //import '../../components/layout/Layout.scss';
 
 import { useGlobalScroll } from '../hooks/useGlobalEvent';
 
 import MicrosoftOpenSourceLogo from './MicrosoftOpenSourceLogo.svg';
-import { ArrowUpRightIcon } from '@primer/octicons-react';
 // import UserSystemButton from '../../components/layout/UserSystemButton';
 
 type Props = {
