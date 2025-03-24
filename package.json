@@ -1,5 +1,5 @@
 {
-  "name": "microsoft-opensource",
+  "name": "opensource.microsoft.com",
   "homepage": "https://opensource.microsoft.com",
   "browserslist": "last 2 versions",
   "version": "2.0.0",
@@ -11,15 +11,26 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "ignoredFormerDependencies": {
+    "autoprefixer": "10.4.21"
+  },
   "devDependencies": {
-    "autoprefixer": "10.4.20",
-    "eslint": "9.20.1",
-    "eslint-config-next": "15.1.7",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@eslint/eslintrc": "^3",
+    "eslint": "9.23.0",
+    "eslint-config-next": "15.2.3",
     "postcss": "8.5.3",
-    "sass": "1.85.0"
+    "sass": "1.86.0",
+    "typescript": "5.2.2"
   },
   "dependencies": {
-    "next": "15.1.7",
+    "@primer/css": "21.5.1",
+    "@primer/octicons-react": "19.15.1",
+    "@primer/primitives": "10.5.0",
+    "@primer/view-components": "0.38.0",
+    "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }

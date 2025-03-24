@@ -1,60 +1,10 @@
-title: Microsoft Open Source
-email:
-description: Microsoft Open Source
-
-twitter_username: openatmicrosoft
-github_username: microsoft
-
-cdn:
-
-# Build settings
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-seo-tag
-  - jekyll-octicons
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-
 collections:
   projects:
     output: false
   posts:
     output: false
-  community:
-    output: false
   fossfund:
     output: false
-
-exclude:
-  - README.md
-  - Brewfile
-  - Brewfile.lock.json
-  - CODE_OF_CONDUCT.md
-  - content.json
-  - CONTRIBUTING.md
-  - LICENSE
-  - localbuilder.sh
-  - Gemfile
-  - SECURITY.md
-  - Gemfile.lock
-  - CNAME
-  - Dockerfile
-  - Dockerfile.builder
-  - script
-  - vendor/gems
-  - node_modules
-  - node_modules/**/CHANGELOG.md
-  - CHANGELOG.md
-  - gulpfile.js
-  - package.json
-  - package-lock.json
-seo:
-
-twitter:
-  username: openatmicrosoft
 
 defaults:
   -

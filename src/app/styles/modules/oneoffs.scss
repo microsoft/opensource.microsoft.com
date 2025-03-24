@@ -1,0 +1,165 @@
+// ---------------------------------------------------------------------
+//  One Offs
+// ---------------------------------------------------------------------
+
+
+.skip-to-content {
+    position: fixed;
+    top: 80px;
+    width: 300px;
+    height: 44px;
+    left: calc(50% - 50px);
+    z-index: 100000;
+    background: --base-color-gray-9; // $gray-900;
+    color: $white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    left: -99999px;
+
+    &:focus,
+    &:active {
+        left: calc(50% - 50px);
+    }
+}
+
+#refresh-feed {
+    color: --base-color-blue-6; // $blue-600;
+    &[disabled="disabled"],
+    &[disabled] {
+        color: --base-color-gray-4; // $gray-400;
+        pointer-events: none;
+    }
+}
+
+.IssueLabel {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4px 6px 0;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px 3px;
+    border-radius: 50px;
+    text-transform: capitalize;
+    text-align: center;
+    min-width: 50px;
+}
+
+.refresh {
+    color: --base-color-blue-6; // $blue-600;
+    display: flex;
+    align-items: center;
+
+    transition: color $trans;
+
+    svg {
+        display: block;
+        margin-left: 6px;
+        transition: transform $trans;
+    }
+
+    /*
+    &:hover {
+        cursor: pointer;
+        color: $brand-dark;
+        svg {
+            transform: rotate(360deg);
+        }
+    }
+    */
+}
+
+.page-header {
+    background: $black;
+    padding: 80px 0 80px;
+    position: relative;
+    z-index: 1;
+
+    .h2 {
+        color: $brand;
+    }
+    p {
+        color: $white;
+    }
+    a {
+        color: $brand;
+    }
+
+}
+
+.page-header__shapes-lg {
+    display: none;
+
+    @include start-at(1110px) {
+        display: block;
+        position: absolute;
+        right: $wrapper-padding;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.intro-svg {
+    max-width: 100%;
+    width: 100%;
+    transform: translate3d(0,0,0);
+
+    svg {
+        width: 100%;
+
+        // @include stop-at($small) {
+        //     > g:nth-child(1),
+        //     > g:nth-child(2) {
+        //         display: none;
+        //     }
+        // }
+    }
+}
+
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+.rotate {
+
+}
+
+
+// ----------------------------------------
+// Cta
+// ----------------------------------------
+
+.cta {
+    background: #4F6BED;
+    padding: 55px 50px;
+    text-align: center;
+    color: $white;
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        width: 64px;
+        height: 64px;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background: url('../../../../public/images/direction/dots-corner.svg') center / cover no-repeat;
+        pointer-events: none;
+    }
+
+}
+
+@include start-at($large) {
+    .sticky {
+        position: sticky;
+        top: 80px
+    }
+}
