@@ -6,7 +6,7 @@
 import React from 'react';
 import { SquareFillIcon, TriangleRightIcon } from '@primer/octicons-react';
 
-import OpenSourceSvg from '../svg/OpenSourceSvg';
+import OpenSourceSvg from './svg/OpenSourceSvg';
 
 export default function OpenSourceHero() {
   return (
