@@ -7,7 +7,7 @@ import Why from './components/Why';
 import OpenSourceHero from './components/OpenSourceHero';
 import Projects from './components/Projects';
 import Azure from './components/Azure';
-import OpenSourceBlog from './components/OpenSourceBlog';
+// import OpenSourceBlog from './components/OpenSourceBlog';
 import CommunityResources from './components/CommunityResources';
 
 export default function Home() {
@@ -21,7 +21,9 @@ export default function Home() {
 
       <Why />
       <Azure />
+      {/*
       <OpenSourceBlog />
+      */}
       <CommunityResources />
 
       {/*

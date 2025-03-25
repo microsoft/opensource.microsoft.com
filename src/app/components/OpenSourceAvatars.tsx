@@ -10,6 +10,10 @@ import { SquareFillIcon, TriangleRightIcon } from '@primer/octicons-react';
 
 import OpenSourceSvg from './svg/OpenSourceSvg';
 
+// Punted from port from jQuery:
+// - no gsap or animated squares and drawing
+// - no need for the accessibility controls to hook the animated squares and drawing
+
 type AvatarHighlight = {
   grantedClicks: number;
   remainingClicks: number;
