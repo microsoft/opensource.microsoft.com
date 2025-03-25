@@ -15,10 +15,6 @@ COPY . .
 
 RUN npm install
 RUN npm run build
-# RUN mv node_modules production_node_modules
-# RUN rm -f .npmrc
-
-# the site will show up in the dist folder
 
 FROM nginx:alpine
 COPY --from=build /build/out /usr/share/nginx/html
