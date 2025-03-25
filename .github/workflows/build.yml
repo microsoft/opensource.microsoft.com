@@ -69,4 +69,3 @@ jobs:
             --account-name ${{ vars.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
             -s oss-dev
-            - uses: azure/cli@v2
