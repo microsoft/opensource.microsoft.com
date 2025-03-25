@@ -62,7 +62,7 @@ export default function Projects() {
                   <path d="M16 0a16 16 0 1 0 0 32A16 16 0 1 0 16 0zm8.5 22.5h-2v-6.5h2v6.5zm-4.5-6.5h-2v6.5h2v-6.5zm-4.5 0h-2v6.5h2v-6.5zm4.5-4h-2V8h2v4.5zM8.5 22.5h-2v-6.5h2v6.5zM4 8H2V4h2v4zm0 10H2v-4h2v4zm12-10V4h2v4h-2zm0 10V14h2v4h-2z" />
                 </svg>
               ) : (
-                <img className="mr-3 icon" src={`/assets/images/projects/${project.logo}`} alt={`${project.title} logo`} />
+                <img className="mr-3 icon" src={`/images/projects/${project.logo}`} alt={`${project.title} logo`} />
               )}
               <h2>{project.title}</h2>
             </div>

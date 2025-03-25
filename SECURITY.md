@@ -2,6 +2,6 @@
 
 ## Security
 
-Please review the latest Microsoft SECURITY.md guidance at [https://aka.ms/security.md](https://aka.ms/security.md).
+Please review the latest Microsoft SECURITY.md guidance at [https://aka.ms/SECURITY.md](https://aka.ms/SECURITY.md).
 
 <!-- END MICROSOFT SECURITY.MD BLOCK -->

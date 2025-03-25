@@ -179,7 +179,7 @@ export default function Ecosystem() {
             if (post.externalLogo) {
               img = post.externalLogo;
             } else if (post.logo) {
-              img = `/images/foundation/${post.logo}`;
+              img = `/images/projects/${post.logo}`;
             }
             return (
               <div key={post.title} className="col-12 col-sm-6 col-md-4 pr-sm-3 pr-lg-4 mb-6" data-animate-in="fade"
@@ -223,7 +223,7 @@ export default function Ecosystem() {
             </h2>
             <p>
               We are offering Azure credits to open source projects for their use for testing, builds, 
-              and other infrustructure support needs. Projects must apply for credits. Applications are 
+              and other infrastructure support needs. Projects must apply for credits. Applications are 
               reviewed and applicants will be contacted with a decision within 3-4 weeks.
             </p>
             <p>
@@ -252,7 +252,6 @@ export default function Ecosystem() {
           </div>
         </div>
       </div>
-      {/* TODO: include octicons.html */}
       <div className="wrapper py-6 my-6">
         <div className="col-lg-8 mx-auto">
           <div className="d-sm-flex flex-wrap" style={{minHeight: '350px'}}>

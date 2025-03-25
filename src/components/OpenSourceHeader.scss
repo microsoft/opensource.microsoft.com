@@ -1,3 +1,8 @@
+//
+// Copyright (c) Microsoft.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+//
+
 @use "sass:color";
 @use "sass:map";
 
@@ -13,9 +18,9 @@ $error: #FF3333;
 
 @font-face {
 	font-family: 'FabricMDL2Icons';
-	src: url('../../assets/fonts/FabExMDL2.woff') format('woff2'),
-			url('../../assets/fonts/FabExMDL2.woff') format('woff'),
-			url('../../assets/fonts/FabExMDL2.ttf') format('truetype');
+	src: url('../assets/fonts/FabExMDL2.woff') format('woff2'),
+			url('../assets/fonts/FabExMDL2.woff') format('woff'),
+			url('../assets/fonts/FabExMDL2.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }

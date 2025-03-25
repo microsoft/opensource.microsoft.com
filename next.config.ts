@@ -5,16 +5,21 @@
 
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
+const isProduction = process.env.NODE_ENV === 'production';
+
+const nextConfig: NextConfig = isProduction ? {
   output: 'export',
-  async rewrites() {
+} : {};
+
+if (!isProduction) {
+  nextConfig.rewrites = async function rewrites() {
     return [
       {
         source: '/api/:path*',
         destination: 'https://opensource.microsoft.com/api/:path*',
       },
     ]
-  }
-};
+  };
+}
 
 export default nextConfig;

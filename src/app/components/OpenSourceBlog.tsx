@@ -53,7 +53,7 @@ export default function OpenSourceBlog() {
                           display: 'inline-block',
                         }
                       }
-                      src={`/assets/images/posts/${post.authorAvatar}`}
+                      src={`/images/posts/${post.authorAvatar}`}
                     />
                   ) : (
                     <div

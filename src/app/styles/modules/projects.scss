@@ -1,3 +1,9 @@
+//
+// Copyright (c) Microsoft.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+//
+
+
 // ---------------------------------------------------------------------
 //  Projects
 // ---------------------------------------------------------------------
@@ -115,7 +121,7 @@
         height: 44px;
         z-index: 3;
         pointer-events: none;
-        background: url('../../../../assets/images/svgs/reload.svg') center / cover no-repeat;
+        background: url('../../../assets/images/svgs/reload.svg') center / cover no-repeat;
         transition: transform 3s ease-in-out, opacity 0.2s ease;
         opacity: 0;
     }
