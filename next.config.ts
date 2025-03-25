@@ -18,6 +18,10 @@ if (!isProduction) {
         source: '/api/:path*',
         destination: 'https://opensource.microsoft.com/api/:path*',
       },
+      {
+        source: '/avatars/:path*',
+        destination: 'https://opensource.microsoft.com/avatars/:path*',
+      },
     ]
   };
 }

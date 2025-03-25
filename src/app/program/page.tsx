@@ -3,7 +3,18 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
+import Contributing from "./Contributing";
+import Overview from "./Overview";
+import Releasing from "./Releasing";
+import Tools from "./Tools";
+import Using from "./Using";
+
 // Page title: Microsoft's Open Source Program
+
+{/*
+  Other pages not live now:
+  - Supporting
+*/}
 
 export default function Program() {
   return (
@@ -15,7 +26,6 @@ export default function Program() {
           </div>
         </div>
       </div>
-
       <div className="wrapper-full bg-light">
         <div className="wrapper my-6 py-4">
           <div className="col-md-10 col-lg-7 mx-auto">
@@ -40,7 +50,6 @@ export default function Program() {
           </div>
         </div>
       </div>
-
       <div className="tabs">
         <nav className="wrapper my-6" data-require-javascript="yes" data-javascript-show="immediate">
           <div className="col-md-10 col-lg-7 mx-auto">
@@ -53,32 +62,31 @@ export default function Program() {
             </div>
           </div>
         </nav>
-
         <div className="wrapper my-6 pt-lg-3 pb-4">
           <div className="col-md-10 col-lg-7 mx-auto">
             <noscript><h2>Overview</h2></noscript>
-              <div className="tabs__content is-active" data-tab="program-overview">
-                include program-overview.html
-              </div>
-              <div className="tabs__content" data-tab="program-tools">
-                <noscript><h2>Tools &amp; resources</h2></noscript>
-                include program-tools.html
-              </div>
-              <div className="tabs__content" data-tab="program-using">
-                <noscript><h2>Using open source</h2></noscript>
-                include program-using.html
-              </div>
-              <div className="tabs__content" data-tab="program-contributing">
-                <noscript><h2>Contributing</h2></noscript>
-                include program-contributing.html
-              </div>
-              <div className="tabs__content" data-tab="program-releasing">
-                <noscript><h2>Releasing projects</h2></noscript>
-                include program-releasing.html
-              </div>
+            <div className="tabs__content is-active" data-tab="program-overview">
+              <Overview />
+            </div>
+            <div className="tabs__content" data-tab="program-tools">
+              <noscript><h2>Tools &amp; resources</h2></noscript>
+              <Tools />
+            </div>
+            <div className="tabs__content" data-tab="program-using">
+              <noscript><h2>Using open source</h2></noscript>
+              <Using />
+            </div>
+            <div className="tabs__content" data-tab="program-contributing">
+              <noscript><h2>Contributing</h2></noscript>
+              <Contributing />
+            </div>
+            <div className="tabs__content" data-tab="program-releasing">
+              <noscript><h2>Releasing projects</h2></noscript>
+              <Releasing />
             </div>
           </div>
         </div>
+      </div>
     </article>
   );
 }

@@ -8,39 +8,30 @@ var resumeIcon = $('#resume-icon');
 var pageHeroAccessibilityControls = $('#hero-accessibility-controls');
 var toggleLink = $('#toggle-graphics');
 
-var paused = true;
-
-function toggle() {
-  if (paused) {
-    return resume();
-  } else {
-    return pause();
-  }
-}
 
 function pause() {
-  paused = true;
-  pauseIcon.hide();
-  resumeIcon.show();
-  toggleText.text('Resume');
-  toggleText2.text('Resume animations and start showing new graphics');
-  toggleLink.prop('title', 'Resume graphics');
+  // paused = true;
+  // pauseIcon.hide();
+  // resumeIcon.show();
+  // toggleText.text('Resume');
+  // toggleText2.text('Resume animations and start showing new graphics');
+  // toggleLink.prop('title', 'Resume graphics');
   pageHeroAccessibilityControls.trigger("hero-pause");
   return false;
 }
 
 function resume() {
-  paused = false;
-  pauseIcon.show();
-  resumeIcon.hide();
-  toggleLink.prop('title', 'Pause graphics');
-  toggleText.text('Pause');
-  toggleText2.text('Pause animations and stop showing new graphics');
+  // paused = false;
+  // pauseIcon.show();
+  // resumeIcon.hide();
+  // toggleLink.prop('title', 'Pause graphics');
+  // toggleText.text('Pause');
+  // toggleText2.text('Pause animations and stop showing new graphics');
   pageHeroAccessibilityControls.trigger("hero-resume");
   return false;
 }
 
-toggleAction.click(toggle);
+// toggleAction.click(toggle);
 
 resume(); // startup
 

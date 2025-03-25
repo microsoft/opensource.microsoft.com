@@ -4,9 +4,8 @@
 //
 
 import React from 'react';
-import { SquareFillIcon, TriangleRightIcon } from '@primer/octicons-react';
 
-import OpenSourceSvg from './svg/OpenSourceSvg';
+import OpenSourceAvatars from './OpenSourceAvatars';
 
 export default function OpenSourceHero() {
   return (
@@ -29,24 +28,7 @@ export default function OpenSourceHero() {
                       <a className="link-arrow text-white mt-4" href="/projects">Explore projects</a>
                   </div>
               </div>
-              <div className="col-12 col-md-5 col-lg-4 pl-md-4 pl-lg-2" style={{ position: "relative" }} id="hero-figure">
-                  <figure className="intro-svg" id="draw-svg" data-detect-viewport>
-                    <OpenSourceSvg />
-                  </figure>
-                  <div id="hero-avatars" style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}></div>
-                  <div id="hero-accessibility-controls" style={{ position: "absolute", right: 0, bottom: 0 }} data-require-javascript="yes" data-javascript-show="immediate">
-                      <div style={{ position: "relative", marginBottom: "-30px" }} >
-                          <a  className="refresh"
-                              style={{ color: "#fff" }}
-                              id="toggle-graphics"
-                              href="#"
-                              title="Pause animation"><span className="sr-only" id="toggle-text2">Pause animations and stop showing new graphics</span>
-                              <span id="toggle-text" aria-hidden="true">Pause</span> <span id="pause-icon"><SquareFillIcon /></span><span 
-                              id="resume-icon"><TriangleRightIcon /></span>
-                          </a>
-                      </div>
-                  </div>
-              </div>
+              <OpenSourceAvatars />
           </div>
       </div>
   </div>

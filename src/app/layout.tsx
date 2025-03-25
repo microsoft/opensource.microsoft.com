@@ -3,11 +3,14 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
+import fs from 'fs';
+
 import './globals.css'
 import './styles/main.scss'
 
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 import Head from 'next/head';
+import Script from 'next/script';
 
 import Footer from '../components/Footer';
 import TelemetryHead from '../components/TelemetryHead';
@@ -15,13 +18,15 @@ import TelemetryBody from '../components/TelemetryBody';
 import TelemetryScript from '../components/TelemetryScript';
 import MicrosoftOpenSourceHeader from '@/components/OpenSourceHeader';
 
-export const metadata: Metadata = {
-  title: 'Microsoft Open Source',
-  description: 'Microsoft Open Source',
-};
+// export const metadata: Metadata = {
+//   title: 'Microsoft Open Source',
+//   description: 'Microsoft Open Source',
+// };
 
 // CONSIDER: if actually opensource.microsoft.com prod build, only then add telemetry
 // (right now any Next.js prod build will add telemetry)
+
+const startupJavaScript = fs.readFileSync('./src/app/startup.js', 'utf8');
 
 export default function RootLayout({
   children,
@@ -50,12 +55,20 @@ export default function RootLayout({
   // - gsap.min.js
   // - DrawSVGPlugin.min.js
 
+  // legacy code: after the page loads, add the "page-ready" class to the body classlist
   return (
     <html lang="en">
-      <Head>
-      <meta name="robots" content="noindex nofollow" />
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <head>
+        <script 
+          dangerouslySetInnerHTML={
+            {
+              __html: startupJavaScript
+            }
+          }
+        />
+        <meta name="robots" content="noindex nofollow" />
+        <meta name="google-site-verification" content="PXNcqyP34d82CBV3rvH8RwDRH5iWWb_zL-UFwp-3Ubs" />
+        <meta name="google-site-verification" content="jj6XRLurdxcqc_T28_tszxZ4M2K8TFQDPjvVRb8MLsg" />
         <meta name="theme-color" content="#24292e" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png" />
@@ -64,35 +77,9 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#11100f" />
         <link rel="shortcut icon" type="image/x-icon" href="/images/favicons/favicon.ico" />
         <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#11100f" />
-
-        {/* Domain verification */}
-        <meta name="google-site-verification" content="PXNcqyP34d82CBV3rvH8RwDRH5iWWb_zL-UFwp-3Ubs" />
-        <meta name="google-site-verification" content="jj6XRLurdxcqc_T28_tszxZ4M2K8TFQDPjvVRb8MLsg" />
-
-        {/* Make sure in IE that ClearType is off */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (navigator.userAgent.match(/MSIE|Trident/)) {
-                const meta = document.createElement('meta');
-                meta.httpEquiv = 'cleartype';
-                meta.content = 'off';
-                document.head.appendChild(meta);
-              }
-            `,
-          }}
-        />
-
-        {/* Inline script to light-up animations */}
-        <script 
-          type="text/javascript" 
-          dangerouslySetInnerHTML={{
-            __html: `document.write('<style type="text/css">*[data-animate-in="up"], *[data-animate-in="up"], *[data-animate-in="fade"], *[data-animate-in="left"], *[data-animate-in="right"] { opacity: 0; } .tabs__content { display: none; } *[data-javascript-show="immediate"] { opacity: 1.0 }</style>');`
-          }}
-        />
-        
+        <meta httpEquiv='cleartype' content='off' />
         {isProduction && <TelemetryHead />}
-      </Head>
+      </head>
       <body className="page-loading no-js">
         {isProduction && <TelemetryBody />}
         
@@ -109,13 +96,14 @@ export default function RootLayout({
         <Footer />
         
         {/* Scripts */}
-        <script src="/assets/js/gsap.min.js"></script>
-        <script src="/assets/js/DrawSVGPlugin.min.js"></script>
-        <script src="/assets/js/main.js"></script>
+        {/*
+        <script src="/js/gsap.min.js"></script>
+        <script src="/js/DrawSVGPlugin.min.js"></script>
+        */}
         
         {/* Production telemetry script */}
         {isProduction && <TelemetryScript />}
       </body>
     </html>
-  )
+  );
 }

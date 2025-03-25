@@ -6,7 +6,9 @@ export default function OpenSourceSvg() {
       <svg version="1.1" viewBox="0 0 370 370">
       <g>
         <g id="heroSquare2">
+          {/*
           <rect x="289" y="1" fill="none" stroke="#FFFFFF" width="80" height="80"/>
+          */}
           <circle fill="none" stroke="#FFFFFF" cx="329" cy="41" r="40"/>
         </g>
         <g>
@@ -268,7 +270,9 @@ export default function OpenSourceSvg() {
           <circle fill="#4F6BED" cx="270" cy="78" r="1"/>
         </g>
         <g id="heroSquare1">
+          {/*
           <rect x="97" y="1" fill="none" stroke="#FFFFFF" width="80" height="80"/>
+          */}
           <circle fill="none" stroke="#FFFFFF" cx="137" cy="41" r="40"/>
         </g>
         <g className="rotate">
@@ -295,14 +299,18 @@ export default function OpenSourceSvg() {
           <rect x="289" y="97" fill="#4F6BED" width="80" height="80"/>
         </g>
         <g id="heroSquare4">
+          {/*
           <rect x="193" y="97" fill="none" stroke="#FFFFFF" width="80" height="80"/>
+          */}
           <circle fill="none" stroke="#FFFFFF" cx="233" cy="137" r="40"/>
         </g>
         <g>
           <circle fill="#0078D4" cx="137" cy="137" r="40"/>
         </g>
         <g id="heroSquare3">
+          {/*
           <rect x="1" y="97" fill="none" stroke="#FFFFFF" width="80" height="80"/>
+          */}
           <circle fill="none" stroke="#FFFFFF" cx="41" cy="137" r="40"/>
         </g>
       </g>
@@ -719,7 +727,9 @@ export default function OpenSourceSvg() {
           <path fill="#342859" d="M272,219.8c0.1,0.1,0.1,0.1,0.2,0.1c-0.1-0.4-0.3-0.8-0.4-1.2C271.6,219,271.7,219.5,272,219.8z"/>
         </g>
         <g id="heroSquare5">
+          {/*
           <rect x="97" y="193" fill="none" stroke="#FFFFFF" width="80" height="80"/>
+          */}
           <circle fill="none" stroke="#FFFFFF" cx="137" cy="233" r="40"/>
         </g>
         <g>
@@ -801,7 +811,9 @@ export default function OpenSourceSvg() {
           <circle fill="#0078D4" cx="366" cy="366" r="1"/>
         </g>
         <g id="heroSquare6">
+          {/*
           <rect x="193" y="289" fill="none" stroke="#FFFFFF" width="80" height="80"/>
+          */}
           <circle fill="none" stroke="#FFFFFF" cx="233" cy="329" r="40"/>
         </g>
         <g>
