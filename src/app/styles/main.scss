@@ -1,0 +1,43 @@
+//
+// Copyright (c) Microsoft.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+//
+
+@import '@primer/css/index.scss';
+@import '@primer/primitives/dist/css/functional/themes/light.css';
+
+@import './base/fonts.scss';
+@import './settings.scss';
+@import './base/reset.scss';
+@import './base/type.scss';
+@import './base/links.scss';
+@import './base/mixins.scss';
+@import './base/baseHtml.scss';
+@import './base/fontFAB.scss';
+
+@import './layout/wrappers.scss';
+@import './layout/header.scss';
+@import './layout/navigation.scss';
+
+@import './modules/animateIn.scss';
+@import './modules/banner.scss';
+@import './modules/lists.scss';
+@import './modules/oneoffs.scss';
+@import './modules/media.scss';
+@import './modules/splitContent.scss';
+@import './modules/explore.scss';
+@import './modules/projects.scss';
+@import './modules/activity.scss';
+@import './modules/tabs.scss';
+// @import './modules/carousel.scss';
+@import './modules/accordion.scss';
+// @import './modules/modal.scss';
+@import './modules/forms.scss';
+@import './layout/footer.scss';
+
+@import './modules/utils.scss';
+
+// ----------------------------------------
+// Remove for production
+// ----------------------------------------
+@import './modules/devOnly.scss';

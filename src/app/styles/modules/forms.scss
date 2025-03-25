@@ -1,0 +1,157 @@
+// ---------------------------------------------------------------------
+//  Form Styles (Gravity Forms)
+// ---------------------------------------------------------------------
+
+#subscribe {
+    transition: background $trans;
+
+    .wrapper {
+        min-height: 188px;
+    }
+}
+
+
+#mce-responses {
+    max-width: 530px;
+}
+
+
+
+.form-body {
+    max-width: 544px;
+    width: 100%;
+    margin: 24px 0 0;
+}
+
+div.mce_inline_error {
+    display: none;
+    background: transparent !important;
+    color: --base-color-red-4 !important; // $red-400;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    position: absolute;
+    top: 100%;
+    margin: 0 !important;
+    padding: 2px 0 !important;
+}
+
+
+
+#mce-success-response {
+    color: --base-color-green-5 !important; // $green-500
+}
+
+.response#mce-error-response {
+    font-size: 11px;
+    margin-top: 8px;
+    color: --base-color-red-4; // $red-400;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.response#mce-success-response {
+    font-size: 14px;
+    margin-top: 8px;
+    color: --base-color-green-4; // $green-400;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+
+.field-group {
+    display: block;
+    flex-grow: 1;
+    position: relative;
+}
+
+
+.subscribe-form {
+    button {
+        @include btn;
+        width: 137px;
+        min-width: 137px !important;
+        max-width: 137px;
+        color: $white;
+        height: 56px;
+        border-radius: 3px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin-top: 36px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    input {
+        appearance: none;
+        display: block;
+        text-align: left;
+        flex-grow: 1;
+        padding: 0 18px;
+        font-size: 16px;
+        font-weight: 400;
+        overflow: hidden;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        border-radius: 3px;
+        border: 1px solid --base-color-gray-2; // $gray-200;
+        height: 56px;
+        color: --base-color-gray-7; // $gray-700;
+        background: $white;
+        transition: border-color $trans;
+        margin-bottom: 24px;
+
+        &:focus {
+            outline: none;
+            border-color: --fgColor-link;
+        }
+
+        &.mce_inline_error {
+            border-color: --base-color-red-4 !important; // $red-400
+        }
+    }
+}
+
+
+// ----------------------------------------
+// Placeholders
+// ----------------------------------------
+
+input::-webkit-input-placeholder {
+    
+    color: --base-color-gray-4; // $gray-400;
+    transition: opacity $trans;
+}
+input:focus::-webkit-input-placeholder {
+    opacity: 0.3;
+}
+input:-moz-placeholder {
+    color: #959DA5;
+    transition: opacity $trans;
+}
+input:focus:-moz-placeholder {
+    opacity: 0.3;
+}
+input::-moz-placeholder {
+    color: #959DA5;
+    transition: opacity $trans;
+}
+input:focus::-moz-placeholder {
+    opacity: 0.3;
+}
+input:-ms-input-placeholder {
+    color: #959DA5;
+    transition: opacity $trans;
+}
+input:focus:-ms-input-placeholder {
+    opacity: 0.3;
+}

@@ -1,39 +1,38 @@
 {
-  "name": "microsoft-opensource",
+  "name": "opensource.microsoft.com",
   "homepage": "https://opensource.microsoft.com",
   "browserslist": "last 2 versions",
   "version": "2.0.0",
   "license": "MIT",
   "repository": "github:microsoft/opensource.microsoft.com",
   "scripts": {
-    "start": "gulp",
-    "build": "node_modules/gulp/bin/gulp.js build"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "ignoredFormerDependencies": {
+    "autoprefixer": "10.4.21"
   },
   "devDependencies": {
-    "browser-sync": "^3.0.3",
-    "child_process": "^1.0.2",
-    "color-contrast-checker": "2.1.0",
-    "del": "^5.1.0",
-    "gemfile": "1.1.0",
-    "gulp": "^5.0.0",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "9.1.0",
-    "gulp-load-plugins": "^2.0.2",
-    "gulp-newer": "^1.4.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^6.0.0",
-    "gulp-uglify": "^3.0.2",
-    "imagemin-pngquant": "^8.0.0",
-    "npm-clean": "^1.0.3",
-    "sass": "1.83.4",
-    "yaml": "2.7.0"
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "9.23.0",
+    "eslint-config-next": "15.2.3",
+    "postcss": "8.5.3",
+    "sass": "1.86.0",
+    "typescript": "5.2.2"
   },
   "dependencies": {
-    "@primer/css": "^14.3.0",
-    "gsap": "3.12.5",
-    "primer-core": "^6.7.0",
-    "timeago": "1.6.7"
+    "@primer/css": "21.5.1",
+    "@primer/octicons-react": "19.15.1",
+    "@primer/primitives": "10.5.0",
+    "@primer/view-components": "0.38.0",
+    "gray-matter": "^4.0.3",
+    "next": "15.2.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
