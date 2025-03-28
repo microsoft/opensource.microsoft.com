@@ -11,7 +11,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
-import { CommentIcon, GitMergeIcon, GitPullRequestIcon, IssueOpenedIcon, IssueReopenedIcon, RepoIcon } from '@primer/octicons-react';
+import { CommentDiscussionIcon, CommentIcon, GitMergeIcon, GitPullRequestIcon, IssueOpenedIcon, IssueReopenedIcon, RepoIcon } from '@primer/octicons-react';
 import { formatDistanceToNow } from 'date-fns';
 
 // Just using single-page react query to keep this mostly-static server-side
@@ -21,7 +21,7 @@ import { formatDistanceToNow } from 'date-fns';
 
 const queryClient = new QueryClient();
 
-const QUERY_KEY = 'upstream-contributions'
+const QUERY_KEY = 'upstream-contributions';
 const INITIAL_CONTRIBUTIONS_DISPLAY = 15;
 
 type Contribution = {
@@ -130,7 +130,7 @@ function UpstreamContributions() {
                       <span>
                         {ShowOcticonForType(type, context || '')}
                         {' '}
-                        {descriptionFromType(type, context || '')}
+                        {GitHubDescriptionFromType(type, context || '')}
                       </span>
                       {' '}
                       <TimeAgo isoDate={created} />
@@ -156,11 +156,14 @@ function UpstreamContributions() {
   );
 }
 
-function ShowOcticonForType(type: string, optionalContext: string) {
+export function ShowOcticonForType(type: string, optionalContext: string) {
   if (optionalContext === 'merged') {
     return <GitMergeIcon />;
   }
   switch (type) {
+    case 'pull_request_review.submitted': {
+      return <CommentDiscussionIcon />;
+    }
     case 'pull_request.opened': {
       return <GitPullRequestIcon />;
     }
@@ -181,7 +184,7 @@ function ShowOcticonForType(type: string, optionalContext: string) {
   }
 }
 
-function descriptionFromType(type: string, optionalContext: string) {
+export function GitHubDescriptionFromType(type: string, optionalContext: string, issuesLabeledOverride?: string) {
   if (optionalContext === 'merged') {
     return 'merged a pull request';
   }
@@ -203,7 +206,7 @@ function descriptionFromType(type: string, optionalContext: string) {
     case 'pull_request_review.submitted':
       return 'reviewed a pull request';
     case 'issues.labeled':
-      return 'good first issue';
+      return issuesLabeledOverride || 'issue labeled';
     default:
       return type;
   }
