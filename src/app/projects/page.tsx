@@ -3,6 +3,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
+import { RepoIcon } from "@primer/octicons-react";
 import { getHighlightedProjects } from "./data";
 
 // Page title: Projects
@@ -26,22 +27,25 @@ export default function Projects() {
               <a className="link-arrow text-white mt-4" href="/projects/explore/">All projects</a>
             </div>
           </div>
+          <img className="page-header__shapes-lg" src="/images/direction/project-shapes.svg" alt="abstract shapes" />
       </div>
     </div>
-    <img className="page-header__shapes-lg" src="/images/direction/project-shapes.svg" alt="abstract shapes" />
     <div className="wrapper d-lg-flex flex-justify-between my-6 py-lg-4">
       <div className="col-12 col-lg-7 pr-lg-6 mb-4 mb-md-0">
         {projects.map((project, index) => (
           <div key={index} className="mb-6 pb-lg-4" data-animate-in="up">
             <div className="d-flex mb-3">
-              {project.logo === "" || project.logo == null ? (
-                <svg height="32" style={{ marginRight: "12px" }} aria-label="repository">
-                  <path d="M16 0a16 16 0 1 0 0 32A16 16 0 1 0 16 0zm8.5 22.5h-2v-6.5h2v6.5zm-4.5-6.5h-2v6.5h2v-6.5zm-4.5 0h-2v6.5h2v-6.5zm4.5-4h-2V8h2v4.5zM8.5 22.5h-2v-6.5h2v6.5zM4 8H2V4h2v4zm0 10H2v-4h2v4zm12-10V4h2v4h-2zm0 10V14h2v4h-2z" />
-                </svg>
-              ) : (
-                <img className="mr-3 icon" src={`/images/projects/${project.logo}`} alt={`${project.title} logo`} />
+              {project.logo ? <img className="mr-3 icon" src={`/images/projects/${project.logo}`} alt={`${project.title} logo`} /> :
+              (
+                <>
+                  <RepoIcon size={32} />
+                </>
               )}
-              <h2>{project.title}</h2>
+              {' '}
+              &nbsp;&nbsp;
+              <h2 className="text-title-size-large" style={{ fontSize: '3rem' }}>
+                {project.title}
+              </h2>
             </div>
             <p>{project.description}</p>
             <a className="link-arrow-external mt-3" href={project.projectUrl}

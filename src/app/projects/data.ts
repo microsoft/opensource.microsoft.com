@@ -15,6 +15,7 @@ export type HighlightedProject = {
   logo?: string;
   storeUrl?: string;
   featured?: boolean;
+  // deprecated: social?: string;
 };
 
 export function getHighlightedProjects() {
