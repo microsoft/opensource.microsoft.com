@@ -8,9 +8,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-// Page title: Ecosystem
+import UpstreamContributionsWidget from "../contributions/components/UpstreamContributionsWidget";
 
-// TODO: {% include upstream-contributions.js %}
+// Page title: Ecosystem
 
 type FundedProject = {
   title: string;
@@ -254,24 +254,12 @@ export default function Ecosystem() {
       </div>
       <div className="wrapper py-6 my-6">
         <div className="col-lg-8 mx-auto">
+          <noscript>
+            <h2>JavaScript is required for this interactive feature.</h2>
+            <p>This section works best with JavaScript. A feed of recent contributions is used with a REST API and JavaScript.</p>
+          </noscript>
           <div className="d-sm-flex flex-wrap" style={{minHeight: '350px'}}>
-            <div id="contributionsFeed" className="col-12">
-              <noscript>
-                <h2>JavaScript is required for this interactive feature.</h2>
-                <p>This section works best with JavaScript. A feed of recent contributions is used with a REST API and JavaScript.</p>
-              </noscript>
-              <ul className="project-list" id="contributionsList"></ul>
-            </div>
-            <script id="contributions-template" type="text/x-handlebars-template">
-              <li>
-                {/* TODO:
-               
-                include activity.html
-                also previously included upstream-contribution.html
-
-                */}
-              </li>
-            </script>
+              <UpstreamContributionsWidget />
           </div>
         </div>
         <div className="mt-6 col-lg-8 mx-auto">

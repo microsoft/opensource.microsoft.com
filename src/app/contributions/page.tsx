@@ -4,10 +4,9 @@
 //
 
 import CommunityResources from "../components/CommunityResources"
+import UpstreamContributionsWidget from "./components/UpstreamContributionsWidget";
 
 // Page title: Contributions
-
-// TODO: {% include upstream-contributions.js %}
 
 export default function Contributions() {
   return (
@@ -47,17 +46,7 @@ export default function Contributions() {
           While many public highlighted contributions here may be for official work, 
           Microsoft does not endorse any contribution listed here.
         </p>
-        <div className="d-sm-flex flex-wrap" style={{ minHeight: '400px' }}>
-          <div id="contributionsFeed">
-            <ul className="project-list" id="contributionsList">
-            </ul>
-          </div>
-          <script id="contributions-template" type="text/x-handlebars-template">
-            <li>
-              {/* TODO: equivalent of include upstream-contribution.html */}
-            </li>
-          </script>
-        </div>
+        <UpstreamContributionsWidget />
       </div>
       <CommunityResources />
     </article>
