@@ -11,7 +11,7 @@ import { SquareFillIcon, TriangleRightIcon } from '@primer/octicons-react';
 import OpenSourceSvg from './svg/OpenSourceSvg';
 
 // Punted from port from jQuery:
-// - no gsap or animated squares and drawing
+// - no gsap or animated squares and drawing @cspell: ignore gsap
 // - no need for the accessibility controls to hook the animated squares and drawing
 
 type AvatarHighlight = {
@@ -41,13 +41,13 @@ const AVATARS_ENDPOINT = '/api/avatars';
 const MAX_HEROES = 6;
 const MAX_RECENT_QUEUE_SIZE = 12;
 const STARTUP_DELAY_MS = 50;
-const WORKER_FREQUENCY_MS = 40;
+const WORKER_FREQUENCY_MS = 50;
 // const FIRST_DISPLAY_DELAY_MS = 1700;
 // const DISMISS_MS = 500;
 // const INTRODUCE_MS = 800;
 // const HOOK_RESIZE_HANDLER_MS = 5000;
-const CLICK_MINIMUM_PER_AVATAR = 42;
-const CLICK_MAXIMUM_PER_AVATAR = 95;
+const CLICK_MINIMUM_PER_AVATAR = 62;
+const CLICK_MAXIMUM_PER_AVATAR = 125;
 
 const EMPTY_HIGHLIGHTS: AvatarHighlight[] = new Array(MAX_HEROES).fill(EMPTY_HIGHLIGHT);
 
@@ -67,7 +67,6 @@ export default function OpenSourceAvatars() {
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth !== lastKnownWidth) {
-        console.log('Window resized, updating lastKnownWidth to ', window.innerWidth);
         setLastKnownWidth(window.innerWidth);
       }
       const heroContainer = document.getElementById('hero-figure');
@@ -96,7 +95,7 @@ export default function OpenSourceAvatars() {
     };
   }, [
     lastKnownWidth, 
-    heroSquarePositions,    
+    heroSquarePositions,
   ]);
 
   useEffect(() => {
@@ -159,7 +158,6 @@ export default function OpenSourceAvatars() {
             const randomIndex = getRandomInt(0, availableIndexes.length);
             const directIndex = availableIndexes[randomIndex];
             const clicksToAssign = getRandomInt(CLICK_MINIMUM_PER_AVATAR, CLICK_MAXIMUM_PER_AVATAR);
-            console.log(`Assigning ${clicksToAssign} clicks to avatar ${randomAvatar} at index ${directIndex}`);
             updatedHighlights[directIndex] = {
               grantedClicks: clicksToAssign,
               remainingClicks: clicksToAssign,

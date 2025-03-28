@@ -16,22 +16,22 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
+    "@types/node": "22.13.14",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "9.23.0",
-    "eslint-config-next": "15.2.3",
+    "eslint-config-next": "15.2.4",
     "postcss": "8.5.3",
     "sass": "1.86.0",
-    "typescript": "5.2.2"
+    "typescript": "5.8.2"
   },
   "dependencies": {
     "@primer/css": "21.5.1",
     "@primer/octicons-react": "19.15.1",
     "@primer/primitives": "10.5.0",
-    "@primer/view-components": "0.38.0",
+    "@primer/view-components": "0.39.0",
     "gray-matter": "^4.0.3",
-    "next": "15.2.3",
+    "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
