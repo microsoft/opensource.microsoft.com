@@ -5,6 +5,8 @@
 
 // Page title: Azure Credits for Open Source Projects
 
+// @cspell: ignore Snakemake
+
 export default function AzureCredits() {
   return (
     <article className="program-page">

@@ -11,15 +11,17 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
-import { CommentIcon, GitMergeIcon, GitPullRequestIcon, IssueOpenedIcon, IssueReopenedIcon, RepoIcon } from '@primer/octicons-react';
+import { BellSlashIcon, CommentIcon, GitMergeIcon, GitPullRequestIcon, IssueOpenedIcon, IssueReopenedIcon, RepoIcon, SyncIcon } from '@primer/octicons-react';
 import { formatDistanceToNow } from 'date-fns';
-import { ShowOcticonForType } from '@/app/contributions/components/UpstreamContributionsWidget';
+import { GitHubDescriptionFromType, ShowOcticonForType } from '@/app/contributions/components/UpstreamContributionsWidget';
 
 // @cspell: ignore octicon
 
 const queryClient = new QueryClient();
 
 const QUERY_KEY = 'activity-stream';
+
+const IS_LIVE = false;
 
 type Event = {
   id: string;
@@ -47,7 +49,85 @@ function TimeAgo({ isoDate }: { isoDate: string }) {
 export default function ActivityStreamWidget() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ActivityStream />
+      <>
+        <header className="mb-6 border-bottom pb-4">
+          <div className="d-lg-flex flex-items-end flex-justify-between">
+            <div>
+              <h2 className="h3">
+                Happening now
+              </h2>
+              <p>
+                See the latest activity on GitHub with Microsoft Open Source projects.
+              </p>
+            </div>
+            <div data-javascript-show="immediate" data-require-javascript="yes">
+              {IS_LIVE && (
+                <p>
+                  <a
+                    className="refresh"
+                    id="toggle-feed"
+                    href="#"
+                    title="Pause real-time activity feed"><span className="sr-only" id="toggle-text2">
+                      Pause real-time activity feed
+                    </span>
+                    <span
+                      id="toggle-text"
+                      aria-hidden="true">
+                      Pause
+                    </span> 
+                    <span
+                      id="pause-icon">
+                      <BellSlashIcon />
+                    </span>
+                    <span
+                      id="resume-icon"
+                      style={{ display: 'none' }}
+                    >
+                      <SyncIcon />
+                    </span>
+                  </a>
+                </p>
+              )}
+            </div>
+          </div>
+        </header>
+        <div className="d-lg-flex flex-justify-between">
+          <div className="col-12 col-lg-8 pr-lg-6 mb-4 mb-md-0">
+            <div className="d-sm-flex flex-wrap">
+              <div className="col-12" id="activityFeed">
+                <noscript>
+                  <h2>JavaScript is required for this interactive feature.</h2>
+                  <p>This page works best with JavaScript. The activity feeds are dynamically generated using a REST API and JavaScript.</p>
+                </noscript>
+                <ul className="project-list" id="activityList">
+                  <ActivityStream />
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-lg-4 pl-lg-6 col-lg-4">
+            <div className="sticky">
+              <div className="cta">
+                <div className="cta__inner">
+                  <p className="h5">Explore Microsoft projects</p>
+                  <p>
+                    Microsoft engineers and community members
+                    maintain thousands of GitHub repos: everything
+                    from complete samples, to product SDKs, to entire products.
+                  </p>
+                  <p>
+                    Search, filter and explore to find what you're looking for
+                    or an opportunity to join in the fun.
+                  </p>
+                  <a className="link-arrow text-white mt-4" href="/projects">Featured projects</a>
+                  <br />
+                  <a className="link-arrow text-white mt-4" href="/projects/explore">View all projects</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
     </QueryClientProvider>
   );
 }
@@ -57,10 +137,15 @@ function ActivityStream() {
   const { isPending, error, data } = useQuery<GitHubStreamResponse>({
     queryKey: [QUERY_KEY, continuation],
     queryFn: () =>
-      fetch('/api/stream' + (continuation ? '?future=' + encodeURIComponent(continuation) : '')).then((res) =>
+      fetch('/api/stream').then((res) =>
+      // fetch('/api/stream' + (continuation ? '?future=' + encodeURIComponent(continuation) : '')).then((res) =>
         res.json(),
       ),
   });
+
+  if (data?.future && data?.future !== continuation) {
+    setContinuation(data.future);
+  }
 
   const activities = data?.activities || [];
 
@@ -85,63 +170,53 @@ function ActivityStream() {
     );
   }
 
-  return (
-    <div className="d-sm-flex flex-wrap" style={{ minHeight: '400px' }}>
-      <div id="contributionsFeed" className="col-12">
-        <ul className="project-list" id="contributionsList">
-          {activities.map((activity) => {
-            const { repoName, created, title, id, actorLogin, orgName, actorAvatar, type, activityUrl } = activity;
-            function descriptionFromType(type: string, arg1: any): React.ReactNode {
-              throw new Error('Function not implemented.');
-            }
+  return activities.map((activity) => {
+    const { id, created, actorLogin, actorAvatar, type, activityUrl, repoName, orgName, title } = activity;
+    const description = GitHubDescriptionFromType(type, '');
+    const showOcticon = ShowOcticonForType(type, '');
 
-            return (
-              <article key={id} className="activity">
-                {actorAvatar && (
-                  <a
-                    className="activity__avatar"
-                    target='_blank'
-                    href={`https://github.com/${actorLogin}`}
-                  >
-                    <img
-                      src={actorAvatar}
-                      alt={actorLogin}
-                      className="activity__avatar"
-                    />
-                    {actorLogin}
-                  </a>
-                )}
-                <div className="activity__body">
-                  <div className="activity__body-hd">
-                    <a href={`https://github.com/${actorLogin}`} target='_blank'>
-                      {actorLogin}
-                    </a>
-                    <p className="activity__activity">
-                      <span>
-                        {ShowOcticonForType(type, '')}
-                        {' '}
-                        {descriptionFromType(type, '')}
-                      </span>
-                      {' '}
-                      <TimeAgo isoDate={created} />
-                    </p>
-                  </div>
-                  <a className="activity__title" href={activityUrl} target="_blank">
-                    {title}
-                  </a>
-                  <div className="activity__footer">
-                    <RepoIcon />
-                    {' '}
-                    <a target="_blank" href={activityUrl}>
-                      <strong>{orgName}/{repoName}</strong> repo
-                    </a>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
-        </ul>
-      </div>
-    </div>
-  );
+    return (
+      <li key={id}>
+        <article className="activity">
+          <a
+            href={activityUrl}
+            target="_blank"
+            className="activity__avatar">
+            <img
+              src={actorAvatar}
+              alt={`Avatar image of GitHub user @${actorLogin}`} />
+          </a>
+          <div className="activity__body">
+            <div className="activity__body-hd">
+              <a href={activityUrl} target="_blank">
+                {actorLogin}
+              </a>
+              <p className="activity__activity">
+                <span>
+                  {showOcticon}
+                  {' '}
+                  {description}
+                  {' '}
+                </span>
+                &nbsp;
+                <TimeAgo isoDate={created} />
+              </p>
+            </div>
+            <a className='activity__title'
+               href={activityUrl}
+               target="_blank">
+                {title}
+            </a>
+            <div className="activity__footer">
+              <RepoIcon />
+              <a target='_blank'
+              href={activityUrl}>
+                {orgName}/{repoName}
+              </a>
+            </div>
+          </div>
+        </article>
+      </li>
+    );
+  });
 }
