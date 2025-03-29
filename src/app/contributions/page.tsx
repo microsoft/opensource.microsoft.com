@@ -6,7 +6,11 @@
 import CommunityResources from "../components/CommunityResources"
 import UpstreamContributionsWidget from "./components/UpstreamContributionsWidget";
 
-// Page title: Contributions
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contributions',
+};
 
 export default function Contributions() {
   return (

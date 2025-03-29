@@ -10,7 +10,11 @@ import matter from 'gray-matter';
 
 import UpstreamContributionsWidget from "../contributions/components/UpstreamContributionsWidget";
 
-// Page title: Ecosystem
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ecosystem',
+};
 
 type FundedProject = {
   title: string;

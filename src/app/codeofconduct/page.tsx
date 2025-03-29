@@ -3,7 +3,12 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
-// Page title: Code of Conduct
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Code of Conduct for Microsoft open source projects',
+};
+
 
 export default function CodeOfConduct() {
   return (

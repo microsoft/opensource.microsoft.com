@@ -3,12 +3,15 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
-import { BellSlashIcon, SyncIcon } from '@primer/octicons-react';
 import CommunityResources from '../components/CommunityResources';
 import HelpWantedWidget from './components/HelpWantedWidget';
 import ActivityStreamWidget from './components/ActivityStreamWidget';
 
-// Page title: Get involved
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Get involved',
+};
 
 export default function Collaborate() {
   return (

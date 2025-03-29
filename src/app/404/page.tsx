@@ -5,6 +5,12 @@
 
 // separate: we output 404.html eventually, ideally, from this...
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Not Found',
+};
+
 import OpenSourceSvg from '../components/svg/OpenSourceSvg';
 
 export default function Oops() {

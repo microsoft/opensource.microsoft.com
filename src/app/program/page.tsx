@@ -9,7 +9,11 @@ import Releasing from "./Releasing";
 import Tools from "./Tools";
 import Using from "./Using";
 
-// Page title: Microsoft's Open Source Program
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Microsoft\'s Open Source Program',
+};
 
 {/*
   Other pages not live now:

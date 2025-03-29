@@ -7,6 +7,11 @@ import { RepoIcon } from "@primer/octicons-react";
 import { getHighlightedProjects } from "./data";
 
 // Page title: Projects
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Projects',
+};
 
 export default function Projects() {
   const projects = getHighlightedProjects();

@@ -6,6 +6,11 @@
 import React from 'react';
 
 // Page title: Code of Conduct - FAQ
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Code of Conduct - FAQ',
+};
 
 type Entry = {
   question: string;

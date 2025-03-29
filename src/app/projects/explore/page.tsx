@@ -5,8 +5,6 @@
 
 'use client';
 
-// Page title: Explore all Microsoft repos
-
 import { RepoForkedIcon, RepoIcon, StarIcon } from '@primer/octicons-react';
 import { useState, useEffect } from 'react';
 

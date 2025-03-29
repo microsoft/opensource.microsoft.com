@@ -3,7 +3,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
-// Page title: Azure Credits for Open Source Projects
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Azure Credits for Open Source Projects',
+};
 
 // @cspell: ignore Snakemake
 

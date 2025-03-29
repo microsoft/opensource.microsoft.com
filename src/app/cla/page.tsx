@@ -3,7 +3,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
-// Page title: Contributor License Agreements at Microsoft
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contributor License Agreements at Microsoft',
+};
 
 export default function ContributorLicenseAgreement() {
   return (

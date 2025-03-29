@@ -3,7 +3,12 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
-// Page title: Thanks - Open Source used in this site
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Thanks - Open Source used in this site',
+};
+
 
 import fs from 'fs';
 import path from 'path';

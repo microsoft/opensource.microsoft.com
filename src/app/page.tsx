@@ -10,6 +10,12 @@ import Azure from './components/Azure';
 // import OpenSourceBlog from './components/OpenSourceBlog';
 import CommunityResources from './components/CommunityResources';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Microsoft Open Source',
+};
+
 export default function Home() {
   return (
     <article>
