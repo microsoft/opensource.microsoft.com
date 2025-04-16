@@ -7,17 +7,15 @@
 
 import { useState, useEffect } from 'react';
 
-const TABS = {
-  'program-overview': 'Overview',
-  'program-tools': 'Tools & resources',
-  'program-using': 'Using open source',
-  'program-contributing': 'Contributing',
-  'program-releasing': 'Releasing projects',
+export const TABS = {
+  'overview': 'Overview',
+  'faq': 'FAQ',
+  'apply': 'Apply',
 };
 
 const FIRST_TAB = Object.keys(TABS)[0];
 
-const ProgramTabs = () => {
+const AzureCreditsTabs = () => {
   // Initialize with a default value
   const [activeTab, setActiveTab] = useState(FIRST_TAB);
   
@@ -40,7 +38,7 @@ const ProgramTabs = () => {
 
   return (
     <div className="tabs__tabs" role="tablist">
-      {TABS && Object.entries(TABS).map(([key, label]) => (
+      {Object.entries(TABS).map(([key, label]) => (
         <a
           key={key}
           className={['tabs__tab', activeTab === key ? 'is-active' : ''].filter(x => x).join(' ')}
@@ -55,4 +53,4 @@ const ProgramTabs = () => {
   );
 }
 
-export default ProgramTabs;
+export default AzureCreditsTabs;
