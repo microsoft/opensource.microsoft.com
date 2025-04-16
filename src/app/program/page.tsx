@@ -3,13 +3,15 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
-import Contributing from "./Contributing";
-import Overview from "./Overview";
-import Releasing from "./Releasing";
-import Tools from "./Tools";
-import Using from "./Using";
-
 import { Metadata } from 'next';
+
+import ProgramDynamicContent from './Content';
+import Contributing from './Contributing';
+import Overview from './Overview';
+import Releasing from './Releasing';
+import ProgramTabs from './Tabs';
+import Tools from './Tools';
+import Using from './Using';
 
 export const metadata: Metadata = {
   title: 'Microsoft\'s Open Source Program',
@@ -58,37 +60,38 @@ export default function Program() {
         <nav className="wrapper my-6" data-require-javascript="yes" data-javascript-show="immediate">
           <div className="col-md-10 col-lg-7 mx-auto">
             <div className="tabs__tabs" role="tablist">
-              <a className="tabs__tab is-active" role="tab" href="#program-overview" data-tab="program-overview">Overview</a>
-              <a className="tabs__tab" role="tab" href="#program-tools" data-tab="program-tools">Tools &amp; resources</a>
-              <a className="tabs__tab" role="tab" href="#program-using" data-tab="program-using">Using open source</a>
-              <a className="tabs__tab" role="tab" href="#program-contributing" data-tab="program-contributing">Contributing</a>
-              <a className="tabs__tab" role="tab" href="#program-releasing" data-tab="program-releasing">Releasing projects</a>
+              <ProgramTabs />
             </div>
           </div>
         </nav>
         <div className="wrapper my-6 pt-lg-3 pb-4">
-          <div className="col-md-10 col-lg-7 mx-auto">
-            <noscript><h2>Overview</h2></noscript>
-            <div className="tabs__content is-active" data-tab="program-overview">
-              <Overview />
+          {/* No JavaScript entire set of content */}
+          <noscript>
+            <div className="col-md-10 col-lg-7 mx-auto">
+              <h2>Overview</h2>
+              <div className="tabs__content is-active" data-tab="program-overview">
+                <Overview />
+              </div>
+              <div className="tabs__content" data-tab="program-tools">
+                <h2>Tools &amp; resources</h2>
+                <Tools />
+              </div>
+              <div className="tabs__content" data-tab="program-using">
+                <h2>Using open source</h2>
+                <Using />
+              </div>
+              <div className="tabs__content" data-tab="program-contributing">
+                <h2>Contributing</h2>
+                <Contributing />
+              </div>
+              <div className="tabs__content" data-tab="program-releasing">
+                <h2>Releasing projects</h2>
+                <Releasing />
+              </div>
             </div>
-            <div className="tabs__content" data-tab="program-tools">
-              <noscript><h2>Tools &amp; resources</h2></noscript>
-              <Tools />
-            </div>
-            <div className="tabs__content" data-tab="program-using">
-              <noscript><h2>Using open source</h2></noscript>
-              <Using />
-            </div>
-            <div className="tabs__content" data-tab="program-contributing">
-              <noscript><h2>Contributing</h2></noscript>
-              <Contributing />
-            </div>
-            <div className="tabs__content" data-tab="program-releasing">
-              <noscript><h2>Releasing projects</h2></noscript>
-              <Releasing />
-            </div>
-          </div>
+          </noscript>
+          {/* Equivalent content for JavaScript */}
+          <ProgramDynamicContent />
         </div>
       </div>
     </article>

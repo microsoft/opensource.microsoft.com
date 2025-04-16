@@ -36,7 +36,7 @@ const COMMUNITY_RESOURCES: Resource[] = [
 export default function CommunityResources() {
   return (
     <>
-      <div className="wrapper-full bg-brand-dark text-white">
+      <div className="wrapper-full">
         <div className="wrapper py-6 my-6">
           <h3 className="h3">Community Resources</h3>
           <div className="d-md-flex">
