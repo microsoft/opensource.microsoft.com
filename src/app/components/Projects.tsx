@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { getHighlightedProjects } from '../projects/data';
+import Link from 'next/link';
 
 function chooseRandom(arr: any[], num: number) {
   const shuffled = arr.sort(() => 0.5 - Math.random());
@@ -54,7 +55,7 @@ export default function Projects() {
         ))}
         </div>
         <div className="text-center mt-6 pb-6">
-            <a className="link-arrow text-brand" href="/projects">Explore Microsoft projects</a>
+            <Link className="link-arrow text-brand" href="/projects">Explore Microsoft projects</Link>
         </div>
     </div>
   );

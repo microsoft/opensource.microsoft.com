@@ -7,6 +7,7 @@ import React from 'react';
 
 // Page title: Code of Conduct - FAQ
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Code of Conduct - FAQ',
@@ -78,9 +79,9 @@ const FAQ_ENTRIES: Entry[] = [
       <>
         <p>
           Thanks for being proactive in this important area. You are welcome to continue using your existing Code of Conduct, or you may change to the{" "}
-          <a className="link-standard" href="https://opensource.microsoft.com/codeofconduct/">
+          <Link className="link-standard" href="/codeofconduct">
             Microsoft Open Source Code of Conduct
-          </a>
+          </Link>
           . Either way, all Microsoft projects must use the same issue resolution process. Please ensure that your documentation and guidance is updated to point people at the process outlined in this FAQ (see below).
         </p>
         <p>

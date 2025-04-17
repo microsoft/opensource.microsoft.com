@@ -3,6 +3,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
+import Link from "next/link";
+
 export default function Supporting() {
   return (
     <>
@@ -55,7 +57,7 @@ export default function Supporting() {
                 `}
               </p>
               <p>
-                The <a href="/ecosystem">Ecosystem</a> section of this{' '}
+                The <Link href="/ecosystem">Ecosystem</Link> section of this{' '}
                 site has a comprehensive list of many of the foundations and{' '}
                 groups that are sponsored centrally today.
               </p>

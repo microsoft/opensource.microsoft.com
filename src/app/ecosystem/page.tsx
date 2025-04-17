@@ -11,6 +11,7 @@ import matter from 'gray-matter';
 import UpstreamContributionsWidget from "../contributions/components/UpstreamContributionsWidget";
 
 import { Metadata } from 'next';
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: 'Ecosystem',
@@ -90,8 +91,8 @@ export default function Ecosystem() {
               `}
             </p>
             <div data-animate-in="fade" data-animate-in-delay="240">
-              <a className="link-arrow text-white mt-4" 
-              href="/collaborate">See recent activity in Microsoft open source repositories</a>
+              <Link className="link-arrow text-white mt-4" 
+              href="/collaborate">See recent activity in Microsoft open source repositories</Link>
             </div>
           </div>
       </div>

@@ -4,6 +4,7 @@
 //
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Code of Conduct for Microsoft open source projects',
@@ -22,7 +23,7 @@ export default function CodeOfConduct() {
           <div className="col-md-6 pl-md-4 col-lg-4">
             <p>Have a question?</p>
             <div data-animate-in="fade" data-animate-in-delay="240">
-              <a className="link-arrow text-white mt-4" href="/codeofconduct/faq/">Read our FAQ</a>
+              <Link className="link-arrow text-white mt-4" href="/codeofconduct/faq/">Read our FAQ</Link>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ import {
 import { BellSlashIcon, CommentIcon, GitMergeIcon, GitPullRequestIcon, IssueOpenedIcon, IssueReopenedIcon, RepoIcon, SyncIcon } from '@primer/octicons-react';
 import { formatDistanceToNow } from 'date-fns';
 import { GitHubDescriptionFromType, ShowOcticonForType } from '@/app/contributions/components/UpstreamContributionsWidget';
+import Link from 'next/link';
 
 // @cspell: ignore octicon
 
@@ -123,9 +124,9 @@ export default function ActivityStreamWidget() {
                     or an opportunity to join in the fun.
                     `}
                   </p>
-                  <a className="link-arrow text-white mt-4" href="/projects">Featured projects</a>
+                  <Link className="link-arrow text-white mt-4" href="/projects">Featured projects</Link>
                   <br />
-                  <a className="link-arrow text-white mt-4" href="/projects/explore">View all projects</a>
+                  <Link className="link-arrow text-white mt-4" href="/projects/explore">View all projects</Link>
                 </div>
               </div>
             </div>

@@ -3,6 +3,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
+import Link from 'next/link';
 import React from 'react';
 
 export default function Why() {
@@ -26,9 +27,9 @@ export default function Why() {
                 `}
           </p>
           <div className="mt-6">
-            <a className="link-arrow" href="/collaborate/#get-involved">Happening now</a><br />
-            <a className="link-arrow" href="/collaborate/#get-started">Find a "good first issue"</a><br />
-            <a className="link-arrow" href="/projects">Featured projects</a>
+            <Link className="link-arrow" href="/collaborate#get-involved">Happening now</Link><br />
+            <Link className="link-arrow" href="/collaborate#get-started">Find a "good first issue"</Link><br />
+            <Link className="link-arrow" href="/projects">Featured projects</Link>
           </div>
         </div>
 
@@ -53,9 +54,9 @@ export default function Why() {
           </p>
 
           <div className="mt-6">
-            <a className="link-arrow" href="/program">Our program</a><br />
-            <a className="link-arrow" href="/program/#program-tools">Our tools</a><br />
-            <a className="link-arrow" href="/ecosystem">The ecosystem we support</a>
+            <Link className="link-arrow" href="/program">Our program</Link><br />
+            <Link className="link-arrow" href="/program#program-tools">Our tools</Link><br />
+            <Link className="link-arrow" href="/ecosystem">The ecosystem we support</Link>
           </div>
         </div>
         <img src="/images/direction/dots-corner.svg" alt="" />

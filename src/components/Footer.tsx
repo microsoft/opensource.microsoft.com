@@ -5,6 +5,8 @@
 
 'use client'
 
+import Link from "next/link";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -18,7 +20,7 @@ export default function Footer() {
                           <div className="text-white" data-animate-in="fade">
                               <ul className="list-style-none">
                                   <li>
-                                      <a className="mt-4 link-arrow-external" href="https://twitter.com/OpenAtMicrosoft" target="_blank" rel= "noopener">
+                                      <a className="mt-4 link-arrow-external" href="https://x.com/OpenAtMicrosoft" target="_blank" rel= "noopener">
                                           <img className="mr-2" src="/images/twitter.svg" alt="Twitter icon" title="Twitter icon" />
                                           OpenAtMicrosoft
                                       </a>
@@ -49,7 +51,7 @@ export default function Footer() {
           <div className="wrapper d-xl-flex flex-justify-between flex-items-center flex-column">
               <div className="site-footer__brand flex-column">
                   <img className="mb-4" src="/images/Microsoft-icon-white.svg" alt="Microsoft icon" />
-                  <p className="mb-4">Powered by <a className="link-decorated" href="/thanks">Open Source</a> and Microsoft Azure</p>
+                  <p className="mb-4">Powered by <Link className="link-decorated" href="/thanks">Open Source</Link> and Microsoft Azure</p>
               </div>
 
               <ul>

@@ -26,7 +26,7 @@ export default function Oops() {
             {/*
               <!--
               <div data-animate-in="fade" data-animate-in-delay="240">
-                  <a className="link-arrow text-white mt-4" href="{{ '/explore/' | relative_url }}">Explore Projects</a>
+                  <a className="link-arrow text-white mt-4" href="/explore">Explore Projects</a>
               </div>
               -->
             */}
