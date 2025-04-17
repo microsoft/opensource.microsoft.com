@@ -70,7 +70,7 @@ export default function ContributorLicenseAgreement() {
                 If you're an active Microsoft employee or vendor, there is a Microsoft-internal
                 system that allows you to "link" your GitHub account for corporate use. When you
                 use your linked account, you will not have to sign the CLA. Microsoft
-                employees and vendors can learn more about linking accounts at 
+                employees and vendors can learn more about linking accounts at {' '}
                 <a href="https://aka.ms/opensource" target="_new">aka.ms/opensource</a>.
               </li>
             </ul>
