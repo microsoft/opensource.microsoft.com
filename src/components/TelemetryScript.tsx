@@ -5,7 +5,7 @@
 
 import fs from 'fs';
 
-const telemetryJavaScript = fs.readFileSync('./src/app/components/telemetry.js', 'utf8');
+const telemetryJavaScript = fs.readFileSync('./src/components/telemetry.js', 'utf8');
 
 export default function TelemetryScript() {
   return (
