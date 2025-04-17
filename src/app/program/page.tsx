@@ -36,22 +36,30 @@ export default function Program() {
         <div className="wrapper my-6 py-4">
           <div className="col-md-10 col-lg-7 mx-auto">
             <h3 className="h4 font-weight-400 mb-4">
+              {`
               Microsoft has a strong open source program that encourages contribution, respects
               license obligations, and allows engineers to use open source with ease, work in the open,
               release projects, and be secure.
+              `}
             </h3>
             <p>
-              Our developers use more than 200,000 open source components every month while building 
+              {`
+              Our developers use more than 200,000 open source components every month while building
               products and services.
+              `}
             </p>
             <p>
+              {`
               Relentless automation, engineering system innovation, and making it easy for our
               developers to "fall into the pit of success" have been key to using open source
               at enterprise-scale.
+              `}
             </p>
             <p>
-              Here are just a few of the ways that we've built a strong open source program. 
+              {`
+              Here are just a few of the ways that we've built a strong open source program.
               We're sharing our process in hopes it helps others be more successful in open source too.
+              `}
             </p>
           </div>
         </div>
