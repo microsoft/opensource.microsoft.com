@@ -13,7 +13,8 @@ import {
 } from '@tanstack/react-query'
 import { RepoIcon } from '@primer/octicons-react';
 import { formatDistanceToNow } from 'date-fns';
-import { GitHubDescriptionFromType, ShowOcticonForType } from '@/app/contributions/components/UpstreamContributionsWidget';
+
+import { GitHubDescriptionFromType } from '@/app/contributions/components/UpstreamContributionsWidget';
 
 // @cspell: ignore octicon
 

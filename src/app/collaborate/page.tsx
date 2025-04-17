@@ -25,9 +25,11 @@ export default function Collaborate() {
           </div>
           <div className="col-md-6 pl-md-4 col-lg-4">
             <p>
+              {`
               Right now, open communities are building amazing software together, and
               there are excellent "good first issue" opportunities, if you're looking
               to get involved.
+              `}
             </p>
           </div>
         </div>

@@ -111,13 +111,17 @@ export default function ActivityStreamWidget() {
                 <div className="cta__inner">
                   <p className="h5">Explore Microsoft projects</p>
                   <p>
+                    {`
                     Microsoft engineers and community members
                     maintain thousands of GitHub repos: everything
                     from complete samples, to product SDKs, to entire products.
+                    `}
                   </p>
                   <p>
+                    {`
                     Search, filter and explore to find what you're looking for
                     or an opportunity to join in the fun.
+                    `}
                   </p>
                   <a className="link-arrow text-white mt-4" href="/projects">Featured projects</a>
                   <br />

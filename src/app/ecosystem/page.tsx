@@ -75,16 +75,23 @@ export default function Ecosystem() {
           </div>
           <div className="col-md-6 pl-md-4 col-lg-4">
             <p>
-              Microsoft is proud to support amazing <a href="#fossfund">open source projects</a>, <a href="#foundations">initiatives, and foundations</a>,
-              to offer <a href="#credits">Azure credits</a> to open source projects,
-              and to make <a href="#contributions">upstream contributions</a> to thousands of open source projects on GitHub and beyond.
+              Microsoft is proud to support amazing <a href="#fossfund">open source projects</a>, <a 
+              href="#foundations">initiatives, and foundations</a>,
+              to offer <a 
+              href="#credits">Azure credits</a> to open source projects,
+              and to make <a 
+              href="#contributions">upstream contributions</a> to thousands of open source projects on GitHub and beyond.
             </p>
             <p>
-              The examples on this page are just a few of the ways that we're working with the broader open source ecosystem to collectively empower
+              {`
+              The examples on this page are just a few of the ways that we're working with the 
+              broader open source ecosystem to collectively empower
               every person and every organization on the planet to achieve more.
+              `}
             </p>
             <div data-animate-in="fade" data-animate-in-delay="240">
-              <a className="link-arrow text-white mt-4" href="/collaborate">See recent activity in Microsoft open source repositories</a>
+              <a className="link-arrow text-white mt-4" 
+              href="/collaborate">See recent activity in Microsoft open source repositories</a>
             </div>
           </div>
       </div>
@@ -94,20 +101,25 @@ export default function Ecosystem() {
         <div className="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
         <h2 className="h2" id="fossfund">FOSS Fund</h2>
           <p>
+            {`
             The Free and Open Source Software Fund (FOSS Fund) is a
             way for our employees to collectively select open source
             projects to receive sponsorship awards throughout the year.
+            `}
           </p>
           <p>
+            {`
             Microsoft's engineers select projects they are super passionate about.
             Only employees who contribute to open source projects can
             participate in the selection process.
+            `}
           </p>
           <p>
             The following projects are a subset of the many that have been sponsored.
           </p>
           <p>
-            <a className="link-arrow-external" href="https://aka.ms/microsoftfossfund" target="_new">
+            <a className="link-arrow-external" 
+            href="https://aka.ms/microsoftfossfund" target="_new">
               Learn about the Microsoft FOSS Fund process and see the full list of sponsored projects
             </a>
           </p>
@@ -167,8 +179,10 @@ export default function Ecosystem() {
         <div className="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
           <h2 className="h2" id="foundations">Foundations &amp; Initiatives</h2>
           <p>
+            {`
             Microsoft is proud to participate, partner, and sponsor
             many amazing initiatives to better the open source ecosystem.
+            `}
           </p>
           </div>
           <div className="col-md-6 pl-md-4 col-lg-4">
@@ -219,28 +233,6 @@ export default function Ecosystem() {
           }
         </div>
       </div>
-      <div className="wrapper my-6 py-6">
-        <div className="d-md-flex flex-items-center">
-          <div className="col-md-6 col-lg-5 pr-md-4 pr-lg-6 mb-4 mb-md-0">
-            <h2 className="h2" id="credits">
-              Azure Credits
-            </h2>
-            <p>
-              We are offering Azure credits to open source projects for their use for testing, builds, 
-              and other infrastructure support needs. Projects must apply for credits. Applications are 
-              reviewed and applicants will be contacted with a decision within 3-4 weeks.
-            </p>
-            <p>
-              <a className="link-arrow-external" href="/azure-credits">
-                Learn about our Azure Credits program
-              </a>
-            </p>
-          </div>
-          <div className="col-md-6 pl-md-4 col-lg-4">
-            <img className="mb-4" src="/images/direction/community-shapes.svg" alt="" />
-          </div>
-        </div>
-      </div>
       <hr className="wrapper" />
       <div className="wrapper my-6 py-6">
         <div className="col-lg-8 mx-auto">
@@ -249,9 +241,11 @@ export default function Ecosystem() {
               Recent Contributions
             </h2>
             <p>
+              {`
               Whether an official contribution as part of a team's business goals,
               an after-hours project in robotics and hackathons, or contributions to
               non-profits and communities, our employees are always involved.
+              `}
             </p>
           </div>
         </div>

@@ -24,8 +24,10 @@ export default function Contributions() {
           </div>
           <div className="col-md-6 pl-md-4 col-lg-4">
             <p>
+              {`
               Microsoft's engineers can be found participating 
               in communities throughout the Internet and GitHub.
+              `}
             </p>
             <div data-animate-in="fade" data-animate-in-delay="240">
               <a className="link-arrow text-white mt-4" href="/collaborate">
@@ -40,15 +42,19 @@ export default function Contributions() {
           Recent contributions
         </h3>
         <p>
+          {`
           Thousands of Microsoft engineers are active in open source communities, 
           whether contributing for work, hobbies, or maintaining other projects.
+          `}
         </p>
         <p>
           Here are some recent contributions that have been made to projects on GitHub.
         </p>
         <p>
+          {`
           While many public highlighted contributions here may be for official work, 
           Microsoft does not endorse any contribution listed here.
+          `}
         </p>
         <UpstreamContributionsWidget />
       </div>

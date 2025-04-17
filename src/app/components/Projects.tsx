@@ -22,8 +22,10 @@ export default function Projects() {
       <div className="text-center mb-6" data-animate-in="up" data-animate-in-delay="200">
         <h2 className="h3">Projects</h2>
         <p>
+          {`
           Some of the most popular developer tools, frameworks and experiences in the world
           are built around open communities. Here are a few featured Microsoft projects of note:
+          `}
         </p>
       </div>
       <div className="tile-list" data-animate-in="up" data-animate-in-delay="400">

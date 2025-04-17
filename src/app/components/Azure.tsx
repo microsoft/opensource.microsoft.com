@@ -10,9 +10,9 @@ export default function Azure() {
     <div className="wrapper pt-6 pb-6 mt-6 mb-6">
       <div className="d-md-flex">
         <div className="col-md-6 col-lg-5 mb-4 mb-md-0">
-            <h3 className="h5 text-brand font-weight-600 mb-2">Innovate faster and more securely with open source on Azure</h3>
-            <p>Build on a highly secure cloud platform designed to protect your data and business assets, including proactive, comprehensive compliance coverage.  Gain the flexibility to move your app anywhere. Operate seamlessly and elastically, on-premises, in hybrid or multicloud environments, or at the edge.</p>
-            <div className="link-arrow-external mt-4"><a href="https://azure.microsoft.com/en-us/solutions/open-source/#overview">Learn more about open source on Azure</a></div>
+          <h3 className="h5 text-brand font-weight-600 mb-2">Innovate faster and more securely with open source on Azure</h3>
+          <p>Build on a highly secure cloud platform designed to protect your data and business assets, including proactive, comprehensive compliance coverage.  Gain the flexibility to move your app anywhere. Operate seamlessly and elastically, on-premises, in hybrid or multicloud environments, or at the edge.</p>
+          <div className="link-arrow-external mt-4"><a href="https://azure.microsoft.com/en-us/solutions/open-source/#overview">Learn more about open source on Azure</a></div>
         </div>
 
         {/*
@@ -25,7 +25,7 @@ export default function Azure() {
         </div>
         */}
 
+      </div>
     </div>
-  </div>
   );
 }
