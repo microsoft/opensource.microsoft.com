@@ -79,7 +79,7 @@ WcpConsent.init('en-US', 'cookiebanner', function (err, _siteConsent) {
     if (showTelemetryDebug) {
       console.log('WcpConsent.init error', err);
     }
-    return error;
+    return err;
   } else {
     siteConsent = _siteConsent;
     if (showTelemetryDebug) {
