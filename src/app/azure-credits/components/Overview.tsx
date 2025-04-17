@@ -10,16 +10,20 @@ const AzureCreditsOverview = () => {
         Azure credits for open source projects
       </h4>
       <p>
+        {`
         Many Microsoft product teams grant Azure credits to open source communities 
         to support their work. These credits augment other complementary programs
         such as GitHub repositories, CI/CD with GitHub Actions, as well as financial 
         contributions through the Microsoft FOSS Fund, foundation memberships, and
         other ecosystem support.
+        `}
       </p>
       <p>
+        {`
         Microsoft not currently accepting new applications from projects directly and 
         is instead relying on strategic, organic relationships between Microsoft
         businesses and the open source that they depend on.
+        `}
       </p>
     </div>
   );
