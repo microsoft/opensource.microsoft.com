@@ -8,10 +8,9 @@ export function CookieConsentWrapper() {
     // You can optionally load or trigger it here
     const windowAsAny = (window as any);
     if (windowAsAny.tryInitializeWcp) {
-      console.log('tryInitializeWcp is defined');
       windowAsAny.tryInitializeWcp();
     } else {
-      console.warn('tryInitializeWcp is not defined');
+      console.warn('The consent system is not available. Cookies will not be set.');
     }
   }, []);
 
