@@ -77,10 +77,7 @@ export default function Ecosystem() {
           <div className="col-md-6 pl-md-4 col-lg-4">
             <p>
               Microsoft is proud to support amazing <a href="#fossfund">open source projects</a>, <a 
-              href="#foundations">initiatives, and foundations</a>,
-              to offer <a 
-              href="#credits">Azure credits</a> to open source projects,
-              and to make <a 
+              href="#foundations">initiatives, and foundations</a>, making <a 
               href="#contributions">upstream contributions</a> to thousands of open source projects on GitHub and beyond.
             </p>
             <p>

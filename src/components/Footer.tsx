@@ -111,9 +111,18 @@ export default function Footer() {
                   </li>
                   <li id="manageCookies" data-require-javascript="yes" data-javascript-show="immediate">
                       <a href="#" onClick={() => {
-                        // manageCookies()
-                        // TODO: implement manageCookies function
-                      }}>Manage Cookies</a>
+                        try {
+                          if ((window as any).manageCookies) {
+                            (window as any).manageCookies();
+                          }
+                        } catch (e) {
+                          console.error('Error managing cookies:', e);
+                        }
+                      }
+                    }
+                    >
+                      Manage Cookies
+                    </a>
                   </li>
                   <li>
                       <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx" target="_blank">Terms</a>

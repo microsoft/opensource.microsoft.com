@@ -20,16 +20,12 @@ const COMMUNITY_RESOURCES: Resource[] = [
     url: "/cla",
   },
   {
-    title: "Third-Party Disclosures",
+    title: "Third-Party Source Disclosures",
     url: "https://3rdpartysource.microsoft.com/",
   },
   {
     title: "Microsoft's Open Source Program",
     url: "/program/",
-  },
-  {
-    title: "Azure Credits",
-    url: "/azure-credits",
   },
 ];
 
