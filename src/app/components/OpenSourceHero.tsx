@@ -4,6 +4,7 @@
 //
 
 import React from 'react';
+import Link from 'next/link';
 
 import OpenSourceAvatars from './OpenSourceAvatars';
 
@@ -25,9 +26,9 @@ export default function OpenSourceHero() {
               `}
             </p>
             <div data-animate-in="fade" data-animate-in-delay="240">
-              <a className="link-arrow text-white mt-4" href="/collaborate">Get involved</a>
+              <Link className="link-arrow text-white mt-4" href="/collaborate">Get involved</Link>
               <br />
-              <a className="link-arrow text-white mt-4" href="/projects">Explore projects</a>
+              <Link className="link-arrow text-white mt-4" href="/projects">Explore projects</Link>
             </div>
           </div>
           <OpenSourceAvatars />
