@@ -9,14 +9,15 @@ import './globals.css'
 import './styles/main.scss'
 
 // import type { Metadata } from 'next';
-import Head from 'next/head';
-import Script from 'next/script';
+// import Head from 'next/head';
+// import Script from 'next/script';
 
 import Footer from '../components/Footer';
 import TelemetryHead from '../components/TelemetryHead';
 import TelemetryBody from '../components/TelemetryBody';
 import TelemetryScript from '../components/TelemetryScript';
 import MicrosoftOpenSourceHeader from '@/components/OpenSourceHeader';
+import { isTelemetryEnabled } from './telemetry';
 
 // export const metadata: Metadata = {
 //   title: 'Microsoft Open Source',
@@ -33,7 +34,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isProduction = process.env.NODE_ENV === 'production';
+  const shouldRenderTelemetry = isTelemetryEnabled();
 
   // for simplicity, in the port away from Jekyll, we didn't move
   //
@@ -78,10 +79,10 @@ export default function RootLayout({
         <link rel="shortcut icon" type="image/x-icon" href="/images/favicons/favicon.ico" />
         <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#11100f" />
         <meta httpEquiv='cleartype' content='off' />
-        {isProduction && <TelemetryHead />}
+        {shouldRenderTelemetry && <TelemetryHead />}
       </head>
       <body className="page-loading no-js">
-        {isProduction && <TelemetryBody />}
+        {shouldRenderTelemetry && <TelemetryBody />}
         
         <a className="skip-to-content" href="#content" tabIndex={1}>skip to content</a>
         
@@ -102,7 +103,7 @@ export default function RootLayout({
         */}
         
         {/* Production telemetry script */}
-        {isProduction && <TelemetryScript />}
+        {shouldRenderTelemetry && <TelemetryScript />}
       </body>
     </html>
   );

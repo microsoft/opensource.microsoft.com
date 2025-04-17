@@ -1,9 +1,12 @@
-'use client'
+//
+// Copyright (c) Microsoft.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+//
 
 export default function TelemetryHead() {
   return (
     <>
-      {/* This is equivalent to the production-telemetry-head.html include */}
+      {/* This was the production-telemetry-head.html include */}
       <script 
         dangerouslySetInnerHTML={{
           __html: `
