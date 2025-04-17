@@ -74,21 +74,23 @@ function evaluateUserConsent() {
     }
   }
 }
-WcpConsent.init('en-US', 'cookiebanner', function (err, _siteConsent) {
-  if (err != undefined) {
-    if (showTelemetryDebug) {
-      console.log('WcpConsent.init error', err);
+function tryInitializeWcp() {
+  WcpConsent.init('en-US', 'cookiebanner', function (err, _siteConsent) {
+    if (err != undefined) {
+      if (showTelemetryDebug) {
+        console.log('WcpConsent.init error', err);
+      }
+      return err;
+    } else {
+      siteConsent = _siteConsent;
+      if (showTelemetryDebug) {
+        console.log('WcpConsent.init', siteConsent);
+      }
     }
-    return err;
-  } else {
-    siteConsent = _siteConsent;
-    if (showTelemetryDebug) {
-      console.log('WcpConsent.init', siteConsent);
-    }
-  }
-  evaluateShowManagement();
-  evaluateUserConsent();
-}, onConsentChanged);
+    evaluateShowManagement();
+    evaluateUserConsent();
+  }, onConsentChanged);
+}
 
 function manageCookies() {
   if(siteConsent.isConsentRequired){
