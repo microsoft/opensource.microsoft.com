@@ -139,13 +139,9 @@ const MicrosoftOpenSourceHeader: FunctionComponent<Props> = ( { site, siteSectio
               <>
                 {OPENSOURCE_SITE_LINKS.map((link) => (
                   <li key={link.href} className={selected === link.href ? selectedClassName : undefined}>
-                    <Link as="a" href={
+                    <Link href={
                       link.href
-                    } onClick={(e: any) => {
-                      e.preventDefault();
-                      // navigate(link.href);
-                      router.push(link.href);
-                    }}>{link.title}</Link>
+                    }>{link.title}</Link>
                   </li>
                 ))}
                 <li>
