@@ -22,10 +22,21 @@ const FAQ_ENTRIES: Entry[] = [
     question: "Why have a Code of Conduct?",
     answer: (
       <>
-        People and communities are the foundation of open source. Communities thrive through diversity of thought and the safety of its members. Microsoft has a deep-seated commitment to diversity and inclusion. All Microsoft employees enjoy a safe work environment and a culture of mutual respect and responsibility. Our team members and open source partners should enjoy the same environment when collaborating on open source projects.
+        {`
+        People and communities are the foundation of open source. Communities 
+        thrive through diversity of thought and the safety of its members. 
+        Microsoft has a deep-seated commitment to diversity and inclusion. All 
+        Microsoft employees enjoy a safe work environment and a culture of 
+        mutual respect and responsibility. Our team members and open source 
+        partners should enjoy the same environment when collaborating on open 
+        source projects.
+        `}
         <br />
         <br />
-        While conduct issues seldom arise, when they do, they are often very public and very passionate. It is best for the community to be prepared with:
+        {`
+        While conduct issues seldom arise, when they do, they are often very 
+        public and very passionate. It is best for the community to be prepared with:
+        `}
         <ul>
           <li>A clear and accessible <b>Code of Conduct</b> stating the norms under which projects operate</li>
           <li>An <b>Issue Resolution Process</b> for addressing cases where these norms are not being maintained</li>

@@ -30,23 +30,30 @@ export default function CodeOfConduct() {
       <div className="wrapper my-6 py-4">
         <div className="col-md-10 col-lg-7 mx-auto longform">
           <p className="p-lg">
+            {`
             This code of conduct outlines expectations for participation in Microsoft-managed open source communities, 
             as well as steps for reporting unacceptable behavior. We are committed to providing a welcoming and 
             inspiring community for all. People violating this code of conduct may be banned from the community.
+            `}
           </p>
           <br />
           <br />
           <div className="pb-6">
             <h3 className="h3">Our Pledge</h3>
             <p>
+              {`
               We as members, contributors, and leaders pledge to make participation in our community a 
               harassment-free experience for everyone, regardless of age, body size, visible or invisible 
               disability, ethnicity, sex characteristics, gender identity and expression, level of experience, 
               education, socio-economic status, nationality, personal appearance, race, caste, color, religion, 
               or sexual identity and orientation.
+              `}
             </p>
             <p>
-              We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+              {`
+              We pledge to act and interact in ways that contribute to an open, welcoming, diverse, 
+              inclusive, and healthy community.
+              `}
             </p>
           </div>
           <div className="pb-6">
@@ -81,14 +88,18 @@ export default function CodeOfConduct() {
               Enforcement Responsibilities
             </h3>
             <p>
+              {`
               Community leaders are responsible for clarifying and enforcing our standards of acceptable 
               behavior and will take appropriate and fair corrective action in response to any behavior 
               that they deem inappropriate, threatening, offensive, or harmful.
+              `}
             </p>
             <p>
+              {`
               Community leaders have the right and responsibility to remove, edit, or reject comments,
               commits, code, wiki edits, issues, and other contributions that are not aligned to this 
               Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+              `}
             </p>
           </div>
           <div className="pb-6">
@@ -96,14 +107,18 @@ export default function CodeOfConduct() {
               Scope
             </h3>
             <p>
+              {`
               This Code of Conduct applies within all community spaces, and also applies when an individual 
               is officially representing the community in public spaces. Examples of representing our 
               community include using an official e-mail address, posting via an official social media 
               account, or acting as an appointed representative at an online or offline event.
+              `}
             </p>
             <p>
+              {`
               This Code of Conduct also applies to actions taken outside of these spaces, and which have 
               a negative impact on community health.
+              `}
             </p>
           </div>
           <div className="pb-6">
@@ -111,19 +126,23 @@ export default function CodeOfConduct() {
               Enforcement and Reporting
             </h3>
             <p>
+              {`
               We encourage all communities to resolve issues on their own whenever possible. Instances of 
               abusive, harassing, or otherwise unacceptable behavior should be reported to the community
               leaders responsible for enforcement in a given project or to <a 
               href="mailto:opencode@microsoft.com">opencode@microsoft.com</a>. If you 
-              are a Microsoft employee looking for support, please use the <a 
+              are a Microsoft employee looking for support, please use the `}
+              <a 
               href="https://aka.ms/community-911-landingpage" className="link-standard" target="_new">
                 Community 911 reporting process
               </a>.
             </p>
             <p>
+              {`
               Your report will be handled in accordance with the issue resolution process described 
               in the Code of Conduct FAQ. All project and community leaders are obligated to respect 
               the privacy and security of the reporter of any incident.
+              `}
             </p> 
           </div>
           <div className="pb-6">
