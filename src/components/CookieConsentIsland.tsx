@@ -8,5 +8,5 @@ export function CookieConsentWrapper() {
     // You can optionally load or trigger it here
   }, []);
 
-  return <div id="cookieConsent" ref={ref} suppressHydrationWarning />;
+  return <div id="cookiebanner" ref={ref} suppressHydrationWarning />;
 }
