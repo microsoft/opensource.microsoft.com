@@ -61,7 +61,7 @@ export default function Tools() {
         <li><strong><a
           target="_blank"
           rel="noopener"
-          href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Azure Pipelines</a></strong>{' '}
+          href="https://azure.microsoft.com/services/devops/pipelines/">Azure Pipelines</a></strong>{' '}
           can be exposed to public, open communities,{' '}
           allowing many Microsoft projects to continue using the build system they've been{' '}
           using for many years, but with a collaborative angle.
@@ -206,11 +206,11 @@ export default function Tools() {
         and eventually completing any necessary reviews.
       </p>
       <p>
-        This system is built by using the
-        <a href="https://docs.microsoft.com/en-us/azure/devops/reference/add-modify-wit?view=azure-devops-2020"
+        This system is built by using the{' '}
+        <a href="https://learn.microsoft.com/azure/devops/reference/add-modify-wit?view=azure-devops-2020"
           rel="noopener"
-          target="_blank">Work Item Tracking extensibility features</a>
-        and the <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/wit/?view=azure-devops-rest-5.1"
+          target="_blank">Work Item Tracking extensibility features</a>{' '}
+        and the <a href="https://learn.microsoft.com/rest/api/azure/devops/wit/?view=azure-devops-rest-5.1"
           rel="noopener"
           target="_blank">Azure DevOps REST API</a>.
       </p>
