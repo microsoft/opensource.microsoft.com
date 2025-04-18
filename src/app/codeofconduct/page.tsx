@@ -166,7 +166,7 @@ export default function CodeOfConduct() {
               Expanding scope to include external impact on community health inspired by <a 
               href="https://opensource.facebook.com/code-of-conduct" className="link-standard" 
               target="_new">Facebook's Open Source Code of Conduct</a> and <a 
-              href="https://www.mozilla.org/en-US/about/governance/policies/participation/" 
+              href="https://www.mozilla.org/about/governance/policies/participation/" 
               className="link-standard" target="_new">Mozilla's Community Participation Guidelines</a>.
             </p>
             <p>

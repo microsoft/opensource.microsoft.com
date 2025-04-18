@@ -107,7 +107,7 @@ export default function Footer() {
                       </a>
                   </li>
                   <li>
-                      <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank">Privacy & Cookies</a>
+                      <a href="https://privacy.microsoft.com/privacystatement" target="_blank">Privacy & Cookies</a>
                   </li>
                   <li id="manageCookies" data-require-javascript="yes" data-javascript-show="immediate">
                       <a href="#" onClick={() => {
@@ -125,7 +125,7 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                      <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx" target="_blank">Terms</a>
+                      <a href="https://www.microsoft.com/legal/intellectualproperty/copyright/default.aspx" target="_blank">Terms</a>
                   </li>
                   <li>
                       <a href="https://www.microsoft.com/trademarks" target="_blank">Trademarks</a>
