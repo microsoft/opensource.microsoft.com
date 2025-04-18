@@ -210,8 +210,7 @@ export default function Tools() {
         <a href="https://learn.microsoft.com/azure/devops/reference/add-modify-wit?view=azure-devops-2020"
           rel="noopener"
           target="_blank">Work Item Tracking extensibility features</a>{' '}
-        and the{' '}
-        <a href="https://learn.microsoft.com/rest/api/azure/devops/wit/?view=azure-devops-rest-5.1"
+        and the <a href="https://learn.microsoft.com/rest/api/azure/devops/wit/?view=azure-devops-rest-5.1"
           rel="noopener"
           target="_blank">Azure DevOps REST API</a>.
       </p>
