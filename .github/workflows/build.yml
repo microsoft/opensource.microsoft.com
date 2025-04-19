@@ -17,7 +17,7 @@ jobs:
     - name: "Build the site"
       run: |
         npm install
-        npm run build
+        NEXT_ENV_DESCRIPTOR=production NEXT_ONE_DS_INSTRUMENTATION_KEY=b341ec446e65436485df678003ce82f7 npm run build
     - name: "Stamp content.json"
       env:
         GITSHA: ${{ github.sha }}
