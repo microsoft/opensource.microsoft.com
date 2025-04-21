@@ -6,9 +6,6 @@ on:
       - main
       - next
 
-env:
-  REGISTRY: docker.pkg.github.com
-  IMAGE_NAME: ${{ github.repository }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,33 +14,21 @@ jobs:
       name: "Check it out"
     - name: "Startup"
       run: pwd
-    - name: Package registry login
-      if: github.event_name != 'pull_request'
-      uses: docker/login-action@v3
-      with:
-        registry: ${{ env.REGISTRY }}
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.GITHUB_TOKEN }}
     - name: "Build the site"
       run: |
-        docker run -i -v ${PWD}:/usr/local/site docker.pkg.github.com/microsoft/opensource.microsoft.com/custom-jekyll-builder:latest sh << COMMANDS
-        cd /usr/local/site
-        ls -la
-        bundle install
-        npm i
-        ./node_modules/gulp/bin/gulp.js build
-        JEKYLL_ENV=opensource.microsoft.com jekyll build
-        COMMANDS
-    - name: "Write content.json"
+        npm install
+        NEXT_ENV_DESCRIPTOR=dev NEXT_ONE_DS_INSTRUMENTATION_KEY= npm run build
+        #NEXT_ENV_DESCRIPTOR=production NEXT_ONE_DS_INSTRUMENTATION_KEY=b341ec446e65436485df678003ce82f7 npm run build
+    - name: "Stamp content.json"
       env:
         GITSHA: ${{ github.sha }}
       run: |
           echo "{\"commitId\":\"$GITSHA\"}" > content.json
           cat ./content.json
-          cp content.json _site/
+          cp content.json out/
     - name: "Compress the static site"
       run: zip -r ../site.zip .
-      working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
+      working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/out
     - uses: actions/upload-artifact@v4
       name: "Store the site as an artifact"
       with:
@@ -54,7 +39,9 @@ jobs:
       run: |
         ls -la site.zip content.json
     - uses: azure/cli@v2
-      name: "Upload to share via CLI (2024)"
+      name: "Upload to share via CLI (main)"
+      if: github.ref == 'refs/heads/main'
+      # NOTE: Azure Files does not support FIC or managed identity at this time
       with:
         inlineScript: |
           az storage file upload \
@@ -67,29 +54,19 @@ jobs:
             --account-name ${{ vars.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
             -s oss-live
-    - name: "Prepare to AzCopy..."
-      working-directory: /home/runner/work
-      run: |
-        mkdir azcopy
-        cd azcopy
-        wget https://aka.ms/downloadazcopy-v10-linux
-        mv downloadazcopy-v10-linux azcopy.tar.gz
-        tar -xvf azcopy.tar.gz
-        mv azcopy_linux* azcopy_linux
-        mv azcopy_linux/azcopy ./
-        ls -la
-    - name: "Copy to CDN"
-      if: false
-      working-directory: /home/runner/work/azcopy
-      env:
-        SASTOKEN: ${{ secrets.AZURE_CDN_SAS }}
-      run: |
-        ./azcopy sync /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site "https://osssite.blob.core.windows.net/cdn/$SASTOKEN" --recursive=true
-    - name: "Copy to static web container"
-      if: false
-      working-directory: /home/runner/work/azcopy
-      env:
-        AZCOPY_AUTO_LOGIN_TYPE: AZCLI
-      run: |
-        ./azcopy sync /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site "https://osssite.blob.core.windows.net/\$web/$SASTOKEN" --recursive=true
-
+    - uses: azure/cli@v2
+      name: "Upload dev content (next branch)"
+      if: github.ref == 'refs/heads/next'
+      # NOTE: Azure Files does not support FIC or managed identity at this time
+      with:
+        inlineScript: |
+          az storage file upload \
+            --account-key ${{ secrets.AZURE_FILES_SP }} \
+            --account-name ${{ vars.AZURE_FILES_USERNAME }} \
+            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip \
+            -s oss-dev
+          az storage file upload \
+            --account-key ${{ secrets.AZURE_FILES_SP }} \
+            --account-name ${{ vars.AZURE_FILES_USERNAME }} \
+            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
+            -s oss-dev
