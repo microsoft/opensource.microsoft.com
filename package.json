@@ -10,9 +10,9 @@
     "build": "node_modules/gulp/bin/gulp.js build"
   },
   "devDependencies": {
-    "browser-sync": "^3.0.2",
+    "browser-sync": "^3.0.3",
     "child_process": "^1.0.2",
-    "color-contrast-checker": "1.5.0",
+    "color-contrast-checker": "2.1.0",
     "del": "^5.1.0",
     "gemfile": "1.1.0",
     "gulp": "^5.0.0",
@@ -23,12 +23,12 @@
     "gulp-load-plugins": "^2.0.2",
     "gulp-newer": "^1.4.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
+    "gulp-sass": "^6.0.0",
     "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^8.0.0",
     "npm-clean": "^1.0.3",
-    "sass": "1.79.2",
-    "yaml": "2.5.1"
+    "sass": "1.83.4",
+    "yaml": "2.7.0"
   },
   "dependencies": {
     "@primer/css": "^14.3.0",

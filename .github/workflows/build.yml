@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - next
 
 env:
   REGISTRY: docker.pkg.github.com
@@ -12,14 +13,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    #       actions/checkout@v2 on 11/4/2021
-    - uses: actions/checkout@230611dbd0eb52da1e1f4f7bc8bb0c3a339fc8b7
+    - uses: actions/checkout@v4
       name: "Check it out"
     - name: "Startup"
       run: pwd
     - name: Package registry login
       if: github.event_name != 'pull_request'
-      uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
+      uses: docker/login-action@v3
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.repository_owner }}
@@ -44,8 +44,7 @@ jobs:
     - name: "Compress the static site"
       run: zip -r ../site.zip .
       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site
-    #       actions/upload-artifact/v2 on 11/4/2021
-    - uses: actions/upload-artifact@6fc84b101e3160d153b2b53314fa13f02a36ae96
+    - uses: actions/upload-artifact@v4
       name: "Store the site as an artifact"
       with:
         name: website
@@ -93,4 +92,4 @@ jobs:
         AZCOPY_AUTO_LOGIN_TYPE: AZCLI
       run: |
         ./azcopy sync /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/_site "https://osssite.blob.core.windows.net/\$web/$SASTOKEN" --recursive=true
-  
+
