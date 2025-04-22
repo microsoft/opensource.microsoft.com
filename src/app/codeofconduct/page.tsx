@@ -131,9 +131,12 @@ export default function CodeOfConduct() {
               We encourage all communities to resolve issues on their own whenever possible. Instances of 
               abusive, harassing, or otherwise unacceptable behavior should be reported to the community
               leaders responsible for enforcement in a given project or to `}
-              <a 
-              href="mailto:opencode@microsoft.com">opencode@microsoft.com</a>.
-              {`If you are a Microsoft employee looking for support, please use the `}
+              <a
+              className="link-standard" href="mailto:opencode@microsoft.com">
+                opencode@microsoft.com
+                </a>.
+              {`
+              If you are a Microsoft employee looking for support, please use the `}
               <a 
               href="https://aka.ms/community-911-landingpage" className="link-standard" target="_new">
                 Community 911 reporting process
