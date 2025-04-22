@@ -220,7 +220,7 @@ function HelpWantedSection() {
             <li><a href="https://opensource.guide/how-to-contribute/" className="link-arrow text-brand" target="_new">How to Contribute to Open Source</a></li>
             <li><Link href="/codeofconduct" className="link-arrow text-brand">Microsoft's Open Source Code of Conduct</Link></li>
             <li><a href="https://opensource.com/life/14/2/exploring-open-source-beginners" className="link-arrow text-brand" target="_new">Getting Started in Open Source Online and Offline</a></li>
-            <li><a href="https://todogroup.org/guides/participating/" className="link-arrow text-brand" target="_new">TODO Group's Participating in Open Source Communities Guide</a></li>
+            <li><a href="https://todogroup.org/resources/guides/participating-in-open-source-communities/" className="link-arrow text-brand" target="_new">TODO Group's Participating in Open Source Communities Guide</a></li>
           </ul>
         </div>
       </div>
