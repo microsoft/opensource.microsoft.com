@@ -3,8 +3,8 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
     schedule:
-      interval: "weekly"
+      interval: "daily"
