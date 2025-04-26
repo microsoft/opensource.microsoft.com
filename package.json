@@ -23,7 +23,7 @@
     "eslint-config-next": "15.2.4",
     "postcss": "8.5.3",
     "sass": "1.86.0",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "dependencies": {
     "@primer/css": "21.5.1",
