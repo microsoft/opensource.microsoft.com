@@ -20,7 +20,7 @@ const AzureCreditsOverview = () => {
       </p>
       <p>
         {`
-        Microsoft not currently accepting new applications from projects directly and 
+        Microsoft is not accepting new applications from projects directly and 
         is instead relying on strategic, organic relationships between Microsoft
         businesses and the open source that they depend on.
         `}
