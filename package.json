@@ -19,7 +19,7 @@
     "@types/node": "22.15.14",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "9.25.1",
+    "eslint": "9.26.0",
     "eslint-config-next": "15.3.2",
     "postcss": "8.5.3",
     "sass": "1.87.0",
