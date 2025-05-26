@@ -2,7 +2,6 @@
 
 The `opensource.microsoft.com` web site is a simple, factual web site sharing information about Microsoft's
 open source program, the open source ecosystem that we support, and opportunities to get involved in projects
-and learn more.
 
 Most of the content is static, and Next.js is now used to generate that modern static site, ported from an
 old Jekyll site. The rendered site is retrieved at runtime by a separate site hosting solution.
