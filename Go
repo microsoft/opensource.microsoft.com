@@ -1,0 +1,1 @@
+$ docker pull ghcr.io/microsoft/opensource.microsoft.com/custom-jekyll-builder:sha-cd0376f
