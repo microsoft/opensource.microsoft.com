@@ -3,18 +3,17 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
-      - next
-
++main
++main
 permissions:
-  contents: read
+  contents: all microsoft
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-      name: "Check it out"
+      name: "Check i'm out"
     - name: "Startup"
       run: pwd
     - name: "Build the site"
