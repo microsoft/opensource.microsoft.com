@@ -1,0 +1,140 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/404",
+      "regex": "^/404(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/404(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/azure-credits",
+      "regex": "^/azure\\-credits(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/azure\\-credits(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/cla",
+      "regex": "^/cla(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cla(?:/)?$"
+    },
+    {
+      "page": "/codeofconduct",
+      "regex": "^/codeofconduct(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/codeofconduct(?:/)?$"
+    },
+    {
+      "page": "/codeofconduct/faq",
+      "regex": "^/codeofconduct/faq(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/codeofconduct/faq(?:/)?$"
+    },
+    {
+      "page": "/collaborate",
+      "regex": "^/collaborate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/collaborate(?:/)?$"
+    },
+    {
+      "page": "/contributions",
+      "regex": "^/contributions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contributions(?:/)?$"
+    },
+    {
+      "page": "/ecosystem",
+      "regex": "^/ecosystem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ecosystem(?:/)?$"
+    },
+    {
+      "page": "/program",
+      "regex": "^/program(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/program(?:/)?$"
+    },
+    {
+      "page": "/projects",
+      "regex": "^/projects(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/projects(?:/)?$"
+    },
+    {
+      "page": "/projects/explore",
+      "regex": "^/projects/explore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/projects/explore(?:/)?$"
+    },
+    {
+      "page": "/thanks",
+      "regex": "^/thanks(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/thanks(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": []
+}

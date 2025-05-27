@@ -1,0 +1,17 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/projects/explore/page": "app/projects/explore/page.js",
+  "/azure-credits/page": "app/azure-credits/page.js",
+  "/404/page": "app/404/page.js",
+  "/collaborate/page": "app/collaborate/page.js",
+  "/contributions/page": "app/contributions/page.js",
+  "/codeofconduct/faq/page": "app/codeofconduct/faq/page.js",
+  "/program/page": "app/program/page.js",
+  "/page": "app/page.js",
+  "/codeofconduct/page": "app/codeofconduct/page.js",
+  "/cla/page": "app/cla/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/thanks/page": "app/thanks/page.js",
+  "/ecosystem/page": "app/ecosystem/page.js"
+}
