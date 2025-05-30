@@ -20,7 +20,10 @@ jobs:
     - name: "Build the site"
       run: |
         npm install
-        NEXT_ENV_DESCRIPTOR=production NEXT_ONE_DS_INSTRUMENTATION_KEY=b341ec446e65436485df678003ce82f7 npm run build
+        # For the Microsoft production site we integrate with 1DS telemetry. This is not a secret value.
+        NEXT_ENV_DESCRIPTOR=production \
+        NEXT_ONE_DS_INSTRUMENTATION_KEY=b341ec446e65436485df678003ce82f7-1d36a7a4-ef54-4cf0-93eb-ba18b3241d36-7404 \
+        npm run build
     - name: "Stamp content.json"
       env:
         GITSHA: ${{ github.sha }}
