@@ -22,7 +22,7 @@
     "eslint": "9.28.0",
     "eslint-config-next": "15.3.3",
     "postcss": "8.5.4",
-    "sass": "1.89.1",
+    "sass": "1.89.2",
     "typescript": "5.8.3"
   },
   "dependencies": {
