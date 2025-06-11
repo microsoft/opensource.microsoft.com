@@ -9,7 +9,7 @@ import UpstreamContributionsWidget from "./components/UpstreamContributionsWidge
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contributions',
+  title: 'Contributions that Microsoft makes to open source',
 };
 
 export default function Contributions() {

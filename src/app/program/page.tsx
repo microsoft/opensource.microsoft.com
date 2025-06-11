@@ -14,7 +14,7 @@ import Tools from './Tools';
 import Using from './Using';
 
 export const metadata: Metadata = {
-  title: 'Microsoft\'s Open Source Program',
+  title: 'About Microsoft\'s Open Source Program',
 };
 
 {/*
