@@ -106,48 +106,50 @@ function UpstreamContributions() {
           {contributionsToDisplay.map((contribution) => {
             const { repoName, created, context, title, id, actorLogin, orgName, actorAvatar, type, activityUrl } = contribution;
             return (
-              <article key={id} className="activity">
-                {actorAvatar && (
-                  <a
-                    className="activity__avatar"
-                    target='_blank'
-                    href={`https://github.com/${actorLogin}`}
-                  >
-                    <img
-                      src={actorAvatar}
-                      alt={actorLogin}
+              <li key={id}>
+                <article className="activity">
+                  {actorAvatar && (
+                    <a
                       className="activity__avatar"
-                    />
-                    {actorLogin}
-                  </a>
-                )}
-                <div className="activity__body">
-                  <div className="activity__body-hd">
-                    <a href={`https://github.com/${actorLogin}`} target='_blank'>
+                      target='_blank'
+                      href={`https://github.com/${actorLogin}`}
+                    >
+                      <img
+                        src={actorAvatar}
+                        alt={actorLogin}
+                        className="activity__avatar"
+                      />
                       {actorLogin}
                     </a>
-                    <p className="activity__activity">
-                      <span>
-                        {ShowOcticonForType(type, context || '')}
+                  )}
+                  <div className="activity__body">
+                    <div className="activity__body-hd">
+                      <a href={`https://github.com/${actorLogin}`} target='_blank'>
+                        {actorLogin}
+                      </a>
+                      <p className="activity__activity">
+                        <span>
+                          {ShowOcticonForType(type, context || '')}
+                          {' '}
+                          {GitHubDescriptionFromType(type, context || '')}
+                        </span>
                         {' '}
-                        {GitHubDescriptionFromType(type, context || '')}
-                      </span>
-                      {' '}
-                      <TimeAgo isoDate={created} />
-                    </p>
-                  </div>
-                  <a className="activity__title" href={activityUrl} target="_blank">
-                    {title}
-                  </a>
-                  <div className="activity__footer">
-                    <RepoIcon />
-                    {' '}
-                    <a target="_blank" href={activityUrl}>
-                      <strong>{orgName}/{repoName}</strong> repo
+                        <TimeAgo isoDate={created} />
+                      </p>
+                    </div>
+                    <a className="activity__title" href={activityUrl} target="_blank">
+                      {title}
                     </a>
+                    <div className="activity__footer">
+                      <RepoIcon />
+                      {' '}
+                      <a target="_blank" href={activityUrl}>
+                        <strong>{orgName}/{repoName}</strong> repo
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </li>
             );
           })}
         </ul>
