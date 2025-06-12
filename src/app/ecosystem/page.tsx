@@ -14,7 +14,7 @@ import { Metadata } from 'next';
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Ecosystem',
+  title: 'The Open Source Ecosystem supported by Microsoft',
 };
 
 type FundedProject = {

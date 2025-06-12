@@ -6,7 +6,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contributor License Agreements at Microsoft',
+  title: 'Contributor License Agreement - Microsoft projects',
 };
 
 export default function ContributorLicenseAgreement() {

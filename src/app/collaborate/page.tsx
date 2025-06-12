@@ -10,7 +10,7 @@ import ActivityStreamWidget from './components/ActivityStreamWidget';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Get involved',
+  title: 'Get involved with Microsoft open source projects',
 };
 
 export default function Collaborate() {
