@@ -1,4 +1,4 @@
-async function authorizationCheck({github, context}) {
+ async function authorizationCheck({github, context}) {
     const { payload, eventName } = context;
     const { sender, action, pull_request, review, repository } = payload;
     const { login } = sender;
