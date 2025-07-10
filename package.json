@@ -30,7 +30,7 @@
     "@primer/octicons-react": "19.15.3",
     "@primer/primitives": "11.0.0",
     "@primer/view-components": "0.43.5",
-    "@tanstack/react-query": "5.81.5",
+    "@tanstack/react-query": "5.82.0",
     "axios": "1.10.0",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
