@@ -19,10 +19,23 @@ export default function Footer() {
                       <div className="col-12 col-md-7 col-lg-7 mb-6 mb-md-0">
                           <div className="text-white" data-animate-in="fade">
                               <ul className="list-style-none">
+
+                                  <li>
+                                      <a className="mt-4 link-arrow-external" href="https://discord.com/invite/2PtM9ZaU" target="_blank" rel= "noopener">
+                                          <img className="mr-2" src="/images/discord.svg" alt="Discord icon" title="Discord icon" />
+                                          Microsoft Open Source
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a className="mt-4 link-arrow-external" href="https://www.youtube.com/playlist?list=PLlrxD0HtieHg8On6t1l5_kj--7PMmyfGi" target="_blank" rel= "noopener">
+                                          <img className="mr-2" src="/images/youtube.svg" alt="Youtube icon" title="Youtube icon" />
+                                          Open At Microsoft
+                                      </a>
+                                  </li>
                                   <li>
                                       <a className="mt-4 link-arrow-external" href="https://x.com/OpenAtMicrosoft" target="_blank" rel= "noopener">
                                           <img className="mr-2" src="/images/twitter.svg" alt="Twitter icon" title="Twitter icon" />
-                                          OpenAtMicrosoft
+                                          Open At Microsoft
                                       </a>
                                   </li>
                                   <li>
