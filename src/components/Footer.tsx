@@ -21,7 +21,7 @@ export default function Footer() {
                               <ul className="list-style-none">
 
                                   <li>
-                                      <a className="mt-4 link-arrow-external" href="https://discord.com/invite/2PtM9ZaU" target="_blank" rel= "noopener">
+                                      <a className="mt-4 link-arrow-external" href="https://discord.gg/microsoft-open-source" target="_blank" rel= "noopener">
                                           <img className="mr-2" src="/images/discord.svg" alt="Discord icon" title="Discord icon" />
                                           Microsoft Open Source
                                       </a>
