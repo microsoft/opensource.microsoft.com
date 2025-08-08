@@ -40,7 +40,7 @@ export default function AzureCredits() {
       <div className="tabs">
         <nav className="wrapper my-6" data-require-javascript="yes" data-javascript-show="immediate">
           <div className="col-md-10 col-lg-7 mx-auto">
-            <div className="tabs__tabs" role="tablist">
+            <div className="tabs__tabs">
               <AzureCreditsTabs />
             </div>
           </div>
