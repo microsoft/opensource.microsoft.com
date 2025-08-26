@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   build:
@@ -15,8 +16,14 @@ jobs:
     steps:
     - uses: actions/checkout@v5
       name: "Check it out"
-    - name: "Startup"
-      run: pwd
+
+    - name: Login for OIDC blob upload ☁️
+      uses: azure/login@v2.3.0
+      with:
+        client-id: ${{ secrets.BLOB_CLIENT_ID }}
+        tenant-id: ${{ secrets.BLOB_TENANT_ID }}
+        subscription-id: ${{ secrets.BLOB_SUBSCRIPTION_ID }}
+
     - name: "Build the site"
       run: |
         npm install
@@ -39,10 +46,6 @@ jobs:
       with:
         name: website
         path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip
-    - name: "List site files"
-      working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com
-      run: |
-        ls -la site.zip content.json
     - uses: azure/cli@v2
       name: "Upload to share via CLI (main)"
       if: github.ref == 'refs/heads/main'
@@ -75,3 +78,42 @@ jobs:
             --account-name ${{ vars.AZURE_FILES_USERNAME }} \
             --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
             -s oss-dev
+    - uses: azure/cli@v2
+      name: "Upload to blob via CLI (main)"
+      if: github.ref == 'refs/heads/main'
+      with:
+        inlineScript: |
+          az storage blob upload \
+            --auth-mode login \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+            --container-name oss-live \
+            --name site.zip \
+            --file site.zip \
+            --overwrite true
+          az storage blob upload \
+            --auth-mode login \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+            --container-name oss-live \
+            --name content.json \
+            --file content.json \
+            --overwrite true
+        
+    - uses: azure/cli@v2
+      name: "Upload dev content as blob (next branch)"
+      if: github.ref == 'refs/heads/next'
+      with:
+        inlineScript: |
+          az storage blob upload \
+            --auth-mode login \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+            --container-name oss-dev \
+            --name site.zip \
+            --file site.zip \
+            --overwrite true
+          az storage blob upload \
+            --auth-mode login \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+            --container-name oss-dev \
+            --name content.json \
+            --file content.json \
+            --overwrite true
