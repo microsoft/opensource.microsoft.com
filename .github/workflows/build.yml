@@ -47,38 +47,6 @@ jobs:
         name: website
         path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip
     - uses: azure/cli@v2
-      name: "Upload to share via CLI (main)"
-      if: github.ref == 'refs/heads/main'
-      # NOTE: Azure Files does not support FIC or managed identity at this time
-      with:
-        inlineScript: |
-          az storage file upload \
-            --account-key ${{ secrets.AZURE_FILES_SP }} \
-            --account-name ${{ vars.AZURE_FILES_USERNAME }} \
-            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip \
-            -s oss-live
-          az storage file upload \
-            --account-key ${{ secrets.AZURE_FILES_SP }} \
-            --account-name ${{ vars.AZURE_FILES_USERNAME }} \
-            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
-            -s oss-live
-    - uses: azure/cli@v2
-      name: "Upload dev content (next branch)"
-      if: github.ref == 'refs/heads/next'
-      # NOTE: Azure Files does not support FIC or managed identity at this time
-      with:
-        inlineScript: |
-          az storage file upload \
-            --account-key ${{ secrets.AZURE_FILES_SP }} \
-            --account-name ${{ vars.AZURE_FILES_USERNAME }} \
-            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip \
-            -s oss-dev
-          az storage file upload \
-            --account-key ${{ secrets.AZURE_FILES_SP }} \
-            --account-name ${{ vars.AZURE_FILES_USERNAME }} \
-            --source /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/content.json \
-            -s oss-dev
-    - uses: azure/cli@v2
       name: "Upload to blob via CLI (main)"
       if: github.ref == 'refs/heads/main'
       with:
@@ -97,7 +65,6 @@ jobs:
             --name content.json \
             --file content.json \
             --overwrite true
-        
     - uses: azure/cli@v2
       name: "Upload dev content as blob (next branch)"
       if: github.ref == 'refs/heads/next'
