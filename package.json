@@ -29,7 +29,7 @@
     "@primer/css": "22.0.2",
     "@primer/octicons-react": "19.16.0",
     "@primer/primitives": "10.7.0",
-    "@primer/view-components": "0.44.0",
+    "@primer/view-components": "0.44.1",
     "@tanstack/react-query": "5.87.4",
     "axios": "1.12.0",
     "date-fns": "^4.1.0",
