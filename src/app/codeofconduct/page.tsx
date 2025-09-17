@@ -152,6 +152,33 @@ export default function CodeOfConduct() {
           </div>
           <div className="pb-6">
             <h3 className="h3">
+              Responsible Use of AI-Generated Content
+            </h3>
+            <p>
+              {`
+              We are excited about the innovation and the opportunities that generative AI tools like 
+              GitHub Copilot bring to our community. It's essential to use these technologies thoughtfully 
+              and in alignment with our shared values of integrity, respect, and authenticity.
+              `}
+            </p>
+            <p>
+              When using generative AI to contribute to the community:
+            </p>
+            <ul>
+              <li><strong>Take ownership of your contributions.</strong> You are responsible for the content you share.</li>
+              <li><strong>Review and revise AI-generated responses before posting.</strong> Ensure they reflect your own understanding and voice.</li>
+              <li><strong>Apply your expertise </strong> to validate that the information is accurate, relevant, and helpful.</li>
+            </ul>
+            <p>
+              {`
+              These practices support a community built on trust, collaboration, and mutual respect. 
+              Misuse of AI-generated content may be considered a violation of our Code of Conduct. 
+              Please refer to the enforcement section for more details.
+              `}
+            </p>
+          </div>          
+          <div className="pb-6">
+            <h3 className="h3">
               Attribution
             </h3>
             <p>
