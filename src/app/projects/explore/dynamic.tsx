@@ -56,7 +56,7 @@ export default function ExploreProjectsDynamic() {
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    fetch(`/api/repos?q=${encodeURIComponent(searchQuery)}&languages=${filters.join(',')}`)
+    fetch(`/api/repos?q=${encodeURIComponent(searchQuery)}&languages=${filters.map((f) => encodeURIComponent(f)).join(',')}`)
       .then((response) => response.json())
       .then((data: ProjectsSearchResponse) => {
         setProjects(data.repos);
@@ -70,7 +70,7 @@ export default function ExploreProjectsDynamic() {
         : [...prevFilters, filter];
 
       // Trigger a new search with updated filters
-      fetch(`/api/repos?q=${encodeURIComponent(searchQuery)}&languages=${newFilters.join(',')}`)
+      fetch(`/api/repos?q=${encodeURIComponent(searchQuery)}&languages=${newFilters.map((f) => encodeURIComponent(f)).join(',')}`)
         .then((response) => response.json())
         .then((data: ProjectsSearchResponse) => {
           setProjects(data.repos);
