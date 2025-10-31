@@ -31,7 +31,7 @@
     "@primer/primitives": "11.2.1",
     "@primer/view-components": "0.46.0",
     "@tanstack/react-query": "5.90.5",
-    "axios": "1.12.2",
+    "axios": "1.13.1",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
     "next": "15.5.5",
