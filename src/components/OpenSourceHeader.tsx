@@ -148,7 +148,7 @@ const MicrosoftOpenSourceHeader: FunctionComponent<Props> = ( { site, siteSectio
                 <li>
                   <a
                     className='external'
-                    href="https://careers.microsoft.com/us/en/search-results?keywords=open%20source" target='_blank'>
+                    href="https://apply.careers.microsoft.com/careers?query=open+source" target='_blank'>
                     Jobs
                   </a>
                 </li>
