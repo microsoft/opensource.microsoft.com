@@ -79,7 +79,7 @@ function UpstreamContributions() {
   const contributionsToDisplay = contributions.slice(0, INITIAL_CONTRIBUTIONS_DISPLAY);
 
   if (isPending) {
-    return <div className="loading">Discovering recent contributions...</div>;
+    return <>Discovering recent contributions...</>;
   }
 
   if (error) {

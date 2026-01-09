@@ -155,7 +155,7 @@ function ActivityStream() {
   const activities = data?.activities || [];
 
   if (isPending) {
-    return <div className="loading">Discovering recent activity...</div>;
+    return <>Discovering recent activity...</>;
   }
 
   if (error) {
