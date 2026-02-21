@@ -1,0 +1,57 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com/
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}            - name: Azure DevOps Pull Request Notifications
+  # You may pin to the exact commit or the version.
+  # uses: dc-ag/azure-devops-pr-notification@0bd7787725f01880928dd1c8ea29c52109902b70
+  uses: dc-ag/azure-devops-pr-notification@v1.4.0
+  with:
+    # Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}
+    repo-token: 
+    # Regex which gets applied to title and body (in this order) to find the DevOpsId (only first match gets used)
+    devops-work-item-regex: 
+    # The state you want the work item to be set to (exact string match). Keep empty to skip.
+    set-to-state: # optional
+    # Set to true if you don't want to set the state while GitHub PRs associated with the DevOps Work Item are still open
+    dont-set-state-while-prs-open: # optional
+    # The url-slug of the devops organization
+    devops-organization: # optional
+    # The Personal-Access-Token (PAT) to authorize the action to communicate with DevOps. As of now the PAT needs the following rights: - 'Work Items - Read, write, & manage' to move the work item between states - 'Full Access' to link the PR to the work item (currently there is no specific right to only allow this, it only works with full access. Be careful who you give this token!)
+    devops-pat: 
+    # If you don't want the action to fail (and create failed checks) on error (e.g. when # the work item id couldn't be found via the regex or an unforseen error occurs) set # this to false. Setting this to false will also allow partial completion (e.g. only # link pr but not move the state)
+    fail-on-error: # optional
+    # Regex to check branches. If matched the PR won't be assigned any reviewers via this workflow
+    ignore-branches-regex: # optional
+          
