@@ -11,7 +11,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
-import { BellSlashIcon, CommentIcon, GitMergeIcon, GitPullRequestIcon, IssueOpenedIcon, IssueReopenedIcon, RepoIcon, SyncIcon } from '@primer/octicons-react';
+import { BellSlashIcon, RepoIcon, SyncIcon } from '@primer/octicons-react';
 import { formatDistanceToNow } from 'date-fns';
 import { GitHubDescriptionFromType, ShowOcticonForType } from '@/app/contributions/components/UpstreamContributionsWidget';
 import Link from 'next/link';
@@ -155,23 +155,23 @@ function ActivityStream() {
   const activities = data?.activities || [];
 
   if (isPending) {
-    return <>Discovering recent activity...</>;
+    return <li>Discovering recent activity...</li>;
   }
 
   if (error) {
     return (
-      <div className="error">
+      <li className="error">
         <p>There was an error loading recent activity.</p>
         <p>{error.message}</p>
-      </div>
+      </li>
     );
   }
 
   if (!activities.length) {
     return (
-      <div className="error">
+      <li className="error">
         <p>No recent information to show.</p>
-      </div>
+      </li>
     );
   }
 
