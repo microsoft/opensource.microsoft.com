@@ -90,6 +90,8 @@ typings/
 
 # Next.js build output
 .next
+playwright-report/
+test-results/
 
 # Nuxt.js build / generate output
 .nuxt

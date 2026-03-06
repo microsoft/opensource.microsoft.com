@@ -31,6 +31,12 @@ jobs:
         NEXT_ENV_DESCRIPTOR=production \
         NEXT_ONE_DS_INSTRUMENTATION_KEY=b341ec446e65436485df678003ce82f7-1d36a7a4-ef54-4cf0-93eb-ba18b3241d36-7404 \
         npm run build
+    - name: "Install Playwright browser"
+      run: npx playwright install --with-deps chromium
+    - name: "Run automated accessibility checks"
+      env:
+        A11Y_USE_EXISTING_BUILD: '1'
+      run: npm run a11y -- --reporter=line
     - name: "Stamp content.json"
       env:
         GITSHA: ${{ github.sha }}
