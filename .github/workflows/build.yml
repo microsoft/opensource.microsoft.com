@@ -18,7 +18,7 @@ jobs:
       name: "Check it out"
 
     - name: Login for OIDC blob upload ☁️
-      uses: azure/login@v2.3.0
+      uses: azure/login@v3.0.0
       with:
         client-id: ${{ secrets.BLOB_CLIENT_ID }}
         tenant-id: ${{ secrets.BLOB_TENANT_ID }}
