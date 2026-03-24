@@ -28,7 +28,7 @@
     "postcss": "8.5.8",
     "sass": "1.98.0",
     "serve": "^14.2.6",
-    "typescript": "5.9.3"
+    "typescript": "6.0.2"
   },
   "dependencies": {
     "@primer/css": "22.1.1",
