@@ -52,7 +52,7 @@ jobs:
       with:
         name: website
         path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip
-    - uses: azure/cli@v2
+    - uses: azure/cli@v3
       name: "Upload to blob via CLI (main)"
       if: github.ref == 'refs/heads/main'
       with:
@@ -71,7 +71,7 @@ jobs:
             --name content.json \
             --file content.json \
             --overwrite true
-    - uses: azure/cli@v2
+    - uses: azure/cli@v3
       name: "Upload dev content as blob (next branch)"
       if: github.ref == 'refs/heads/next'
       with:
