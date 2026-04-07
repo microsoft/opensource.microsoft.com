@@ -26,7 +26,7 @@
     "eslint": "9.39.2",
     "eslint-config-next": "16.2.2",
     "postcss": "8.5.8",
-    "sass": "1.98.0",
+    "sass": "1.99.0",
     "serve": "^14.2.6",
     "typescript": "6.0.2"
   },
