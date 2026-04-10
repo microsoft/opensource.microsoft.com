@@ -72,7 +72,7 @@ function HelpWantedSection() {
   const helpWanted = data?.helpWanted || [];
 
   if (isPending) {
-    return <>Discovering recent activity...</>;
+    return <p>Discovering recent activity...</p>;
   }
 
   if (error) {
