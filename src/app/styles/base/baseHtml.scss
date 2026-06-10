@@ -98,3 +98,14 @@ hr {
 ::-moz-selection {
     @include selection;
 }
+
+// ---------------------------------------------------------------------
+//  Keyboard Focus Indicator
+//  Ensures all interactive controls show a clearly visible focus
+//  indicator when navigated via keyboard (WCAG 2.4.7 Focus Visible).
+// ---------------------------------------------------------------------
+:focus-visible {
+    outline: 2px solid $brand;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
