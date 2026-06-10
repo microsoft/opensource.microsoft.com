@@ -57,6 +57,14 @@ body {
 	width: 100%;
 	padding: 0 0 0 20px;
 
+	// Preserve the dark brand bar in Windows High Contrast (forced-colors)
+	// themes such as Desert. Otherwise the background is forced to the system
+	// Canvas color (light) while the white SVG logo stays white, dropping the
+	// "Microsoft | Open Source" text contrast to ~1.04:1.
+	@media (forced-colors: active) {
+		forced-color-adjust: none;
+	}
+
 	@include start-at($header-breakpoint) {
 		height: $header-height;
 		padding: 0 3%;
