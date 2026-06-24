@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@primer/css": "22.2.0",
-    "@primer/octicons-react": "19.28.0",
+    "@primer/octicons-react": "19.28.1",
     "@primer/primitives": "11.9.0",
     "@primer/view-components": "0.51.5",
     "@tanstack/react-query": "5.101.0",
