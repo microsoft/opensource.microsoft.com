@@ -1,0 +1,11 @@
+name: hello_$(Date:yyyyMMdd)$(Rev:.r)
+
+trigger: none
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - script: echo "hello"
+    displayName: Say hello
