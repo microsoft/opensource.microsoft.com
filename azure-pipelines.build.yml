@@ -1,0 +1,142 @@
+name: build_$(Date:yyyyMMdd)$(Rev:.r)
+
+trigger:
+  branches:
+    include:
+      - main
+      - next
+
+pr: none
+
+resources:
+  repositories:
+    - repository: 1esPipelines
+      type: git
+      name: 1ESPipelineTemplates/1ESPipelineTemplates
+      ref: refs/tags/release
+
+parameters:
+  - name: enableBlobUpload
+    displayName: Enable blob uploads (set false during shadow period)
+    type: boolean
+    default: false
+  - name: poolName
+    type: string
+    default: 1ES-Shared-Hosted-Pool_Linux-Mariner-2
+  - name: poolOs
+    type: string
+    default: linux
+  - name: azureServiceConnection
+    type: string
+    default: OSPO-OSS-Blob-WIF
+
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1esPipelines
+  parameters:
+    pool:
+      name: ${{ parameters.poolName }}
+      os: ${{ parameters.poolOs }}
+    stages:
+      - stage: BuildAndValidate
+        displayName: Build and validate site
+        jobs:
+          - job: Build
+            displayName: Build, a11y checks, and package
+            variables:
+              # Store this as a secret pipeline variable if your policy requires it.
+              OneDSInstrumentationKey: b341ec446e65436485df678003ce82f7-1d36a7a4-ef54-4cf0-93eb-ba18b3241d36-7404
+              AzureStorageAccountName: $(AZURE_STORAGE_ACCOUNT_NAME)
+            steps:
+              - checkout: self
+                displayName: Check out repository
+
+              - task: NodeTool@0
+                displayName: Use Node.js
+                inputs:
+                  versionSpec: 20.x
+
+              - script: npm install
+                displayName: Install dependencies
+
+              - script: |
+                  NEXT_ENV_DESCRIPTOR=production \
+                  NEXT_ONE_DS_INSTRUMENTATION_KEY=$(OneDSInstrumentationKey) \
+                  npm run build
+                displayName: Build site
+
+              - script: npx playwright install --with-deps chromium
+                displayName: Install Playwright browser
+
+              - script: npm run a11y -- --reporter=line
+                displayName: Run automated accessibility checks
+                env:
+                  A11Y_USE_EXISTING_BUILD: "1"
+
+              - script: |
+                  echo "{\"commitId\":\"$(Build.SourceVersion)\"}" > content.json
+                  cat ./content.json
+                  cp content.json out/
+                displayName: Stamp content.json
+
+              - script: |
+                  cd out
+                  zip -r ../site.zip .
+                displayName: Compress static site
+
+              - task: 1ES.PublishPipelineArtifact@1
+                displayName: Store site zip as pipeline artifact
+                inputs:
+                  targetPath: $(Build.SourcesDirectory)/site.zip
+                  artifactName: website
+
+              - task: 1ES.PublishPipelineArtifact@1
+                displayName: Store content.json as pipeline artifact
+                inputs:
+                  targetPath: $(Build.SourcesDirectory)/content.json
+                  artifactName: content
+
+              - task: AzureCLI@2
+                displayName: Upload to blob (main -> oss-live)
+                condition: and(succeeded(), eq('${{ parameters.enableBlobUpload }}', 'true'), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+                inputs:
+                  azureSubscription: ${{ parameters.azureServiceConnection }}
+                  scriptType: bash
+                  scriptLocation: inlineScript
+                  inlineScript: |
+                    az storage blob upload \
+                      --auth-mode login \
+                      --account-name "$(AzureStorageAccountName)" \
+                      --container-name oss-live \
+                      --name site.zip \
+                      --file site.zip \
+                      --overwrite true
+                    az storage blob upload \
+                      --auth-mode login \
+                      --account-name "$(AzureStorageAccountName)" \
+                      --container-name oss-live \
+                      --name content.json \
+                      --file content.json \
+                      --overwrite true
+
+              - task: AzureCLI@2
+                displayName: Upload to blob (next -> oss-dev)
+                condition: and(succeeded(), eq('${{ parameters.enableBlobUpload }}', 'true'), eq(variables['Build.SourceBranch'], 'refs/heads/next'))
+                inputs:
+                  azureSubscription: ${{ parameters.azureServiceConnection }}
+                  scriptType: bash
+                  scriptLocation: inlineScript
+                  inlineScript: |
+                    az storage blob upload \
+                      --auth-mode login \
+                      --account-name "$(AzureStorageAccountName)" \
+                      --container-name oss-dev \
+                      --name site.zip \
+                      --file site.zip \
+                      --overwrite true
+                    az storage blob upload \
+                      --auth-mode login \
+                      --account-name "$(AzureStorageAccountName)" \
+                      --container-name oss-dev \
+                      --name content.json \
+                      --file content.json \
+                      --overwrite true
