@@ -3,9 +3,25 @@ name: hello_$(Date:yyyyMMdd)$(Rev:.r)
 trigger: none
 pr: none
 
-pool:
-  vmImage: ubuntu-latest
+resources:
+  repositories:
+    - repository: 1esPipelines
+      type: git
+      name: 1ESPipelineTemplates/1ESPipelineTemplates
+      ref: refs/tags/release
 
-steps:
-  - script: echo "hello"
-    displayName: Say hello
+extends:
+  template: v1/1ES.Unofficial.PipelineTemplate.yml@1esPipelines
+  parameters:
+    pool:
+      name: 1ES-Shared-Hosted-Pool_Linux-Mariner-2
+      os: linux
+    stages:
+      - stage: Hello
+        displayName: Hello
+        jobs:
+          - job: SayHello
+            displayName: Say hello
+            steps:
+              - script: echo "hello"
+                displayName: Say hello
