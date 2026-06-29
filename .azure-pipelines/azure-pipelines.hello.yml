@@ -1,6 +1,10 @@
 name: hello_$(Date:yyyyMMdd)$(Rev:.r)
 
-trigger: none
+trigger:
+  branches:
+    include:
+    - main
+    - next
 pr: none
 
 resources:
