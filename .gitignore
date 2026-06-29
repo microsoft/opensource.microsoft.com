@@ -121,3 +121,9 @@ dist
 localbuilder.sh
 
 assets/js/
+
+
+notes/*
+notes
+
+azure-pipelines.build.yml
