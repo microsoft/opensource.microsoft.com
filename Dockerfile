@@ -16,5 +16,19 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-FROM nginx:alpine
-COPY --from=build /build/out /usr/share/nginx/html
+FROM mcr.microsoft.com/azurelinux/base/core:3.0
+
+# Install nginx
+RUN tdnf install -y nginx --quiet && tdnf clean all
+
+WORKDIR /usr/share/nginx/html
+COPY --from=build /build/out .
+
+# Configure nginx
+RUN chmod -R 755 /usr/share/nginx/html
+
+EXPOSE 80
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+  CMD curl -f http://localhost/ || exit 1
+
+CMD ["nginx", "-g", "daemon off;"]
