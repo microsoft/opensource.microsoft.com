@@ -1,2 +1,4 @@
 User-agent: *
 Allow:
+Disallow: /*?*ep_*
+Disallow: /*&ep_*
