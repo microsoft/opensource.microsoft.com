@@ -1,92 +1,92 @@
-name: Build the content
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-      - next
+# name: Build the content
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches:
+#       - main
+#       - next
 
-permissions:
-  contents: read
-  id-token: write
+# permissions:
+#   contents: read
+#   id-token: write
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v7
-      name: "Check it out"
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v7
+#       name: "Check it out"
 
-    - name: Login for OIDC blob upload ☁️
-      uses: azure/login@v3.0.0
-      with:
-        client-id: ${{ secrets.BLOB_CLIENT_ID }}
-        tenant-id: ${{ secrets.BLOB_TENANT_ID }}
-        subscription-id: ${{ secrets.BLOB_SUBSCRIPTION_ID }}
+#     - name: Login for OIDC blob upload ☁️
+#       uses: azure/login@v3.0.0
+#       with:
+#         client-id: ${{ secrets.BLOB_CLIENT_ID }}
+#         tenant-id: ${{ secrets.BLOB_TENANT_ID }}
+#         subscription-id: ${{ secrets.BLOB_SUBSCRIPTION_ID }}
 
-    - name: "Build the site"
-      run: |
-        npm install
-        # For the Microsoft production site we integrate with 1DS telemetry. This is not a secret value.
-        NEXT_ENV_DESCRIPTOR=production \
-        NEXT_ONE_DS_INSTRUMENTATION_KEY=b341ec446e65436485df678003ce82f7-1d36a7a4-ef54-4cf0-93eb-ba18b3241d36-7404 \
-        npm run build
-    - name: "Install Playwright browser"
-      run: npx playwright install --with-deps chromium
-    - name: "Run automated accessibility checks"
-      env:
-        A11Y_USE_EXISTING_BUILD: '1'
-      run: npm run a11y -- --reporter=line
-    - name: "Stamp content.json"
-      env:
-        GITSHA: ${{ github.sha }}
-      run: |
-          echo "{\"commitId\":\"$GITSHA\"}" > content.json
-          cat ./content.json
-          cp content.json out/
-    - name: "Compress the static site"
-      run: zip -r ../site.zip .
-      working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/out
-    - uses: actions/upload-artifact@v7
-      name: "Store the site as an artifact"
-      with:
-        name: website
-        path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip
-    - uses: azure/cli@v3
-      name: "Upload to blob via CLI (main)"
-      if: github.ref == 'refs/heads/main'
-      with:
-        inlineScript: |
-          az storage blob upload \
-            --auth-mode login \
-            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --container-name oss-live \
-            --name site.zip \
-            --file site.zip \
-            --overwrite true
-          az storage blob upload \
-            --auth-mode login \
-            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --container-name oss-live \
-            --name content.json \
-            --file content.json \
-            --overwrite true
-    - uses: azure/cli@v3
-      name: "Upload dev content as blob (next branch)"
-      if: github.ref == 'refs/heads/next'
-      with:
-        inlineScript: |
-          az storage blob upload \
-            --auth-mode login \
-            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --container-name oss-dev \
-            --name site.zip \
-            --file site.zip \
-            --overwrite true
-          az storage blob upload \
-            --auth-mode login \
-            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --container-name oss-dev \
-            --name content.json \
-            --file content.json \
-            --overwrite true
+#     - name: "Build the site"
+#       run: |
+#         npm install
+#         # For the Microsoft production site we integrate with 1DS telemetry. This is not a secret value.
+#         NEXT_ENV_DESCRIPTOR=production \
+#         NEXT_ONE_DS_INSTRUMENTATION_KEY=b341ec446e65436485df678003ce82f7-1d36a7a4-ef54-4cf0-93eb-ba18b3241d36-7404 \
+#         npm run build
+#     - name: "Install Playwright browser"
+#       run: npx playwright install --with-deps chromium
+#     - name: "Run automated accessibility checks"
+#       env:
+#         A11Y_USE_EXISTING_BUILD: '1'
+#       run: npm run a11y -- --reporter=line
+#     - name: "Stamp content.json"
+#       env:
+#         GITSHA: ${{ github.sha }}
+#       run: |
+#           echo "{\"commitId\":\"$GITSHA\"}" > content.json
+#           cat ./content.json
+#           cp content.json out/
+#     - name: "Compress the static site"
+#       run: zip -r ../site.zip .
+#       working-directory: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/out
+#     - uses: actions/upload-artifact@v7
+#       name: "Store the site as an artifact"
+#       with:
+#         name: website
+#         path: /home/runner/work/opensource.microsoft.com/opensource.microsoft.com/site.zip
+#     - uses: azure/cli@v3
+#       name: "Upload to blob via CLI (main)"
+#       if: github.ref == 'refs/heads/main'
+#       with:
+#         inlineScript: |
+#           az storage blob upload \
+#             --auth-mode login \
+#             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+#             --container-name oss-live \
+#             --name site.zip \
+#             --file site.zip \
+#             --overwrite true
+#           az storage blob upload \
+#             --auth-mode login \
+#             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+#             --container-name oss-live \
+#             --name content.json \
+#             --file content.json \
+#             --overwrite true
+#     - uses: azure/cli@v3
+#       name: "Upload dev content as blob (next branch)"
+#       if: github.ref == 'refs/heads/next'
+#       with:
+#         inlineScript: |
+#           az storage blob upload \
+#             --auth-mode login \
+#             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+#             --container-name oss-dev \
+#             --name site.zip \
+#             --file site.zip \
+#             --overwrite true
+#           az storage blob upload \
+#             --auth-mode login \
+#             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+#             --container-name oss-dev \
+#             --name content.json \
+#             --file content.json \
+#             --overwrite true
