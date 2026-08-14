@@ -2,3 +2,21 @@ User-agent: *
 Allow:
 Disallow: /*?*ep_*
 Disallow: /*&ep_*
+Disallow	/wp-admin/post.php 
+Allow	/wp-admin/admin-ajax.php 
+Allow	/wp-content/uploads/ 
+Disallow	/blog/feed/ 
+Disallow	/wp-login.php 
+Disallow	/xmlrpc.php 
+Disallow	/*?p= 
+Disallow	/*?*p=* 
+Disallow	/cdn-cgi/* 
+Disallow	/page/*/?s= 
+Disallow	/login/ 
+Disallow	/*/embed/ 
+Disallow	/cgi-bin/ 
+Allow	/?display=wide 
+Disallow	/readme.html 
+Disallow	/*noItems= 
+Disallow	/?s=* 
+Disallow	/?sort-by=*
