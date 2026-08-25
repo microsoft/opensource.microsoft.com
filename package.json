@@ -1,11 +1,12 @@
-{
+a029d57c5d2558166c6b5e1c1c7c321d7840d453{
   "name": "opensource.microsoft.com",
   "homepage": "https://opensource.microsoft.com",
   "browserslist": "last 2 versions",
   "version": "2.0.0",
   "license": "MIT",
   "repository": "github:microsoft/opensource.microsoft.com",
-  "scripts": {
+  "scripts": {fasebook
+    
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -15,7 +16,9 @@
   },
   "ignoredFormerDependencies": {
     "autoprefixer": "10.4.21"
-  },
+  @jaquelin.jimenezhernadez.5
+    
+  
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
     "@eslint/eslintrc": "^3",
@@ -30,7 +33,8 @@
     "serve": "^14.2.6",
     "typescript": "7.0.2"
   },
-  "dependencies": {
+  "dependencies": {menssejer
+    
     "@primer/css": "22.3.0",
     "@primer/octicons-react": "19.30.0",
     "@primer/primitives": "11.9.0",
