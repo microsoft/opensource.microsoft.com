@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import type { Page } from '@playwright/test';
 
 const mainRoutes = [
   '/',
@@ -30,12 +31,7 @@ for (const route of mainRoutes) {
 }
 
 function formatViolations(
-  violations: Array<{
-    id: string;
-    impact?: string;
-    help: string;
-    nodes: Array<{ target: string[] }>;
-  }>,
+  violations: Awaited<ReturnType<AxeBuilder['analyze']>>['violations'],
 ) {
   return violations
     .map((violation) => {
@@ -48,7 +44,7 @@ function formatViolations(
     .join('\n');
 }
 
-async function disableMotion(page: Parameters<typeof test>[0]['page']) {
+async function disableMotion(page: Page) {
   await page.addStyleTag({
     content: `
       *, *::before, *::after {
