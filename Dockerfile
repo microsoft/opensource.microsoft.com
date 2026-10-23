@@ -3,7 +3,7 @@
 # Licensed under the MIT license. See LICENSE file in the project root for full license information.
 #
 
-ARG IMAGE_NAME=mcr.microsoft.com/azurelinux/base/nodejs:20
+ARG IMAGE_NAME=mcr.microsoft.com/azurelinux/base/nodejs:24
 
 FROM $IMAGE_NAME AS build
 
@@ -13,7 +13,8 @@ WORKDIR /build
 
 COPY . .
 
-RUN npm install
+RUN --mount=type=secret,id=npmrc \
+    npm ci --userconfig=/run/secrets/npmrc
 RUN npm run build
 
 FROM mcr.microsoft.com/azurelinux/base/core:3.0

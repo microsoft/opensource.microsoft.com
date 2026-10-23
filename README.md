@@ -86,12 +86,28 @@ Microsoft's standard cookie compliance and analytics code to connect with Applic
 
 # Development
 
-Ensure you have a modern Node.js environment.
+Use Node.js 24 LTS and npm 11.
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
+
+Keep `package-lock.json`: it pins the dependency versions and integrity hashes
+for reproducible installs. The `omit-lockfile-registry-resolved` setting deliberately
+omits registry-specific tarball URLs, so npm resolves those locked packages
+through your configured registry (npmjs.org by default). This requires additional
+metadata lookups during installation, but does not require deleting or
+regenerating the lockfile when using a different registry.
+
+Use `npm install <package>` to add or update dependencies and commit both
+`package.json` and `package-lock.json`. Keep registry credentials in your user
+configuration or CI secret storage, never in the repository.
+
+Only add publicly available packages. The public CI job verifies installation
+from npmjs.org, builds the site, and runs the accessibility checks.
+
+### Accessibility checks
 
 To run the automated accessibility checks for the primary site pages:
 
@@ -105,3 +121,7 @@ The accessibility check builds the exported site, serves the generated `out/` fo
 The `Dockerfile` is available to host a local `nginx` version of the static site,
 although dynamic site features are not available when running local.
 
+For Docker builds using a custom registry, pass an npm configuration with
+`docker build --secret id=npmrc,src=/path/to/authenticated.npmrc .`.
+The configuration is mounted only during installation and is not copied into
+an image layer.

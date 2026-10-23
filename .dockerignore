@@ -1,0 +1,9 @@
+.git
+.next
+node_modules
+out
+playwright-report
+test-results
+.npmrc
+.env*
+*.log
