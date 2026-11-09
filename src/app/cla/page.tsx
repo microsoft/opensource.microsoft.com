@@ -84,7 +84,7 @@ export default function ContributorLicenseAgreement() {
             </p>
             <p>
               While Microsoft assists with infrastructure alignment, the foundation maintains
-              a separate CLA. You can read more about this process at 
+              a separate CLA. You can read more about this process at {' '}
               <a target="_new" href="https://cla.dotnetfoundation.org/">https://cla.dotnetfoundation.org/</a>. 
               Even Microsoft employees must sign the .NET Foundation CLA to cover their contributions to
               the community.
