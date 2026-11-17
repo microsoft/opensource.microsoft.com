@@ -23,11 +23,11 @@
     "@types/node": "25.3.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "eslint": "10.12.0",
+    "eslint": "10.15.0",
     "eslint-config-next": "16.4.2",
     "postcss": "8.5.30",
     "sass": "1.105.2",
-    "serve": "^14.2.6",
+    "serve": "^14.2.8",
     "typescript": "7.0.2"
   },
   "dependencies": {
@@ -39,7 +39,7 @@
     "axios": "1.20.0",
     "date-fns": "^4.4.0",
     "gray-matter": "^4.0.3",
-    "next": "16.4.2",
+    "next": "16.4.5",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   }
