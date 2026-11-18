@@ -27,15 +27,15 @@ const INITIAL_CONTRIBUTIONS_DISPLAY = 15;
 type Contribution = {
   repoName: string;
   orgName: string;
-  title: string;
+  title?: string | null;
   id: string;
   context?: string;
   payload: {
-    number: number;
+    number?: number;
     pull_request?: {
       state: string;
       merged: boolean;
-      title: string;
+      title?: string | null;
       number: number;
     };
   };
@@ -56,6 +56,19 @@ type GitHubContributionsEvent = {
 
 function TimeAgo({ isoDate }: { isoDate: string }) {
   return <span>{formatDistanceToNow(new Date(isoDate), { addSuffix: true })}</span>;
+}
+
+function contributionTitle(contribution: Contribution) {
+  const title = contribution.title?.trim() || contribution.payload?.pull_request?.title?.trim();
+  if (title) return title;
+
+  const kind = contribution.type.startsWith('pull_request')
+    ? 'Pull request'
+    : contribution.type.startsWith('issue')
+      ? 'Issue'
+      : 'Contribution';
+  const number = contribution.payload?.number;
+  return `${kind}${number != null ? ` #${number}` : ''} in ${contribution.orgName}/${contribution.repoName}`;
 }
 
 export default function UpstreamContributionsWidget() {
@@ -104,7 +117,7 @@ function UpstreamContributions() {
       <div id="contributionsFeed" className="col-12">
         <ul className="project-list" id="contributionsList">
           {contributionsToDisplay.map((contribution) => {
-            const { repoName, created, context, title, id, actorLogin, orgName, actorAvatar, type, activityUrl } = contribution;
+            const { repoName, created, context, id, actorLogin, orgName, actorAvatar, type, activityUrl } = contribution;
             return (
               <li key={id}>
                 <article className="activity">
@@ -138,7 +151,7 @@ function UpstreamContributions() {
                       </p>
                     </div>
                     <a className="activity__title" href={activityUrl} target="_blank">
-                      {title}
+                      {contributionTitle(contribution)}
                     </a>
                     <div className="activity__footer">
                       <RepoIcon />
