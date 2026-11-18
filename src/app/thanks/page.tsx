@@ -68,8 +68,8 @@ const components: DependencyEntry[] = [];
 let dependencies: DependencyEntry[] = [];
 const skips = new Set(SKIP_DEPENDENCIES);
 
-function fromPackage(src: any, dest: DependencyEntry[]) {
-  for (let component of src) {
+function fromPackage(src: { name: string }[], dest: DependencyEntry[]) {
+  for (const component of src) {
     const name = component.name;
     if (skips.has(name)) {
       continue;
@@ -83,8 +83,8 @@ function fromPackage(src: any, dest: DependencyEntry[]) {
         continue;
       }
       const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-      let entry: DependencyEntry = { title: data.title || data.name };
-      let repo = getGitHubRepo(data.homepage);
+      const entry: DependencyEntry = { title: data.title || data.name };
+      const repo = getGitHubRepo(data.homepage);
       if (repo) {
         entry.repo = repo;
       }
@@ -95,10 +95,10 @@ function fromPackage(src: any, dest: DependencyEntry[]) {
   }
 }
 
-function getGitHubRepo(...values: any[]) {
-  for (let i = 0; i < values.length; i++) {
-    if (values[i] && values[i].startsWith && values[i].startsWith('https://github.com/')) {
-      return values[i];
+function getGitHubRepo(...values: unknown[]) {
+  for (const value of values) {
+    if (typeof value === 'string' && value.startsWith('https://github.com/')) {
+      return value;
     }
   }
 }
@@ -132,7 +132,7 @@ export default function Thanks() {
         <div className="wrapper my-6 py-4">
           <div className="col-md-10 col-lg-7 mx-auto">
             <h3 className="h4 font-weight-400 mb-4">
-              Hundreds of thousands of open source projects are used across Microsoft's
+              Hundreds of thousands of open source projects are used across Microsoft&apos;s
               products and services, many contributed to by Microsoft engineers and teams
               along the way.
             </h3>

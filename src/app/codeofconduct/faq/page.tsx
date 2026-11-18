@@ -51,7 +51,7 @@ const FAQ_ENTRIES: Entry[] = [
       <>
         The Microsoft Open Source Code of Conduct is an instantiation of the{" "}
         <a className="link-standard" href="https://www.contributor-covenant.org/version/2/0/code_of_conduct/">
-          Contributor's Covenant 2.0
+          Contributor&apos;s Covenant 2.0
         </a>
         , that captures the Microsoft culture of equality, respect and inclusion. By leveraging this template, which is used by many{" "}
         <a className="link-standard" href="https://www.contributor-covenant.org/adopters/">
@@ -103,7 +103,7 @@ const FAQ_ENTRIES: Entry[] = [
           <a className="link-standard" href="mailto:opencode@microsoft.com">
             opencode@microsoft.com
           </a>
-          . Your message will be handled in a secure and confidential manner. This email address is monitored by the Open Source Program's Office, who are not directly active in open source projects or communities — so you can be sure that you are not communicating with a person involved in the issue you are reporting.
+          . Your message will be handled in a secure and confidential manner. This email address is monitored by the Open Source Program&apos;s Office, who are not directly active in open source projects or communities — so you can be sure that you are not communicating with a person involved in the issue you are reporting.
         </p>
         <p>
           You will receive a response within one business day acknowledging receipt of your email and describing the process for its resolution. (See below for more details.)
@@ -148,7 +148,7 @@ const FAQ_ENTRIES: Entry[] = [
                 opencode@microsoft.com
               </a>
             </p>
-            <small>Email address is published with Code of Conduct, linked from every Microsoft Open Source project's repo.</small>
+            <small>Email address is published with Code of Conduct, linked from every Microsoft Open Source project&apos;s repo.</small>
             <hr />
           </div>
           <div>

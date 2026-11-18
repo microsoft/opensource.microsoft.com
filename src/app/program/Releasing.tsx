@@ -24,7 +24,7 @@ export default function Releasing() {
         </p>
         <h5 className="h5">Location</h5>
         <p>
-          All Microsoft open source code should be released on GitHub in one of Microsoft's{' '}
+          All Microsoft open source code should be released on GitHub in one of Microsoft&apos;s{' '}
           GitHub orgs. The vast majority of projects will go in the official company org.
         </p>
         <p>
@@ -58,8 +58,8 @@ export default function Releasing() {
         <ul className="ul mt-4">
           <li>
             <b>Create your repo and register your release:</b>{' '}
-            The "new repo wizard" contains a form of questions regarding your release. Start there, or,{' '}
-            if you created the repo directly on GitHub, you'll receive a link by e-mail to complete the wizard{' '}
+            The &quot;new repo wizard&quot; contains a form of questions regarding your release. Start there, or,{' '}
+            if you created the repo directly on GitHub, you&apos;ll receive a link by e-mail to complete the wizard{' '}
             and unlock your repo.<br /><br />
             If a business and legal review is needed, the wizard will trigger that review process at the end.
           </li>

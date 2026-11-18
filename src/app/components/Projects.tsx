@@ -7,7 +7,7 @@ import React from 'react';
 import { getHighlightedProjects } from '../projects/data';
 import Link from 'next/link';
 
-function chooseRandom(arr: any[], num: number) {
+function chooseRandom<T>(arr: T[], num: number) {
   const shuffled = arr.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, num);
 }

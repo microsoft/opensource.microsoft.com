@@ -56,7 +56,7 @@ const MicrosoftOpenSourceHeader: FunctionComponent<Props> = ( { site, siteSectio
 
   const callback = useCallback(() => {
     // Adapted for React from the JavaScript + jQuery implementation we launched
-    // in the public site here: https://github.com/microsoft/opensource.microsoft.com/blob/main/_dev/js/main.js
+    // in the public site here: https://github.com/microsoft/opensource.microsoft.com/blob/a0a8eed46c35ff85e88053172cb1e3d6e112d31f/_dev/js/main.js
     const header = document.getElementById(showDevelopmentHeader ? 'site-header-dev' : 'site-header');
     if (window.pageYOffset >= 120) {
       header?.classList.add('is-sticky');
@@ -79,7 +79,7 @@ const MicrosoftOpenSourceHeader: FunctionComponent<Props> = ( { site, siteSectio
     if (lastScrollTop !== currentScrollTop) {
       setLastScrollTop(currentScrollTop);
     }
-  }, [lastScrollTop]);
+  }, [lastScrollTop, showDevelopmentHeader]);
 
   useGlobalScroll(callback);
 
@@ -88,14 +88,10 @@ const MicrosoftOpenSourceHeader: FunctionComponent<Props> = ( { site, siteSectio
       <header id={showDevelopmentHeader ? 'site-header-dev' : 'site-header'} role="banner">
         <div className={`site-header${showDevelopmentHeader ? '-dev' : ''}__inner`}>
           <div className="site-logo">
-            <a href="/" onClick={(e) => { /* tabIndex={2}  */
-              e.preventDefault();
-              router.push('/');
-              // navigate('/');
-            }}>
+            <Link href="/">
               <Image src={MicrosoftOpenSourceLogo} alt='Microsoft | Open Source logo' />
               <span className="sr-only">Return to homepage</span>
-            </a>
+            </Link>
           </div>
           <ul className="site-header__nav list-style-none">
             {site === 'opensource-management-portal' && (
@@ -104,28 +100,28 @@ const MicrosoftOpenSourceHeader: FunctionComponent<Props> = ( { site, siteSectio
                   <a href="https://aka.ms/opensource">Docs</a>
                 </li>
                 <li className={selected === 'github' ? selectedClassName : undefined}>
-                  <Link as="a" href="/" onClick={(e: any) => {
+                  <Link as="a" href="/" onClick={(e) => {
                     e.preventDefault();
                     // navigate('/');
                     router.push('/');
                   }}>Open Source Management</Link>
                 </li>
                 <li className={selected === 'use' ? selectedClassName : undefined}>
-                  <Link as="a" href="/use" onClick={(e: any) => {
+                  <Link as="a" href="/use" onClick={(e) => {
                     e.preventDefault();
                     // navigate('/use');
                     router.push('/use');
                   }}>Use</Link>
                 </li>
                 <li className={selected === 'release' ? selectedClassName : undefined}>
-                  <Link as="a" href="/release" onClick={(e: any) => {
+                  <Link as="a" href="/release" onClick={(e) => {
                     e.preventDefault();
                     // navigate('/release');
                     router.push('/release');
                   }}>Release</Link>
                 </li>
                 <li className={selected === 'contribute' ? selectedClassName : undefined}>
-                  <Link as="a" href="/contribute" onClick={(e: any) => {
+                  <Link as="a" href="/contribute" onClick={(e) => {
                     e.preventDefault();
                     // navigate('/contribute');
                     router.push('/contribute');

@@ -133,7 +133,7 @@ export default function OpenSourceAvatars() {
 
       if (!isPaused) {
         // decrement any highlighted avatars
-        let updatedHighlights = highlighted.map((highlight) => {
+        const updatedHighlights = highlighted.map((highlight) => {
           if (highlight && highlight.remainingClicks > 0) {
             return {
               ...highlight,
@@ -287,20 +287,20 @@ export default function OpenSourceAvatars() {
 }
 
 function getOffset(element: HTMLElement) {
-  var item = element.getBoundingClientRect();
+  const item = element.getBoundingClientRect();
   return [item.top + window.pageYOffset - document.documentElement.clientTop, item.left + window.pageXOffset - document.documentElement.clientLeft];
 }
 
 function getSize(element: HTMLElement) {
-  var item = element.getBoundingClientRect();
+  const item = element.getBoundingClientRect();
   return [item.height, item.width];
 }
 
 function getRelativeOffset(element: HTMLElement, container: HTMLElement) {
-  var containerOffset = getOffset(container);
-  var item = getOffset(element);
-  var top = item[0] - containerOffset[0];
-  var left = item[1] - containerOffset[1];
+  const containerOffset = getOffset(container);
+  const item = getOffset(element);
+  const top = item[0] - containerOffset[0];
+  const left = item[1] - containerOffset[1];
   return [top, left];
 }
 
@@ -318,7 +318,7 @@ function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function randomElement(arr: any[]) {
+function randomElement<T>(arr: T[]) {
   if (!arr || !arr.length) {
     return null;
   }

@@ -6,6 +6,8 @@
 const IS_APP_INSIGHTS_ENABLED = false;
 
 export default function TelemetryHead() { 
+  // The consent library must load before telemetry.js initializes the consent banner.
+  // eslint-disable-next-line @next/next/no-sync-scripts
   return <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>;
   
   // return IS_APP_INSIGHTS_ENABLED ? (

@@ -63,7 +63,7 @@ export default function Tools() {
           rel="noopener"
           href="https://azure.microsoft.com/services/devops/pipelines/">Azure Pipelines</a></strong>{' '}
           can be exposed to public, open communities,{' '}
-          allowing many Microsoft projects to continue using the build system they've been{' '}
+          allowing many Microsoft projects to continue using the build system they&apos;ve been{' '}
           using for many years, but with a collaborative angle.
         </li>
       </ul>
@@ -85,7 +85,7 @@ export default function Tools() {
           alerts can be raised at any time to help engineers protect Microsoft and its customers.
         </li>
         <li><strong>Legal alerts:</strong> open source license data and algorithms specific{' '}
-          to Microsoft's open source approach are used to generate alerts when specific components{' '}
+          to Microsoft&apos;s open source approach are used to generate alerts when specific components{' '}
           have additional legal obligations or requirements, such as publishing third-party source{' '}
           disclosures to <a
             href="https://3rdpartycode.microsoft.com/"
@@ -98,7 +98,7 @@ export default function Tools() {
       </ul>
       <h4 className="h4">GitHub Bots</h4>
       <p>
-        Many different bots and applications are used as part of Microsoft's open source{' '}
+        Many different bots and applications are used as part of Microsoft&apos;s open source{' '}
         program. Bots help teams to scale and provide a great experience for communities.
       </p>
       <p>
@@ -136,13 +136,13 @@ export default function Tools() {
         <li><b>User linking:</b> Authenticating an employee with IT and also GitHub to associate the GitHub{' '}
           account
         </li>
-        <li><b>Communications:</b> By linking an employee's corporate identity with their GitHub account,{' '}
+        <li><b>Communications:</b> By linking an employee&apos;s corporate identity with their GitHub account,{' '}
           comms are possible without having to ask the user to share their email address or other{' '}
           information on their public profile.
         </li>
       </ul>
       <p>
-        Microsoft's self-service GitHub management portal is implemented in TypeScript and is{' '}
+        Microsoft&apos;s self-service GitHub management portal is implemented in TypeScript and is{' '}
         a Node.js service. The portal is open source at <a
           href="https://github.com/microsoft/opensource-portal"
           rel="noopener"
@@ -156,7 +156,7 @@ export default function Tools() {
         open source components. We rely on this data for our compliance systems.</p>
       <p>
         This open source project provides compliance data about open source components from across the package ecosystems.{' '}
-        It uses multiple open source scanners and summarizes their results into a high-quality "definition" of the component{' '}
+        It uses multiple open source scanners and summarizes their results into a high-quality &quot;definition&quot; of the component{' '}
         upon which we base our business policy decisions internally. It also:
       </p>
       <ul className="ul mt-4">
@@ -173,11 +173,11 @@ export default function Tools() {
         ClearlyDefined is an open source project of the Open Source Initiative (OSI) and{' '}
         its open source code is at <a href="https://github.com/clearlydefined" target="_blank">https://github.com/clearlydefined</a>.
       </p>
-      <h4 className="h4">Microsoft's Contributor License Agreement (CLA) </h4>
+      <h4 className="h4">Microsoft&apos;s Contributor License Agreement (CLA) </h4>
       <p>
         The <a href="https://github.com/microsoft/ContributorLicenseAgreement"
           rel="noopener"
-          target="_blank" className="external">Microsoft's Contributor License Agreement</a>{' '}
+          target="_blank" className="external">Microsoft&apos;s Contributor License Agreement</a>{' '}
         is a Contributor License Agreement solution that integrates{' '}
         nicely with GitHub to make sure that all contributors to a project{' '}
         have agreed to common terms by enabling contributors to sign CLAs from within a pull request.
@@ -191,12 +191,12 @@ export default function Tools() {
         our big data systems.
       </p>
       <p>
-        By making data available in Azure Data Explorer, powered by Kusto, it's{' '}
+        By making data available in Azure Data Explorer, powered by Kusto, it&apos;s{' '}
         really quick for Microsoft engineers to be able to query data without having to{' '}
         build specialized GitHub API integrations.
       </p>
       <p>
-        <em>Microsoft's 1ES team is in the process of open sourcing this technology.</em></p>
+        <em>Microsoft&apos;s 1ES team is in the process of open sourcing this technology.</em></p>
       <h4 className="h4">Business review process with Azure Boards</h4>
       <p>
         Our business and legal review process - kicked off when a particular open source{' '}
