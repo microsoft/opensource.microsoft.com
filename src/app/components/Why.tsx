@@ -16,7 +16,7 @@ export default function Why() {
       }>
         <div data-animate-in="fade" data-animate-in-delay="200">
           <h2 className="mb-4">
-            <span className="h5">Microsoft's communities</span>
+            <span className="h5">Microsoft&apos;s communities</span>
             <span className="h2">Get involved</span>
           </h2>
           <p className="p-lg font-weight-400">
@@ -28,7 +28,7 @@ export default function Why() {
           </p>
           <div className="mt-6">
             <Link className="link-arrow" href="/collaborate#get-involved">Happening now</Link><br />
-            <Link className="link-arrow" href="/collaborate#get-started">Find a "good first issue"</Link><br />
+            <Link className="link-arrow" href="/collaborate#get-started">Find a &quot;good first issue&quot;</Link><br />
             <Link className="link-arrow" href="/projects">Featured projects</Link>
           </div>
         </div>

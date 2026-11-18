@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useLocationHash } from '../../hooks/useLocationHash';
 import Contributing from './Contributing';
 import Overview from './Overview';
 import Releasing from './Releasing';
@@ -18,25 +18,7 @@ const FIRST_TAB = 'program-overview';
 // Otherwise, show the active content appropriately.
 
 const ProgramDynamicContent = () => {
-  // Initialize with a default value
-  const [activeTab, setActiveTab] = useState(FIRST_TAB);
-  
-  // Update the active tab once the component mounts in the browser
-  useEffect(() => {
-    const hash = window.location.hash;
-    const newActiveTab = hash ? hash.replace('#', '') : FIRST_TAB;
-    setActiveTab(newActiveTab);
-
-    const handleHashChange = () => {
-      const newHash = window.location.hash;
-      const newTab = newHash ? newHash.replace('#', '') : FIRST_TAB;
-      setActiveTab(newTab);
-    }
-    window.addEventListener('hashchange', handleHashChange);
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    }
-  }, [setActiveTab]);
+  const activeTab = useLocationHash(FIRST_TAB);
 
   return (
     <div className="col-md-10 col-lg-7 mx-auto">

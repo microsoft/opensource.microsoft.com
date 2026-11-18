@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useLocationHash } from '../../../hooks/useLocationHash';
 
 export const TABS = {
   'overview': 'Overview',
@@ -16,25 +16,7 @@ export const TABS = {
 const FIRST_TAB = Object.keys(TABS)[0];
 
 const AzureCreditsTabs = () => {
-  // Initialize with a default value
-  const [activeTab, setActiveTab] = useState(FIRST_TAB);
-  
-  // Update the active tab once the component mounts in the browser
-  useEffect(() => {
-    const hash = window.location.hash;
-    const newActiveTab = hash ? hash.replace('#', '') : FIRST_TAB;
-    setActiveTab(newActiveTab);
-
-    const handleHashChange = () => {
-      const newHash = window.location.hash;
-      const newTab = newHash ? newHash.replace('#', '') : FIRST_TAB;
-      setActiveTab(newTab);
-    }
-    window.addEventListener('hashchange', handleHashChange);
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    }
-  }, [setActiveTab]);
+  const activeTab = useLocationHash(FIRST_TAB);
 
   return (
     <div className="tabs__tabs" role="tablist">

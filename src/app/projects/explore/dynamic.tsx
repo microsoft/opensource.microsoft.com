@@ -6,7 +6,7 @@
 'use client';
 
 import { RepoForkedIcon, RepoIcon, StarIcon } from '@primer/octicons-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 
 const LANGUAGES = [
   'C#',
@@ -54,7 +54,7 @@ export default function ExploreProjectsDynamic() {
       });
   }, []);
 
-  const handleSearch = (e: any) => {
+  const handleSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     fetch(`/api/repos?q=${encodeURIComponent(searchQuery)}&languages=${filters.map((f) => encodeURIComponent(f)).join(',')}`)
       .then((response) => response.json())

@@ -20,7 +20,7 @@ export default function Contributing() {
         `}
       </p>
       <p>
-        Microsoft's contribution policy varies depending on the size and purpose of contribution.
+        Microsoft&apos;s contribution policy varies depending on the size and purpose of contribution.
       </p>
       <ul className="ul mt-4">
         <li>

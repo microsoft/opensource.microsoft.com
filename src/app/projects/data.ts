@@ -13,6 +13,7 @@ export type HighlightedProject = {
   linkText?: string;
   projectUrl?: string;
   logo?: string;
+  externalLogo?: string;
   storeUrl?: string;
   featured?: boolean;
   // deprecated: social?: string;

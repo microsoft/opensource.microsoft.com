@@ -80,7 +80,7 @@ export default function CodeOfConduct() {
               <li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
               <li>Public or private harassment</li>
               <li>Disruptive behavior</li>
-              <li>Publishing others' private information, such as a physical or email address, without their explicit permission</li>
+              <li>Publishing others&apos; private information, such as a physical or email address, without their explicit permission</li>
               <li>Other conduct which could reasonably be considered inappropriate in a professional setting</li>
             </ul>
           </div>
@@ -191,14 +191,14 @@ export default function CodeOfConduct() {
             </p>
             <p>
               Community Impact Guidelines were inspired by <a href="https://github.com/mozilla/inclusion" 
-              className="link-standard" target="_new">Mozilla's code of conduct enforcement ladder</a>.
+              className="link-standard" target="_new">Mozilla&apos;s code of conduct enforcement ladder</a>.
             </p>
             <p>
               Expanding scope to include external impact on community health inspired by <a 
               href="https://opensource.fb.com/code-of-conduct/" className="link-standard" 
-              target="_new">Facebook's Open Source Code of Conduct</a> and <a 
+              target="_new">Facebook&apos;s Open Source Code of Conduct</a> and <a
               href="https://www.mozilla.org/about/governance/policies/participation/" 
-              className="link-standard" target="_new">Mozilla's Community Participation Guidelines</a>.
+              className="link-standard" target="_new">Mozilla&apos;s Community Participation Guidelines</a>.
             </p>
             <p>
               For answers to common questions about this code of conduct, see the FAQ at <a 

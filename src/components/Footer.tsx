@@ -125,9 +125,7 @@ export default function Footer() {
                   <li id="manageCookies" data-require-javascript="yes" data-javascript-show="immediate">
                       <a href="#" onClick={() => {
                         try {
-                          if ((window as any).manageCookies) {
-                            (window as any).manageCookies();
-                          }
+                          window.manageCookies?.();
                         } catch (e) {
                           console.error('Error managing cookies:', e);
                         }

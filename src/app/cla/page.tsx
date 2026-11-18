@@ -43,7 +43,7 @@ export default function ContributorLicenseAgreement() {
             <h3 className="h3">Signing the CLA</h3>
             <p>
               The Microsoft CLA experience is integrated natively into GitHub and its pull request
-              experience. Here's how it works the first time you contribute to a Microsoft open source
+              experience. Here&apos;s how it works the first time you contribute to a Microsoft open source
               project:
             </p>
             <ul>
@@ -52,23 +52,23 @@ export default function ContributorLicenseAgreement() {
                 bot.
               </li>
               <li>
-                If you've signed the CLA before, the status check goes green, and you're done.
+                If you&apos;ve signed the CLA before, the status check goes green, and you&apos;re done.
                 Your pull request is ready to be reviewed and merged.
               </li>
               <li>
                 If you have not signed the CLA at any point before, the pull request will
                 receive a comment annotated with the agreement and more information about
                 signing the agreement. You will reply with a comment to accept the agreement
-                on behalf of yourself, or, if you've been authorized to sign on behalf of
+                on behalf of yourself, or, if you&apos;ve been authorized to sign on behalf of
                 your company, there is a different syntax for that.
               </li>
               <li>
-                After signing, the status check will pass and you're all set. <strong>Thanks for your contribution!</strong>
+                After signing, the status check will pass and you&apos;re all set. <strong>Thanks for your contribution!</strong>
               </li>
               <li>
                 <em>NOTE:</em><br />
-                If you're an active Microsoft employee or vendor, there is a Microsoft-internal
-                system that allows you to "link" your GitHub account for corporate use. When you
+                If you&apos;re an active Microsoft employee or vendor, there is a Microsoft-internal
+                system that allows you to &quot;link&quot; your GitHub account for corporate use. When you
                 use your linked account, you will not have to sign the CLA. Microsoft
                 employees and vendors can learn more about linking accounts at {' '}
                 <a href="https://aka.ms/opensource" target="_new">aka.ms/opensource</a>.
