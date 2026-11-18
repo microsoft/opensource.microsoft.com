@@ -105,14 +105,18 @@ function getGitHubRepo(...values: unknown[]) {
 
 type LockEntry = {
   version: string;
-  dev: boolean;
+  dev?: boolean;
 };
 
-// NPM
+// NPM lockfile v2/v3: top-level packages are keyed as "node_modules/<name>"
+const NODE_MODULES_PREFIX = 'node_modules/';
 const packageRaw = fs.readFileSync(path.join(process.cwd(), 'package-lock.json'), 'utf8');
 const packageLock = JSON.parse(packageRaw);
-const lock = packageLock.dependencies as Record<string, LockEntry>;
-const lockfile = (Object.getOwnPropertyNames(lock).sort()).map(name => { return {name, dev: lock[name].dev}});
+const lock = (packageLock.packages || {}) as Record<string, LockEntry>;
+const lockfile = Object.keys(lock)
+  .filter((key) => key.startsWith(NODE_MODULES_PREFIX) && !key.slice(NODE_MODULES_PREFIX.length).includes('/node_modules/'))
+  .map((key) => ({ name: key.slice(NODE_MODULES_PREFIX.length), dev: lock[key].dev }))
+  .sort((a, b) => (a.name > b.name ? 1 : -1));
 fromPackage(lockfile.filter(dep => dep.dev !== true), components);
 fromPackage(lockfile.filter(dep => dep.dev === true), dependencies);
 
